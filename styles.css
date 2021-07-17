@@ -1,0 +1,23 @@
+@import './fonts.css';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ccc;
+}
+
+.container {
+  padding: 1rem 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  /* padding-bottom: 2rem; */
+}
+
+h1 {
+  text-align: center;
+}
+
+.main{
+  display: flex;
+  background-color: red;
+  height: 100%;
+}
