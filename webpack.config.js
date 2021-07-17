@@ -175,7 +175,7 @@ const plugins = () => {
         // },
         {
           from: `${PATHS.src}fonts`,
-          to: `${PATHS.dist}fonts`,
+          to: `${PATHS.dist}fonts/`,
         },
       ],
     }),
@@ -233,60 +233,18 @@ module.exports = {
           options: babelOptions("@babel/preset-react"),
         },
       },
-      // },
-      // CSS (стили|4 варианта) {
-      // обраб. ccs файлы с импортами и возвращает ccs код.
-      // $$ npm i -D css-loader
-      // CSS + mini{
-      // для отдельных css файлов
-      // $$ npm i --D mini-css-extract-plugin
-      // +++ const MiniCssExtractPlugin
-      // +++ plugins:[new MiniCssExtractPlugin()]
-      // подкл. .css в src/.js
-      // +++ import './test2.css';
-      // подкл. css в html. не нежен с html плагин
-      // +++ <link rel="stylesheet" href="./static/build/styles.css">
       {
         test: /\.css$/,
         // с fn() cssLoaders без дублей. ЛУЧШЕЕ!!!
-        // use: cssLoaders(),s
-        // стандарт
-        use: [
-          // без опций
-          "style-loader",
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-        ],
+        use: cssLoaders(),
       },
       {
-        // sass/scss
-        //test: /\.s[ac]ss$/i,
-        // css, sass, scss
         test: /\.scss/,
-        // с fn() cssLoaders без дублей. ЛУЧШЕЕ!!!
-        // use: cssLoaders("sass-loader"),
-        // без fn()
-        use: [
-          // 3. Создает узлы `MiniCss` из строк JS в файлы
-          {
-            // прямо указ какой loader
-            loader: MiniCssExtractPlugin.loader,
-            options: {},
-          },
-          // 2. Переводит CSS в обычный JS
-          "css-loader",
-          // 1. Компилирует Sass в CSS
-          "sass-loader",
-        ],
+        use: cssLoaders("sass-loader"),
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        // use: ["file-loader"],
-        // use не раб с options
         loader: "file-loader",
-        // задаём имя
-        // ??? не раб - только имя ../ работает, однако созд папку с файлом за dist
-        // такой же файл как из CopyWebPlug., но при уник. имени созд ещё один
         options: {
           // без ничего только hash.png
           // name: '[name].[ext]', // файл в dist
@@ -298,31 +256,12 @@ module.exports = {
           // name:`${PATHS.dist}img/[name].[ext]` // не раб - созд. двойной путь до папки от корня
         },
       },
-      // },
-      // xml {
-      // устан. $$, подкл в js, добавл в файл
-      // $$ npm i -D xml-loader
-      //               {
-      //                 test: /\.xml$/,
-      //                 use: ["xml-loader"],
-      // }
-      // // },
-      // // подкл. csv {
-      // // устан. $$, подкл в js, добавл в файл
-      // // $$ npm i -D csv-loader
-      // // зависит от пакета papaparse который парсит csv в js
-      // // $$ npm i -D papaparse
-      // {
-      //   test: /\.csv$/,
-      //   use: ["csv-loader"],
-      // }
-      // },
     ],
   },
   // расшир/сокращ
   resolve: {
     // расшир. по умолч. чтоб не указыв. в import/export
-    extensions: [".js", ".json", ".png"],
+    extensions: [".js", ".jsx", ".json", ".css", ".scss", ".png"],
     // сокращение/пседвоним указ. на путь
     alias: {
       "@models": path.resolve(__dirname, "src/models"),
@@ -331,16 +270,6 @@ module.exports = {
   },
   // доп настр. знач. можно передать через fn с проверкой на Prod
   optimization: optimization(),
-  // ч/з fn() возращ. сгенерированый объ. ЛУЧШЕЕ!!!
-  // optimization:
-  //   // объектом
-  //   {
-  //     // выгружать библ(jQuery, ) в один файл из 2х не связаных файлов
-  //     splitChunks: {
-  //       chunks: "all",
-  //     },
-  //   },
-  // подкл dev-server к webpack для живой перезагрузки
   devServer: {
     // порт для запуска. рекоменд 8081, реже 8080
     port: 8081, // 8080 // 4200,
