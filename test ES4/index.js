@@ -1,5 +1,5 @@
-import IndexReact from "./js/indexReact.jsx";
-import './css/css/styles.css';
-import './css/scss/style.scss';
+// import IndexReact from "./js/indexReact.jsx";
+import './styles/css/style.css';
+// import './styles/scss/style.scss';
 
-console.log(1)
+// console.log(IndexReact)

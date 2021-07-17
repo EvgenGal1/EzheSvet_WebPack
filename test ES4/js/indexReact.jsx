@@ -1,1 +1,3 @@
-export default class IndexReact {}
+import '../styles/scss/style';
+
+// export default class IndexReact {}

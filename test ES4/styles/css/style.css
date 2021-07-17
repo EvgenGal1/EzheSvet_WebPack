@@ -1,4 +1,4 @@
-@import './fonts.css';
+/* @import './fonts.css'; */
 /* ??? не раб - добавляет лишний font в корень dist */
 
 body {
@@ -20,7 +20,7 @@ h1 {
 .main{
   display: flex;
   flex-direction: column;
-  background-color: red;
   background-color: green;
+  background-color: gray;
   height: 100%;
 }

@@ -13,10 +13,6 @@
     "url": "https://github.com/EvgenGal1/EzheSvet4/issues"
   },
   "homepage": "https://github.com/EvgenGal1/EzheSvet4#readme",
-  "browserslist": [
-    "> 1%",
-    "last 3 version"
-  ],
   "keywords": [
     "ЕжеСвет",
     "ЕжеСвет4",
@@ -54,6 +50,7 @@
     "node-sass": "^6.0.1",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "postcss-loader": "^6.1.1",
+    "raw-loader": "^4.0.2",
     "sass": "^1.35.2",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.1.0",

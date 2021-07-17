@@ -23,6 +23,8 @@ const TerserWebpackPlugin = require("terser-webpack-plugin");
 const PATHS = {
   src: path.join(__dirname, "./test ES4/"),
   dist: path.join(__dirname, "./dist/"),
+  views: path.join(__dirname, "./test ES4/html/views/"),
+  includes: path.resolve(__dirname, "./test ES4/html/includes/"),
   assets: "assets/",
 };
 
@@ -70,7 +72,7 @@ const optimization = () => {
             // For webpack@4
             // test: /\.css$/,
             chunks: "all",
-            enforce: true,
+            // enforce: true,
           },
         },
       });
@@ -134,10 +136,40 @@ const jsLoaders = () => {
   return user;
 };
 
+function generateHtmlPlugins(templateDir) {
+  const fs = require("fs");
+  // const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+  const templateFiles = fs.readdirSync(templateDir);
+  return templateFiles.map((item) => {
+    const parts = item.split(".");
+    const name = parts[0];
+    const ext = parts[1];
+    return new HTMLWebpackPlugin({
+      filename: `${name}.html`,
+      // template: path.resolve(__dirname, `${templateDir}/${name}.${ext}`),
+      template: `${templateDir}/${name}.html`,
+      minify: {
+        collapseWhitespace: isProd,
+      },
+      inject: true,
+    });
+  });
+}
+
+const htmlPlugins = generateHtmlPlugins("./test ES4/html/views/Prob/");
+
 // analyzer(визуал размер кода) и plugin ч/з fn()
 // описание plugin в plugins:стандарт + описание
 const plugins = () => {
   const base = [
+    new HTMLWebpackPlugin({
+      minify: {
+        collapseWhitespace: isProd,
+      },
+      chunks: ["main"],
+      filename: `${PATHS.dist}html/Prob/Prob.html`,
+      template: `${PATHS.views}Prob/Prob.html`,
+    }),
     new HTMLWebpackPlugin({
       minify: {
         collapseWhitespace: isProd,
@@ -152,7 +184,7 @@ const plugins = () => {
       },
       chunks: ["app"],
       filename: `${PATHS.dist}html/Catalog/Catalog.html`,
-      template: `${PATHS.src}html/Catalog/Catalog.html`,
+      template: `${PATHS.views}Catalog/Catalog.html`,
     }),
     new HTMLWebpackPlugin({
       minify: {
@@ -160,7 +192,7 @@ const plugins = () => {
       },
       chunks: ["app"],
       filename: `${PATHS.dist}html/Reference/Reference.html`,
-      template: `${PATHS.src}html/Reference/Reference.html`,
+      template: `${PATHS.views}Reference/Reference.html`,
     }),
     new MiniCssExtractPlugin({
       // filename: `${PATHS.assets}css/[name].css`,
@@ -179,7 +211,7 @@ const plugins = () => {
         },
       ],
     }),
-  ];
+  ].concat(htmlPlugins);
   // analyzer подк. е/и Prod
   // if (isProd) {
   //   base.push(new BundleAnalyzerPlugin());
@@ -214,6 +246,11 @@ module.exports = {
     // `правила` для модулей (настройка, параметры парсера и т. д.)
     rules: [
       {
+        test: /\.html$/,
+        include: path.resolve(__dirname, "test ES4/html/views/Prob/Prob.html"),
+        use: ["raw-loader"],
+      },
+      {
         // для js. синтаксис регулярных выражений
         test: /\.js?$/,
         // исключ. папка node_modules
@@ -246,15 +283,21 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: "file-loader",
         options: {
-          // без ничего только hash.png
-          // name: '[name].[ext]', // файл в dist
-          // name: '../[name].[ext]', // файл за dist
-          name: "img/[name][hash].[ext]", // файл в img/ с hash. созд отдельный файл от копир.
-          // name: '/img/[name].[ext]', // файл в img/
-          // name: './img/[name].[ext]', // файл в img/
-          // name: '../img/[name].[ext]', // парка с файлом за dist
-          // name:`${PATHS.dist}img/[name].[ext]` // не раб - созд. двойной путь до папки от корня
+          name: "img/[name].[hash].[ext]",
         },
+      },
+      {
+        test: /\.(ttf|otf|svg|woff|woff2|eot)$/,
+        exclude: path.resolve(__dirname, "src/img"),
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "fonts/[name].[hash].[ext]",
+              outputPath: path.resolve(__dirname, "dist/fonts"),
+            },
+          },
+        ],
       },
     ],
   },
