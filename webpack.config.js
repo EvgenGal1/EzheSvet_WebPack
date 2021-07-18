@@ -33,7 +33,7 @@ const PATHS = {
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
 
-const filename = (ext) => 
+const filename = (ext) =>
   isDev ? `${ext}/[name].${ext}` : `${ext}/[name].[hash].${ext}`;
 
 // fn для передачи объ. в optimization с проверкой на Prod
@@ -124,41 +124,40 @@ const jsLoaders = () => {
   ];
   // е/и раработка, то добавл eslint
   if (isDev) {
-    // user.push("eslint-loader");
+    user.push("eslint-loader");
   }
   // возвращ
   return user;
 };
 
-function generateHtmlPlugins(templateDir) {
+function generateHtmlPlugins(templatesDir) {
   const fs = require("fs");
-  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
-  // const templateFiles = fs.readdirSync(templateDir);
-  return templateFiles.map((item) => {
-    // const name = require("name")
-    const parts = item.split(".");
-    // const parts = item.split;
-    const name = parts[0];
-    const ext = parts[1];
+  const templateFolders = fs.readdirSync(path.resolve(__dirname, templatesDir));
+  return templateFolders.map((folderName) => {
+    const templateFoldersPath = path.resolve(
+      __dirname,
+      templatesDir,
+      folderName
+    );
+    const firstTemplateFileName = fs.readdirSync(templateFoldersPath)[0];
+    const firstTemplateFilePath = path.resolve(
+      __dirname,
+      templatesDir,
+      folderName,
+      firstTemplateFileName
+    );
     return new HTMLWebpackPlugin({
-      filename: `${name}.html`,
-      // filename: `[name].html`,
-      template: path.resolve(__dirname, `${templateDir}/${name}.${ext}`),
-      // template: path.resolve(__dirname, `${templateDir}/${name}.html`),
-      // template: path.resolve(__dirname, `${templateDir}/[name].html`),
-      // template: `${templateDir}/${name}.html`,
-      // template: `${templateDir}/[name].html`,
-      minify: {
-        collapseWhitespace: isProd,
-      },
-      inject: true,
+      filename: `html/${folderName}/${firstTemplateFileName}`,
+      template: firstTemplateFilePath,
+      minify: { collapseWhitespace: isProd },
+      // inject: true,
+      // inject: false,
+      chunks: ["app"],
     });
   });
 }
 
-// const htmlPlugins = generateHtmlPlugins("./test ES4/html/views");
-const htmlPlugins = generateHtmlPlugins("./test ES4/html/views/Prob/");
-// const htmlPlugins = generateHtmlPlugins("./test ES4/html/views/Prob/Prob.html");
+const htmlPlugins = generateHtmlPlugins("./test ES4/html/views");
 
 // analyzer(визуал размер кода) и plugin ч/з fn()
 // описание plugin в plugins:стандарт + описание
@@ -168,36 +167,26 @@ const plugins = () => {
       minify: {
         collapseWhitespace: isProd,
       },
-      // chunks: ["main"],
-      // не вставляет js, css
-      inject: false,
-      filename: `${PATHS.dist}html/Prob/Prob.html`,
-      template: `${PATHS.views}Prob/Prob.html`,
-    }),
-    new HTMLWebpackPlugin({
-      minify: {
-        collapseWhitespace: isProd,
-      },
       chunks: ["main"],
       filename: `${PATHS.dist}index.html`,
       template: `${PATHS.src}index.html`,
     }),
-    new HTMLWebpackPlugin({
-      minify: {
-        collapseWhitespace: isProd,
-      },
-      chunks: ["app"],
-      filename: `${PATHS.dist}html/Catalog/Catalog.html`,
-      template: `${PATHS.views}Catalog/Catalog.html`,
-    }),
-    new HTMLWebpackPlugin({
-      minify: {
-        collapseWhitespace: isProd,
-      },
-      chunks: ["app"],
-      filename: `${PATHS.dist}html/Reference/Reference.html`,
-      template: `${PATHS.views}Reference/Reference.html`,
-    }),
+    // new HTMLWebpackPlugin({
+    //   minify: {
+    //     collapseWhitespace: isProd,
+    //   },
+    //   chunks: ["app"],
+    //   filename: `${PATHS.dist}html/Catalog/Catalog.html`,
+    //   template: `${PATHS.views}Catalog/Catalog.html`,
+    // }),
+    // new HTMLWebpackPlugin({
+    //   minify: {
+    //     collapseWhitespace: isProd,
+    //   },
+    //   chunks: ["app"],
+    //   filename: `${PATHS.dist}html/Reference/Reference.html`,
+    //   template: `${PATHS.views}Reference/Reference.html`,
+    // }),
     new MiniCssExtractPlugin({
       // filename: `${PATHS.assets}css/[name].css`,
       filename: filename("css"),
@@ -236,13 +225,11 @@ module.exports = {
   plugins: plugins(),
   module: {
     rules: [
+      // html
       {
         test: /\.html$/,
-        // include: path.resolve(__dirname, "test ES4/html/"),
-        // include: path.resolve(__dirname, "test ES4/html/views/Prob/Prob.html"),
-        // include: path.resolve(__dirname, "test ES4/html/includes"),
-        // loader: "html-loader",
-        // loader: "raw-loader",
+        // exclude: path.resolve(__dirname, "test ES4/html/views"),
+          include: path.resolve(__dirname, "test ES4/html/includes"),
         use: ["raw-loader"],
       },
       // JS
@@ -253,7 +240,7 @@ module.exports = {
       },
       // JSX
       {
-        test: /\.(js|jsx)?$/i, 
+        test: /\.(js|jsx)?$/i,
         exclude: /(node_modules)/,
         use: {
           loader: "babel-loader",
@@ -309,7 +296,7 @@ module.exports = {
   // server
   devServer: {
     // порт для запуска. рекоменд 8081, реже 8080
-    port: 8081, // 8080 // 4200,
+    port: 8080, // 8080 // 4200 // 8081
     // только в разраб
     hot: isDev,
     // показ ошб. на экране а не в консоле

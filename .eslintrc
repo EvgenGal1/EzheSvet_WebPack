@@ -43,8 +43,8 @@
   },
   // ! 2.0.48 исправл. от ошибок. эти хз на ??? что не раб
   "globals": {
-    // "$": true,
-    // "process": true,
+    "$": true,
+    "process": true,
     // ! 2.0.48 исправл. от ошибок - 'require' is not defined.eslintno-undef
     "require": true,
     "const": true

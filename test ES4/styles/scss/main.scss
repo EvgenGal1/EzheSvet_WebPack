@@ -1,0 +1,146 @@
+// 2 видео
+@import "./utils/libs.scss"; // добавл библ()
+@import "./utils/vars"; // основ переменые
+@import "./utils/mixins"; // миксины(fn()сокращ кода)
+@import "./utils/fonts";
+@import "./utils/reset"; // обнул стили
+
+.wrapper__example {
+  display: flex;
+  // align-items: center;
+
+  h1 {
+    color: red;
+    // ??? не раб - вроде. в браузере и в Styles не видно изменений. в Computed измен показывает
+    font-size: rem(20);
+  }
+}
+#main {
+  // не ставить картинки ч/з css. сложно доставать beckend, сложно менять. лучше ч/з html-img или html-style-background-image
+  background: url("../assets/img/logo.png");
+  width: 100%;
+}
+// .rtv {
+//   @include size(100px, 80px);
+//   // @include placeholder {
+//   //   color: green;
+//   // }
+// }
+// .rtv {
+//   // @include placeholder(100px)
+//   @include placeholder {
+//     color: green;
+//     width: 12px;
+//   }
+// }
+// ! законченое
+
+html {
+  color: $mainFontColor;
+  font-size: $mainFontSize;
+  line-height: $mainLineHeight;
+  height: 100%;
+  @media screen and (max-width: $desktopWidth) {
+    font-size: 17px;
+  }
+  @media screen and (max-width: $smDesktopWidth) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: $tableWidth) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: $smTableWidth) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 13px;
+  }
+  @media screen and (max-width: $smPhoneWidth) {
+    font-size: 12px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  font-weight: $mainFontWeight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+section,
+.section {
+  position: relative;
+  padding: 40px 0;
+  @media screen and (max-width: $smDesktopWidth) {
+    padding: 36px 0;
+  }
+  @media screen and (max-width: $tableWidth) {
+    padding: 28px 0;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    padding: 20px 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  flex: 0 0 auto;
+  position: relative;
+  margin: 0 auto;
+  max-width: $desktopWidth;
+  @media screen and (max-width: $smDesktopWidth) {
+    max-width: $tableWidth;
+  }
+  @media screen and (max-width: $tableWidth) {
+    max-width: $phoneWidth;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    max-width: $smPhoneWidth;
+  }
+}
+
+// // Modules:
+// // example: @import "modules/my-module.scss";
