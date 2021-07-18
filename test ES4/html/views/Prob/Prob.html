@@ -1,13 +1,14 @@
-<!-- <% var data = {
+<% var data = {
   title: "Заголовок | Проект",
   author: "EvGen"
-}; %> -->
-<!-- <%= _.template(require('../../includes/header.html'))(data) %> -->
-<%= .require('../../includes/header.html') %>
+}; %>
+<%= _.template(require('../../includes/header.html'))(data) %>
+<!-- <%= .require('../../includes/header.html') %> -->
 
 <div class="container">
   <p>Первая страница.</p>
   <p><img src="uploads/test.jpg"></p>
 </div>
 
-<%= .require('../../includes/footer.html') %>
+<%= _.template(.require('../../includes/footer.html'))(data) %>
+<!-- <%= .require('../../includes/footer.html') %> -->

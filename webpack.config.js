@@ -33,11 +33,8 @@ const PATHS = {
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
 
-// перименовка файлов в зависимости от режима. более сложное для Prod для кэша
-// const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
-// дополнил. при передаче ext, созд. идентич. папку и формат. ЛУЧШЕЕ для css, js
-// const filename = (ext) =>
-//   isDev ? `${ext}/[name].${ext}` : `${ext}/[name].[hash].${ext}`;
+const filename = (ext) => 
+  isDev ? `${ext}/[name].${ext}` : `${ext}/[name].[hash].${ext}`;
 
 // fn для передачи объ. в optimization с проверкой на Prod
 const optimization = () => {
@@ -80,9 +77,6 @@ const optimization = () => {
   // возращ по умолчан
   return config;
 };
-
-const filename = (ext) =>
-  isDev ? `${ext}/[name].${ext}` : `${ext}/[name].[hash].${ext}`;
 
 // убираем дубли loader в css, scss, less
 const cssLoaders = (extra) => {
@@ -138,16 +132,22 @@ const jsLoaders = () => {
 
 function generateHtmlPlugins(templateDir) {
   const fs = require("fs");
-  // const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
-  const templateFiles = fs.readdirSync(templateDir);
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+  // const templateFiles = fs.readdirSync(templateDir);
   return templateFiles.map((item) => {
+    // const name = require("name")
     const parts = item.split(".");
+    // const parts = item.split;
     const name = parts[0];
     const ext = parts[1];
     return new HTMLWebpackPlugin({
       filename: `${name}.html`,
-      // template: path.resolve(__dirname, `${templateDir}/${name}.${ext}`),
-      template: `${templateDir}/${name}.html`,
+      // filename: `[name].html`,
+      template: path.resolve(__dirname, `${templateDir}/${name}.${ext}`),
+      // template: path.resolve(__dirname, `${templateDir}/${name}.html`),
+      // template: path.resolve(__dirname, `${templateDir}/[name].html`),
+      // template: `${templateDir}/${name}.html`,
+      // template: `${templateDir}/[name].html`,
       minify: {
         collapseWhitespace: isProd,
       },
@@ -156,7 +156,9 @@ function generateHtmlPlugins(templateDir) {
   });
 }
 
+// const htmlPlugins = generateHtmlPlugins("./test ES4/html/views");
 const htmlPlugins = generateHtmlPlugins("./test ES4/html/views/Prob/");
+// const htmlPlugins = generateHtmlPlugins("./test ES4/html/views/Prob/Prob.html");
 
 // analyzer(визуал размер кода) и plugin ч/з fn()
 // описание plugin в plugins:стандарт + описание
@@ -166,7 +168,9 @@ const plugins = () => {
       minify: {
         collapseWhitespace: isProd,
       },
-      chunks: ["main"],
+      // chunks: ["main"],
+      // не вставляет js, css
+      inject: false,
       filename: `${PATHS.dist}html/Prob/Prob.html`,
       template: `${PATHS.views}Prob/Prob.html`,
     }),
@@ -219,66 +223,54 @@ const plugins = () => {
   return base;
 };
 
-// экспорт настроек плагинов объ., из док.(config)
 module.exports = {
-  // укажем где исходники. путает в fn(), PATHS, наборе имени
-  // context: path.resolve(__dirname, "src"),
-  // `режим разработки`
   mode: "development",
-  // точка входа, начало сборки
   entry: {
     main: PATHS.src,
-    // найдёт в src/js/indexReact.jsx. синтаксис ES6
     app: `${PATHS.src}js/indexReact.jsx`,
   },
-  // точка вывода
   output: {
     filename: filename("js"),
     path: PATHS.dist,
   },
-  // доп. узкие настр.
-  // plugins(),
-  //[
   plugins: plugins(),
-  // ! е/и не нужен analyzer - раскомит `стандарт + описание` всё с [] один раз и закомит вызов fn()`plugins()` в analyzer для Prod
-  // конфигурация модулей(загрузчиков)
   module: {
-    // `правила` для модулей (настройка, параметры парсера и т. д.)
     rules: [
       {
         test: /\.html$/,
-        include: path.resolve(__dirname, "test ES4/html/views/Prob/Prob.html"),
+        // include: path.resolve(__dirname, "test ES4/html/"),
+        // include: path.resolve(__dirname, "test ES4/html/views/Prob/Prob.html"),
+        // include: path.resolve(__dirname, "test ES4/html/includes"),
+        // loader: "html-loader",
+        // loader: "raw-loader",
         use: ["raw-loader"],
       },
+      // JS
       {
-        // для js. синтаксис регулярных выражений
         test: /\.js?$/,
-        // исключ. папка node_modules
         exclude: /(node_modules)/,
         use: jsLoaders(),
       },
       // JSX
       {
-        test: /\.jsx?$/i, // есть такой test: /\.(js|jsx)$/,
-        // исключ. папка node_modules
+        test: /\.(js|jsx)?$/i, 
         exclude: /(node_modules)/,
-        // указ. webpack какой loader использовать
         use: {
-          // загрузчик - babel (собирает jsx файлы)
           loader: "babel-loader",
-          // в опциях доп. настр.
           options: babelOptions("@babel/preset-react"),
         },
       },
+      // css
       {
         test: /\.css$/,
-        // с fn() cssLoaders без дублей. ЛУЧШЕЕ!!!
         use: cssLoaders(),
       },
+      // scss
       {
         test: /\.scss/,
         use: cssLoaders("sass-loader"),
       },
+      // img
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: "file-loader",
@@ -286,6 +278,7 @@ module.exports = {
           name: "img/[name].[hash].[ext]",
         },
       },
+      // fonts
       {
         test: /\.(ttf|otf|svg|woff|woff2|eot)$/,
         exclude: path.resolve(__dirname, "src/img"),
@@ -313,6 +306,7 @@ module.exports = {
   },
   // доп настр. знач. можно передать через fn с проверкой на Prod
   optimization: optimization(),
+  // server
   devServer: {
     // порт для запуска. рекоменд 8081, реже 8080
     port: 8081, // 8080 // 4200,
