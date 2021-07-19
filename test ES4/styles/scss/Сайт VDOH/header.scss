@@ -1,0 +1,433 @@
+// <HEADER>============================================
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 150px;
+  padding: 25px 03%;
+  background-color: #8b0000;
+
+  @media (max-width: 553px) {
+    // @media (max-width: $md4+px) {
+
+    height: 120px;
+    padding: 20px 02%;
+
+    .header-logo .header-logo-smail {
+      width: 80px !important;
+      height: 80px !important;
+    }
+  }
+  // .header {
+  //   background-color: #8b0000;
+  //   height: 150px;
+  //   display: flex;
+  //   justify-content: space-between;
+  // }
+}
+// <LOGO>============================================
+.header-logo {
+  .header-logo-smail {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    // height: 100%;
+    // min-width: 100%;
+    background-color: #ccc;
+    // margin-top: 25px;
+    // margin-left: 25px;
+    // outline: 4px solid yellow;
+    border: 4px solid yellow;
+    float: left;
+    // outline-style: ridge;
+    border-style: ridge;
+    @include flexbox();
+    flex-direction: column;
+    justify-content: space-between;
+    .logo-img {
+      position: absolute;
+      left: 22%;
+      top: 22%;
+      width: 48px;
+    }
+    .logo-down {
+      text-align: right;
+    }
+    .logo-up {
+      text-align: left;
+    }
+  }
+}
+//<MENU>====================================================
+.wrapper {
+  .header-menu {
+    position: relative;
+    // min-width: 1250px;
+    &__top {
+      position: absolute;
+      right: 0;
+      top: 0;
+      .header-menu-list {
+        flex-flow: initial;
+      }
+      .menu-list__items {
+        float: left;
+      }
+    }
+
+    &__bottom {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.header-menu {
+  text-shadow: 0.5px 0.3px 0.5px #000;
+  .header-menu__top {
+    // margin: 0 0 20px 0px;
+  }
+  // затемняет не то что выделено
+  ul:hover li:not(:hover) {
+    // не видно
+    // opacity: 0;
+    opacity: 0.5;
+  }
+  .header-menu-list {
+    display: flex;
+    // ??? убрать полсе решения последних li
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    justify-content: flex-end;
+  }
+
+  .menu-list__items {
+    // для li кроме первого отступ с лево
+    &:not(:first-child) {
+      margin: 0 0 0px 10px;
+      z-index: 3;
+    }
+    // margin: 0 0 0px 10px;
+    // затемняет не то что выделено
+    &:hover .ul li:not(:hover) {
+      opacity: 0.5;
+      // opacity: 1;
+    }
+    &:hover .ul {
+      display: block;
+    }
+    // всем, кроме первого. перебивает медиа запрос
+    // &:nth-child(n):not(:first-child) {
+    //   content: "open-quote";
+    //   // width: 150px;
+    //   // height: 50px;
+    // }
+    &:nth-child(1) .menu-list-link {
+      background-color: #ffff00;
+      width: 170px;
+    }
+    &:nth-child(2) .menu-list-link {
+      background-color: #fd2727;
+    }
+    &:nth-child(3) .menu-list-link {
+      background-color: #00ba00;
+    }
+    &:nth-child(4) .menu-list-link {
+      background-color: #ffa500;
+    }
+    &:nth-child(5) .menu-list-link {
+      background-color: #1c89bb;
+    }
+    &:nth-child(6) .menu-list-link {
+      background-color: #ffffff;
+      color: #000;
+    }
+    &:nth-child(7) .menu-list-link {
+      background-color: #000000;
+      color: #fff;
+    }
+    &:nth-child(8) a.menu-list-link {
+      background-color: #12621d;
+    }
+    &:nth-child(9) a.menu-list-link {
+      background-color: #961cbb;
+    }
+    // ??? не раб - уменьшать соседний передний блок, при наведении на сокращенный
+    // ??? не раб - уменьш себя а не соседа
+    // &:nth-child(n):hover {
+    //   // .menu-list__items:nth-child(n + 1)
+    //   &:nth-child(n + 1) {
+    //     width: 50px;
+    //     a {
+    //       width: 50px;
+    //     }
+    //     .link__last-bykv {
+    //       display: none;
+    //     }
+    //     background-color: #ffa;
+    //   }
+    // }
+    @media (max-width: 553px) {
+      // @media (max-width: $md4+px) {
+      header {
+        height: 120px;
+        padding: 20px 02%;
+      }
+      .header-logo .header-logo-smail {
+        width: 80px !important;
+        height: 80px !important;
+      }
+      .menu-list-link,
+      .ul {
+        border-radius: 7px;
+        text-decoration: none;
+      }
+      // вибираем все li.menu-list__items кроме первого,
+      &:nth-child(n):not(:first-child) {
+        width: 20px !important;
+        // всем a.menu-list-link перед дочерним элементом ставим <
+        & .menu-list-link:nth-child(n)::before {
+          content: "<";
+        }
+        a.menu-list-link {
+          width: 20px !important;
+          .link__firct-bykv {
+            display: none;
+            // text-shadow: 1px 1px#000000;
+          }
+        }
+        .ul {
+          width: 20px !important;
+          .ul-li {
+            width: 0px !important;
+            border: 0;
+          }
+        }
+      }
+    }
+    @media (max-width: $md0+px) {
+      // &:last-child
+      &:nth-child(7) {
+        width: 50px;
+        a {
+          width: 50px;
+        }
+        .link__last-bykv {
+          display: none;
+        }
+      }
+    }
+    @media (max-width: 1212px) {
+      &:nth-child(6) {
+        width: 50px;
+        a {
+          width: 50px;
+        }
+        .link__last-bykv {
+          display: none;
+        }
+      }
+    }
+    @media (max-width: 1106px) {
+      &:nth-child(5) {
+        width: 50px;
+        a {
+          width: 50px;
+        }
+        .link__last-bykv {
+          display: none;
+        }
+      }
+    }
+    @media (max-width: 1009px) {
+      &:nth-child(4) {
+        // width: 50px;
+        // a,
+        // .ul {
+        //   width: 50px;
+        // }
+        // .link__last-bykv,
+        // .ul-li__last-bykv {
+        //   display: none;
+        // }
+        // .ul-li-a:hover {
+        //   &::before,
+        //   &::after {
+        //     content: "" !important;
+        //   }
+        // }
+        @include ulliul();
+      }
+    }
+    @media (max-width: 1212px) {
+      &:nth-child(6) {
+        @include ulliul();
+      }
+    }
+    @media (max-width: 1106px) {
+      &:nth-child(5) {
+        @include ulliul();
+      }
+    }
+    @media (max-width: 1009px) {
+      &:nth-child(4) {
+        @include ulliul();
+      }
+    }
+    @media (max-width: 903px) {
+      &:nth-child(3) {
+        @include ulliul();
+      }
+    }
+    @media (max-width: 797px) {
+      &:nth-child(2) {
+        @include ulliul();
+      }
+    }
+    @media (max-width: 680px) {
+      &:nth-child(1) {
+        width: 50px;
+        a.menu-list-link {
+          width: 50px;
+        }
+        .link__last-bykv {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .menu-list-link {
+    // margin-top: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    // ??? не раб - задать всем кроме последнего
+    // not:last-child.menu-list-link:
+    // margin: 0 10px 20px 0;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: italic;
+    list-style-type: none;
+    border: 2px solid #000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    &:hover {
+      // color: #000000;
+      &:before,
+      &:after {
+        // content: "!";
+      }
+    }
+    &:link {
+      color: #8b0000;
+    }
+  }
+
+  .header-menu__top a:link {
+    // color: #8b0000;
+  }
+
+  .header-menu__top a:visited {
+    // color: #800080;
+  }
+
+  .header-menu__top a:hover {
+    color: #000000;
+  }
+
+  .header-menu__top a:active {
+    // color: #1400d4;
+  }
+
+  // .header-menu__top a {
+  //   display: inline-block;
+  //   width: 100%;
+  //   height: 100%;
+  // }
+}
+
+//<>====================================================
+
+.ul {
+  display: none;
+  // display: block;
+  // top: 20px;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  width: 150px;
+  // margin: 15px 2px 1px;
+  padding: 1px 3px 3px;
+  // float: right;
+  list-style-type: none;
+  border: 2px solid #000;
+  background: #ccc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  .ul-li {
+    // opacity: 0.5;
+    display: block;
+    top: 25px;
+    margin-top: 3px;
+    background: #a3a3a3;
+    border: 1px solid #f00;
+    .ul-li-a {
+      text-decoration: none;
+      &:hover {
+        // color: #000000;
+        &::before {
+          content: ">>";
+        }
+        &:hover::after {
+          content: "<<";
+        }
+      }
+    }
+    @media (max-width: $md3+px) {
+    }
+  }
+}
+
+/*
+
+.header-menu__top a:hover::before {
+  content: "!!!";
+  color: #000;
+}
+
+.header-menu__top a:hover::after {
+  content: "!!!";
+  color: #000000;
+}
+
+.header-menu__top a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.header-menu__top a:link {
+  color: #8b0000;
+}
+
+.header-menu__top a:visited {
+  color: #800080;
+}
+
+.header-menu__top a:hover {
+  color: #1400d4;
+}
+
+.header-menu__top a:active {
+  color: #000000;
+}
+*/

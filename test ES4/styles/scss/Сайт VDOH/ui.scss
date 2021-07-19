@@ -1,0 +1,503 @@
+//<(ui.scss)ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ ИГОТОВЫХ КЛАССОВ>˅=!=!=!=!=!=!=!=!=!=!=!=!=!=!=˅
+
+// <ОСНОВНОЙ БЛОК>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
+// станд отст для h
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 10px 03%;
+}
+
+// классы отступов по бокам и с верху =====================================================
+.mc0 {
+  margin: 0px 03%;
+}
+.mc1 {
+  margin: 10px 03%;
+}
+.pc0 {
+  padding: 0px 03%;
+}
+.pc1 {
+  padding: 10px 03%;
+}
+.mp0 {
+  margin: 0px 0%;
+}
+.mp1 {
+  margin: 10px 0%;
+}
+.pp0 {
+  padding: 0px 0%;
+}
+.pp1 {
+  padding: 10px 0%;
+}
+
+//<блок кнопки "Покупки">====================================================
+// .kup {
+//   // grid-area: kup;
+//   // justify-self: center;
+// }
+.kup #kup {
+  grid-area: kup;
+  // float: right;
+  border-radius: 1px;
+  width: 250px;
+  background-color: #fc0101;
+  font-family: fantasy;
+  font-size: 30px;
+  border: 10px double yellow;
+  text-transform: capitalize;
+  // margin: -3px 25px;
+  h1 {
+    font-size: 30px;
+    margin: 0 0 10px;
+    min-height: 50px;
+    padding: 10px 0px;
+    vertical-align: bottom;
+    text-align: left;
+    background: yellow;
+    color: #8b0000;
+    font-family: cursive;
+    margin: 0px 0px;
+    overflow: hidden;
+    background: yellow;
+  }
+}
+
+#kup:hover {
+  color: yellow;
+  border-style: ridge;
+  border-color: red;
+  background: black;
+}
+
+#kup:active {
+  color: red;
+}
+.kup {
+  background: yellow;
+  // margin-bottom: 10px;
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #8b0000;
+    font-family: cursive;
+    font-size: 30px;
+    padding: 0px 03%;
+  }
+}
+
+// блок приветствия ============================================================
+.helloys,
+.block-side {
+  color: #8b0000;
+  font-family: cursive;
+  margin: 0px 0px;
+  // overflow: hidden;
+  // background: yellow;
+
+  // ??? не раб - не могу растянуть блок на высоту картинки
+  // height: 100vh;
+  // .block-side-wrapper {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+
+  h1,
+  h1.hel-title,
+  h1.b-s_title {
+    font-size: 30px;
+    margin: 0 0 10px;
+    // min-height: 50px;
+    // padding: 10px 0px;
+    // vertical-align: bottom;
+    // text-align: left;
+    background: yellow;
+  }
+  h2,
+  h2.hel-title,
+  h2.b-s_title {
+    font-size: 25px;
+    margin: 0 0 10px;
+    // min-height: 40px;
+    background: yellow;
+  }
+  h3,
+  h3.hel-title,
+  h3.b-s_title {
+    font-size: 20px;
+    margin: 0 0 10px;
+    // min-height: 40px;
+    background: yellow;
+  }
+  p,
+  p.hel-text,
+  p.b-s_text {
+    flex: 1 1 auto;
+    // min-height: 175px;
+    // margin: 10px 03%;
+    padding: 10px 03%;
+    // font-family: cursive;
+    line-height: 16px;
+    // font-size: 18px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #707070;
+    color: black;
+    background: #a3a3a3;
+    border: 1px solid #f00;
+    &::first-letter {
+      font-size: 30px;
+      color: #ff0000;
+    }
+  }
+  // ??? не раб оттолкнуть всё кроме h1, h2 ???
+  // &:not(h1, h2) {
+  //   padding: 0px 03%;
+  // }
+}
+
+// большой текст. блок ============================================================
+.block-body {
+  min-height: 200px;
+  height: auto;
+  padding: 10px 10px;
+  // margin: 0px 0px -20px 0px;
+  font-family: monospace;
+  font-weight: 400;
+  color: #000;
+  background: #a3a3a3;
+  border: 1px solid #f00;
+  // overflow: hidden;
+  h3 {
+    padding: 0px 0px;
+    font-size: 18px;
+    font-family: monospace;
+    font-weight: 400;
+  }
+  p {
+    font-size: 18px;
+    font-family: monospace;
+  }
+}
+
+// большой текст. блок ============================================================
+
+.catalog-block,
+.game-block,
+.directory-block {
+  @include flexbox();
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+// обход картинки. 1 вар. float + доделка ibg ===========================================
+.block-img,
+.block-img2 {
+  flex: 0 1 15%;
+  // flex-grow: 0; //* гибкий рост
+  // flex-shrink: 1; //* гибкое сжатие
+  // flex-basis: 20%; //* гибкая основа
+  width: 100%;
+  height: 100%;
+  // margin: 0px 0px 20px 20px;
+  margin: 0px 0px 2% 2%;
+  padding: 5px;
+  outline: 3px dashed red;
+  &:first-child {
+    // margin: 0px 0px 20px 0px;
+    margin: 0px 0px 0px 0px;
+  }
+  a.block-img__link {
+    // outline: 3px dashed red;
+    // border: 3px solid #ccc;
+    display: block;
+    padding: 0px 0px 100% 0px;
+  }
+  &:hover {
+    outline: 3px solid red;
+    a.block-img__link {
+      // ??? не раб - обводка начин только после transition-delay
+      outline: 3px solid #ff0;
+      // border: 3px solid #ff0;
+    }
+  }
+
+  @media (max-width: $md2+px) {
+    flex: 0 1 20%;
+    &:nth-last-child(-n + 2) {
+      margin: inherit;
+      margin: 2% 0px 0px 0px; // * у последних двух
+    }
+  }
+}
+
+// .block-img-back__content,
+// .block-img__link-back {
+//   // display: none;
+// }
+
+//</ОСНОВНОЙ БЛОК>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄
+
+//<ГОТОВЫЕ КЛАССЫ>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
+.row:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.rub:after {
+  content: "₽";
+}
+//============================================================================================
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+//===========================================================================================
+ol.counter {
+  list-style-type: none;
+  counter-reset: item;
+  li {
+    position: relative;
+    padding: 0px 0px 0px 45px;
+    &:before {
+      counter-increment: item;
+      content: counter(item);
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #818181;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 26px;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      border: 1px solid #4274bb;
+    }
+  }
+}
+//===========================================================================================
+.ellipsis {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.es {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+//==========================================================================================
+.table {
+  display: table;
+  font-size: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+.trow {
+  display: table-row;
+}
+.cell {
+  display: table-cell;
+  &.full {
+    width: 100%;
+  }
+}
+//============================================================================================
+// .ibg - класс совместный с функцией JS, для переделки пути картинки из img в html,
+// в фон родительского блока, с помощью css и js.
+// Для появления картинки, блоку с картинкой прописать высоту.
+// Для удобной замены картинок
+// Адаптированость по высоте изза равнения на родителя.
+// Возможность применять картинки с различными размерами.
+// Картинки подстраиваються под размер уже прописаного блока
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  img {
+    display: none;
+  }
+}
+//===========================================================================================
+.video {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+  video,
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+.videobg {
+  video,
+  iframe,
+  object,
+  embed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+  }
+}
+//=============================================================================================
+.moretext {
+  overflow: hidden;
+}
+.moretext__more {
+  cursor: pointer;
+  i {
+    font-style: normal;
+    &:first-child {
+      display: block;
+    }
+    &:last-child {
+      display: none;
+    }
+  }
+  &.active {
+    i {
+      font-style: normal;
+      &:first-child {
+        display: none;
+      }
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+}
+//=============================================================================================
+.graystyle {
+  @include anim(0.8s, 0s);
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  -o-filter: grayscale(1);
+}
+.graystyleoff {
+  filter: grayscale(0);
+  -webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  -o-filter: grayscale(0);
+}
+//=============================================================================================
+.slick-slider {
+  position: relative;
+  .slick-track,
+  .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .slick-list {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  .slick-track {
+    position: relative;
+    width: 100%;
+  }
+  .slick-slide {
+    overflow: hidden;
+    float: left;
+    position: relative;
+  }
+  // .slick-dots {
+  //   li {
+  //     button {
+  //     }
+  //     &.slick-active {
+  //       button {
+  //       }
+  //     }
+  //   }
+  // }
+}
+//============================================================================================
+.tab__item {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+//============================================================================================
+.mirror {
+  transform: scale(-1, 1);
+}
+//============================================================================================
+.nicescroll-rails {
+  z-index: 1000 !important;
+}
+//============================================================================================
+// .gm-style {
+// }
+.gm-style-iw-t {
+  opacity: 0;
+}
+.baloon {
+  opacity: 1;
+  right: -7px !important;
+  bottom: 80px !important;
+  button {
+    display: none !important;
+  }
+  &:after {
+    display: none !important;
+  }
+}
+.baloon-style {
+  display: none;
+}
+.baloon-content.gm-style-iw {
+  opacity: 1;
+  border-radius: 0px !important;
+  max-width: 300px !important;
+  padding: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  overflow: visible !important;
+  > .gm-style-iw-d {
+    overflow: hidden !important;
+    max-width: none !important;
+  }
+  &:after {
+    display: none !important;
+  }
+}
+.baloon-close {
+  top: 18px !important;
+}
+//</ГОТОВЫЕ КЛАССЫ>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄
+
+//</(ui.scss)ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ ИГОТОВЫХ КЛАССОВ>˄=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=˄

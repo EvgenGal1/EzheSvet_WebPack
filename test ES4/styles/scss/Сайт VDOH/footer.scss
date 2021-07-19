@@ -1,0 +1,18 @@
+// <FOOTER>============================================
+footer {
+  height: 120px;
+  background: #ccc;
+  background: #000;
+  // height: 30px;
+  // text-align: center;
+  @include flexbox();
+  align-items: center;
+  // justify-content: center;
+  & p {
+    font-size: 18px;
+    color: #fff;
+    // padding: 25px;
+  }
+  & a {
+  }
+}

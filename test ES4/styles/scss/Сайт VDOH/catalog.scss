@@ -1,0 +1,72 @@
+// <Основной блок Катал>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
+// .catalog-block {
+//   @include flexbox();
+//   flex-flow: row wrap;
+//   justify-content: space-between;
+// }
+
+//<>====================================================
+
+.b-b__text {
+  color: #707070;
+  font-size: 18px;
+  font-family: cursive;
+  line-height: 24px;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.b-b__text::first-letter {
+  font-size: 35px;
+  color: #ff0000;
+}
+
+.har {
+  margin-left: 30px;
+}
+
+.har li {
+  color: #484343;
+  font-style: oblique;
+  font-size: 1.2em;
+  font-weight: 900;
+  line-height: 25px;
+  text-align: justify-all;
+  list-style-image: url(/img/minElem/qw.jpg);
+}
+
+//<>====================================================
+
+// .table
+.tabl-block {
+  display: table;
+  // margin-left: 10px;
+  border: 1px solid #000;
+  // width: 450px;
+  // height: 200px;
+  padding: 2px;
+  .table {
+    font-size: 14px;
+    padding: 1px;
+    caption {
+      border: 1px solid #000;
+      padding: 5px;
+      background-color: dimgray;
+    }
+    td {
+      border: 1px solid #000;
+      padding: 5px;
+      vertical-align: top;
+      color: blue;
+    }
+
+    .tr td {
+      width: 15px;
+      vertical-align: middle;
+      text-align: center;
+      color: red;
+    }
+  }
+}
+
+//</Основной блок Катал>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄

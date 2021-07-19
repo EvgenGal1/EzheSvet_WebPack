@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title></title>
+    <!-- @import "../blockElem/head/head3.kit" -->
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- @import "../blockElem/header3.kit" -->
+      <hr />
+      <div class="kup">
+        <form action="#">
+          <label>
+            <h1>
+              Игра Змейка
+              <input type="submit" value="Купить!" id="kup" autofocus />
+            </h1>
+          </label>
+        </form>
+      </div>
+      <hr />
+      <div class="games-items cont-grid pc1">
+        <div class="block-img">
+          <a
+            class="block-img__link ibg"
+            href="../../../img/game/змейка3.jpg"
+            target="_blank"
+          >
+            <img
+              class="img-bl"
+              src="../../../img/game/змейка3.jpg"
+              alt="сорян"
+            />
+          </a>
+        </div>
+        <div class="block-side">
+          <h3 class="b-s__title">Разработка переписывания игры - Змейка.</h3>
+          <p class="b-s__text">
+            Ещё пару букв про игры, отсутстие времени, разработку и лень
+          </p>
+        </div>
+        <div class="block-body">
+          <h3 class="b-b__title">Подробное описание игры</h3>
+          <p class="b-b__text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit sed
+            harum quisquam odit exercitationem nesciunt!
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div class="games-block pc1">
+        <div class="snakeGrey">
+          <div class="dates">
+            <div class="score">
+              Счет игры:
+              <span class="current">1</span> / <span class="toWin"></span>
+            </div>
+            <div class="speed">
+              <span class="speed">Скорость</span> :
+              <span class="curSpeed">0</span>
+            </div>
+          </div>
+          <!--  игровое поле змейки -->
+          <table id="game" class="gameTbl"></table>
+          <!-- кнопка старт -->
+          <button id="startBtn">Старт</button>
+          <!-- кнопка пауза -->
+          <button id="pauseBtn">Пауза</button>
+          <!-- кнопка настройки -->
+          <button id="speedBtn">Настройки</button>
+          <!-- вывод результата игра -->
+          <div id="message"></div>
+        </div>
+      </div>
+      <hr />
+      <!-- @import "../blockElem/footer.kit" -->
+    </div>
+    <!-- @import "../blockElem/scriptJqury.kit" -->
+    <script src="../../../js/main.js"></script>
+
+    <script src="../../../js/snake.js"></script>
+    <!-- <script src="src/Main.js"></script>
+    <script src="src/Settings.js"></script>
+    <script src="src/Status.js"></script>
+    <script src="src/Snake.js"></script>
+    <script src="src/Score.js"></script>
+    <script src="src/Board.js"></script>
+    <script src="src/Food.js"></script>
+    <script src="src/Game.js"></script>
+    <script src="src/Menu.js"></script> -->
+
+    <!-- <script src="/js/custom.js"></script> -->
+  </body>
+</html>
