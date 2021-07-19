@@ -14,6 +14,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 // cssmini вывод - по видео
 const OptimizeCssAssetWebpackPlugin = require("optimize-css-assets-webpack-plugin");
+// минимизация JS
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 // analyzer подк. визуал размер кода
 // const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
@@ -82,15 +83,19 @@ const optimization = () => {
 const cssLoaders = (extra) => {
   // массив по умолчанию
   const loaders = [
+    MiniCssExtractPlugin.loader,
+    "css-loader",
     {
-      loader: MiniCssExtractPlugin.loader,
+      loader: "postcss-loader",
       options: {
-        // hmr: isDev,
-        // reloadAll: true,
+        // указ где искать
+        postcssOptions: {
+          config: path.resolve(__dirname, "postcss.config.js"),
+        },
+        // ??? не раб???
+        // config: { path: "src/js/postcss.config.js" },
       },
     },
-    // MiniCssExtractPlugin.loader,
-    "css-loader",
   ];
   // если есть передаваемый параметр(extra) добовл. его в конце массива
   if (extra) {
@@ -130,6 +135,7 @@ const jsLoaders = () => {
   return user;
 };
 
+// принимает путь основ. папок с html в src, пересобирает всё dist
 function generateHtmlPlugins(templatesDir) {
   const fs = require("fs");
   const templateFolders = fs.readdirSync(path.resolve(__dirname, templatesDir));
@@ -157,12 +163,14 @@ function generateHtmlPlugins(templatesDir) {
   });
 }
 
+// передаем в fn() путь основных папок с html. вызов в plugins().base[].concat(htmlPlugins)
 const htmlPlugins = generateHtmlPlugins("./test ES4/html/views");
 
 // analyzer(визуал размер кода) и plugin ч/з fn()
 // описание plugin в plugins:стандарт + описание
 const plugins = () => {
   const base = [
+    new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       minify: {
         collapseWhitespace: isProd,
@@ -191,7 +199,6 @@ const plugins = () => {
       // filename: `${PATHS.assets}css/[name].css`,
       filename: filename("css"),
     }),
-    new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         // {
@@ -229,7 +236,7 @@ module.exports = {
       {
         test: /\.html$/,
         // exclude: path.resolve(__dirname, "test ES4/html/views"),
-          include: path.resolve(__dirname, "test ES4/html/includes"),
+        include: path.resolve(__dirname, "test ES4/html/includes"),
         use: ["raw-loader"],
       },
       // JS

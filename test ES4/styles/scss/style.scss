@@ -1,4 +1,22 @@
+::placeholder {
+  color: gray;
+}
+.wrapper{
+  display: flex;
+}
+h1{
+  padding: 1px;
+}
+// комент
+h2{
+  padding: 1px;
+}
+h3{
+  padding: 1px;
+}
+// комент2
 .container {
+  // комент 
   padding: 5rem 0;
   .main__item {
     display: flex;
