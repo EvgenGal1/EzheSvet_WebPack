@@ -1,6 +1,5 @@
 <div align="center">
-  <img width="200" height="200" src="./">
-  <img src="./test ES4/img/logo/ЕжеСветRedWhWhEff.png"  alt="">
+  <img width="200" height="200" src="./test ES4/img/logo/ЕжеСветRedWhWhEff.png"  alt="">
   <h1>Сайт EzheSvet</h1>
   <p>
     Сайт ЕжеСвет(EzheSvet)
@@ -43,19 +42,23 @@ JS, jQ, React,
 ## Структура Сайта:
 
 - `1` - 191
-+ `2` - 248
-* `3` - 396
-# `4` - 428
+
+* `2` - 248
+
+- `3` - 396
+
+= `4` - 428
+
 ^ `5` - 575
 
 <div align="center">
   <h2>Настройки:</h2>
 </div>
 
-## Код/Elem/Логика:
+## Код/Elements/Логика:
 
 Заполню по наличию времени...
-Пока кусчки экспериментов:
+Пока кусочки экспериментов:
 
 Webpack:
 
@@ -111,6 +114,7 @@ const motiv = new Bro({
   <!-- Dobro -->
 </div>
 ```
+
 ## Thanks
 
 Выражаю благодарность за помощь/уроки/материалы to Травник, FreelancerLifeStyle, vedees,
