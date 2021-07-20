@@ -26,3 +26,11 @@ h3{
   height: 100%;
   }
 }
+img{
+  width: 200px;
+  height: 200px;
+}
+.img2{
+  // ??? не раб - разобраться с путями из стилей
+  background-image: url(../../img/catalog/anonim1.jpg);
+}

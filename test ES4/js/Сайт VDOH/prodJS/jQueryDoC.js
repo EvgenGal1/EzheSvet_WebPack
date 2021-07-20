@@ -458,7 +458,7 @@ function shortAnd2Change() {
 }
 shortAnd2Change();
 
-// *** всем span.cont у кого есть текст и текст('|'), сделать padding 0 5px. и убрать .gap(пробел)
+// *** всем span.cont у кого есть текст('=') и текст('|'), сделать padding 0 5px. и убрать .gap(пробел)
 function iliPadd() {
   var contSp = $("span.cont:contains()");
   var contSpIli = $("span.cont:contains('|'), span.cont:contains('=')");

@@ -4,7 +4,12 @@
   <p>
     Сайт ЕжеСвет(EzheSvet)
   </p>
-  <p>Author: <a href="#" target="_blank">EvGen Gal</a> | <a href="#" target="_blank">В Никуда</a> | <a href="#" target="_blank">В Нигде</a> | <a href="#" target="_blank">В Никогда</a></p>
+  <p>Author:
+    <a href="#" target="_blank">EvGen Gal</a> | 
+    <a href="#" target="_blank">В Никуда</a> | 
+    <a href="#" target="_blank">В Нигде</a> | 
+    <a href="#" target="_blank">В Никогда</a>
+  </p>
 </div>
 
 ## Цель проекта:
@@ -22,7 +27,7 @@ JS, jQ, React,
 Картинок, Фонов, Gifок,
 . ... .. ..... ... .
 
-# 3 Создание Ресурса Помощи и напоминания ради:
+# 3 Создание Ресурса Помощи и напоминания Чтобы Было:
 Советы, Уроки, Схемы, Рецепты, Мастеркласы,
 ... .. ... .... .. . ...
 ... ..
@@ -32,14 +37,18 @@ JS, jQ, React,
 
 - `test ES4/index.html` - HTML основного приложения
 - `test ES4/html/` - многостраничный проект HTML
-- `test ES4/styles/scss` - SCSS стили + разбор.
-- `test ES4/styles/css` - CSS стили + разбор.
-- `test ES4/index.js` - основной файл JS приложения, со всеми включениями
-- `test ES4/js` - скрипты JS приложений + разбор.
-- `test ES4/img` - изображения проекта
-- `test ES4/fonts` - шрифты проекта
+- `test ES4/styles/scss/` - SCSS стили + разбор.
+- `test ES4/styles/css/` - CSS стили + разбор.
+- `test ES4/index.js` - основной файл JS приложения, с разными включениями
+- `test ES4/js/` - скрипты JS приложений, с разными включениями + разбор.
+- `test ES4/img/` - изображения проекта
+- `test ES4/fonts/` - шрифты проекта
 
 ## Структура Сайта:
+
+# 0 \* -
+
+# `0` - `1`
 
 - `1` - 191
 
@@ -47,9 +56,9 @@ JS, jQ, React,
 
 - `3` - 396
 
-= `4` - 428
+* `4` - 428
 
-^ `5` - 575
+- `5` - 575
 
 <div align="center">
   <h2>Настройки:</h2>
@@ -59,6 +68,23 @@ JS, jQ, React,
 
 Заполню по наличию времени...
 Пока кусочки экспериментов:
+
+HTML:
+
+```html
+<div class="header-menu">
+  <nav class="header-menu__top">
+    <ul class="header-menu-list">
+      <li class="menu-list__items">
+        <a class="menu-list-link" href="index.html">
+          <span class="link__firct-bykv">Г</span>
+          <span class="link__last-bykv">лавная</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+```
 
 Webpack:
 
@@ -89,6 +115,40 @@ SCSS:
 }
 ```
 
+jQ:
+
+```js
+function iliPadd() {
+  var contSp = $("span.cont:contains()");
+  var contSpIli = $("span.cont:contains('|'), span.cont:contains('=')");
+  $(".gap").css("display", "none");
+  $(contSp).css("padding", "0 1px");
+  $(".token__el span")
+    .filter(contSpIli)
+    .css({ "font-weight": "900", "text-shadow": "0px 0px 0px black" });
+}
+iliPadd();
+```
+
+JS:
+
+```js
+const PATHS = {
+function ibgJS() {
+  let ibg = document.querySelectorAll(".ibg");
+  for (var i = 0; i < ibg.length; i++) {
+    if (
+      ibg[i].querySelector("img") &&
+      ibg[i].querySelector("img").getAttribute("src") != null
+    ) {
+      ibg[i].style.backgroundImage =
+        "url(" + ibg[i].querySelector("img").getAttribute("src") + ")";
+    }
+  }
+}
+ibgJS();
+```
+
 ## Разбор будет обязательно:
 
 Осталось: **Немного подождать и ..**
@@ -117,7 +177,8 @@ const motiv = new Bro({
 
 ## Thanks
 
-Выражаю благодарность за помощь/уроки/материалы to Травник, FreelancerLifeStyle, vedees,
+Выражаю благодарность за помощь/уроки/материалы следующим:
+`Травник`, [FreelancerLifeStyle](https://www.youtube.com/c/FreelancerLifeStyle/playlists), [vedees](https://www.youtube.com/channel/UCDtQ4kJos22sCdYtNDB_4Cg),
 
 ## Authorship
 

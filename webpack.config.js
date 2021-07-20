@@ -13,6 +13,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // ??? не раб - прибавляет очень много веса
 // const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 // cssmini вывод - по видео
+// минимизация CSS
 const OptimizeCssAssetWebpackPlugin = require("optimize-css-assets-webpack-plugin");
 // минимизация JS
 const TerserWebpackPlugin = require("terser-webpack-plugin");
@@ -25,7 +26,7 @@ const PATHS = {
   src: path.join(__dirname, "./test ES4/"),
   dist: path.join(__dirname, "./dist/"),
   views: path.join(__dirname, "./test ES4/html/views/"),
-  includes: path.resolve(__dirname, "./test ES4/html/includes/"),
+  includes: path.join(__dirname, "./test ES4/html/includes/"),
   assets: "assets/",
 };
 
@@ -187,14 +188,6 @@ const plugins = () => {
     //   filename: `${PATHS.dist}html/Catalog/Catalog.html`,
     //   template: `${PATHS.views}Catalog/Catalog.html`,
     // }),
-    // new HTMLWebpackPlugin({
-    //   minify: {
-    //     collapseWhitespace: isProd,
-    //   },
-    //   chunks: ["app"],
-    //   filename: `${PATHS.dist}html/Reference/Reference.html`,
-    //   template: `${PATHS.views}Reference/Reference.html`,
-    // }),
     new MiniCssExtractPlugin({
       // filename: `${PATHS.assets}css/[name].css`,
       filename: filename("css"),
@@ -208,6 +201,10 @@ const plugins = () => {
         {
           from: `${PATHS.src}fonts`,
           to: `${PATHS.dist}fonts/`,
+        },
+        {
+          from: `${PATHS.src}img`,
+          to: `${PATHS.dist}img`,
         },
       ],
     }),
@@ -265,13 +262,20 @@ module.exports = {
         use: cssLoaders("sass-loader"),
       },
       // img
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: "file-loader",
-        options: {
-          name: "img/[name].[hash].[ext]",
-        },
-      },
+      // ??? не раб - не создает, не переносит img. только ч/з copy
+      // {
+      //   test: /\.(ico|gif|png|jpe?g|svg)$/i,
+      //   loader: "file-loader",
+      //   options: {
+      //     name: "img/[name].[hash].[ext]",
+      //     publicPath: "../",
+      //   },
+      //   // type: "asset/resource",
+      //   // generator: {
+      //     // filename: "img/[name].[hash].[ext]",
+      //     // publicPath: "../",
+      //   // },
+      // },
       // fonts
       {
         test: /\.(ttf|otf|svg|woff|woff2|eot)$/,
@@ -285,6 +289,10 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: "asset/inline",
       },
     ],
   },
