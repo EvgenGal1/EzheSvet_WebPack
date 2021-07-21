@@ -145,28 +145,33 @@
   .rating__item {
     margin: 0 !important;
   }
-
-  @include bgr_r-b;
-  @media (max-width: $md2+px) {
+  // ??? не раб - SassError: Undefined mixin - @include bgr_r-b;
+  // @include bgr_r-b;
+  background: repeating-radial-gradient(circle, #f00, #000 135px);
+  // ??? не раб - SassError: Undefined variable - @media (max-width: $md2+px) {
+  @media (max-width: 993px) {
+  // @media (max-width: $md2+px) {
   }
 }
 
 .block-img-back__title {
   // margin: 0px 0px 20px 0px;
   font-size: 15px;
-  font-family: $fontfamily3;
+  // ??? не раб - importы scss
+  // font-family: $fontfamily3;
 }
 
 .block-img-back__text {
   // margin: 0px 0px 15px 0px;
   font-size: 10px;
-  font-family: $fontfamily3;
+  // font-family: $fontfamily3;
 }
 
 .block-img__link-back {
   // margin: 0px 0px 20px 0px;
   font-size: 15px;
-  font-family: $fontfamily3;
+
+  // font-family: $fontfamily3;
   color: #000;
   letter-spacing: 5.5px;
   text-transform: uppercase;

@@ -44,7 +44,7 @@ const optimization = () => {
   const config = {
     splitChunks: {
       // объедин/разъедин доп библ js (jQ, React). в один файл из 2х не связаных файлов
-      chunks: "all", // async
+      // chunks: "all", // async
     },
   };
   // е/и prod(true) в minimize добавл. cssmini а css объединяет в один файл
@@ -86,17 +86,17 @@ const cssLoaders = (extra) => {
   const loaders = [
     MiniCssExtractPlugin.loader,
     "css-loader",
-    {
-      loader: "postcss-loader",
-      options: {
-        // указ где искать
-        postcssOptions: {
-          config: path.resolve(__dirname, "postcss.config.js"),
-        },
-        // ??? не раб???
-        // config: { path: "src/js/postcss.config.js" },
-      },
-    },
+    // {
+    //   loader: "postcss-loader",
+    //   options: {
+    //     // указ где искать
+    //     postcssOptions: {
+    //       config: path.resolve(__dirname, "postcss.config.js"),
+    //     },
+    //     // ??? не раб???
+    //     // config: { path: "src/js/postcss.config.js" },
+    //   },
+    // },
   ];
   // если есть передаваемый параметр(extra) добовл. его в конце массива
   if (extra) {
@@ -154,9 +154,9 @@ function generateHtmlPlugins(templatesDir) {
       firstTemplateFileName
     );
     return new HTMLWebpackPlugin({
-      filename: `html/${folderName}/${firstTemplateFileName}`,
+      filename: `html/global/${folderName}/${firstTemplateFileName}`,
       template: firstTemplateFilePath,
-      minify: { collapseWhitespace: isProd },
+      // minify: { collapseWhitespace: isProd },
       // inject: true,
       // inject: false,
       chunks: ["app"],
@@ -179,6 +179,7 @@ const plugins = () => {
       chunks: ["main"],
       filename: `${PATHS.dist}index.html`,
       template: `${PATHS.src}index.html`,
+      minify: false
     }),
     // new HTMLWebpackPlugin({
     //   minify: {
@@ -191,6 +192,7 @@ const plugins = () => {
     new MiniCssExtractPlugin({
       // filename: `${PATHS.assets}css/[name].css`,
       filename: filename("css"),
+      // filename: "css/[name].[hash].css",
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -206,6 +208,10 @@ const plugins = () => {
           from: `${PATHS.src}img`,
           to: `${PATHS.dist}img`,
         },
+        // {
+        //   from: `${PATHS.src}styles/scss/catalog.scss`,
+        //   to: `${PATHS.dist}styles/`,
+        // },
       ],
     }),
   ].concat(htmlPlugins);
@@ -221,6 +227,7 @@ module.exports = {
   entry: {
     main: PATHS.src,
     app: `${PATHS.src}js/indexReact.jsx`,
+    catalog: `${PATHS.src}styles/scss/Сайт VDOH/catalog.scss`,
   },
   output: {
     filename: filename("js"),

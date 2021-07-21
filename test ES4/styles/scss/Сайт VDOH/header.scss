@@ -40,7 +40,9 @@ header {
     float: left;
     // outline-style: ridge;
     border-style: ridge;
-    @include flexbox();
+    // ??? не раб - SassError: Undefined mixin - @include flexbox();
+    // @include flexbox();
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     .logo-img {
@@ -205,7 +207,9 @@ header {
         }
       }
     }
-    @media (max-width: $md0+px) {
+    // ??? не раб - SassError: Undefined variable. - @media (max-width: $md0+px) {
+    @media (max-width: 1320px) {
+      // @media (max-width: $md0+px) {
       // &:last-child
       &:nth-child(7) {
         width: 50px;
@@ -256,32 +260,132 @@ header {
         //     content: "" !important;
         //   }
         // }
-        @include ulliul();
+        // ??? не раб - SassError: Undefined mixin - @include ulliul();
+        // @include ulliul();
+        width: 50px;
+        a,
+        .ul {
+          width: 50px;
+        }
+        .link__last-bykv,
+        .ul-li__last-bykv {
+          display: none;
+        }
+        .ul-li-a:hover {
+          text-decoration: underline;
+          &::before,
+          &::after {
+            content: "" !important;
+          }
+        }
       }
     }
     @media (max-width: 1212px) {
       &:nth-child(6) {
-        @include ulliul();
+        // @include ulliul();
+        width: 50px;
+        a,
+        .ul {
+          width: 50px;
+        }
+        .link__last-bykv,
+        .ul-li__last-bykv {
+          display: none;
+        }
+        .ul-li-a:hover {
+          text-decoration: underline;
+          &::before,
+          &::after {
+            content: "" !important;
+          }
+        }
       }
     }
     @media (max-width: 1106px) {
       &:nth-child(5) {
-        @include ulliul();
+        // @include ulliul();
+        width: 50px;
+        a,
+        .ul {
+          width: 50px;
+        }
+        .link__last-bykv,
+        .ul-li__last-bykv {
+          display: none;
+        }
+        .ul-li-a:hover {
+          text-decoration: underline;
+          &::before,
+          &::after {
+            content: "" !important;
+          }
+        }
       }
     }
     @media (max-width: 1009px) {
       &:nth-child(4) {
-        @include ulliul();
+        // ??? не раб - SassError: Undefined mixin - @include ulliul();
+        // @include ulliul();
+        width: 50px;
+        a,
+        .ul {
+          width: 50px;
+        }
+        .link__last-bykv,
+        .ul-li__last-bykv {
+          display: none;
+        }
+        .ul-li-a:hover {
+          text-decoration: underline;
+          &::before,
+          &::after {
+            content: "" !important;
+          }
+        }
       }
     }
     @media (max-width: 903px) {
       &:nth-child(3) {
-        @include ulliul();
+        // ??? не раб - SassError: Undefined mixin - @include ulliul();
+        // @include ulliul();
+        width: 50px;
+        a,
+        .ul {
+          width: 50px;
+        }
+        .link__last-bykv,
+        .ul-li__last-bykv {
+          display: none;
+        }
+        .ul-li-a:hover {
+          text-decoration: underline;
+          &::before,
+          &::after {
+            content: "" !important;
+          }
+        }
       }
     }
     @media (max-width: 797px) {
       &:nth-child(2) {
-        @include ulliul();
+        // ??? не раб - SassError: Undefined mixin - @include ulliul();
+        // @include ulliul();
+        width: 50px;
+        a,
+        .ul {
+          width: 50px;
+        }
+        .link__last-bykv,
+        .ul-li__last-bykv {
+          display: none;
+        }
+        .ul-li-a:hover {
+          text-decoration: underline;
+          &::before,
+          &::after {
+            content: "" !important;
+          }
+        }
       }
     }
     @media (max-width: 680px) {
@@ -392,7 +496,9 @@ header {
         }
       }
     }
-    @media (max-width: $md3+px) {
+    // ??? не раб - SassError: Undefined variable. - @media (max-width: $md3+px) {
+    @media (max-width: 768px) {
+      // @media (max-width: $md3+px) {
     }
   }
 }

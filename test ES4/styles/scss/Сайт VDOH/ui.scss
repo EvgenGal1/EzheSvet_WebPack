@@ -192,7 +192,10 @@ h6 {
 .catalog-block,
 .game-block,
 .directory-block {
-  @include flexbox();
+  // ??? не раб - SassError: Undefined mixin - @include flexbox();
+  // @include flexbox();
+  display: flex;
+  font-size: 0;
   flex-flow: row wrap;
   justify-content: space-between;
 }
@@ -229,7 +232,8 @@ h6 {
     }
   }
 
-  @media (max-width: $md2+px) {
+  @media (max-width: 993px) {
+    // @media (max-width: $md2+px) {
     flex: 0 1 20%;
     &:nth-last-child(-n + 2) {
       margin: inherit;
@@ -396,7 +400,9 @@ ol.counter {
 }
 //=============================================================================================
 .graystyle {
-  @include anim(0.8s, 0s);
+  // ??? не раб - SassError: Undefined mixin - @include flexbox();
+  // @include anim(0.8s, 0s);
+  transition: all 0.8s ease 0s;
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
   -moz-filter: grayscale(1);

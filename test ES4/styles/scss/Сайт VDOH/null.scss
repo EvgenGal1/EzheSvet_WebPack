@@ -31,7 +31,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  min-width: $minwidth;
+  // ??? не раб - SassError: Undefined variable. - min-width: $minwidth;
+  // min-width: $minwidth;
   position: relative;
   width: 100%;
   color: #000;
@@ -40,13 +41,16 @@ body {
   font-size: 100%;
   line-height: 1;
   font-size: 14px;
-  font-family: $fontfamily;
+  // ??? не раб - SassError: Undefined variable. - font-family: $fontfamily;
+  // font-family: $fontfamily;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   &.lock {
     overflow: hidden;
-    @media (max-width: $md3+px) {
+    @media (max-width: 768px) {
+      // ??? не раб - SassError: Undefined variable. - @media (max-width: $md3+px) {
+      // @media (max-width: $md3+px) {
       width: 100%;
       position: fixed;
       overflow: hidden;
@@ -56,7 +60,8 @@ body {
 input,
 button,
 textarea {
-  font-family: $fontfamily;
+  // ??? не раб - SassError: Undefined variable. - ont-family: $fontfamily;
+  // font-family: $fontfamily;
 }
 input::-ms-clear {
   display: none;
