@@ -1,20 +1,17 @@
 <div align="center">
   <img width="200" height="200" src="./test ES4/img/logo/ЕжеСветRedWhWhEff.png"  alt="">
   <h1>Сайт ЕжеСвет</h1>
-  <p>
-    
-  </p>
   <p>Сайт ЕжеСвет(EzheSvet) | Author:
-    <!-- <a href="#" target="_blank">EvGen Gal</a> | 
+    <a href="#" target="_blank">EvGen Gal</a> | 
     <a href="#" target="_blank">В Никуда</a> | 
     <a href="#" target="_blank">В Нигде</a> | 
-    <a href="#" target="_blank">В Никогда</a> -->
-[![EvGen Gal][EvGen]][vk] | 
+    <a href="#" target="_blank">В Никогда</a>
   </p>
 </div>
+<!-- [![EvGen Gal][EvGen]][vk] | 
 [![В Никуда][nowhereTo]][nwt] | 
 [![В Нигде][nowhere]][nwe] | 
-[![В Никогда][inNever]][inr]
+[![В Никогда][inNever]][inr] -->
 
 [evgen]: https://github.com/EvgenGal1
 [vk]: https://vk.com/genwolk
@@ -31,7 +28,8 @@
 - [Структура и Иерархия Проекта](#Структура-и-Иерархия-Проекта)
   * [Важные файлы](#Важные-файлы)
   * [Важные моменты](#Важные-моменты)
-    + [Ещё пара важных моментов:](#Ещё-пара-важных-моментов:)
+    + [Ещё пара важных моментов](#Ещё-пара-важных-моментов:)
+    + [В `index.html`](#in-indexhtml)
 - [Код/Elements/Логика](#Код/Elements/Логика)
   * [HTML](#HTML)
   * [Webpack](#Webpack)
@@ -68,8 +66,8 @@ JS, jQ, React,
 ```
 src(test ES4)/
 ├── html/                   - `многостраничный проект HTML`
-│   └── views/              - `одностраничные проекты HTML`
-│   ├── includes/           - `подкл. блоки к проектам HTML`
+│   │── views/              - `одностраничные проекты HTML`
+│   └── includes/           - `подкл. блоки к проектам HTML`
 ├── styles/                 - `стили проекта`
 │   ├── css/                - `CSS стили + разбор`
 │   └── scss/               - `SCSS стили + разбор`
@@ -81,15 +79,15 @@ src(test ES4)/
 └── webpack.config.js       - `настройка webpack`
 ```
 
-## Важные файлы:
+### Важные файлы:
 
-**[`index.html`](#HTML)**
-**[index.js](#JS)**
-[`styles.css`](#SCSS)
-[jQuery.js](#jQ)
-[webpack.config.js](#Webpack)
+- **[`index.html`](#HTML)**
+- **[index.js](#JS)**
+- [`styles.css`](#SCSS)
+- [jQuery.js](#jQ)
+- [webpack.config.js](#Webpack)
 
-## Важные моменты:
+### Важные моменты:
 
 - `1` - 191
 * `2` - 248
@@ -97,21 +95,21 @@ src(test ES4)/
 * `4` - 428
 - `5` - 575
 
-### Ещё пара важных моментов:
+#### Ещё пара важных моментов:
 
-|                                                                            Имя                            | Тип                       | Статус              | Описание                                                                         |
-| :-------------------------------------------------------------------------------------------------------: | :-----------------------: | :-----------------: | :------------------------------------------------------------------------------- |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/html5.svg"></a>    | **[`index.html`](#HTML)** | `{Object}`          | HTML код в разработке заливки в<a href="https://github.com/EvgenGal1">Проект</a> |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/css-3.svg"></a>    | [`styles.css`](#SCSS)     | `{String/Function}` | CSS код в разработке заливки JavaScript                                          |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/sass-1.svg"></a>   | [`styles.css`](#SCSS)     | `{Array/Function}`  | SCSS код в разработке заливки                                                    |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/babel-10.svg"></a> | `false`                   | `[]`                | Код в разработке заливки <a href="https://#">Babel</a>                           |
+| Имя                                                                                                       | Тип                 | Свойства                  | Статус        | Описание                                                                         |
+| :-------------------------------------------------------------------------------------------------------: | :-----------------: | ------------------------: | :-----------: | :------------------------------------------------------------------------------- |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/html5.svg"></a>    | `{Object}`          | **[`index.html`](#HTML)** | in developing | HTML код в разработке заливки в<a href="https://github.com/EvgenGal1">Проект</a> |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/css-3.svg"></a>    | `{String/Function}` | [`styles.css`](#SCSS)     | projected     | CSS код в разработке заливки JavaScript                                          |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/sass-1.svg"></a>   | `{Array/Function}`  | [styles.css](#SCSS)       | going to      | SCSS код в разработке заливки                                                    |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/babel-10.svg"></a> | `[]`                | `false`                   | planned       | Код в разработке заливки <a href="https://#">Babel</a>                           |
 
 <h2 align="center">Код/Elements/Логика</h2>
 
 Заполню по наличию времени...
 Пока кусочки экспериментов:
 
-#### `HTML`
+####  HTML
 
 ```html
 <div class="header-menu">
@@ -128,7 +126,7 @@ src(test ES4)/
 </div>
 ```
 
-#### `Webpack`
+#### Webpack
 
 ```js
 const PATHS = {
@@ -142,7 +140,7 @@ const PATHS = {
   includes: path.resolve(__dirname, "./test ES4/html/includes/"),
 ```
 
-#### `SCSS`
+#### SCSS
 
 ```scss
 .block-img-back__content {
@@ -157,7 +155,7 @@ const PATHS = {
 }
 ```
 
-#### `jQ`
+#### jQ
 
 ```js
 function iliPadd() {
@@ -172,7 +170,7 @@ function iliPadd() {
 iliPadd();
 ```
 
-#### `JS`
+#### JS
 
 ```js
 const PATHS = {
@@ -217,11 +215,11 @@ const motiv = new Bro({
 </div>
 ```
 
-## Признательность
+<h2 align="center">Признательность</h2>
 
-Выражаю благодарность за помощь/уроки/материалы следующим:
-`Травник`, [FreelancerLifeStyle](https://www.youtube.com/c/FreelancerLifeStyle/playlists), [vedees](https://www.youtube.com/channel/UCDtQ4kJos22sCdYtNDB_4Cg),
+<p>Выражаю благодарность за помощь/уроки/материалы следующим:</p>
+<p>`Травник`, [FreelancerLifeStyle](https://www.youtube.com/c/FreelancerLifeStyle/playlists), [vedees](https://www.youtube.com/channel/UCDtQ4kJos22sCdYtNDB_4Cg),</p>
 
-## Авторство
+<h2 align="center">Авторство</h2>
 
 Copyright (c) 2021-present, [EvGen Gal](https://github.com/EvgenGal1)
