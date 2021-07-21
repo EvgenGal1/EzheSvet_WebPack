@@ -28,8 +28,7 @@
 - [Структура и Иерархия Проекта](#Структура-и-Иерархия-Проекта)
   * [Важные файлы](#Важные-файлы)
   * [Важные моменты](#Важные-моменты)
-    + [Ещё пара важных моментов](#Ещё-пара-важных-моментов:)
-    + [В `index.html`](#in-indexhtml)
+    + [Ещё пара важных моментов](#Ещё-пара-важных-моментов)
 - [Код/Elements/Логика](#Код/Elements/Логика)
   * [HTML](#HTML)
   * [Webpack](#Webpack)
@@ -82,10 +81,10 @@ src(test ES4)/
 ### Важные файлы:
 
 - **[`index.html`](#HTML)**
-- **[index.js](#JS)**
-- [`styles.css`](#SCSS)
-- [jQuery.js](#jQ)
-- [webpack.config.js](#Webpack)
+- **[`index.js`](#JS)**
+- **[`styles.css`](#SCSS)**
+- **[`jQuery.js`](#jQ)**
+- **[`webpack.config.js`](#Webpack)**
 
 ### Важные моменты:
 
@@ -100,8 +99,8 @@ src(test ES4)/
 | Имя                                                                                                       | Тип                 | Свойства                  | Статус        | Описание                                                                         |
 | :-------------------------------------------------------------------------------------------------------: | :-----------------: | ------------------------: | :-----------: | :------------------------------------------------------------------------------- |
 | <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/html5.svg"></a>    | `{Object}`          | **[`index.html`](#HTML)** | in developing | HTML код в разработке заливки в<a href="https://github.com/EvgenGal1">Проект</a> |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/css-3.svg"></a>    | `{String/Function}` | [`styles.css`](#SCSS)     | projected     | CSS код в разработке заливки JavaScript                                          |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/sass-1.svg"></a>   | `{Array/Function}`  | [styles.css](#SCSS)       | going to      | SCSS код в разработке заливки                                                    |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/css-3.svg"></a>    | `{String/Function}` | **[`styles.css`](#SCSS)**     | projected     | CSS код в разработке заливки JavaScript                                          |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/sass-1.svg"></a>   | `{Array/Function}`  | **[`styles.scss`](#SCSS)**       | going to      | SCSS код в разработке заливки                                                    |
 | <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/babel-10.svg"></a> | `[]`                | `false`                   | planned       | Код в разработке заливки <a href="https://#">Babel</a>                           |
 
 <h2 align="center">Код/Elements/Логика</h2>
@@ -218,7 +217,7 @@ const motiv = new Bro({
 <h2 align="center">Признательность</h2>
 
 <p>Выражаю благодарность за помощь/уроки/материалы следующим:</p>
-<p>`Травник`, [FreelancerLifeStyle](https://www.youtube.com/c/FreelancerLifeStyle/playlists), [vedees](https://www.youtube.com/channel/UCDtQ4kJos22sCdYtNDB_4Cg),</p>
+`Травник`, [FreelancerLifeStyle](https://www.youtube.com/c/FreelancerLifeStyle/playlists), [vedees](https://www.youtube.com/channel/UCDtQ4kJos22sCdYtNDB_4Cg),
 
 <h2 align="center">Авторство</h2>
 
