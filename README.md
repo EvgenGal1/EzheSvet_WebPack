@@ -1,18 +1,48 @@
 <div align="center">
   <img width="200" height="200" src="./test ES4/img/logo/ЕжеСветRedWhWhEff.png"  alt="">
-  <h1>Сайт EzheSvet</h1>
+  <h1>Сайт ЕжеСвет</h1>
   <p>
-    Сайт ЕжеСвет(EzheSvet)
+    
   </p>
-  <p>Author:
-    <a href="#" target="_blank">EvGen Gal</a> | 
+  <p>Сайт ЕжеСвет(EzheSvet) | Author:
+    <!-- <a href="#" target="_blank">EvGen Gal</a> | 
     <a href="#" target="_blank">В Никуда</a> | 
     <a href="#" target="_blank">В Нигде</a> | 
-    <a href="#" target="_blank">В Никогда</a>
+    <a href="#" target="_blank">В Никогда</a> -->
+[![EvGen Gal][EvGen]][vk] | 
   </p>
 </div>
+[![В Никуда][nowhereTo]][nwt] | 
+[![В Нигде][nowhere]][nwe] | 
+[![В Никогда][inNever]][inr]
 
-## Цель проекта:
+[evgen]: https://github.com/EvgenGal1
+[vk]: https://vk.com/genwolk
+[nowhereto]: https://#
+[nwt]: https://#
+[nowhere]: https://#
+[nwe]: https://#
+[innever]: https://#
+[inr]: https://#
+
+<h2 align="center">Оглавление</h2>
+
+- [Цель проекта](#Цель-проекта)
+- [Структура и Иерархия Проекта](#Структура-и-Иерархия-Проекта)
+  * [Важные файлы](#Важные-файлы)
+  * [Важные моменты](#Важные-моменты)
+    + [Ещё пара важных моментов:](#Ещё-пара-важных-моментов:)
+- [Код/Elements/Логика](#Код/Elements/Логика)
+  * [HTML](#HTML)
+  * [Webpack](#Webpack)
+  * [SCSS](#SCSS)
+  * [jQuery](#jQ)
+  * [JavaScript](#JS)
+- [Разбор](#Разбор-будет-обязательно)
+- [Признательность](#Признательность)
+- [Авторство](#Авторство)
+
+<h2 align="center">Цель проекта</h2>
 
 ```bash
 # 1 Обучение вёрстке:
@@ -33,43 +63,55 @@ JS, jQ, React,
 ... ..
 ```
 
-## Структура Проекта:
+<h2 align="center">Структура и Иерархия Проекта</h2>
 
-- `test ES4/index.html` - HTML основного приложения
-- `test ES4/html/` - многостраничный проект HTML
-- `test ES4/styles/scss/` - SCSS стили + разбор.
-- `test ES4/styles/css/` - CSS стили + разбор.
-- `test ES4/index.js` - основной файл JS приложения, с разными включениями
-- `test ES4/js/` - скрипты JS приложений, с разными включениями + разбор.
-- `test ES4/img/` - изображения проекта
-- `test ES4/fonts/` - шрифты проекта
+```
+src(test ES4)/
+├── html/                   - `многостраничный проект HTML`
+│   └── views/              - `одностраничные проекты HTML`
+│   ├── includes/           - `подкл. блоки к проектам HTML`
+├── styles/                 - `стили проекта`
+│   ├── css/                - `CSS стили + разбор`
+│   └── scss/               - `SCSS стили + разбор`
+├── js/                     - `доп. JS приложения, + включ. + разбор`
+├── img/                    - `изображения проекта`
+├── fonts/                  - `шрифты проекта`
+├── index.html              - `начальный файл HTML приложения`
+├── index.js                - `основной файл JS приложения, + включ.`
+└── webpack.config.js       - `настройка webpack`
+```
 
-## Структура Сайта:
+## Важные файлы:
 
-# 0 \* -
+**[`index.html`](#HTML)**
+**[index.js](#JS)**
+[`styles.css`](#SCSS)
+[jQuery.js](#jQ)
+[webpack.config.js](#Webpack)
 
-# `0` - `1`
+## Важные моменты:
 
 - `1` - 191
-
 * `2` - 248
-
-- `3` - 396
-
++ `3` - 396
 * `4` - 428
-
 - `5` - 575
 
-<div align="center">
-  <h2>Настройки:</h2>
-</div>
+### Ещё пара важных моментов:
 
-## Код/Elements/Логика:
+|                                                                            Имя                            | Тип                       | Статус              | Описание                                                                         |
+| :-------------------------------------------------------------------------------------------------------: | :-----------------------: | :-----------------: | :------------------------------------------------------------------------------- |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/html5.svg"></a>    | **[`index.html`](#HTML)** | `{Object}`          | HTML код в разработке заливки в<a href="https://github.com/EvgenGal1">Проект</a> |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/css-3.svg"></a>    | [`styles.css`](#SCSS)     | `{String/Function}` | CSS код в разработке заливки JavaScript                                          |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/sass-1.svg"></a>   | [`styles.css`](#SCSS)     | `{Array/Function}`  | SCSS код в разработке заливки                                                    |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/babel-10.svg"></a> | `false`                   | `[]`                | Код в разработке заливки <a href="https://#">Babel</a>                           |
+
+<h2 align="center">Код/Elements/Логика</h2>
 
 Заполню по наличию времени...
 Пока кусочки экспериментов:
 
-HTML:
+#### `HTML`
 
 ```html
 <div class="header-menu">
@@ -86,7 +128,7 @@ HTML:
 </div>
 ```
 
-Webpack:
+#### `Webpack`
 
 ```js
 const PATHS = {
@@ -100,7 +142,7 @@ const PATHS = {
   includes: path.resolve(__dirname, "./test ES4/html/includes/"),
 ```
 
-SCSS:
+#### `SCSS`
 
 ```scss
 .block-img-back__content {
@@ -115,7 +157,7 @@ SCSS:
 }
 ```
 
-jQ:
+#### `jQ`
 
 ```js
 function iliPadd() {
@@ -130,7 +172,7 @@ function iliPadd() {
 iliPadd();
 ```
 
-JS:
+#### `JS`
 
 ```js
 const PATHS = {
@@ -149,9 +191,9 @@ function ibgJS() {
 ibgJS();
 ```
 
-## Разбор будет обязательно:
+<h2 align="center">Разбор будет обязательно</h2>
 
-Осталось: **Немного подождать и ..**
+Осталось: **не Немного подождать и ..**
 
 1. Установить мотиватор
 
@@ -175,11 +217,11 @@ const motiv = new Bro({
 </div>
 ```
 
-## Thanks
+## Признательность
 
 Выражаю благодарность за помощь/уроки/материалы следующим:
 `Травник`, [FreelancerLifeStyle](https://www.youtube.com/c/FreelancerLifeStyle/playlists), [vedees](https://www.youtube.com/channel/UCDtQ4kJos22sCdYtNDB_4Cg),
 
-## Authorship
+## Авторство
 
 Copyright (c) 2021-present, [EvGen Gal](https://github.com/EvgenGal1)
