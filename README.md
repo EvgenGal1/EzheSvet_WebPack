@@ -217,6 +217,7 @@ const motiv = new Bro({
 <h2 align="center">Признательность</h2>
 
 <p>Выражаю благодарность за помощь/уроки/материалы следующим:</p>
+
 `Травник`, [FreelancerLifeStyle](https://www.youtube.com/c/FreelancerLifeStyle/playlists), [vedees](https://www.youtube.com/channel/UCDtQ4kJos22sCdYtNDB_4Cg),
 
 <h2 align="center">Авторство</h2>
