@@ -61,7 +61,7 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  font-size: 0;
+  // font-size: 0;
 }
 @mixin flexboxinline() {
   display: -webkit-inline-flex;
@@ -150,8 +150,4 @@
 // * градиент чёрно серый шар с белым фоном
 @mixin bgr_b-g-w {
   background: repeating-radial-gradient(circle, #fff 0px, #000 82px, #ccc 25px);
-}
-h3.res{
-  color: #fff;
-  @include bgl_r-y-b()
 }

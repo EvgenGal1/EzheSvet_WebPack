@@ -183,9 +183,9 @@ const plugins = () => {
       minify: false
     }),
     // new HTMLWebpackPlugin({
-    //   minify: {
-    //     collapseWhitespace: isProd,
-    //   },
+    // minify: {
+    //   collapseWhitespace: isProd,
+    // },
     //   chunks: ["app"],
     //   filename: `${PATHS.dist}html/Catalog/Catalog.html`,
     //   template: `${PATHS.views}Catalog/Catalog.html`,
@@ -324,6 +324,14 @@ module.exports = {
     hot: isDev,
     // показ ошб. на экране а не в консоле
     overlay: true,
+    // из док WP
+    // contentBase: path.join(__dirname, 'dist'),
+    // contentBase: [
+    //   path.join(__dirname, 'dist'),
+    //   path.join(__dirname, 'dist/html'),
+    // ],
+    // compress: true,
+    // port: 9000,
   },
   // показ в консоле исходный код файла. для разраб(isDev)
   // ??? не раб - при npm build прибавляет очень много веса объед. файлу js

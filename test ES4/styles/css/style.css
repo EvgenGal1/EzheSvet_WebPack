@@ -1,26 +1,2 @@
 /* @import './fonts.css'; */
 /* ??? не раб - добавляет лишний font в корень dist */
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #ccc;
-}
-
-.container {
-  padding: 1rem 0;
-  max-width: 1000px;
-  margin: 0 auto;
-  /* padding-bottom: 2rem; */
-}
-
-h1 {
-  text-align: center;
-}
-
-.main{
-  display: flex;
-  flex-direction: column;
-  background-color: green;
-  background-color: gray;
-  height: 100%;
-}
