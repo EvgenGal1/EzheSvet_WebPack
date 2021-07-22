@@ -86,17 +86,17 @@ const cssLoaders = (extra) => {
   const loaders = [
     MiniCssExtractPlugin.loader,
     "css-loader",
-    // {
-    //   loader: "postcss-loader",
-    //   options: {
-    //     // указ где искать
-    //     postcssOptions: {
-    //       config: path.resolve(__dirname, "postcss.config.js"),
-    //     },
-    //     // ??? не раб???
-    //     // config: { path: "src/js/postcss.config.js" },
-    //   },
-    // },
+    {
+      loader: "postcss-loader",
+      options: {
+        // указ где искать
+        postcssOptions: {
+          config: path.resolve(__dirname, "postcss.config.js"),
+        },
+        // ??? не раб???
+        // config: { path: "src/js/postcss.config.js" },
+      },
+    },
   ];
   // если есть передаваемый параметр(extra) добовл. его в конце массива
   if (extra) {
@@ -154,9 +154,10 @@ function generateHtmlPlugins(templatesDir) {
       firstTemplateFileName
     );
     return new HTMLWebpackPlugin({
-      filename: `html/global/${folderName}/${firstTemplateFileName}`,
+      filename: `html/${folderName}/${firstTemplateFileName}`,
       template: firstTemplateFilePath,
       // minify: { collapseWhitespace: isProd },
+      minify: false,
       // inject: true,
       // inject: false,
       chunks: ["app"],
@@ -227,7 +228,7 @@ module.exports = {
   entry: {
     main: PATHS.src,
     app: `${PATHS.src}js/indexReact.jsx`,
-    catalog: `${PATHS.src}styles/scss/Сайт VDOH/catalog.scss`,
+    catalog: `${PATHS.src}styles/scss/htmlProjsPages/catalog.scss`,
   },
   output: {
     filename: filename("js"),
@@ -318,7 +319,7 @@ module.exports = {
   // server
   devServer: {
     // порт для запуска. рекоменд 8081, реже 8080
-    port: 8080, // 8080 // 4200 // 8081
+    port: 8081, // 8080 // 4200 // 8081
     // только в разраб
     hot: isDev,
     // показ ошб. на экране а не в консоле

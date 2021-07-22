@@ -1,6 +1,66 @@
 //<(ui.scss)ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ ИГОТОВЫХ КЛАССОВ>˅=!=!=!=!=!=!=!=!=!=!=!=!=!=!=˅
 
 // <ОСНОВНОЙ БЛОК>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
+body {
+  background-color: #e8e8e8;
+  background-color: #cccccc;
+}
+
+body {
+  display: block;
+  // margin: 0 20px;
+}
+
+.container {
+  // @include flexbox();
+  margin: 0 auto;
+  //
+  max-width: 880px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.content {
+  background-color: #cccccc;
+}
+
+//<>====================================================
+
+hr {
+  display: block;
+  // юникод биди. направления контента
+  unicode-bidi: isolate;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  // переполнение: скрыто
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
+}
+
+a {
+  color: #8b0000;
+}
+
+// .body,
+// .header,
+// .catalogs,
+// .games,
+// .items,
+// .contact {
+//   // font-family: $fontfamilyCurs;
+// }
+
+// .padd_cont {
+//   padding: 0 03%;
+// }
+
+p {
+  font-size: 14px;
+}
+
 // станд отст для h
 h1,
 h2,

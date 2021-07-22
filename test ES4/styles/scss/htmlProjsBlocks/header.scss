@@ -1,6 +1,8 @@
 // <HEADER>============================================
+
 header {
-  display: flex;
+  // display: flex;
+  // @include flexbox();
   justify-content: space-between;
   height: 150px;
   padding: 25px 03%;
@@ -47,6 +49,9 @@ header {
     justify-content: space-between;
     .logo-img {
       position: absolute;
+      top: 0;
+      left: 0;
+      width: auto;
       left: 22%;
       top: 22%;
       width: 48px;
