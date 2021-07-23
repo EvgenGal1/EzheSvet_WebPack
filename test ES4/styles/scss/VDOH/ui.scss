@@ -251,7 +251,7 @@ h6 {
 
 .catalog-block,
 .game-block,
-.directory-block {
+.manual-block {
   // ??? не раб - SassError: Undefined mixin - @include flexbox();
   // @include flexbox();
   display: flex;

@@ -416,7 +416,9 @@ header {
     // ??? не раб - задать всем кроме последнего
     // not:last-child.menu-list-link:
     // margin: 0 10px 20px 0;
-    font-size: 25px;
+    // убираем пробел м/у span
+    // font-size: 25px;
+    font-size: 0px;
     font-weight: 700;
     font-style: italic;
     list-style-type: none;
@@ -426,10 +428,10 @@ header {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     // тень li
-    box-shadow: -1px -1px 3px #000 inset, 2px 2px 10px black;
+    box-shadow: 0 0 3px #555555 inset, 0px 0px 10px black;
     &:hover {
       // повесить на hover
-      box-shadow: 0 0 3px #555555 inset, 0px 0px 10px black;
+      box-shadow: -1px -1px 3px #000 inset, 2px 2px 10px black;
       // color: #000000;
       &:before,
       &:after {
@@ -438,6 +440,11 @@ header {
     }
     &:link {
       color: #8b0000;
+    }
+    // убираем пробел м/у span
+    .link__last-bykv,
+    .link__firct-bykv {
+      font-size: 25px;
     }
   }
 
