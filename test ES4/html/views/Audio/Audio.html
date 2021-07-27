@@ -1,30 +1,35 @@
+<% var data = {
+  htmlWebpackPlugin: htmlWebpackPlugin,
+  title: "Аудио", 
+  author: "EvGen", 
+}; %>
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Аудио</title>
-    <!-- @import "../blockElem/head/head2.kit" -->
+    <%= _.template(require('../../includes/head.html').default)(data) %>
+    <link rel="stylesheet" href="../../css/audio.css" />
   </head>
   <body>
     <div class="wrapper">
-      <!-- @import "../blockElem/header2.kit" -->
+      <%= _.template(require('../../includes/header.html').default)(data) %>
       <hr />
-      <div class="kup">
-        <form action="#">
-          <!--??? зачем тут был label -->
-          <label>
-            <h1>
-           
-              <input type="submit" value="Купить!" id="kup" autofocus />
-            </h1>
-          </label>
-        </form>
-      </div>
-      <hr />
-      <div class="content">
+      <div class="content-body">
+        <div class="kup">
+          <form action="#">
+            <!--??? зачем тут был label -->
+            <label>
+              <h1>
+                <input type="submit" value="Купить!" id="kup" autofocus />
+              </h1>
+            </label>
+          </form>
+        </div>
+        <hr />
         <div class="helloys">
           <h1>Разработка Аудио.</h1>
           <h2>
-            В планах: Музыка, звук. эффекты, плейлисты, текста песен, аккорды, возможно какието плееры и пр.
+            В планах: Музыка, звук. эффекты, плейлисты, текста песен, аккорды,
+            возможно какието плееры и пр.
           </h2>
           <p>
             Ещё пару букв про аудио, отсутстие времени, отсутстие времени,
@@ -37,16 +42,13 @@
           </p>
         </div>
         <hr />
-        <div class="block-body mc0">
+        <div class="audio-block pc1">
           <h3>Инфа для твоей жизни...</h3>
           <p>В&nbsp;разработке. ... .. .. . ... . ..</p>
         </div>
       </div>
       <hr />
-      <!-- @import "../blockElem/footer.kit" -->
+      <%= _.template(require('../../includes/footer.html').default)(data) %>
     </div>
-    <!-- @import "../blockElem/scriptJqury.kit" -->
-    <script src="../../js/main.js"></script>
-    <!-- <script src="/js/custom.js"></script> -->
   </body>
 </html>

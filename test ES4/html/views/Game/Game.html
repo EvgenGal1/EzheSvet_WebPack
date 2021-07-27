@@ -1,41 +1,53 @@
-<% var data = { 
-  htmlWebpackPlugin: htmlWebpackPlugin, 
-  title: "Каталог",
+<% var data = {
+  htmlWebpackPlugin: htmlWebpackPlugin,
+  title: "Игры",
   author: "EvGen",
 }; %>
 <!DOCTYPE html>
 <html lang="ru">
   <head>
     <%= _.template(require('../../includes/head.html').default)(data) %>
-    <link rel="stylesheet" href="../../css/catalog.css" />
+    <link rel="stylesheet" href="../../css/game.css" />
   </head>
   <body>
     <div class="wrapper">
       <%= _.template(require('../../includes/header.html').default)(data) %>
       <hr />
       <div class="content-body">
+        <!-- <div class="kup">
+        <form action="#">
+          <label>
+            <h1>
+              <input type="submit" value="Купить!" id="kup" autofocus />
+            </h1>
+          </label>
+        </form>
+      </div>
+      <hr /> -->
         <div class="helloys">
-          <h1>Каталог. Мечты, надежды, страхи на раздачу</h1>
+          <h1>Разработка переписывания игр.</h1>
           <h2>
-            Приветствую тебя, о&nbsp;странник, в&nbsp;поисках своей мечты!
+            В планах: крестики/нолики, змейка, сапёр, солитер, танчики, и т.д. и
+            т.п.
           </h2>
           <p>
-            Ещё пару букв приветсвия и пожеланий <br />Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Magni at nisi qui cumque
-            doloribus, perspiciatis repellendus repellat? Veniam, nemo?
-            Consectetur, repellendus esse saepe natus aspernatur nihil maiores,
-            vel officiis iste dignissimos perspiciatis porro temporibus numquam?
+            Ещё пару букв про игры, отсутстие времени, разработку и лень
+            <br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+            at nisi qui cumque doloribus, perspiciatis repellendus repellat?
+            Veniam, nemo? Consectetur, repellendus esse saepe natus aspernatur
+            nihil maiores, vel officiis iste dignissimos perspiciatis porro
+            temporibus numquam?
           </p>
         </div>
         <hr />
-        <main class="catalog-block pc1">
+        <div class="game-block pc1">
           <div class="block-img">
-            <a class="block-img__link ibg" href="catalogs/dreamSpace.html">
+            <a class="block-img__link ibg" href="games/snake.html">
               <img
                 class="img-bl"
-                src="../../img/catalog/space1.jpg"
+                src="../../../img/game/змейка.png"
                 alt="сорян"
-                title="Космонавт"
+                title="змейка"
               />
             </a>
             <br />
@@ -47,7 +59,7 @@
               </div>
               <a
                 class="block-img__link-back link link--b"
-                href="catalogs/dreamSpace.html"
+                href="games/snake.html"
                 >Перейти</a
               >
               <div class="rating__items">
@@ -85,12 +97,12 @@
             </div>
           </div>
           <div class="block-img">
-            <a class="block-img__link ibg" href="catalogs/hopeImmortality.html">
+            <a class="block-img__link ibg" href="games/snake.html">
               <img
                 class="img-bl"
-                src="../../img/catalog/immortal1.jpg"
+                src="../../../img/game/змейка2.jpg"
                 alt="сорян"
-                title="Бессмертный"
+                title="змейка"
               />
             </a>
             <br />
@@ -102,7 +114,7 @@
               </div>
               <a
                 class="block-img__link-back link link--b"
-                href="catalogs/hopeImmortality.html"
+                href="games/snake.html"
                 >Перейти</a
               >
               <div class="rating__items">
@@ -140,15 +152,12 @@
             </div>
           </div>
           <div class="block-img">
-            <a
-              class="block-img__link ibg"
-              href="catalogs/illusionAnonymity.html"
-            >
+            <a class="block-img__link ibg" href="games/snake.html">
               <img
                 class="img-bl"
-                src="../../img/catalog/anonim1.jpg"
+                src="../../../img/game/змейка3.jpg"
                 alt="сорян"
-                title="Аноним"
+                title="змейка"
               />
             </a>
             <br />
@@ -160,7 +169,7 @@
               </div>
               <a
                 class="block-img__link-back link link--b"
-                href="catalogs/illusionAnonymity.html"
+                href="games/snake.html"
                 >Перейти</a
               >
               <div class="rating__items">
@@ -198,12 +207,12 @@
             </div>
           </div>
           <div class="block-img">
-            <a class="block-img__link ibg" href="catalogs/daydreamWealth.html">
+            <a class="block-img__link ibg" href="games/crossAndZero.html">
               <img
                 class="img-bl"
-                src="../../img/catalog/wealth1.jpg"
+                src="../../../img/game/крестИноль.jpg"
                 alt="сорян"
-                title="Богатый"
+                title="крестик и нолик"
               />
             </a>
             <br />
@@ -215,7 +224,7 @@
               </div>
               <a
                 class="block-img__link-back link link--b"
-                href="catalogs/daydreamWealth.html"
+                href="games/crossAndZero.html"
                 >Перейти</a
               >
               <div class="rating__items">
@@ -253,12 +262,12 @@
             </div>
           </div>
           <div class="block-img">
-            <a class="block-img__link ibg" href="catalogs/timeManager.html">
+            <a class="block-img__link ibg" href="games/crossAndZero.html">
               <img
                 class="img-bl"
-                src="../../img/catalog/time1.jpg"
+                src="../../../img/game/крестИнольКор.jpg"
                 alt="сорян"
-                title="Временник"
+                title="крестик и нолик"
               />
             </a>
             <br />
@@ -270,7 +279,7 @@
               </div>
               <a
                 class="block-img__link-back link link--b"
-                href="catalogs/timeManager.html"
+                href="games/crossAndZero.html"
                 >Перейти</a
               >
               <div class="rating__items">
@@ -308,12 +317,12 @@
             </div>
           </div>
           <div class="block-img">
-            <a class="block-img__link ibg" href="catalogs/timeManager.html">
+            <a class="block-img__link ibg" href="games/sapper.html">
               <img
                 class="img-bl"
-                src="../../img/catalog/time1.jpg"
+                src="../../../img/game/сапёр.png"
                 alt="сорян"
-                title="Временник"
+                title="сапёр"
               />
             </a>
             <br />
@@ -325,7 +334,7 @@
               </div>
               <a
                 class="block-img__link-back link link--b"
-                href="catalogs/timeManager.html"
+                href="games/sapper.html"
                 >Перейти</a
               >
               <div class="rating__items">
@@ -362,7 +371,62 @@
               </div>
             </div>
           </div>
-        </main>
+          <div class="block-img">
+            <a class="block-img__link ibg" href="games/sapper.html">
+              <img
+                class="img-bl"
+                src="../../../img/game/сапёр2.jpg"
+                alt="сорян"
+                title="сапёр"
+              />
+            </a>
+            <br />
+            <div class="block-img-back__content">
+              <div class="block-img-back__title">Заголовок / Главное</div>
+              <div class="block-img-back__text">
+                Описание, подробности, минимум. Примерно как здесь, может чуть
+                побольше
+              </div>
+              <a
+                class="block-img__link-back link link--b"
+                href="games/sapper.html"
+                >Перейти</a
+              >
+              <div class="rating__items">
+                <input
+                  type="radio"
+                  class="rating__item"
+                  value="1"
+                  name="rating"
+                />
+                <input
+                  type="radio"
+                  class="rating__item"
+                  value="2"
+                  name="rating"
+                />
+                <input
+                  type="radio"
+                  class="rating__item"
+                  value="3"
+                  name="rating"
+                />
+                <input
+                  type="radio"
+                  class="rating__item"
+                  value="4"
+                  name="rating"
+                />
+                <input
+                  type="radio"
+                  class="rating__item"
+                  value="5"
+                  name="rating"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <hr />
       <%= _.template(require('../../includes/footer.html').default)(data) %>

@@ -1,25 +1,19 @@
+<% var data = { 
+  htmlWebpackPlugin: htmlWebpackPlugin, 
+  title: "Каталог",
+  author: "visual",
+}; %>
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title></title>
-    <!-- @import "../blockElem/head/head2.kit" -->
+    <%= _.template(require('../../includes/head.html').default)(data) %>
+    <link rel="stylesheet" href="../../css/visual.css" />
   </head>
   <body>
     <div class="wrapper">
-      <!-- @import "../blockElem/header2.kit" -->
+      <%= _.template(require('../../includes/header.html').default)(data) %>
       <hr />
-      <div class="kup">
-        <form action="#">
-          <!--??? зачем тут был label -->
-          <label>
-            <h1>
-              <input type="submit" value="Купить!" id="kup" autofocus />
-            </h1>
-          </label>
-        </form>
-      </div>
-      <hr />
-      <div class="content">
+      <div class="content-body">
         <div class="helloys">
           <h1>Разработка визульных эффектов.</h1>
           <h2>В планах: Паралаксы, html css и js анимация, загрузки, .</h2>
@@ -32,11 +26,6 @@
             nihil maiores, vel officiis iste dignissimos perspiciatis porro
             temporibus numquam?
           </p>
-        </div>
-        <hr />
-        <div class="block-body mc0">
-          <h3>Инфа для твоей жизни...</h3>
-          <p>В&nbsp;разработке. ... .. .. . ... . ..</p>
         </div>
         <hr />
         <div class="visual-block pc1">
@@ -270,7 +259,6 @@
               </div>
             </div>
           </div>
-
           <div class="proby1">
             <div class="accordion">
               <div class="acord-item">
@@ -327,10 +315,7 @@
         </div>
       </div>
       <hr />
-      <!-- @import "../blockElem/footer.kit" -->
+      <%= _.template(require('../../includes/footer.html').default)(data) %>
     </div>
-    <!-- @import "../blockElem/scriptJqury.kit" -->
-    <script src="../../js/main.js"></script>
-    <!-- <script src="/js/custom.js"></script> -->
   </body>
 </html>

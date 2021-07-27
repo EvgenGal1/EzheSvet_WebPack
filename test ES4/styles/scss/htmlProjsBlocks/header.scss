@@ -98,7 +98,7 @@ header {
   ul:hover li:not(:hover) {
     // не видно
     // opacity: 0;
-    opacity: 0.5;
+    opacity: 0.7;
   }
   .header-menu-list {
     display: flex;
@@ -113,15 +113,6 @@ header {
     &:not(:first-child) {
       margin: 0 0 0px 10px;
       z-index: 3;
-    }
-    // margin: 0 0 0px 10px;
-    // затемняет не то что выделено
-    &:hover .ul li:not(:hover) {
-      opacity: 0.5;
-      // opacity: 1;
-    }
-    &:hover .ul {
-      display: block;
     }
     // всем, кроме первого. перебивает медиа запрос
     // &:nth-child(n):not(:first-child) {
@@ -428,10 +419,10 @@ header {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     // тень li
-    box-shadow: 0 0 3px #555555 inset, 0px 0px 10px black;
+    box-shadow: -1px -1px 3px #000 inset, 2px 2px 10px black;
     &:hover {
       // повесить на hover
-      box-shadow: -1px -1px 3px #000 inset, 2px 2px 10px black;
+      box-shadow: 0 0 3px #555555 inset, 0px 0px 10px black;
       // color: #000000;
       &:before,
       &:after {
