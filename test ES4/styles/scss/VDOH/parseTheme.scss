@@ -2,6 +2,101 @@
 
 // header-menu__bottom ()>˅=======================================================================================˅
 
+// 1 Использование класса для <body>
+// body {
+//   color: #222;
+//   background: #fff;
+// }
+// a {
+//   color: #0033cc;
+// }
+// /* Стили Тёмной темы */
+// body.dark-theme {
+//   color: #eee;
+//   background: #121212;
+// }
+// body.dark-theme a {
+//   color: #809fff;
+// }
+// 2 Использование пользовательских свойств
+// body {
+//   --text-color: #222;
+//   --bkg-color: #fff;
+//   --anchor-color: #0033cc;
+// }
+// body.dark-theme {
+//   --text-color: #eee;
+//   --bkg-color: #121212;
+//   --anchor-color: #809fff;
+// }
+// body {
+//   color: var(--text-color);
+//   background: var(--bkg-color);
+// }
+// a {
+//   color: var(--anchor-color);
+// }
+// 4 Переопределение настроек ОС
+/* Цвета по умолчанию */
+body {
+  --text-color: #222;
+  --bkg-color: #fff;
+}
+/* Цвета тёмной темы */
+body.dark-theme {
+  --text-color: #eee;
+  --bkg-color: #121212;
+}
+body.gray-theme {
+  --text-color: #f00;
+  --bkg-color: #cccccc;
+}
+/* Стили для пользователей, предпочитающих тёмный режим на уровне ОС */
+@media (prefers-color-scheme: dark) {
+  /* Тёмная тема по умолчанию */
+  body { 
+    --text-color: #eee;
+    --bkg-color: #121212;
+  }
+  /* Переопределяем тёмный режим стилями светлого режима, если пользователь решает поменять их местами */
+  body.light-theme {
+    --text-color: #222;
+    --bkg-color: #fff;
+  }
+  body.gray-theme {
+    --text-color: #f00;
+    --bkg-color: #cccccc;
+  }
+}
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background: var(--bkg-color);
+}
+h1,
+p {
+  color: var(--text-color);
+}
+
+// Советы по дизайну
+// Изображения в тёмном режиме
+/* Применяем фильтр напрямую к тегу <body> */
+body.dark-theme img {
+  filter: brightness(.8) contrast(1.2);
+}
+
+/* Или применяем через медиа-запрос */
+// @media (prefers-color-scheme: dark) {
+//   img {
+//     filter: brightness(.3) contrast(1.8);
+//   }
+// }
+
+
+
+
+
 .header-menu__bottom {
   // display: flex;
   // justify-content: flex-end;
