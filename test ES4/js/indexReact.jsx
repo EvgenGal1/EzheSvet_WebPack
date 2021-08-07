@@ -1,3 +1,4 @@
+import "../index.js";
 // import "../styles/scss/utils/mixins.scss";
 // import "../styles/scss/VDOH/mixins.scss";
 // import "../styles/scss/VDOH/ui.scss";

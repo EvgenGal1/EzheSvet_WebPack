@@ -30,7 +30,7 @@ function ibgJS() {
 }
 ibgJS();
 
-// !!! https://webref.ru/dev/dark-mode/toggling-themes
+// !!! https://webref.ru/dev/dark-theme/toggling-themes
 // 1 Использование класса для <body> (2 Использование пользовательских свойств)
 // Выбираем кнопку
 // const btn = document.querySelector(".btn-toggle");
@@ -119,74 +119,218 @@ ibgJS();
 // });
 
 // 7 своё
-// !!! https://ru.stackoverflow.com/questions/858396/%D0%9A%D0%B0%D0%BA-%D0%BF%D0%BE%D0%B2%D0%B5%D1%81%D0%B8%D1%82%D1%8C-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B5-%D0%BD%D0%B0-%D0%B2%D1%81%D0%B5-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8-%D0%BD%D0%B0-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B5
-// ! 1
-// const swlabelAll = document.querySelectorAll(".switcher-label");
-// const swNeut = document.querySelector(".switcher-neutral");
-// const swOn = document.querySelector(".switcher-on");
-// const swOff = document.querySelector(".switcher-off");
-// swlabelAll.addEventListener("click", function (e) {
-//   if (e.target.classList.contains(swNeut)) console.log(1);
-//   //  alert(`Я выполню задачу ${e.target.textContent}`);
-//   if (e.target.classList.contains(swOn))
-//     alert(`Я выполню задачу ${e.target.textContent}`);
-//   if (e.target.classList.contains(swOff))
-//     alert(`Я выполню задачу ${e.target.textContent}`);
-//   //и так далее
-// });
+// !!!
 // ! 2
+// Проверяем предпочтение тёмного режима на уровне ОС
+// const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+// !!
+// Если у пользователя тёмный режим ОС и он соответствует нашему классу .dark-theme…
+// if (prefersDarkScheme.matches) {
+//   // …тогда переключаем класс светлого режима
+//   document.body.classList.toggle("light-theme");
+//   // …но используем .dark-theme, если класс .light-theme уже находится в <body>
+//   var theme = document.body.classList.contains("light-theme")
+//     ? "light"
+//     : "dark";
+// } else {
+//   // В противном случае, делаем то же самое, но для .dark-theme
+//   document.body.classList.toggle("dark-theme");
+//   var theme = document.body.classList.contains("dark-theme")
+//     ? "dark"
+//     : "light";
+// }
+// В конце сохраняем текущее предпочтение в localStorage, чтобы продолжить его использовать
+// ! альтернатива  для //!!
+// !!! https://www.kooslooijesteijn.net/blog/add-dark-theme-to-website
+// if (prefDark) {
+//   var theme = document.body.classList.contains("dark-theme")
+//   return "dark";
+// } else if (preflight) {
+//   var theme = document.body.classList.contains("light-theme")
+//   return "light";
+// } else if (prefNo) {
+//   var theme = document.body.classList.contains("grayn-theme")
+//   return "grayn";
+// }
+
+// localStorage.setItem("theme", theme);
+// !!
+// const prefDark = window.matchMedia("(prefers-color-scheme: dark)");
+// const preflight = window.matchMedia("(prefers-color-scheme: light)");
+// const prefNo = window.matchMedia("(prefers-color-scheme: no-preference)");
+// // Получаем предпочтение темы пользователя из локального хранилища, если оно доступно
+// const currentTheme = localStorage.getItem("theme");
+// // Если текущая тема в localStorage равна "dark"…
+// if (currentTheme == "dark") {
+//   // …переключаем класс .dark-theme для <body>
+//   document.body.classList.toggle("dark-theme");
+//   // В противном случае, если текущая тема в localStorage равна "light"…
+// } else if (currentTheme == "light") {
+//   // …переключаем класс .light-theme для <body>
+//   document.body.classList.toggle("light-theme");
+// } else if (currentTheme == "grayn") {
+//   // …переключаем класс .grayn-theme для <body>
+//   document.body.classList.toggle("grayn-theme");
+// }
+
+// !! опред ОС
+// !!! 1. https://webref.ru/dev/dark-theme/os-level
+// !!! 2. https://www.kooslooijesteijn.net/blog/add-dark-theme-to-website
+// 1.
+// Получаем предпочтение темы пользователя из локального хранилища, если оно доступно
+const currentTheme = localStorage.getItem("theme");
+// Если текущая тема в localStorage равна "grayn"
+if (currentTheme == "grayn") {
+  // вкл класс .grayn-theme для <body>
+  document.body.classList.add("grayn-theme");
+} else if (currentTheme == "dark") {
+  document.body.classList.add("dark-theme");
+} else if (currentTheme == "light") {
+  document.body.classList.add("light-theme");
+}
 // Выбираем все кнопки на странице и получаем массив
-var btns = document.querySelectorAll(".switcher-label");
+var swLabelAll = document.querySelectorAll(".switcher-label");
 // Проходим по массиву
-btns.forEach(function (btn) {
+swLabelAll.forEach(function (btn) {
+  // заводим перем для позиций кнопок
   const swNeut = document.querySelector(".switcher-neutral");
   const swOn = document.querySelector(".switcher-on");
   const swOff = document.querySelector(".switcher-off");
   // Вешаем событие клик
-  btn.addEventListener("click", function (e) {
-    console.log("Button clicked" + e.target.classList);
-    // ! 2.1
-    // if (e.target.classList === swNeut) {
-    //   console.log(1);
-    // }
-    // if ((e.target.classList.contains == swOn)) {
-    //   console.log(2);
-    // }
-    // if ((e.target.classList.contains == swOff)) {
-    //   console.log(3);
-    // }
-    // ! 2.2
-    // if (e.target.classList.contains(swNeut));
-    // console.log(1);
-    // if (e.target.classList.contains(swOn));
-    // console.log(2);
-    // if (e.target.classList.contains(swOff));
-    // console.log(3);
-    // ! 2.3
-    if (btn == swNeut){
-      console.log('~');
+  btn.addEventListener("click", function () {
+    // console.log("Button clicked" + e.target.classList);
+    if (btn == swNeut) {
+      console.log("~");
       document.body.classList.remove("light-theme");
       document.body.classList.remove("dark-theme");
-      document.body.classList.add("gray-theme");
+      document.body.classList.add("grayn-theme");
+      var theme = "grayn";
+      // !
+      // document.swNeut.checked=true;
+      // localStorage.setItem("document.swNeut.checked", true);
+      // localStorage.setItem("document.swNeut.checked", checkbox.checked);
+      // localStorage.input = this.checked
+      // localStorage.setItem("document.swNeut", checkbox.checked);
+      // localStorage.setItem("swNeut", checkbox.checked);
+
+      // el.onchange = () => localStorage.setItem(el.id, el.checked);
+      // el.checked = localStorage.getItem(el.id) === "true";
+      btn.onchange = () => localStorage.setItem(btn.id, btn.checked);
+      btn.checked = localStorage.getItem(btn.id) === "true";
+      // !
     }
-    if (btn == swOn){
-      console.log('+');
-      // document.body.classList.toggle("light-theme");
+    if (btn == swOn) {
+      console.log("+");
       document.body.classList.remove("dark-theme");
-      document.body.classList.remove("gray-theme");
+      document.body.classList.remove("grayn-theme");
       document.body.classList.add("light-theme");
+      var theme = "light";
+      // !
+      // document.swOn.checked=true;
+      localStorage.setItem("document.swOn.checked", true);
+      // !
     }
-    if (btn == swOff){
-      console.log('o');
-      // document.body.classList.toggle("dark-theme");
+    if (btn == swOff) {
+      console.log("o");
       document.body.classList.remove("light-theme");
-      document.body.classList.remove("gray-theme");
+      document.body.classList.remove("grayn-theme");
       document.body.classList.add("dark-theme");
+      var theme = "dark";
+      // !
+      // document.swOff.checked=true;
+      localStorage.setItem("document.swOff.checked", true);
+      // !
     }
+    localStorage.setItem("theme", theme);
+    // localStorage.clear();
   });
 });
-// ! 3
-// document.body.addEventListener("click", (e) => {
-//   if (e.target.classList.contains(".switcher-label"));
-//   console.log(4);
-// });
+// document.querySelector(".switcher-off").checkbox.checked
+// document.querySelector(".switcher-off").checked
+// !
+
+// ! https://ru.stackoverflow.com/questions/943640/%D0%9A%D0%B0%D0%BA-%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D1%82%D1%8C-%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5-%D1%87%D0%B5%D0%BA%D0%B1%D0%BE%D0%BA%D1%81%D0%B0-%D0%B2-localstorage
+// document.querySelectorAll(".switcher-label").forEach(el => {
+//   el.onchange = () => localStorage.setItem(el.id, el.checked);
+//   el.checked = localStorage.getItem(el.id) === "true";
+// })
+
+// ! https://stackoverflow.com/questions/26628812/localstorage-how-to-save-a-checkbox
+// function saveRtd() {
+//   var checkbox = document.getElementById("checkbox1zaal1");
+//   localStorage.setItem("checkbox1zaal1", checkbox.checked);
+// }
+// function load() {
+//   // var checked = JSON.parse(localStorage.getItem("checkbox1zaal1"));
+//   // if (checked == true) {
+//   //   document.getElementById("checkbox1zaal1").checked = true;
+//   // }
+//   var checked = JSON.parse(localStorage.getItem("checkbox1zaal1"));
+//   document.getElementById("checkbox1zaal1").checked = checked;
+// }
+// function wis() {
+//   location.reload();
+//   localStorage.clear();
+// }
+// load();
+// ! https://www.cyberforum.ru/javascript/thread1815033.html
+// function save_checkbox(name) {
+//   localStorage[name] = document.getElementById(name).checked ? 1 : 0;
+//   // localStorage[name] = document.querySelector(name).checked ? 1 : 0;
+// }
+// function load_checkbox() {
+//   var table = document.getElementById("resources");
+//   var input = table.getElementsByTagName("input");
+
+//   for (var i = 0; i < input.length; i++) {
+//     var checkbox = input[i];
+//     checkbox.checked = parseInt(localStorage[checkbox.id], 10);
+//   }
+// }
+// load_checkbox()
+// save_checkbox('sale_wood')
+// !
+
+// !!!!! настройки стиля-размера
+const currentStyle = localStorage.getItem("style");
+if (currentStyle == "mid") {
+  document.body.classList.add("style-mid");
+} else if (currentStyle == "big") {
+  document.body.classList.add("style-big");
+} else if (currentStyle == "small") {
+  document.body.classList.add("style-small");
+}
+var swLabelAll = document.querySelectorAll(".sw7-label");
+swLabelAll.forEach(function (btn) {
+  const sw7Of = document.querySelector(".sw7-off");
+  const sw7On = document.querySelector(".sw7-on");
+  const sw7Nul = document.querySelector(".sw7-null");
+  // ???не раб - по id не вызов. для смены стиля по нажатию на центр в 3х циферблатную кнопку
+  // const sw7Of = document.querySelectorById(".item3-state-off");
+  // const sw7On = document.querySelectorById(".item3-state-on");
+  // const sw7Nul = document.querySelectorById(".item3-state-null");
+  btn.addEventListener("click", function () {
+    if (btn == sw7Nul) {
+      document.body.classList.remove("style-small");
+      document.body.classList.remove("style-big");
+      document.body.classList.add("style-mid");
+      var style = "mid";
+    }
+    if (btn == sw7On) {
+      document.body.classList.remove("style-big");
+      document.body.classList.remove("style-mid");
+      document.body.classList.add("style-small");
+      var style = "small";
+    }
+    if (btn == sw7Of) {
+      document.body.classList.remove("style-small");
+      document.body.classList.remove("style-mid");
+      document.body.classList.add("style-big");
+      var style = "big";
+    }
+    localStorage.setItem("style", style);
+    // localStorage.clear();
+  });
+});
+// !!!!! настройки стиля-размера

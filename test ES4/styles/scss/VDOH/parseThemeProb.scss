@@ -1,0 +1,273 @@
+// 1 Использование класса для <body>
+// !!! https://webref.ru/dev/dark-mode/toggling-themes
+// body {
+//   color: #222;
+//   background: #fff;
+// }
+// a {
+//   color: #0033cc;
+// }
+// /* Стили Тёмной темы */
+// body.dark-theme {
+//   color: #eee;
+//   background: #121212;
+// }
+// body.dark-theme a {
+//   color: #809fff;
+// }
+// 2 Использование пользовательских свойств
+// body {
+//   --text-color: #222;
+//   --bkg-color: #fff;
+//   --anchor-color: #0033cc;
+// }
+// body.dark-theme {
+//   --text-color: #eee;
+//   --bkg-color: #121212;
+//   --anchor-color: #809fff;
+// }
+// body {
+//   color: var(--text-color);
+//   background: var(--bkg-color);
+// }
+// a {
+//   color: var(--anchor-color);
+// }
+
+// ? 4 Переопределение настроек ОС
+/* Цвета по умолчанию */
+// body.grayn-theme {
+//   // --text-color: #f00;
+//   // --bkg-color: #cccccc;
+//   --anchor-color: #0d0238;
+// }
+// /* Цвета тёмной темы */
+// body.dark-theme {
+//   --text-color: #c0c0c0;
+//   --bkg-color: #121212;
+//   --anchor-color: #809fff;
+// }
+// body.light-theme {
+//   --text-color: #222;
+//   --bkg-color: #fff;
+//   --anchor-color: #0033cc;
+// }
+// /* Стили для пользователей, предпочитающих тёмный режим на уровне ОС */
+// @media (prefers-color-scheme: grayn) {
+//   /* Стили для темы по умолчанию */
+//   body {
+//     // --text-color: #f00;
+//     // --bkg-color: #cccccc;
+//     // --anchor-color: #01299e;
+//   }
+// }
+// @media (prefers-color-scheme: dark) {
+//   /* Стили для тёмной темы */
+//   body {
+//     --text-color: #c0c0c0;
+//     --bkg-color: #121212;
+//     --anchor-color: #809fff;
+//   }
+// }
+// @media (prefers-color-scheme: light) {
+//   /* Стили для светлой темы */
+//   body {
+//     --text-color: #222;
+//     --bkg-color: #fff;
+//     --anchor-color: #0033cc;
+//   }
+// }
+// * {
+//   // font-family: Arial, Helvetica, sans-serif;
+// }
+// body {
+//   color: var(--text-color);
+//   background: var(--bkg-color);
+// }
+// h1,
+// p {
+//   color: var(--text-color);
+// }
+// a {
+//   color: var(--anchor-color);
+// }
+
+// ? 5
+// !!! https://habr.com/ru/company/macloud/blog/550168/
+// Обратите внимание на пробелы, они не ломают синтаксис (что сбросило бы определение всей строки). Теперь осталось только вынести переключатель состояния в отдельные переменные:
+// :root {
+body {
+  // body.grayn-theme {
+  // :root.grayn-theme {
+  /* --ON и --OFF заменяют двоичную переменную */
+  --ON: initial;
+  // --ON: ;
+  --OFF: ;
+  // --NORM: initial;
+}
+/* выбираем светлую тему по умолчанию */
+// .theme-default,
+// .theme-light {
+// .default-theme,
+.grayn-theme {
+  --grayn: var(--ON);
+  --light: var(--OFF);
+  --dark: var(--OFF);
+}
+.light-theme {
+  --light: var(--ON);
+  --grayn: var(--OFF);
+  --dark: var(--OFF);
+}
+.dark-theme {
+  --dark: var(--ON);
+  --light: var(--OFF);
+  --grayn: var(--OFF);
+}
+/* медиа-запрос теперь нужен только для переключения */
+@media (prefers-color-scheme: dark) {
+  .theme-default {
+    --dark: var(--ON);
+    --light: var(--OFF);
+    --grayn: var(--OFF);
+  }
+}
+// Теперь цветовые схемы можно определять в одном месте, выглядеть это будет так:
+// :root {
+body {
+  --baz-bkg-color: var(--light, #858585) var(--dark, #1d0a0a)
+    var(--grayn, #8b0000);
+  --background: var(--light, #ffffff) var(--dark, #080707) var(--grayn, #500000);
+  --text-color: var(--light, #000000) var(--dark, #eaeaea) var(--grayn, #4b4b4b);
+  --link-color: var(--light, #0089c7) var(--dark, #b76c10) var(--grayn, #cde404);
+  --primary-color: var(--light, #165fb9) var(--dark, #8916b9)
+    var(--grayn, #c07d00);
+  /* ... */
+}
+body {
+  color: var(--text-color);
+  background: var(--background);
+}
+h1,
+p {
+  color: var(--text-color);
+}
+h2-h3 {
+  color: var(--primary-color);
+}
+a {
+  color: var(--link-color);
+}
+header {
+  background: var(--baz-bkg-color);
+}
+
+// Советы по дизайну
+// Изображения в тёмном режиме
+// ! Применяем фильтр напрямую к тегу <body>
+// body.dark-theme img {
+//   filter: brightness(0.8) contrast(1.2);
+// }
+/* Или применяем через медиа-запрос */
+// @media (prefers-color-scheme: dark) {
+//   img {
+//     filter: brightness(.3) contrast(1.8);
+//   }
+// }
+
+// @media (prefers-color-scheme: dark) {
+//   img {
+//     opacity: .75;
+//     transition: opacity .5s ease-in-out;
+//   }
+//   img:hover {
+//     opacity: 1;
+//   }
+// }
+// куски для тесной темы
+// background: rgba(0, 0, 0, 0.7);
+// !!! https://stuffandnonsense.co.uk/blog/redesigning-your-product-and-website-for-dark-mode
+// заставит буквы казаться дальше друг от друга, Увеличение интерлиньяжа в абзацах,  увеличить расстояние между словами
+// p {
+//   font-family: var(--font-family);
+//   line-height: 1.5;
+//  }
+
+//   @media (prefers-color-scheme: dark) {
+//   p {
+//   font-family: var(--font-family-light);
+//   line-height: 1.7;
+//   word-spacing: .05em;}
+//   }
+// }
+// .mechagodzilla img {
+//   filter: drop-shadow(0 2px 4px #969696); }
+
+//   @media (prefers-color-scheme: dark) {
+//   .mechagodzilla img {
+//   filter: drop-shadow(0 2px 4px #0b0b0b); }
+//   }
+// :root {
+//   --color-background: #ffffff;
+//   --color-border: #cacfd5;
+//   --color-text-default: #0b1016;
+//   --color-base: #f4f5f6;
+//   --color-accent: #ba0d37; }
+//   @media (prefers-color-scheme: dark) {
+//     :root {
+//     --color-background: #38444c;
+//     --color-border: #697278;
+//     --color-text-default: #f0f2f3;
+//     --color-base: #293238;
+//     --color-accent: #ec1a62; }
+//     }
+// !!!!! настройки стиля-размера
+body {
+  /* --ON и --OFF заменяют двоичную переменную */
+  --ON: initial;
+  --OFF: ;
+}
+// .style-mid .style-small .style-big .style-default,
+.style-mid {
+  --mid: var(--ON);
+  --small: var(--OFF);
+  --big: var(--OFF);
+}
+.style-small {
+  --small: var(--ON);
+  --mid: var(--OFF);
+  --big: var(--OFF);
+}
+.style-big {
+  --big: var(--ON);
+  --small: var(--OFF);
+  --mid: var(--OFF);
+}
+/* медиа-запрос теперь нужен только для переключения */
+@media (prefers-color-scheme: big) {
+  .style-default {
+    --big: var(--ON);
+    --small: var(--OFF);
+    --mid: var(--OFF);
+  }
+}
+// Теперь цветовые схемы можно определять в одном месте, выглядеть это будет так:
+// :root {
+body {
+  --width: var(--small, 80px) var(--big, 150px) var(--mid, 100px);
+  --height: var(--small, 25px) var(--big, 40px) var(--mid, 30px);
+  --font-size: var(--small, 15px) var(--big, 25px) var(--mid, 17px);
+  --font-weight: var(--small, 200) var(--big, 700) var(--mid, 400);
+  --border: var(--small, 0.5px solid #000) var(--big, 2px solid #000) var(--mid, 1px solid #000);
+  --border-radius: var(--small, 2px) var(--big, 10px) var(--mid, 5px);
+  /* ... */
+}
+.menu-list__items .menu-list-link {
+  width: var(--width);
+    height: var(--height);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  border: var(--border);
+  border-radius: var(--border-radius);
+}
+// !
