@@ -96,16 +96,16 @@ src(test ES4)/
 
 #### Ещё пара важных моментов:
 
-| Имя                                                                                                          | Тип                 | Свойства                   | Статус        | Описание                                                                         |
-| :----------------------------------------------------------------------------------------------------------: | :-----------------: | -------------------------: | :-----------: | :------------------------------------------------------------------------------- |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/html5.svg"></a>       | `{Object}`          | **[`index.html`](#HTML)**  | in developing | HTML код в разработке заливки в<a href="https://github.com/EvgenGal1">Проект</a> |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/css-3.svg"></a>       | `{String/Function}` | **[`styles.css`](#SCSS)**  | projected     | CSS код в разработке заливки JavaScript                                          |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/sass-1.svg"></a>      | `{Array/Function}`  | **[`styles.scss`](#SCSS)** | going to      | SCSS код в разработке заливки                                                    |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/babel.svg"></a>    | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">Babel</a>                           |
+| Имя                                                                                                        | Тип                 | Свойства                   | Статус        | Описание                                                                         |
+| :--------------------------------------------------------------------------------------------------------: | :-----------------: | -------------------------: | :-----------: | :------------------------------------------------------------------------------- |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/html5.svg"></a>     | `{Object}`          | **[`index.html`](#HTML)**  | in developing | HTML код в разработке заливки в<a href="https://github.com/EvgenGal1">Проект</a> |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/css-3.svg"></a>     | `{String/Function}` | **[`styles.css`](#SCSS)**  | projected     | CSS код в разработке заливки JavaScript                                          |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/sass-1.svg"></a>    | `{Array/Function}`  | **[`styles.scss`](#SCSS)** | going to      | SCSS код в разработке заливки                                                    |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/babel.svg"></a>     | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">Babel</a>                           |
 | <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/react.svg"></a>      | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">React</a>                           |
 | <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/javascript.svg"></a> | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">JavaScript</a>                      |
 | <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/jquery.svg"></a>     | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">jQuery</a>                          |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/webpack.svg"></a> | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">WebPack</a>                         |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/webpack.svg"></a>    | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">WebPack</a>                         |
 
 <h2 align="center">Код/Elements/Логика</h2>
 
