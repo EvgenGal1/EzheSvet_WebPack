@@ -7,6 +7,7 @@ header {
   height: 150px;
   padding: 25px 03%;
   background-color: #8b0000;
+  box-shadow: #000000 3px 5px 20px 0.5px inset, #000000 -3px -1px 10px 0.5px inset;
 
   @media (max-width: 553px) {
     // @media (max-width: $md4+px) {
@@ -61,6 +62,9 @@ header {
     }
     .logo-up {
       text-align: left;
+    }
+    p{
+      color: #8b0000
     }
   }
 }
@@ -122,33 +126,50 @@ header {
     // }
     &:nth-child(1) .menu-list-link {
       background-color: #ffff00;
-      width: 170px;
+      background-color: #ff0000;
+      background-color: #ffff00;
+      // width: 170px;
     }
     &:nth-child(2) .menu-list-link {
       background-color: #fd2727;
+      background-color: #ffa500;
+      background-color: #ff0000;
     }
     &:nth-child(3) .menu-list-link {
       background-color: #00ba00;
+      background-color: #ffff00;
+      background-color: #0000ff;
     }
     &:nth-child(4) .menu-list-link {
+      background-color: #008000;
       background-color: #ffa500;
     }
     &:nth-child(5) .menu-list-link {
       background-color: #1c89bb;
+      background-color: #42aaff;
     }
     &:nth-child(6) .menu-list-link {
-      background-color: #ffffff;
-      color: #000;
+      // background-color: #ffffff;
+      // color: #000;
+      background-color: #0000ff;
+      background-color: #008000;
+      background-color: #00ba00;
     }
     &:nth-child(7) .menu-list-link {
-      background-color: #000000;
-      color: #fff;
+      // background-color: #000000;
+      // color: #fff;
+      background-color: #008000;
+      background-color: #8b00ff;
     }
     &:nth-child(8) a.menu-list-link {
       background-color: #12621d;
+      background-color: #ffffff;
+      color: #000;
     }
     &:nth-child(9) a.menu-list-link {
       background-color: #961cbb;
+      background-color: #000000;
+      color: #fff;
     }
     // ??? не раб - уменьшать соседний передний блок, при наведении на сокращенный
     // ??? не раб - уменьш себя а не соседа
@@ -404,7 +425,7 @@ header {
     justify-content: center;
     width: 100px;
     width: 150px;
-    height:30px;
+    height: 30px;
     height: 40px;
     // ??? не раб - задать всем кроме последнего
     // not:last-child.menu-list-link:
@@ -427,6 +448,7 @@ header {
     // border-bottom-right-radius: 10px;
     // тень li
     box-shadow: -1px -1px 3px #000 inset, 2px 2px 10px black;
+    box-shadow: -1px -1px 3px #000 inset, 1px 1px 3px black;
     &:hover {
       // повесить на hover
       box-shadow: 0 0 3px #555555 inset, 0px 0px 10px black;

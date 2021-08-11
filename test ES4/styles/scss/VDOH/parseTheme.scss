@@ -646,6 +646,7 @@
         height: 40%;
         border-radius: 50%;
         box-shadow: -30px 0 0 $DullGray, 0 30px 0 $DullGray, 30px 0 0 $DullGray;
+        box-shadow: -30px -13px 0 $DullGray, -30px 13px 0 $DullGray, 30px -13px 0 $DullGray, 30px 13px 0 $DullGray;
       }
       // стрелка
       &:after {
@@ -664,7 +665,8 @@
     label {
       position: absolute;
       left: -40%;
-      top: 33%;
+      top: 3%;
+      top: 0%;
       width: 30%;
       height: 30%;
       display: inline-block;
@@ -672,12 +674,22 @@
       text-align: center;
       border-radius: 50px;
       & + label {
-        left: calc(50% - 6px);
-        top: calc(100% + 1px);
+        // left: calc(50% - 6px);
+        // top: calc(100% + 1px);
+        left: -40%;
+        top: 97%;
+        top: 63%;
         & + label {
           right: -40% !important;
           left: 110%;
-          top: 33%;
+          top: 3%;
+          top: 0%;
+          & + label {
+            right: -40% !important;
+            left: 110%;
+            top: 97%;
+            top: 63%;
+          }
         }
       }
     }
@@ -700,8 +712,7 @@
           z-index: 0;
         }
       }
-
-      // изменения в label при нажатии
+// изменение цвета центр. и мини кнопок при нажатии
       // ??? не раб - разобратся как работает такая вложенность
       // начальная позиция на .item3-state-off attr checked в -90'град
       &:checked {
@@ -720,6 +731,7 @@
         & + input[type="radio"] {
           & + i {
             background-color: #ff0;
+            background-color: #00f;
             & + label,
             & + label + label + label {
               background: none;
@@ -729,14 +741,27 @@
           & + input[type="radio"] {
             & + i {
               background-color: #f00;
+              background-color: #ff0;
+              & + label + label,
+              & + label + label + label {
+                background: none;
+              }
+            }
+            // ? 0 положение
+          & + input[type="radio"] {
+            & + i {
+              background-color: #00f;
+              background-color: #f00;
               & + label + label,
               & + label + label + label {
                 background: none;
               }
             }
           }
+          }
         }
       }
+      // изменение стрелки(:after) при нажатии
       // изменения в label при нажатии
       // ??? не раб - разобратся как работает такая вложенность
       // начальная позиция на .item3-state-off attr checked в -90'град
@@ -744,21 +769,33 @@
         // третье положение?
         & + i {
           &:after {
-            transform: rotate(-180deg);
+            transform: rotate(150deg);
+            transform: rotate(210deg);
           }
         }
         // второе положение?
         & + input[type="radio"] {
           & + i {
             &:after {
-              transform: rotate(-90deg);
+              transform: rotate(-30deg);
+              transform: rotate(150deg);
             }
           }
           // первое положение?
           & + input[type="radio"] {
             & + i {
               &:after {
-                transform: rotate(0deg);
+                transform: rotate(30deg);
+                transform: rotate(-30deg);
+              }
+            }
+            // ? 4 положение
+            & + input[type="radio"] {
+              & + i {
+                &:after {
+                  transform: rotate(210deg);
+                  transform: rotate(30deg);
+                }
               }
             }
           }

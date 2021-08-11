@@ -135,33 +135,140 @@ body {
 // Теперь цветовые схемы можно определять в одном месте, выглядеть это будет так:
 // :root {
 body {
-  --baz-bkg-color: var(--light, #858585) var(--dark, #1d0a0a)
-    var(--grayn, #8b0000);
-  --background: var(--light, #ffffff) var(--dark, #080707) var(--grayn, #500000);
-  --text-color: var(--light, #000000) var(--dark, #eaeaea) var(--grayn, #4b4b4b);
-  --link-color: var(--light, #0089c7) var(--dark, #b76c10) var(--grayn, #cde404);
-  --primary-color: var(--light, #165fb9) var(--dark, #8916b9)
-    var(--grayn, #c07d00);
-  /* ... */
+  --baz-bkg-color: var(--dark, #1d0a0a) var(--grayn, #500000)
+    var(--light, #858585);
+  --hed-bkg-color: var(--dark, #1d0a0a) var(--grayn, #8b0000)
+    var(--light, #858585);
+  --background: var(--dark, #080707) var(--grayn, #500000) var(--light, #cccccc); //--grayn, #500000
+  --text-color: var(--dark, #4b4b4b) var(--grayn, #cccccc) var(--light, #000000);
+  --h-color: var(--dark, #4b4b4b) var(--grayn, #8b0000) var(--light, #000000);
+  --h-bkg-color: var(--dark, #1d0a0a) var(--grayn, #ff0) var(--light, #4b4b4b);
+  --link-color: var(--dark, #b76c10) var(--grayn, #cde404) var(--light, #0089c7);
+  --primary-color: var(--dark, #8916b9) var(--grayn, #c07d00)
+    var(--light, #165fb9);
 }
 body {
-  color: var(--text-color);
+  // color: var(--text-color);
   background: var(--background);
-}
-h1,
-p {
-  color: var(--text-color);
-}
-h2-h3 {
-  color: var(--primary-color);
-}
-a {
-  color: var(--link-color);
+  background: var(--baz-bkg-color);
+  // color: #4b4b4b;
+  // color: #858585;
 }
 header {
-  background: var(--baz-bkg-color);
+  background: var(--text-color);
+  background: var(--hed-bkg-color);
+}
+.helloys {
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+    background-color: var(--h-bkg-color);
+    color: var(--h-bkg-color);
+    color: var(--background);
+    color: var(--h-color);
+  }
+  // h1 {
+  //   color: var(--baz-bkg-color);
+  // }
+  // h2 {
+  // }
+}
+.block-body {
+  h3 {
+    // text-align: center;
+    // background-color: var(--h-bkg-color);
+    // color: var(--h-bkg-color);
+    // color: var(--background);
+    color: var(--text-color);
+  }
+  p {
+    // background: var(--baz-bkg-color);
+    // background-color: var(--h-bkg-color);
+    color: var(--text-color);
+  }
 }
 
+// !!!!! настройки стиля-размера
+body {
+  --ON: initial;
+  --OFF: ;
+}
+.style-mid {
+  --mid: var(--ON);
+  --small: var(--OFF);
+  --big: var(--OFF);
+  --off: var(--OFF);
+}
+.style-small {
+  --small: var(--ON);
+  --mid: var(--OFF);
+  --big: var(--OFF);
+  --off: var(--OFF);
+}
+.style-big {
+  --big: var(--ON);
+  --small: var(--OFF);
+  --mid: var(--OFF);
+  --off: var(--OFF);
+}
+.style-off {
+  --off: var(--ON);
+  --small: var(--OFF);
+  --mid: var(--OFF);
+  --big: var(--OFF);
+}
+@media (prefers-color-scheme: big) {
+  .style-default {
+    --big: var(--ON);
+    --small: var(--OFF);
+    --mid: var(--OFF);
+    --off: var(--OFF);
+  }
+}
+body {
+  --width: var(--big, 120px) var(--mid, 100px) var(--small, 80px)
+    var(--off, 80px);
+  --height: var(--big, 35px) var(--mid, 30px) var(--small, 25px)
+    var(--off, 25px);
+  --font-size: var(--big, 22px) var(--mid, 17px) var(--small, 15px)
+    var(--off, 15px);
+  --font-weight: var(--big, 700) var(--mid, 400) var(--small, 200)
+    var(--off, 200);
+  --border: var(--big, 1px solid #000) var(--mid, 1px solid #000)
+    var(--small, 0.5px solid #000) var(--off, 0px solid #000);
+  --border-radius: var(--big, 10px) var(--mid, 5px) var(--small, 2px)
+    var(--off, 0px);
+  // --mar-bl: var(--big, 8px) var(--mid, 5px) var(--small, 2px) var(--off, 0px);
+  // --bor-wid: var(--big, 5px) var(--mid, 2px) var(--small, 1px) var(--off, 0px);
+  --mar-bl: var(--big, 5px) var(--mid, 0px) var(--small, 0px) var(--off, 0px);
+  --bor-wid: var(--big, 5px) var(--mid, 5px) var(--small, 3px) var(--off, 0px);
+
+  --mar-blqw: var(--small, 2px) var(--big, 8px) var(--mid, 5px) var(--off, 0px);
+  --mar-bl-endqw: var(--small, 15px) var(--big, 25px) var(--mid, 17px);
+  --mar-bl-strqw: var(--small, 15px) var(--big, 25px) var(--mid, 17px);
+}
+hr {
+  margin-block-start: var(--mar-bl);
+  margin-block-end: var(--mar-bl);
+  border-width: var(--bor-wid);
+}
+.helloys {
+  h1,
+  h2 {
+    margin: 0px 0px var(--mar-bl);
+  }
+}
+.menu-list__items .menu-list-link {
+  width: var(--width);
+  height: var(--height);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  border: var(--border);
+  border-radius: var(--border-radius);
+}
+
+// !
 // Советы по дизайну
 // Изображения в тёмном режиме
 // ! Применяем фильтр напрямую к тегу <body>
@@ -184,7 +291,7 @@ header {
 //     opacity: 1;
 //   }
 // }
-// куски для тесной темы
+// куски для темной темы
 // background: rgba(0, 0, 0, 0.7);
 // !!! https://stuffandnonsense.co.uk/blog/redesigning-your-product-and-website-for-dark-mode
 // заставит буквы казаться дальше друг от друга, Увеличение интерлиньяжа в абзацах,  увеличить расстояние между словами
@@ -221,53 +328,3 @@ header {
 //     --color-base: #293238;
 //     --color-accent: #ec1a62; }
 //     }
-// !!!!! настройки стиля-размера
-body {
-  /* --ON и --OFF заменяют двоичную переменную */
-  --ON: initial;
-  --OFF: ;
-}
-// .style-mid .style-small .style-big .style-default,
-.style-mid {
-  --mid: var(--ON);
-  --small: var(--OFF);
-  --big: var(--OFF);
-}
-.style-small {
-  --small: var(--ON);
-  --mid: var(--OFF);
-  --big: var(--OFF);
-}
-.style-big {
-  --big: var(--ON);
-  --small: var(--OFF);
-  --mid: var(--OFF);
-}
-/* медиа-запрос теперь нужен только для переключения */
-@media (prefers-color-scheme: big) {
-  .style-default {
-    --big: var(--ON);
-    --small: var(--OFF);
-    --mid: var(--OFF);
-  }
-}
-// Теперь цветовые схемы можно определять в одном месте, выглядеть это будет так:
-// :root {
-body {
-  --width: var(--small, 80px) var(--big, 150px) var(--mid, 100px);
-  --height: var(--small, 25px) var(--big, 40px) var(--mid, 30px);
-  --font-size: var(--small, 15px) var(--big, 25px) var(--mid, 17px);
-  --font-weight: var(--small, 200) var(--big, 700) var(--mid, 400);
-  --border: var(--small, 0.5px solid #000) var(--big, 2px solid #000) var(--mid, 1px solid #000);
-  --border-radius: var(--small, 2px) var(--big, 10px) var(--mid, 5px);
-  /* ... */
-}
-.menu-list__items .menu-list-link {
-  width: var(--width);
-    height: var(--height);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
-  border: var(--border);
-  border-radius: var(--border-radius);
-}
-// !

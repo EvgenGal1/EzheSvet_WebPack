@@ -30,8 +30,8 @@ hr {
   display: block;
   // юникод биди. направления контента
   unicode-bidi: isolate;
-  margin-block-start: 0.5em;
-  margin-block-end: 0.5em;
+  margin-block-start: 7px;
+  margin-block-end: 7px;
   margin-inline-start: auto;
   margin-inline-end: auto;
   // переполнение: скрыто
@@ -170,10 +170,9 @@ h6 {
   // }
 
   h1,
-  h1.hel-title,
   h1.b-s_title {
     font-size: 30px;
-    margin: 0 0 10px;
+    // margin: 0 0 10px;
     // min-height: 50px;
     // padding: 10px 0px;
     // vertical-align: bottom;
@@ -183,6 +182,7 @@ h6 {
   h2,
   h2.hel-title,
   h2.b-s_title {
+    display: none;
     font-size: 25px;
     margin: 0 0 10px;
     // min-height: 40px;
@@ -199,6 +199,7 @@ h6 {
   p,
   p.hel-text,
   p.b-s_text {
+    display: none;
     flex: 1 1 auto;
     // min-height: 175px;
     // margin: 10px 03%;
@@ -211,7 +212,7 @@ h6 {
     color: #707070;
     color: black;
     background: #a3a3a3;
-    border: 1px solid #f00;
+    outline: 1px solid #f00;
     &::first-letter {
       font-size: 30px;
       color: #ff0000;
@@ -225,25 +226,34 @@ h6 {
 
 // большой текст. блок ============================================================
 .block-body {
+  // color: #000;
+  // background: #a3a3a3;
+  // border: 1px solid #f00;
+  // overflow: hidden;
   min-height: 200px;
   height: auto;
-  padding: 10px 10px;
-  // margin: 0px 0px -20px 0px;
+  padding: 10px 0px;
   font-family: monospace;
+  font-family: cursive;
   font-weight: 400;
-  color: #000;
-  background: #a3a3a3;
-  border: 1px solid #f00;
-  // overflow: hidden;
+  color: #707070;
+  color: #ccc;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  word-break: break-all;
+  font-weight: 400;
+  line-height: 1.2;
   h3 {
     padding: 0px 0px;
     font-size: 18px;
     font-family: monospace;
     font-weight: 400;
+    font-family: cursive;
   }
   p {
     font-size: 18px;
     font-family: monospace;
+    font-family: cursive;
   }
 }
 

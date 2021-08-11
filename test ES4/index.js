@@ -300,34 +300,47 @@ if (currentStyle == "mid") {
   document.body.classList.add("style-big");
 } else if (currentStyle == "small") {
   document.body.classList.add("style-small");
+} else if (currentStyle == "off") {
+  document.body.classList.add("style-off");
 }
 var swLabelAll = document.querySelectorAll(".sw7-label");
 swLabelAll.forEach(function (btn) {
-  const sw7Of = document.querySelector(".sw7-off");
-  const sw7On = document.querySelector(".sw7-on");
-  const sw7Nul = document.querySelector(".sw7-null");
+  const sw7big = document.querySelector(".sw7-big");
+  const sw7small = document.querySelector(".sw7-small");
+  const sw7mid = document.querySelector(".sw7-mid");
+  const sw7off = document.querySelector(".sw7-off");
   // ???не раб - по id не вызов. для смены стиля по нажатию на центр в 3х циферблатную кнопку
   // const sw7Of = document.querySelectorById(".item3-state-off");
   // const sw7On = document.querySelectorById(".item3-state-on");
   // const sw7Nul = document.querySelectorById(".item3-state-null");
   btn.addEventListener("click", function () {
-    if (btn == sw7Nul) {
+    if (btn == sw7big) {
+      document.body.classList.remove("style-mid");
       document.body.classList.remove("style-small");
-      document.body.classList.remove("style-big");
-      document.body.classList.add("style-mid");
-      var style = "mid";
+      document.body.classList.remove("style-off");
+      document.body.classList.add("style-big");
+      var style = "big";
     }
-    if (btn == sw7On) {
+    if (btn == sw7small) {
       document.body.classList.remove("style-big");
       document.body.classList.remove("style-mid");
+      document.body.classList.remove("style-off");
       document.body.classList.add("style-small");
       var style = "small";
     }
-    if (btn == sw7Of) {
+    if (btn == sw7mid) {
+      document.body.classList.remove("style-big");
       document.body.classList.remove("style-small");
+      document.body.classList.remove("style-off");
+      document.body.classList.add("style-mid");
+      var style = "mid";
+    }
+    if (btn == sw7off) {
+      document.body.classList.remove("style-big");
       document.body.classList.remove("style-mid");
-      document.body.classList.add("style-big");
-      var style = "big";
+      document.body.classList.remove("style-small");
+      document.body.classList.add("style-off");
+      var style = "off";
     }
     localStorage.setItem("style", style);
     // localStorage.clear();
