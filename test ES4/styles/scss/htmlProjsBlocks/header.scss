@@ -7,7 +7,10 @@ header {
   height: 150px;
   padding: 25px 03%;
   background-color: #8b0000;
-  box-shadow: #000000 3px 5px 20px 0.5px inset, #000000 -3px -1px 10px 0.5px inset;
+  box-shadow: #000000 3px 5px 20px 0.5px inset,
+    #000000 -3px -1px 10px 0.5px inset;
+  box-shadow: #000000 10px 10px 30px 7px inset,
+    #000000 -10px -10px 30px 7px inset;
 
   @media (max-width: 553px) {
     // @media (max-width: $md4+px) {
@@ -63,8 +66,8 @@ header {
     .logo-up {
       text-align: left;
     }
-    p{
-      color: #8b0000
+    p {
+      color: #8b0000;
     }
   }
 }

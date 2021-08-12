@@ -135,44 +135,68 @@ body {
 // Теперь цветовые схемы можно определять в одном месте, выглядеть это будет так:
 // :root {
 body {
-  --baz-bkg-color: var(--dark, #1d0a0a) var(--grayn, #500000)
-    var(--light, #858585);
-  --hed-bkg-color: var(--dark, #1d0a0a) var(--grayn, #8b0000)
-    var(--light, #858585);
+  // --baz-bkg-color: var(--dark, #1d0a0a) var(--grayn, #500000)    var(--light, #858585);
+  --baz-bkg-color: var(--dark, #140f0b) var(--grayn, #333) var(--light, #858585);
+  // --hed-bkg-color: var(--dark, #500000) var(--grayn, #8b0000) var(--light, #4b4b4b);
+  --hed-bkg-color: var(--dark, #35170c) var(--grayn, #8b0000)
+    var(--light, #4b4b4b);
+  --hed-bkg-color: var(--dark, #4b0000) var(--grayn, #8b0000)
+    var(--light, #4b4b4b);
   --background: var(--dark, #080707) var(--grayn, #500000) var(--light, #cccccc); //--grayn, #500000
-  --text-color: var(--dark, #4b4b4b) var(--grayn, #cccccc) var(--light, #000000);
-  --h-color: var(--dark, #4b4b4b) var(--grayn, #8b0000) var(--light, #000000);
-  --h-bkg-color: var(--dark, #1d0a0a) var(--grayn, #ff0) var(--light, #4b4b4b);
+  // --text-color: var(--dark, #4b4b4b) var(--grayn, #cccccc) var(--light, #000000);
+  // --text-color: var(--dark, #555555) var(--grayn, #4b0000) var(--light, #000000);
+  --text-color: var(--dark, #555555) var(--grayn, #1b0000) var(--light, #000000);
+  // --h-color: var(--dark, #555555) var(--grayn, #8b0000) var(--light, #000000);
+  // --h-color: var(--dark, #4b0000) var(--grayn, #8b0000) var(--light, #000000);
+  // --h-bkg-color: var(--dark, #C34D0A) var(--grayn, #ff0) var(--light, #ccc);
+  --hel-p-bkg-color: var(--dark, #4D220E) var(--grayn, #555) var(--light, #ccc); //--dark, #58290e
+  --hel-p-color: var(--dark, #4b0000) var(--grayn, #8b0000) var(--light, #000000);
+  --hel-p-color: var(--dark, #1b0000) var(--grayn, #8b0000) var(--light, #000000);
+  --hel-p-color: var(--dark, #555555) var(--grayn, #8b0000) var(--light, #000000);
+  // --h-bkg-color: var(--dark, #3f2512) var(--grayn, #555) var(--light, #ccc); //--dark, #58290e
+  --hel-h-color: var(--dark, #6b0000) var(--grayn, #8b0000) var(--light, #000000);
+  --hel-h-bkg-color: var(--dark, #35170c) var(--grayn, #fad201) var(--light, #ccc); //--dark, #58290e
   --link-color: var(--dark, #b76c10) var(--grayn, #cde404) var(--light, #0089c7);
   --primary-color: var(--dark, #8916b9) var(--grayn, #c07d00)
     var(--light, #165fb9);
 }
+// #C3B6A2 #313B44 #232B32
+// background: #C34D0A;
+// background: #FF4F00;
+// background: #8b0000;
+// background: #232B32;
+// color: #8b0000;
+// color: #500000;
+// color: #200c0c;
 body {
   // color: var(--text-color);
-  background: var(--background);
+  background: #1d0a0a;
   background: var(--baz-bkg-color);
+  // background: #200c0c;
   // color: #4b4b4b;
   // color: #858585;
 }
 header {
-  background: var(--text-color);
   background: var(--hed-bkg-color);
 }
 .helloys {
+  // background: #35170c;
+  // // background: #3F2512;
+  // // background: #4D220E;
+  // color: #4b0000;
+  // color: #8b0000;
   h1,
   h2,
   h3 {
     text-align: center;
-    background-color: var(--h-bkg-color);
-    color: var(--h-bkg-color);
-    color: var(--background);
-    color: var(--h-color);
+    background-color: var(--hel-h-bkg-color);
+    color: var(--hel-h-color);
   }
-  // h1 {
-  //   color: var(--baz-bkg-color);
-  // }
-  // h2 {
-  // }
+  p {
+    // background: #58290e;
+    background-color: var(--hel-p-bkg-color);
+    color: var(--hel-p-color);
+  }
 }
 .block-body {
   h3 {
@@ -180,13 +204,15 @@ header {
     // background-color: var(--h-bkg-color);
     // color: var(--h-bkg-color);
     // color: var(--background);
+    background-color: var(--h-bkg-color);
     color: var(--text-color);
   }
-  p {
-    // background: var(--baz-bkg-color);
-    // background-color: var(--h-bkg-color);
-    color: var(--text-color);
-  }
+  // p {
+  // background: var(--baz-bkg-color);
+  // background-color: var(--h-bkg-color);
+  color: var(--text-color);
+  // color: #500000;
+  // }
 }
 
 // !!!!! настройки стиля-размера

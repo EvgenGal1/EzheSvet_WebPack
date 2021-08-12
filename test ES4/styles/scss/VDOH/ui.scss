@@ -62,13 +62,15 @@ p {
 }
 
 // станд отст для h
-h1,
+h1{
+  padding: 10px 03%;
+}
 h2,
 h3,
 h4,
 h5,
 h6 {
-  padding: 10px 03%;
+  display: inline-block;
 }
 
 // классы отступов по бокам и с верху =====================================================
@@ -159,6 +161,7 @@ h6 {
   color: #8b0000;
   font-family: cursive;
   margin: 0px 0px;
+  // outline: 1px solid #f00;
   // overflow: hidden;
   // background: yellow;
 
@@ -199,7 +202,7 @@ h6 {
   p,
   p.hel-text,
   p.b-s_text {
-    display: none;
+    // display: none;
     flex: 1 1 auto;
     // min-height: 175px;
     // margin: 10px 03%;
@@ -209,13 +212,15 @@ h6 {
     // font-size: 18px;
     font-size: 15px;
     font-weight: 400;
-    color: #707070;
-    color: black;
-    background: #a3a3a3;
-    outline: 1px solid #f00;
+    // color: #707070;
+    // color: black;
+    // background: #a3a3a3;
+    // outline: 1px solid #f00;
+    word-spacing: 2px;
+    letter-spacing: 2px;
     &::first-letter {
       font-size: 30px;
-      color: #ff0000;
+      // color: #ff0000;
     }
   }
   // ??? не раб оттолкнуть всё кроме h1, h2 ???
