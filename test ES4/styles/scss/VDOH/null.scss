@@ -32,7 +32,7 @@ body {
   margin: 0;
   padding: 0;
   // ??? не раб - SassError: Undefined variable. - min-width: $minwidth;
-  // min-width: $minwidth;
+  min-width: $minwidth;
   position: relative;
   width: 100%;
   color: #000;

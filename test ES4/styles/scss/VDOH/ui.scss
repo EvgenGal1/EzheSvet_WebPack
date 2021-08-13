@@ -11,14 +11,12 @@ body {
   // margin: 0 20px;
 }
 
-.container {
-  // @include flexbox();
-  margin: 0 auto;
-  //
-  max-width: 880px;
-  margin: 0 auto;
-  width: 100%;
-}
+// .container {
+//   // @include flexbox();
+//   max-width: 880px;
+//   margin: 0 auto;
+//   width: 100%;
+// }
 
 .content {
   background-color: #cccccc;
@@ -62,7 +60,7 @@ p {
 }
 
 // станд отст для h
-h1{
+h1 {
   padding: 10px 03%;
 }
 h2,
@@ -230,7 +228,8 @@ h6 {
 }
 
 // большой текст. блок ============================================================
-.block-body {
+.block-body,
+.centr-text {
   // color: #000;
   // background: #a3a3a3;
   // border: 1px solid #f00;
@@ -270,57 +269,139 @@ h6 {
   // ??? не раб - SassError: Undefined mixin - @include flexbox();
   // @include flexbox();
   display: flex;
+  max-width: 1308px;
   font-size: 0;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 
 // обход картинки. 1 вар. float + доделка ibg ===========================================
-.block-img,
-.block-img2 {
-  flex: 0 1 15%;
-  // flex-grow: 0; //* гибкий рост
-  // flex-shrink: 1; //* гибкое сжатие
-  // flex-basis: 20%; //* гибкая основа
-  width: 100%;
-  height: 100%;
-  // margin: 0px 0px 20px 20px;
-  margin: 0px 0px 2% 2%;
-  padding: 5px;
-  outline: 3px dashed red;
-  &:first-child {
-    // margin: 0px 0px 20px 0px;
-    margin: 0px 0px 0px 0px;
-  }
-  a.block-img__link {
-    // outline: 3px dashed red;
-    // border: 3px solid #ccc;
-    display: block;
-    padding: 0px 0px 100% 0px;
-  }
-  &:hover {
-    outline: 3px solid red;
+.catalog-block {
+  .block-img,
+  .block-img2,
+  .block-img3,
+  .block-img4 {
+    flex: 0 1 15%;
+    // flex-grow: 0; //* гибкий рост
+    // flex-shrink: 1; //* гибкое сжатие
+    // flex-basis: 20%; //* гибкая основа
+    width: 100%;
+    height: 100%;
+    // margin: 0px 0px 20px 20px;
+    margin: 0px 0px 2% 2%;
+    padding: 5px;
+    outline: 3px dashed red;
+    &:first-child {
+      // margin: 0px 0px 20px 0px;
+      margin: 0px 0px 0px 0px;
+    }
     a.block-img__link {
-      // ??? не раб - обводка начин только после transition-delay
-      outline: 3px solid #ff0;
-      // border: 3px solid #ff0;
+      // outline: 3px dashed red;
+      // border: 3px solid #ccc;
+      display: block;
+      padding: 0px 0px 100% 0px;
+      // padding: 5px;
+      // outline: 3px dashed red;
+    }
+    a.block-img__link- {
+      // outline: 3px dashed red;
+      // border: 3px solid #ccc;
+      display: block;
+      // padding: 0px 0px 100% 0px;
+      padding: 5px;
+      outline: 3px dashed red;
+    }
+    &:hover {
+      outline: 3px solid red;
+      a.block-img__link {
+        // ??? не раб - обводка начин только после transition-delay
+        outline: 3px solid #ff0;
+        // border: 3px solid #ff0;
+      }
+    }
+
+    @media (max-width: 993px) {
+      // @media (max-width: $md2+px) {
+      flex: 0 1 20%;
+      &:nth-last-child(-n + 2) {
+        margin: inherit;
+        margin: 2% 0px 0px 0px; // * у последних двух
+      }
     }
   }
+}
+.centr-cont- {
+  .cont-block- {
+    // display: inline-block;
 
-  @media (max-width: 993px) {
-    // @media (max-width: $md2+px) {
-    flex: 0 1 20%;
-    &:nth-last-child(-n + 2) {
-      margin: inherit;
-      margin: 2% 0px 0px 0px; // * у последних двух
+    // если текста мало
+    &:nth-child(even) .block-img- {
+      float: left;
+    }
+    &:nth-child(odd) .block-img- {
+      float: right;
+    }
+    // если текста мало
+
+    // отличие текста
+    &:nth-child(even) .block-text- {
+      color: green;
+    }
+    &:nth-child(odd) .block-text- {
+      color: red;
+    }
+    .block-img- {
+      .block-img__link- {
+        .img-bl- {
+        }
+      }
+      .ibg- {
+      }
+    }
+
+    .block-text- {
+      // если текста мало
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 250px;
+      // если текста мало
+      &:first-child{
+        // если текста много, для обтекания откл flex
+        display: block;
+        color: blue;
+        // если текста много, для обтекания откл flex
+      }
+      .w12q {
+        display: none;
+        display: block;
+      }
     }
   }
 }
 
-// .block-img-back__content,
-// .block-img__link-back {
-//   // display: none;
-// }
+.button{
+  display: inline-block;
+    border-radius: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    position: relative;
+    max-width: 270px;
+    padding: .35em 1em;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: inherit;
+    vertical-align: middle;
+    text-align: center;
+    white-space: normal;
+    word-wrap: normal;
+    background-color: #302683;
+    border: 3px solid #302683;
+}
 
 //</ОСНОВНОЙ БЛОК>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄
 

@@ -7,6 +7,7 @@
   // grin на areas
   // хороший адаптив. увеличить высоту блока helloys сранимый с картинкой. до размеров таблицы
   grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
   // grid-template-columns: 1fr repeat(3, auto) 1fr;
   // grid-template-columns: repeat(5, auto);
   // grid-template-columns: minmax(100px, 200px) 1fr 1fr;
@@ -49,7 +50,7 @@
     justify-items: center;
     align-items: center;
   }
-  .block-body {
+  .block-body, .centr-text {
     grid-area: b-b;
     // z-index: 1;
     // grid-column: 1/4;
@@ -58,6 +59,26 @@
     justify-items: center;
     align-items: center;
   }
+  
+  .block-img3 {
+    grid-area: img-b3;
+    margin: 0;
+  }
+  .block-img4 {
+    grid-area: img-b4;
+    margin: 0;
+  }
+  .block-sides {
+    grid-area: b-ss;
+    justify-items: center;
+    align-items: center;
+  }
+  .block-bodys {
+    grid-area: b-bs;
+    justify-items: center;
+    align-items: center;
+  }
+
   .character {
     // grid-area: cha;
     grid-column: 1/4;
@@ -72,12 +93,17 @@
   }
 }
 
-.central-block {
-  &.cont-grid {
+// .central-block {
+  // &.cont-grid {
+  .cont-grid {
     grid-template-areas:
       "img-b b-s b-s b-s b-s"
-      "b-b b-b b-b b-b img-b2";
+      // "b-s b-s b-s b-s b-s"
+      // "b-s"
+      "b-b b-b b-b b-b img-b2"
+      "img-b3 b-ss b-ss b-ss b-ss"
+      "b-bs b-bs b-bs b-bs img-b4";
   }
-}
+// }
 
 //</grid.scss(Grid сетки)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄
