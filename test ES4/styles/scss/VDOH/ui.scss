@@ -102,7 +102,9 @@ h6 {
 //   // grid-area: kup;
 //   // justify-self: center;
 // }
-.kup #kup {
+.kup #kup,
+.kup,
+#kup, #sub-detail- {
   grid-area: kup;
   // float: right;
   border-radius: 1px;
@@ -332,7 +334,16 @@ h6 {
 }
 .centr-cont- {
   .cont-block- {
-    // display: inline-block;
+    // межбуквенное расстояние
+    letter-spacing: 1px;
+    // пробел между словами
+    word-spacing: 1px;
+    // перенос строк внутри слов
+    word-break: break-all;
+    // перенос длянных слов
+    word-wrap: break-word;
+    // высота строки
+    line-height: 1.2;
 
     // если текста мало
     &:nth-child(even) .block-img- {
@@ -350,12 +361,18 @@ h6 {
     &:nth-child(odd) .block-text- {
       color: red;
     }
+
     .block-img- {
+      display: flex;
+      flex-direction: column;
+          margin: 0 0 17px 17px;
       .block-img__link- {
         .img-bl- {
+          font-family: inherit;
         }
       }
       .ibg- {
+        font-family: inherit;
       }
     }
 
@@ -367,40 +384,43 @@ h6 {
       align-items: center;
       min-height: 250px;
       // если текста мало
-      &:first-child{
+      &:first-child {
         // если текста много, для обтекания откл flex
-        display: block;
+        // display: block;
         color: blue;
         // если текста много, для обтекания откл flex
       }
-      .w12q {
+      .text-short{
+        font-family: inherit;
+      }
+      .text-detail- {
         display: none;
-        display: block;
+        // display: block;
       }
     }
   }
 }
 
-.button{
+.button {
   display: inline-block;
-    border-radius: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    touch-action: manipulation;
-    position: relative;
-    max-width: 270px;
-    padding: .35em 1em;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: inherit;
-    vertical-align: middle;
-    text-align: center;
-    white-space: normal;
-    word-wrap: normal;
-    background-color: #302683;
-    border: 3px solid #302683;
+  border-radius: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  position: relative;
+  max-width: 270px;
+  padding: 0.35em 1em;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: inherit;
+  vertical-align: middle;
+  text-align: center;
+  white-space: normal;
+  word-wrap: normal;
+  background-color: #302683;
+  border: 3px solid #302683;
 }
 
 //</ОСНОВНОЙ БЛОК>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄

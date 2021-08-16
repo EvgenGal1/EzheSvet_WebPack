@@ -1,6 +1,6 @@
 // import IndexReact from "./js/indexReact.jsx";
 // import "./styles/css/style.css";
-import { fn } from "jquery";
+// import { fn } from "jquery";
 import "./styles/scss/styles.scss";
 // import "./styles/scss/utils/mixins.scss";
 // import "./styles/scss/VDOH/null.scss";
@@ -347,47 +347,36 @@ swLabelAll.forEach(function (btn) {
     // localStorage.clear();
   });
 });
-console.log(1)
 // !!!!! настройки стиля-размера
 
 // !
-// let najat = document.querySelectorById("#kup");
-// najat.addEventListener("click", function () {
-//   console.log(12)
-//   let w12q = document.querySelectorByClassName(".w12q");
-//   // w12q.style.
-//   if (w12q.style.display === "flex") {
-//     w12q.style.display = "block";
-//   } else {
-//     w12q.style.display = "flex";
-//   }
-// });
-
-// let najat2 = document.querySelectorById("#kup2");
-// najat2.addEventListener("click", function () {
-//   console.log(2)
-//   let w12q = document.querySelectorByClassName(".w12q");
-//   let bltx = document.querySelectorByClassName('.block-text-');
-//   // w12q.style.
-//   if (bltx.style.display === "flex") {
-//     w12q.style.display = "block";
-//   } else if (bltx.style.display === "block"){
-//     bltx.style.display = "flex";
-//     w12q.style.display = "none";
-//   }
-// });
-
-// let but = document.querySelectorById(".button");
-// but.addEventListener("click", function () {
-//   console.log(2)
-//   let w12q = document.querySelectorByClassName(".w12q");
-//   let bltx = document.querySelectorByClassName('.block-text-');
-//   // w12q.style.
-//   if (bltx.style.display === "flex") {
-//     w12q.style.display = "block";
-//   } else if (bltx.style.display === "block"){
-//     bltx.style.display = "flex";
-//     w12q.style.display = "none";
-//   }
-// });
+function clickText() {
+  console.log(1);
+  const najat = document.querySelectorAll("#sub-detail-");
+  const detail = document.querySelector(
+    ".centr-cont- .cont-block- .block-text- .text-detail-"
+  );
+  // detail.forEach(function (det) {
+  const blTx = document.querySelector(".centr-cont- .cont-block- .block-text-");
+  najat.forEach(function (idI) {
+    console.log(2);
+    idI.addEventListener("click", function () {
+      // const detail = document.querySelector(
+      //   ".centr-cont- .cont-block- .block-text- .detail"
+      // );
+      console.log(3);
+      if (blTx.style.display == "block") {
+        console.log(4);
+        blTx.style.display = "flex";
+        detail.style.display = "none";
+      } else if ((blTx.style.display = "flex")) {
+        console.log(5);
+        blTx.style.display = "block";
+        detail.style.display = "block";
+      }
+    });
+  });
+  // });
+}
+clickText();
 // !

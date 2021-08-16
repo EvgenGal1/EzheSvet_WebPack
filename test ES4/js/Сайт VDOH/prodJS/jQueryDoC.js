@@ -388,7 +388,7 @@ function clickTokenElShowExemPl() {
               color: "red",
               transform: "rotate(-90deg)",
             });
-          console.log(2);
+          // console.log(2);
           // ??? не раб - transform'rotate(90deg) и .animate()
         } else {
           $(this).show().next(".ttPlus").fadeToggle(100);
