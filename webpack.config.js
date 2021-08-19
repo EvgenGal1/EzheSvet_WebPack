@@ -172,7 +172,7 @@ const htmlPlugins = generateHtmlPlugins("./test ES4/html/views");
 // описание plugin в plugins:стандарт + описание
 const plugins = () => {
   const base = [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       minify: {
         collapseWhitespace: isProd,
@@ -180,7 +180,7 @@ const plugins = () => {
       chunks: ["main"],
       filename: `${PATHS.dist}index.html`,
       template: `${PATHS.src}index.html`,
-      minify: false
+      minify: false,
     }),
     // new HTMLWebpackPlugin({
     // minify: {
@@ -215,6 +215,7 @@ const plugins = () => {
         // },
       ],
     }),
+    // вызов .concat(htmlPlugins) для f() generateHtmlPlugins
   ].concat(htmlPlugins);
   // analyzer подк. е/и Prod
   // if (isProd) {
@@ -323,7 +324,7 @@ module.exports = {
     // только в разраб
     hot: isDev,
     // показ ошб. на экране а не в консоле
-    overlay: true,
+    // overlay: true,
     // из док WP
     // contentBase: path.join(__dirname, 'dist'),
     // contentBase: [

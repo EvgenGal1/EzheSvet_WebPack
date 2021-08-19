@@ -34,8 +34,11 @@ hr {
   margin-inline-end: auto;
   // переполнение: скрыто
   overflow: hidden;
-  border-style: inset;
+  border-style: groove;
+  border-style: ridge;
+  border-color: #8b0000;
   border-width: 1px;
+  clear: both;
 }
 
 a {
@@ -104,11 +107,13 @@ h6 {
 // }
 .kup #kup,
 .kup,
-#kup, #sub-detail- {
+#kup,
+#sub-detail- {
   grid-area: kup;
   // float: right;
   border-radius: 1px;
   width: 250px;
+  height: 57px;
   background-color: #fc0101;
   font-family: fantasy;
   font-size: 30px;
@@ -305,7 +310,7 @@ h6 {
       // padding: 5px;
       // outline: 3px dashed red;
     }
-    a.block-img__link- {
+    a.block-img__link-- {
       // outline: 3px dashed red;
       // border: 3px solid #ccc;
       display: block;
@@ -332,8 +337,10 @@ h6 {
     }
   }
 }
+// !
 .centr-cont- {
   .cont-block- {
+    clear: both;
     // межбуквенное расстояние
     letter-spacing: 1px;
     // пробел между словами
@@ -347,10 +354,12 @@ h6 {
 
     // если текста мало
     &:nth-child(even) .block-img- {
+      margin: 15px 15px 15px 0;
       float: left;
     }
     &:nth-child(odd) .block-img- {
       float: right;
+      margin: 15px 0 15px 15px;
     }
     // если текста мало
 
@@ -365,7 +374,7 @@ h6 {
     .block-img- {
       display: flex;
       flex-direction: column;
-          margin: 0 0 17px 17px;
+      // margin: 0 0 17px 17px;
       .block-img__link- {
         .img-bl- {
           font-family: inherit;
@@ -382,7 +391,8 @@ h6 {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 250px;
+      padding-top: 15px;
+      min-height: 307px;
       // если текста мало
       &:first-child {
         // если текста много, для обтекания откл flex
@@ -390,7 +400,7 @@ h6 {
         color: blue;
         // если текста много, для обтекания откл flex
       }
-      .text-short{
+      .text-short {
         font-family: inherit;
       }
       .text-detail- {
@@ -400,7 +410,7 @@ h6 {
     }
   }
 }
-
+// !
 .button {
   display: inline-block;
   border-radius: 0;
