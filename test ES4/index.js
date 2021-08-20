@@ -1,6 +1,7 @@
 // import IndexReact from "./js/indexReact.jsx";
 // import "./styles/css/style.css";
 // import { fn } from "jquery";
+// import "./js/Сайт VDOH/prodJS/jQuery";
 import "./styles/scss/styles.scss";
 // import "./styles/scss/utils/mixins.scss";
 // import "./styles/scss/VDOH/null.scss";
@@ -365,7 +366,7 @@ function clickText() {
   // contBl.forEach(function (cont) {
   // cont.subDet.forEach(function (idI) {
   for (var i = 0; i < contBl.length; i++) {
-  // for (var i = 0; i < contBl.length; i+=1) {
+    // for (var i = 0; i < contBl.length; i+=1) {
     console.log(2);
     // subDet.forEach(function (idI) {
     // const subDet = cont.querySelectorAll("#sub-detail-");
@@ -373,8 +374,18 @@ function clickText() {
     // contBlN[i].style.color == "blue";
     // contBlN[i].style.display == "block"
     console.log(2.1);
-    const subDet = contBl[i].querySelector("#sub-detail-");
+    // const subDet = contBl[i].querySelector("#sub-detail-");
+    // const subDet = contBl[i].querySelector("#sub-detail-");
+    // const subDet = contBl[i].querySelectorAll(".block-img- .sub-");
+    // const subDet = contBl[i].querySelectorAll(".sub-");
+    // const subDet = contBl[i].querySelector(".sub-");
+    const subDet = contBl[i].querySelector(".sub-");
+    // const subDetTh = this.attr('id');
     console.log(2.2);
+    // var ellements = document.getElementsByClassName("tohide");
+    // for(var i=0;i<ellements.length;i++) {
+    //    ellements[i].style.display="none";
+    // }
     // var lyricsBox = document.getElementsByClassName("lyricsBox");
     // var displaySetting = lyricsBox[0].style.display;
     // if (displaySetting == "block") {
@@ -384,7 +395,9 @@ function clickText() {
     // for (var i=0;i<elems.length;i+=1){
     //   elems[i].style.display = 'block';
     // }
-    subDet.addEventListener("click", function () {
+    // subDet.addEventListener("click", function () {
+    subDet.addEventListener("click", () => {
+      // subDetTh.addEventListener("click", function () {
       console.log(3);
       const blText = document.querySelectorAll(".block-text-");
       // const blText = document.getElementsByClassName("block-text-");
@@ -400,7 +413,7 @@ function clickText() {
       // if (blText.style.display == "block") {
       // if (displayBlText.style.display == "block") {
       // if (displayBlText == "block") {
-      if (displayBlText == "block" &&  displayTextDet =="block") {
+      if (displayBlText == "block" && displayTextDet == "block") {
         console.log(4);
         // blText.style.display = "flex";
         blText[0].style.display = "flex";
@@ -414,7 +427,7 @@ function clickText() {
         console.log(4.2);
         // } else if ((blText.style.display = "flex")) {
         // } else if ((displayBlText.style.display = "flex")) {
-      // } else if ((displayBlText = "flex")) {
+        // } else if ((displayBlText = "flex")) {
       } else {
         console.log(5);
         // blText.style.display = "block";
@@ -432,7 +445,7 @@ function clickText() {
   }
   // });
 }
-clickText();
+// clickText();
 
 function clickText2() {
   const contBl = Array.from(document.querySelectorAll(".cont-block-"));
@@ -466,4 +479,52 @@ function clickText2() {
   });
 }
 // clickText2();
+// !
+
+//! блоки на/для jQ
+function clickText3() {
+  console.log(1);
+  const btn = document.querySelectorAll(".btn");
+  // querySelectorAll
+  // querySelectorBy
+  // const btn = document.querySelector(".btn");
+  console.log(1.1);
+  btn.addEventListener("click", function () {
+    console.log(2);
+    const block = document.querySelector(".block");
+    // block.classList.remove("active");
+    block.classList.toggle("active");
+    console.log(3);
+    // var num = this.attr("data-num");
+    // var num = this.querySelector(".btn").getAttribute('data-num')
+    var num = this.getAttribute("data-num");
+    console.log(4);
+    const IdBlock = document.querySelector("#block" + num);
+    console.log(5);
+    IdBlock.classList.add("active");
+    // IdBlock.classList.toggle("active");
+    console.log(6);
+  });
+  // $('.btn').click(function(event) {
+  // 	$('.block').removeClass('active')
+  // 	var num = $(this).attr('data-num');
+  // 	$('#block'+num).addClass('active')
+  // });
+  {
+    /* <div class="btn btn1" data-num="1"></div>
+<div class="btn btn2" data-num="2"></div>
+<div class="block" id="block1"></div>
+<div class="block" id="block2"></div> */
+  }
+}
+// clickText3();
+
+function clickText4() {
+  $(".btn").click(function () {
+    $(".block").removeClass("active");
+    var num = $(this).attr("data-num");
+    $("#block" + num).toggle("active");
+  });
+}
+clickText4();
 // !

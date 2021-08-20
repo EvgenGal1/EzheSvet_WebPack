@@ -141,6 +141,7 @@ const PATHS = {
   views: path.join(__dirname, "./test ES4/html/views/"),
   // Путь к блокам HTML
   includes: path.resolve(__dirname, "./test ES4/html/includes/"),
+}
 ```
 
 #### SCSS
@@ -154,6 +155,7 @@ const PATHS = {
   }
   @include bgr_r-b;
   @media (max-width: $md2+px) {
+    font-size: 15px;
   }
 }
 ```
@@ -164,7 +166,6 @@ const PATHS = {
 function iliPadd() {
   var contSp = $("span.cont:contains()");
   var contSpIli = $("span.cont:contains('|'), span.cont:contains('=')");
-  $(".gap").css("display", "none");
   $(contSp).css("padding", "0 1px");
   $(".token__el span")
     .filter(contSpIli)
