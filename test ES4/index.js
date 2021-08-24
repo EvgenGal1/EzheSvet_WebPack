@@ -449,47 +449,38 @@ function clickText() {
 
 function clickText2() {
   const contBl = Array.from(document.querySelectorAll(".cont-block-"));
-  const subDet = users.map((item) => item.querySelector(".#sub-detail-"));
-  const blText = document.querySelector(".block-text-");
-  const textDet = document.querySelector(".text-detail-");
-  // Тоже самое, что Array.from(document.querySelectorAll('.trigger'))
-  console.log(1);
+  // Тоже самое, что Array.from(document.querySelectorAll('#sub-detail-'))
+  const subDet = contBl.map((item) => item.querySelector("#sub-detail-"));
   subDet.forEach((item, i) => {
-    console.log(2);
-    // проходимся по каждому тригеру
-    // item.addEventListener("click", (e) => {
+    const blText = contBl[i].querySelector(".block-text-");
+    const textDet = contBl[i].querySelector(".text-detail-");
     item.addEventListener("click", () => {
-      // ставим на него слушатель события клика
-      contBl[i].classList.toggle("active"); // что-то делаем
-
-      console.log(3);
-      if (
-        contBl[i].classList.toggle("active") &&
-        blText.style.display == "block"
-      ) {
-        console.log(4);
-        blText.style.display = "flex";
-        textDet.style.display = "none";
-      } else if ((blText.style.display = "flex")) {
-        console.log(5);
+      contBl[i].classList.toggle("active");
+      if (contBl[i].classList.contains("active")) {
         blText.style.display = "block";
         textDet.style.display = "block";
+      } else {
+        blText.style.display = "flex";
+        textDet.style.display = "none";
       }
     });
   });
 }
-// clickText2();
+clickText2();
 // !
 
 //! блоки на/для jQ
 function clickText3() {
   console.log(1);
   const btn = document.querySelectorAll(".btn");
+  // document.querySelectorAll(".btn").addEventListener("click", function () {
+  // document.querySelector(".btn").addEventListener("click", function () {
   // querySelectorAll
   // querySelectorBy
   // const btn = document.querySelector(".btn");
   console.log(1.1);
-  btn.addEventListener("click", function () {
+  // btn.addEventListener("click", function () {
+  this.addEventListener("click", function () {
     console.log(2);
     const block = document.querySelector(".block");
     // block.classList.remove("active");
@@ -505,17 +496,6 @@ function clickText3() {
     // IdBlock.classList.toggle("active");
     console.log(6);
   });
-  // $('.btn').click(function(event) {
-  // 	$('.block').removeClass('active')
-  // 	var num = $(this).attr('data-num');
-  // 	$('#block'+num).addClass('active')
-  // });
-  {
-    /* <div class="btn btn1" data-num="1"></div>
-<div class="btn btn2" data-num="2"></div>
-<div class="block" id="block1"></div>
-<div class="block" id="block2"></div> */
-  }
 }
 // clickText3();
 
@@ -527,4 +507,78 @@ function clickText4() {
   });
 }
 clickText4();
-// !
+//! блоки на/для jQ
+//! блоки проб 1
+// !!!https://ru.stackoverflow.com/questions/1200678/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5-%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2-%D0%BF%D0%BE-%D0%BA%D0%BB%D0%B8%D0%BA%D1%83-js
+function clickText5() {
+  const users = Array.from(document.querySelectorAll(".user"));
+  const triggers = users.map((item) => item.querySelector(".trigger")); // Тоже самое, что Array.from(document.querySelectorAll('.trigger'))
+
+  triggers.forEach((item, i) => {
+    let settings = document.querySelector(".settings");
+    // проходимся по каждому тригеру
+    // item.addEventListener("click", (e) => {
+    item.addEventListener("click", () => {
+      // settings.style.display = "block";
+      // ставим на него слушатель события клика
+      users[i].classList.toggle("active");
+      // if (users[i].classList.toggle("active")) {
+      //   // settings.
+      // } // что-то делаем
+    });
+  });
+}
+clickText5();
+//! блоки проб 1
+//! блоки проб 2
+// ??? не раб
+function switchVisible2(element) {
+  console.log(2.1);
+  if (element.className && element.className.length > 0) {
+    console.log(2.2);
+    // находим элемент на который указывает класс нажатой кнопки
+    var targetEl = document.getElementById(element.className);
+    var displayMode = targetEl.style.display === "block" ? "none" : "block";
+    // иной способ без тернарного оператора
+    // var visility = "";
+    //if (targetEl.style.display === "block"){
+    //    displayMode = "none";
+    //}
+    //else{
+    //    displayMode = "block";
+    //}
+    targetEl.style.display = displayMode;
+  }
+}
+switchVisible2(".Div3");
+//! блоки проб 2
+//! блоки проб 3
+function clickText6() {
+  document.querySelector(".box-menu").addEventListener("click", (e) => {
+    if (e.target.classList.contains("menu")) {
+      let num = [...document.querySelectorAll(".box-menu .menu")].indexOf(
+          e.target
+        ),
+        content = document.querySelectorAll(".content");
+      for (let i = 0; i < content.length; i++)
+        i == num
+          ? (content[i].style.display = "block")
+          : (content[i].style.display = "none");
+    }
+  });
+  // <ul class="box-menu">
+  // <li class="menu">Text 4</li>
+  // </ul>
+  // <div class="content" style="display: none">Содержимое 1</div>
+}
+clickText6();
+//! блоки проб 3
+//! блоки проб 4
+function HideAll() {
+  var ellements = document.getElementsByClassName("tohide");
+  for (var i = 0; i < ellements.length; i++) {
+    ellements[i].style.display = "none";
+  }
+}
+HideAll();
+//! блоки проб 4

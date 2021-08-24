@@ -427,8 +427,8 @@
    * Toggle button styles
    */
   .toggle-button--aava label {
-    height: 40px;
-    line-height: 40px;
+    height: 35px;
+    line-height: 35px;
     transition: all 0.2s;
     border-radius: 2rem;
   }
@@ -488,8 +488,8 @@
     position: absolute;
     left: 0;
     top: 0;
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
   }
   .toggle-button--aava .toggle-button__icon:before,
   .toggle-button--aava .toggle-button__icon:after {
@@ -1074,4 +1074,48 @@
 }
 .block.active {
   display: block;
+}
+
+//! блоки проб 1
+.probb1 {
+  .blocks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .user {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    transition: margin-top 0.2s linear;
+  }
+  .user + .user {
+    margin-top: 20px;
+  }
+  .user.active > * + * {
+    margin-top: 10px;
+    max-height: 100%;
+  }
+  .trigger {
+    background-color: yellow;
+    color: black;
+    padding: 5px;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid transparent;
+    transition: border-color 0.2s linear, color 0.2s linear;
+  }
+  .trigger:hover {
+    border-color: red;
+    color: red;
+  }
+  .user.active .trigger {
+    border-color: white !important;
+    color: green !important;
+  }
+  .settings {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s linear, margin-top 0.2s linear;
+  }
 }

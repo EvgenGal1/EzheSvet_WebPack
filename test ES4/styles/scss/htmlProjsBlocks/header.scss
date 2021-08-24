@@ -493,7 +493,7 @@ header {
     // убираем пробел м/у span
     .link__last-bykv,
     .link__firct-bykv {
-      // font-size: 25px;
+      // font-size: 18px;
     }
   }
 
@@ -551,6 +551,7 @@ header {
     border: 1px solid #f00;
     .ul-li-a {
       text-decoration: none;
+      font-size: 0;
       &:hover {
         // color: #000000;
         &::before {
@@ -559,6 +560,10 @@ header {
         &:hover::after {
           content: "<<";
         }
+      }
+      .ul-li__firct-bykv, 
+      .ul-li__last-bykv{
+        // font-size: 16px;
       }
     }
     // ??? не раб - SassError: Undefined variable. - @media (max-width: $md3+px) {

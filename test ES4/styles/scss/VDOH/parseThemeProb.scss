@@ -260,8 +260,8 @@ body {
     var(--off, 25px);
   --font-size-big: var(--big, 22px) var(--mid, 18px) var(--small, 15px)
     var(--off, 15px);
-  --font-size-mid: var(--big, 22px) var(--mid, 18px) var(--small, 15px)
-    var(--off, 15px);
+  --font-size-mid: var(--big, 16px) var(--mid, 14px) var(--small, 11px)
+    var(--off, 11px);
   --font-size-small: var(--big, 22px) var(--mid, 17px) var(--small, 15px)
     var(--off, 15px);
   --font-weight: var(--big, 700) var(--mid, 400) var(--small, 200)
@@ -278,10 +278,16 @@ body {
     var(--off, 5%);
   --switcher-1-lab: var(--big, 32px) var(--mid, 27px) var(--small, 22px)
     var(--off, 22px);
+  --switcher-5-aft: var(--big, 29px) var(--mid, 24px) var(--small, 19px)
+    var(--off, 19px);
+  --switcher-5-top: var(--big, 3px) var(--mid, 2px) var(--small, 1px)
+    var(--off, 1px);
+  --switcher-5-neut: var(--big, 1px) var(--mid, 3px) var(--small, 6px)
+    var(--off, 6px);
 
-  --mar-blqw: var(--small, 2px) var(--big, 8px) var(--mid, 5px) var(--off, 0px);
-  --mar-bl-endqw: var(--small, 15px) var(--big, 25px) var(--mid, 17px);
-  --mar-bl-strqw: var(--small, 15px) var(--big, 25px) var(--mid, 17px);
+  // --mar-blqw: var(--small, 2px) var(--big, 8px) var(--mid, 5px) var(--off, 0px);
+  // --mar-bl-endqw: var(--small, 15px) var(--big, 25px) var(--mid, 17px);
+  // --mar-bl-strqw: var(--small, 15px) var(--big, 25px) var(--mid, 17px);
 }
 hr {
   margin-block-start: var(--mar-bl);
@@ -294,54 +300,91 @@ hr {
     margin: 0px 0px var(--mar-bl);
   }
 }
-.menu-list__items .menu-list-link {
-  width: var(--width);
-  height: var(--height);
-  font-size: var(--font-size-big);
-  // font-weight: var(--font-weight);
-  border: var(--border);
-  border-radius: var(--border-radius);
-}
-.ul {
-  width: var(--width);
-  font-size: var(--font-size-smail);
-}
-// m-s-switcher (кнопки)
-.header-menu__bottom {
-  .menu-set__items {
+header {
+  .menu-list__items .menu-list-link {
+    width: var(--width);
     height: var(--height);
+    font-size: var(--font-size-big);
+    // font-weight: var(--font-weight);
+    border: var(--border);
+    border-radius: var(--border-radius);
   }
-}
-.m-s-switcher {
-  // -1(черно зелёный)
-  &-1 {
-    &:before,
-    &::after {
-      top: var(--switcher-1-top);
-    }
-    label {
-      height: var(--switcher-1-lab);
+  .ul {
+    width: var(--width);
+    // font-size: var(--font-size-smail);
+    .ul-li {
+      &-a {
+        .ul-li__firct-bykv,
+        .ul-li__last-bykv {
+          font-size: var(--font-size-mid);
+        }
+      }
     }
   }
-  // -2,3(черно белые)
-  &-2-3 {
-    .m-s-switchers {
+
+  // m-s-switcher (кнопки)
+  .header-menu__bottom {
+    .menu-set__items {
       height: var(--height);
-      input {
+    }
+  }
+  .m-s-switcher {
+    // -1(черно зелёный)
+    &-1 {
+      &:before,
+      &::after {
+        top: var(--switcher-1-top);
+      }
+      label {
+        height: var(--switcher-1-lab);
+      }
+    }
+    // -2,3(черно белые)
+    &-2-3 {
+      .m-s-switchers {
+        height: var(--height);
+        input {
+          height: var(--height);
+        }
+      }
+      .m-s-switcher-3 label {
         height: var(--height);
       }
-
-      label {
-        // height: var(--height);
-        // border-radius: 5px;
+    }
+    // -4(NISNOM 1 - VX)
+    &-4 {
+      .toggle-button--aava label {
+        height: var(--height);
+        line-height: var(--height);
+      }
+      .toggle-button--aava .toggle-button__icon {
+        height: var(--height);
+        width: var(--height);
+      }
+    }
+    // -5(3 позиции - горизонт)
+    &-5 {
+      // switcher-5-TA
+      .switcher {
+        height: var(--height);
+      }
+      .switcher-slider:after {
+        // top: var(--switcher-5-top);
+        width: var(--switcher-5-aft);
+        height: var(--switcher-5-aft);
+      }
+      .switcher-radio-on:checked ~ .switcher-slider:after {
+        left: calc(100% - (var(--switcher-5-aft) + 3px));
+      }
+      .switcher-radio-neutral:checked ~ .switcher-slider:after {
+        left: calc(((100% + var(--height) - (var(--switcher-5-aft) / 2))) / 3);
+        left: calc(var(--switcher-5-neut) + 100% / 3);
+      }
+      .switcher-radio-off:checked ~ .switcher-slider:after {
+        // left: var(--switcher-5-top);
       }
     }
   }
-}
-.m-s-switcher-2-3 .m-s-switcher-3 label {
-  // border-radius: 5px;
-  height: var(--height);
-  // height: 10px;
 }
 // m-s-switcher (кнопки)
 // !
