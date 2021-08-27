@@ -29,6 +29,7 @@
   * [Важные файлы](#Важные-файлы)
   * [Важные моменты](#Важные-моменты)
     + [Ещё пара важных моментов](#Ещё-пара-важных-моментов)
+    + [Не стоит забывать и про это](#Не-стоит-про-это-забывать)
 - [Код/Elements/Логика](#Код/Elements/Логика)
   * [HTML](#HTML)
   * [Webpack](#Webpack)
@@ -106,6 +107,35 @@ src(test ES4)/
 | <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/javascript.svg"></a> | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">JavaScript</a>                      |
 | <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/jquery.svg"></a>     | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">jQuery</a>                          |
 | <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/webpack.svg"></a>    | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">WebPack</a>                         |
+
+#### Не стоит про это забывать:
+
+```bash
+
+.-. ..- ... 
+-.. ..- -- .- .-.. .. / ---. - --- / --.. -.. . ... -..- / ---. - --- - --- / .-- .- ...- -. --- . ..--..
+.- / -. . - --..-- / .--. --- ... .--. .. - . --..-- / ... -.- --- .-. --- / .--. --- .-.- .-- .. - ... .-.- .-.-.- .-.-.- .-.-.-
+
+.... .. ... ... . ..
+.. ... .. ..... ... ..
+... .. ... .... .. . ...
+... .. .. .... . .....
+.. .... ... .. . ...
+   ───      
+    /     __                 
+   /       /  
+   ───    /_   Z  z
+          ______________
+       __/__/  /  /  __ \___           
+     _/ /  _\  \ / \/  ____/\__
+    / _/____/____\  \ ___/\___ \
+   | /  \____  \____/ \___   _\/
+   \_|_____  \_/  \__________/ 
+     \_______/ \ \/ _____/
+                \ \___/
+                 \ \
+
+```
 
 <h2 align="center">Код/Elements/Логика</h2>
 
@@ -200,22 +230,22 @@ ibgJS();
 1. Установить мотиватор
 
 ```bash
-npm i give-me-motive
+nрm i givе-mе-mоtive
 ```
 
 2. Активировать:
 
 ```js
 const motiv = new Bro({
-  el: "#motiv",
+  еl: "#mоtiv",
 });
 ```
 
 3. Создать div с id motiv и вложится в него
 
 ```html
-<div id="motiv">
-  <!-- Dobro -->
+<div id="mоtiv">
+  <!-- Dоbrо -->
 </div>
 ```
 
@@ -223,7 +253,7 @@ const motiv = new Bro({
 
 <p>Выражаю благодарность за помощь/уроки/материалы следующим:</p>
 
-`Травник`, [FreelancerLifeStyle](https://www.youtube.com/c/FreelancerLifeStyle/playlists), [vedees](https://www.youtube.com/channel/UCDtQ4kJos22sCdYtNDB_4Cg),
+`Травник`, [FreelancerLifeStyle](https://www.youtube.com/c/FreelancerLifeStyle/playlists), [vedees](https://www.youtube.com/c/VladilenMinin/featured), [Geekbrains](https://geekbrains.ru),
 
 <h2 align="center">Авторство</h2>
 
