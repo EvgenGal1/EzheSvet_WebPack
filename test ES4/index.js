@@ -85,66 +85,48 @@ ibgJS();
 // ? ! 6 измен моё Использование JavaScript и Local Storage
 // Выбираем кнопку
 // const btn = document.querySelector(".btn-toggle");
-// // Проверяем предпочтение тёмного режима на уровне ОС
+// Проверяем предпочтение тёмного режима на уровне ОС
 // const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-// // Получаем предпочтение темы пользователя из локального хранилища, если оно доступно
+// Получаем предпочтение темы пользователя из локального хранилища, если оно доступно
 // const currentTheme = localStorage.getItem("theme");
-// // Если текущая тема в localStorage равна "dark"…
+// Если текущая тема в localStorage равна "dark"…
 // if (currentTheme == "dark") {
-//   // …переключаем класс .dark-theme для <body>
+// …переключаем класс .dark-theme для <body>
 //   document.body.classList.toggle("dark-theme");
-//   // В противном случае, если текущая тема в localStorage равна "light"…
+// В противном случае, если текущая тема в localStorage равна "light"…
 // } else if (currentTheme == "light") {
-//   // …переключаем класс .light-theme для <body>
+// …переключаем класс .light-theme для <body>
 //   document.body.classList.toggle("light-theme");
 // }
-// // Отслеживаем щелчок по кнопке
+// Отслеживаем щелчок по кнопке
 // btn.addEventListener("click", function () {
-//   // Если у пользователя тёмный режим ОС и он соответствует нашему классу .dark-theme…
-//   if (prefersDarkScheme.matches) {
-//     // …тогда переключаем класс светлого режима
-//     document.body.classList.toggle("light-theme");
-//     // …но используем .dark-theme, если класс .light-theme уже находится в <body>
-//     var theme = document.body.classList.contains("light-theme")
-//       ? "light"
-//       : "dark";
-//   } else {
-//     // В противном случае, делаем то же самое, но для .dark-theme
-//     document.body.classList.toggle("dark-theme");
-//     var theme = document.body.classList.contains("dark-theme")
-//       ? "dark"
-//       : "light";
-//   }
-//   // В конце сохраняем текущее предпочтение в localStorage, чтобы продолжить его использовать
+// Если у пользователя тёмный режим ОС и он соответствует нашему классу .dark-theme…
+// if (prefersDarkScheme.matches) {
+// …тогда переключаем класс светлого режима
+//   document.body.classList.toggle("light-theme");
+// …но используем .dark-theme, если класс .light-theme уже находится в <body>
+//   var theme = document.body.classList.contains("light-theme")
+//     ? "light"
+//     : "dark";
+// } else {
+// В противном случае, делаем то же самое, но для .dark-theme
+//   document.body.classList.toggle("dark-theme");
+//   var theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+// }
+// В конце сохраняем текущее предпочтение в localStorage, чтобы продолжить его использовать
 //   localStorage.setItem("theme", theme);
 // });
 
 // 7 своё
 // !!!
 // ! 2
+// !!! https://www.kooslooijesteijn.net/blog/add-dark-theme-to-website
 // Проверяем предпочтение тёмного режима на уровне ОС
 // const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-// !!
-// Если у пользователя тёмный режим ОС и он соответствует нашему классу .dark-theme…
-// if (prefersDarkScheme.matches) {
-//   // …тогда переключаем класс светлого режима
-//   document.body.classList.toggle("light-theme");
-//   // …но используем .dark-theme, если класс .light-theme уже находится в <body>
-//   var theme = document.body.classList.contains("light-theme")
-//     ? "light"
-//     : "dark";
-// } else {
-//   // В противном случае, делаем то же самое, но для .dark-theme
-//   document.body.classList.toggle("dark-theme");
-//   var theme = document.body.classList.contains("dark-theme")
-//     ? "dark"
-//     : "light";
-// }
-// В конце сохраняем текущее предпочтение в localStorage, чтобы продолжить его использовать
-// ! альтернатива  для //!!
-// !!! https://www.kooslooijesteijn.net/blog/add-dark-theme-to-website
+// const prefDark = window.matchMedia("(prefers-color-scheme: dark)");
+// const preflight = window.matchMedia("(prefers-color-scheme: light)");
+// const prefNo = window.matchMedia("(prefers-color-scheme: no-preference)");
 // if (prefDark) {
 //   var theme = document.body.classList.contains("dark-theme")
 //   return "dark";
@@ -155,27 +137,8 @@ ibgJS();
 //   var theme = document.body.classList.contains("grayn-theme")
 //   return "grayn";
 // }
-
 // localStorage.setItem("theme", theme);
 // !!
-// const prefDark = window.matchMedia("(prefers-color-scheme: dark)");
-// const preflight = window.matchMedia("(prefers-color-scheme: light)");
-// const prefNo = window.matchMedia("(prefers-color-scheme: no-preference)");
-// // Получаем предпочтение темы пользователя из локального хранилища, если оно доступно
-// const currentTheme = localStorage.getItem("theme");
-// // Если текущая тема в localStorage равна "dark"…
-// if (currentTheme == "dark") {
-//   // …переключаем класс .dark-theme для <body>
-//   document.body.classList.toggle("dark-theme");
-//   // В противном случае, если текущая тема в localStorage равна "light"…
-// } else if (currentTheme == "light") {
-//   // …переключаем класс .light-theme для <body>
-//   document.body.classList.toggle("light-theme");
-// } else if (currentTheme == "grayn") {
-//   // …переключаем класс .grayn-theme для <body>
-//   document.body.classList.toggle("grayn-theme");
-// }
-
 // !! опред ОС
 // !!! 1. https://webref.ru/dev/dark-theme/os-level
 // !!! 2. https://www.kooslooijesteijn.net/blog/add-dark-theme-to-website
@@ -449,8 +412,11 @@ function clickText() {
 
 function clickText2() {
   const contBl = Array.from(document.querySelectorAll(".cont-block-"));
-  // Тоже самое, что Array.from(document.querySelectorAll('#sub-detail-'))
-  const subDet = contBl.map((item) => item.querySelector("#sub-detail-"));
+  // Тоже самое, что
+  const subDet = contBl.map((item) => item.querySelector(".sub-"));
+  // const subDet = Array.from(document.querySelectorAll(".sub-"));
+  // const subDet = Array.from(document.querySelectorAll('#sub-detail-'))
+  // const subDet = contBl.map((item) => item.querySelector("#sub-detail-"));
   subDet.forEach((item, i) => {
     const blText = contBl[i].querySelector(".block-text-");
     const textDet = contBl[i].querySelector(".text-detail-");

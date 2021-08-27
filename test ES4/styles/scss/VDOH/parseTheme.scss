@@ -555,10 +555,11 @@
   }
 
   .switcher-slider {
-    background: #ddd;
     height: 100%;
     width: 100%;
+    padding: 3px;
     border-radius: 25px;
+    background: #ddd;
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1) inset,
       0 0 4px rgba(0, 0, 0, 0.5) inset, 0 2px 2px 1px rgba(0, 0, 0, 0.3) inset;
     box-shadow: 0 0 3px #555555 inset, 0 0 10px black;
@@ -603,6 +604,7 @@
   }
 
   .switcher-radio-off:checked ~ .switcher-slider:after {
+  // .switcher-radio-off:checked + .switcher-slider:after {
     left: 3px;
   }
 }
