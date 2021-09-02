@@ -229,6 +229,7 @@ module.exports = {
   entry: {
     main: PATHS.src,
     app: `${PATHS.src}js/indexReact.jsx`,
+    // ??? не раб - узнать как просто закидывать стиль, без создания js файла
     catalog: `${PATHS.src}styles/scss/htmlProjsPages/catalog.scss`,
   },
   output: {

@@ -1,32 +1,12 @@
+<% var data = { 
+  htmlWebpackPlugin: htmlWebpackPlugin, 
+  title: "Главная",
+  author: "EvGen",
+}; %>
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title></title>
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- //! блоки на/для jQ  -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- шрифт для конпки m-s-switcher-2 и -3 -->
-    <!-- <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Oswald:700"
-/> -->
-    <!-- стиль для кнопки m-s-switcher-2 и -3 -->
-    <!-- <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
-/> -->
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- для раб прогеров отдельно от нас. редко нужен. устаревший  -->
-    <link rel="stylesheet" href="css/custom.css" />
-    <!-- <link rel="shortcut icon" href="favicon.ico" /> -->
-    <!-- <meta name="robots" content="noindex, nofollow" /> -->
-    <!-- для адапт вёрстки -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
+    <%= _.template(require('./html/includes/head.html').default)(data) %>
   </head>
   <body>
     <div class="wrapper">
@@ -744,6 +724,7 @@
       </div>
       <hr />
       <%= _.template(require('./html/includes/footer.html').default)(data) %>
+      <%= _.template(require('./html/includes/JS_fri_TEeKr2ON66A.html').default)(data) %>
     </div>
   </body>
 </html>

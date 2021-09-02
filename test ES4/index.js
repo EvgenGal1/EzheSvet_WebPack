@@ -1,8 +1,20 @@
+// подкл JS
+import "./js/Сайт VDOH/devJS/parseTheme.js";
+
+// подкл CSS/SCSS
+import "./styles/scss/styles.scss";
+
+// врем. подкл JS/CSS/SCSS
+import "./js/Сайт VDOH/devJS/JS_fri_TEeKr2ON66A.js";
+import "./styles/scss/htmlProjsBlocks/JS_fri_TEeKr2ON66A.scss"
+
+
+// !
+// ! разобрать и удалить
 // import IndexReact from "./js/indexReact.jsx";
 // import "./styles/css/style.css";
 // import { fn } from "jquery";
 // import "./js/Сайт VDOH/prodJS/jQuery";
-import "./styles/scss/styles.scss";
 // import "./styles/scss/utils/mixins.scss";
 // import "./styles/scss/VDOH/null.scss";
 // import "./styles/scss/VDOH/ui.scss";
@@ -118,102 +130,102 @@ ibgJS();
 //   localStorage.setItem("theme", theme);
 // });
 
-// 7 своё
-// !!!
-// ! 2
-// !!! https://www.kooslooijesteijn.net/blog/add-dark-theme-to-website
-// Проверяем предпочтение тёмного режима на уровне ОС
-// const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-// const prefDark = window.matchMedia("(prefers-color-scheme: dark)");
-// const preflight = window.matchMedia("(prefers-color-scheme: light)");
-// const prefNo = window.matchMedia("(prefers-color-scheme: no-preference)");
-// if (prefDark) {
-//   var theme = document.body.classList.contains("dark-theme")
-//   return "dark";
-// } else if (preflight) {
-//   var theme = document.body.classList.contains("light-theme")
-//   return "light";
-// } else if (prefNo) {
-//   var theme = document.body.classList.contains("grayn-theme")
-//   return "grayn";
+// // 7 своё
+// // !!!
+// // ! 2
+// // !!! https://www.kooslooijesteijn.net/blog/add-dark-theme-to-website
+// // Проверяем предпочтение тёмного режима на уровне ОС
+// // const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+// // const prefDark = window.matchMedia("(prefers-color-scheme: dark)");
+// // const preflight = window.matchMedia("(prefers-color-scheme: light)");
+// // const prefNo = window.matchMedia("(prefers-color-scheme: no-preference)");
+// // if (prefDark) {
+// //   var theme = document.body.classList.contains("dark-theme")
+// //   return "dark";
+// // } else if (preflight) {
+// //   var theme = document.body.classList.contains("light-theme")
+// //   return "light";
+// // } else if (prefNo) {
+// //   var theme = document.body.classList.contains("grayn-theme")
+// //   return "grayn";
+// // }
+// // localStorage.setItem("theme", theme);
+// // !!
+// // !! опред ОС
+// // !!! 1. https://webref.ru/dev/dark-theme/os-level
+// // !!! 2. https://www.kooslooijesteijn.net/blog/add-dark-theme-to-website
+// // 1.
+// // Получаем предпочтение темы пользователя из локального хранилища, если оно доступно
+// const currentTheme = localStorage.getItem("theme");
+// // Если текущая тема в localStorage равна "grayn"
+// if (currentTheme == "grayn") {
+//   // вкл класс .grayn-theme для <body>
+//   document.body.classList.add("grayn-theme");
+// } else if (currentTheme == "dark") {
+//   document.body.classList.add("dark-theme");
+// } else if (currentTheme == "light") {
+//   document.body.classList.add("light-theme");
 // }
-// localStorage.setItem("theme", theme);
-// !!
-// !! опред ОС
-// !!! 1. https://webref.ru/dev/dark-theme/os-level
-// !!! 2. https://www.kooslooijesteijn.net/blog/add-dark-theme-to-website
-// 1.
-// Получаем предпочтение темы пользователя из локального хранилища, если оно доступно
-const currentTheme = localStorage.getItem("theme");
-// Если текущая тема в localStorage равна "grayn"
-if (currentTheme == "grayn") {
-  // вкл класс .grayn-theme для <body>
-  document.body.classList.add("grayn-theme");
-} else if (currentTheme == "dark") {
-  document.body.classList.add("dark-theme");
-} else if (currentTheme == "light") {
-  document.body.classList.add("light-theme");
-}
-// Выбираем все кнопки на странице и получаем массив
-var swLabelAll = document.querySelectorAll(".switcher-label");
-// Проходим по массиву
-swLabelAll.forEach(function (btn) {
-  // заводим перем для позиций кнопок
-  const swNeut = document.querySelector(".switcher-neutral");
-  const swOn = document.querySelector(".switcher-on");
-  const swOff = document.querySelector(".switcher-off");
-  // Вешаем событие клик
-  btn.addEventListener("click", function () {
-    // console.log("Button clicked" + e.target.classList);
-    if (btn == swNeut) {
-      console.log("~");
-      document.body.classList.remove("light-theme");
-      document.body.classList.remove("dark-theme");
-      document.body.classList.add("grayn-theme");
-      var theme = "grayn";
-      // !
-      // document.swNeut.checked=true;
-      // localStorage.setItem("document.swNeut.checked", true);
-      // localStorage.setItem("document.swNeut.checked", checkbox.checked);
-      // localStorage.input = this.checked
-      // localStorage.setItem("document.swNeut", checkbox.checked);
-      // localStorage.setItem("swNeut", checkbox.checked);
+// // Выбираем все кнопки на странице и получаем массив
+// var swLabelAll = document.querySelectorAll(".switcher-label");
+// // Проходим по массиву
+// swLabelAll.forEach(function (btn) {
+//   // заводим перем для позиций кнопок
+//   const swNeut = document.querySelector(".switcher-neutral");
+//   const swOn = document.querySelector(".switcher-on");
+//   const swOff = document.querySelector(".switcher-off");
+//   // Вешаем событие клик
+//   btn.addEventListener("click", function () {
+//     // console.log("Button clicked" + e.target.classList);
+//     if (btn == swNeut) {
+//       console.log("~");
+//       document.body.classList.remove("light-theme");
+//       document.body.classList.remove("dark-theme");
+//       document.body.classList.add("grayn-theme");
+//       var theme = "grayn";
+//       // !
+//       // document.swNeut.checked=true;
+//       // localStorage.setItem("document.swNeut.checked", true);
+//       // localStorage.setItem("document.swNeut.checked", checkbox.checked);
+//       // localStorage.input = this.checked
+//       // localStorage.setItem("document.swNeut", checkbox.checked);
+//       // localStorage.setItem("swNeut", checkbox.checked);
 
-      // el.onchange = () => localStorage.setItem(el.id, el.checked);
-      // el.checked = localStorage.getItem(el.id) === "true";
-      btn.onchange = () => localStorage.setItem(btn.id, btn.checked);
-      btn.checked = localStorage.getItem(btn.id) === "true";
-      // !
-    }
-    if (btn == swOn) {
-      console.log("+");
-      document.body.classList.remove("dark-theme");
-      document.body.classList.remove("grayn-theme");
-      document.body.classList.add("light-theme");
-      var theme = "light";
-      // !
-      // document.swOn.checked=true;
-      localStorage.setItem("document.swOn.checked", true);
-      // !
-    }
-    if (btn == swOff) {
-      console.log("o");
-      document.body.classList.remove("light-theme");
-      document.body.classList.remove("grayn-theme");
-      document.body.classList.add("dark-theme");
-      var theme = "dark";
-      // !
-      // document.swOff.checked=true;
-      localStorage.setItem("document.swOff.checked", true);
-      // !
-    }
-    localStorage.setItem("theme", theme);
-    // localStorage.clear();
-  });
-});
-// document.querySelector(".switcher-off").checkbox.checked
-// document.querySelector(".switcher-off").checked
-// !
+//       // el.onchange = () => localStorage.setItem(el.id, el.checked);
+//       // el.checked = localStorage.getItem(el.id) === "true";
+//       btn.onchange = () => localStorage.setItem(btn.id, btn.checked);
+//       btn.checked = localStorage.getItem(btn.id) === "true";
+//       // !
+//     }
+//     if (btn == swOn) {
+//       console.log("+");
+//       document.body.classList.remove("dark-theme");
+//       document.body.classList.remove("grayn-theme");
+//       document.body.classList.add("light-theme");
+//       var theme = "light";
+//       // !
+//       // document.swOn.checked=true;
+//       localStorage.setItem("document.swOn.checked", true);
+//       // !
+//     }
+//     if (btn == swOff) {
+//       console.log("o");
+//       document.body.classList.remove("light-theme");
+//       document.body.classList.remove("grayn-theme");
+//       document.body.classList.add("dark-theme");
+//       var theme = "dark";
+//       // !
+//       // document.swOff.checked=true;
+//       localStorage.setItem("document.swOff.checked", true);
+//       // !
+//     }
+//     localStorage.setItem("theme", theme);
+//     // localStorage.clear();
+//   });
+// });
+// // document.querySelector(".switcher-off").checkbox.checked
+// // document.querySelector(".switcher-off").checked
+// // !
 
 // ! https://ru.stackoverflow.com/questions/943640/%D0%9A%D0%B0%D0%BA-%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D1%82%D1%8C-%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5-%D1%87%D0%B5%D0%BA%D0%B1%D0%BE%D0%BA%D1%81%D0%B0-%D0%B2-localstorage
 // document.querySelectorAll(".switcher-label").forEach(el => {
@@ -257,163 +269,169 @@ swLabelAll.forEach(function (btn) {
 // save_checkbox('sale_wood')
 // !
 
-// !!!!! настройки стиля-размера
-const currentStyle = localStorage.getItem("style");
-if (currentStyle == "mid") {
-  document.body.classList.add("style-mid");
-} else if (currentStyle == "big") {
-  document.body.classList.add("style-big");
-} else if (currentStyle == "small") {
-  document.body.classList.add("style-small");
-} else if (currentStyle == "off") {
-  document.body.classList.add("style-off");
-}
-var swLabelAll = document.querySelectorAll(".sw7-label");
-swLabelAll.forEach(function (btn) {
-  const sw7big = document.querySelector(".sw7-big");
-  const sw7small = document.querySelector(".sw7-small");
-  const sw7mid = document.querySelector(".sw7-mid");
-  const sw7off = document.querySelector(".sw7-off");
-  // ???не раб - по id не вызов. для смены стиля по нажатию на центр в 3х циферблатную кнопку
-  // const sw7Of = document.querySelectorById(".item3-state-off");
-  // const sw7On = document.querySelectorById(".item3-state-on");
-  // const sw7Nul = document.querySelectorById(".item3-state-null");
-  btn.addEventListener("click", function () {
-    if (btn == sw7big) {
-      document.body.classList.remove("style-mid");
-      document.body.classList.remove("style-small");
-      document.body.classList.remove("style-off");
-      document.body.classList.add("style-big");
-      var style = "big";
-    }
-    if (btn == sw7small) {
-      document.body.classList.remove("style-big");
-      document.body.classList.remove("style-mid");
-      document.body.classList.remove("style-off");
-      document.body.classList.add("style-small");
-      var style = "small";
-    }
-    if (btn == sw7mid) {
-      document.body.classList.remove("style-big");
-      document.body.classList.remove("style-small");
-      document.body.classList.remove("style-off");
-      document.body.classList.add("style-mid");
-      var style = "mid";
-    }
-    if (btn == sw7off) {
-      document.body.classList.remove("style-big");
-      document.body.classList.remove("style-mid");
-      document.body.classList.remove("style-small");
-      document.body.classList.add("style-off");
-      var style = "off";
-    }
-    localStorage.setItem("style", style);
-    // localStorage.clear();
-  });
-});
-// !!!!! настройки стиля-размера
+// // !!!!! настройки стиля-размера
+// const currentStyle = localStorage.getItem("style");
+// if (currentStyle == "mid") {
+//   document.body.classList.add("style-mid");
+// } else if (currentStyle == "big") {
+//   document.body.classList.add("style-big");
+// } else if (currentStyle == "small") {
+//   document.body.classList.add("style-small");
+// } else if (currentStyle == "off") {
+//   document.body.classList.add("style-off");
+// }
+// var swLabelAll = document.querySelectorAll(".sw7-label");
+// swLabelAll.forEach(function (btn) {
+//   const sw7big = document.querySelector(".sw7-big");
+//   const sw7small = document.querySelector(".sw7-small");
+//   const sw7mid = document.querySelector(".sw7-mid");
+//   const sw7off = document.querySelector(".sw7-off");
+//   // ???не раб - по id не вызов. для смены стиля по нажатию на центр в 3х циферблатную кнопку
+//   // const sw7Of = document.querySelectorById(".item3-state-off");
+//   // const sw7On = document.querySelectorById(".item3-state-on");
+//   // const sw7Nul = document.querySelectorById(".item3-state-null");
+//   btn.addEventListener("click", function () {
+//     if (btn == sw7big) {
+//       document.body.classList.remove("style-mid");
+//       document.body.classList.remove("style-small");
+//       document.body.classList.remove("style-off");
+//       document.body.classList.add("style-big");
+//       var style = "big";
+//     }
+//     if (btn == sw7small) {
+//       document.body.classList.remove("style-big");
+//       document.body.classList.remove("style-mid");
+//       document.body.classList.remove("style-off");
+//       document.body.classList.add("style-small");
+//       var style = "small";
+//     }
+//     if (btn == sw7mid) {
+//       document.body.classList.remove("style-big");
+//       document.body.classList.remove("style-small");
+//       document.body.classList.remove("style-off");
+//       document.body.classList.add("style-mid");
+//       var style = "mid";
+//     }
+//     if (btn == sw7off) {
+//       document.body.classList.remove("style-big");
+//       document.body.classList.remove("style-mid");
+//       document.body.classList.remove("style-small");
+//       document.body.classList.add("style-off");
+//       var style = "off";
+//     }
+//     localStorage.setItem("style", style);
+//     // localStorage.clear();
+//   });
+// });
+// // !!!!! настройки стиля-размера
+
 
 // !
-// for (var i = 0; i < ibg.length; i++) {
-//   if (
-//     ibg[i].querySelector("img") &&
-//     ibg[i].querySelector("img").getAttribute("src") != null
-//   )
+// // !
+// // !
+// // !
+// // !
+// // !
+// // for (var i = 0; i < ibg.length; i++) {
+// //   if (
+// //     ibg[i].querySelector("img") &&
+// //     ibg[i].querySelector("img").getAttribute("src") != null
+// //   )
+// // }
+// function clickText() {
+//   console.log(1);
+//   const contBl = document.querySelectorAll(".cont-block-");
+//   // const subDet = document.querySelectorAll("#sub-detail-");
+//   // const blText = document.querySelectorAll(".block-text-");
+//   // const textDet = document.querySelectorAll(".text-detail-");
+//   // contBl.forEach(function (cont) {
+//   // cont.subDet.forEach(function (idI) {
+//   for (var i = 0; i < contBl.length; i++) {
+//     // for (var i = 0; i < contBl.length; i+=1) {
+//     console.log(2);
+//     // subDet.forEach(function (idI) {
+//     // const subDet = cont.querySelectorAll("#sub-detail-");
+//     // const contBlN = contBl[i].querySelector("#sub-detail-");
+//     // contBlN[i].style.color == "blue";
+//     // contBlN[i].style.display == "block"
+//     console.log(2.1);
+//     // const subDet = contBl[i].querySelector("#sub-detail-");
+//     // const subDet = contBl[i].querySelector("#sub-detail-");
+//     // const subDet = contBl[i].querySelectorAll(".block-img- .sub-");
+//     // const subDet = contBl[i].querySelectorAll(".sub-");
+//     // const subDet = contBl[i].querySelector(".sub-");
+//     const subDet = contBl[i].querySelector(".sub-");
+//     // const subDetTh = this.attr('id');
+//     console.log(2.2);
+//     // var ellements = document.getElementsByClassName("tohide");
+//     // for(var i=0;i<ellements.length;i++) {
+//     //    ellements[i].style.display="none";
+//     // }
+//     // var lyricsBox = document.getElementsByClassName("lyricsBox");
+//     // var displaySetting = lyricsBox[0].style.display;
+//     // if (displaySetting == "block") {
+//     //   lyricsBox[0].style.display = "none";
+//     // }
+//     // idI.addEventListener("click", function () {
+//     // for (var i=0;i<elems.length;i+=1){
+//     //   elems[i].style.display = 'block';
+//     // }
+//     // subDet.addEventListener("click", function () {
+//     subDet.addEventListener("click", () => {
+//       // subDetTh.addEventListener("click", function () {
+//       console.log(3);
+//       const blText = document.querySelectorAll(".block-text-");
+//       // const blText = document.getElementsByClassName("block-text-");
+//       // const blText = document.querySelector(".block-text-");
+//       const displayBlText = blText[0].style.display;
+//       console.log(3.1);
+//       const textDet = document.querySelectorAll(".text-detail-");
+//       // const textDet = document.querySelector(".text-detail-");
+//       const displayTextDet = textDet[0].style.display;
+//       // const textDet = Array.from(document.querySelectorAll('.text-detail-'));
+//       // const textDet = Array.from(document.querySelector('.text-detail-'));
+//       console.log(3.2);
+//       // if (blText.style.display == "block") {
+//       // if (displayBlText.style.display == "block") {
+//       // if (displayBlText == "block") {
+//       if (displayBlText == "block" && displayTextDet == "block") {
+//         console.log(4);
+//         // blText.style.display = "flex";
+//         blText[0].style.display = "flex";
+//         // displayBlText.style.display = "flex";
+//         console.log(4.1);
+//         // textDet.style.display = "none";
+//         // textDet[i].style.display = "none";
+//         textDet[0].style.display = "none";
+//         // displayTextDet[0].style.display = "none";
+//         // displayTextDet.style.display = "none";
+//         console.log(4.2);
+//         // } else if ((blText.style.display = "flex")) {
+//         // } else if ((displayBlText.style.display = "flex")) {
+//         // } else if ((displayBlText = "flex")) {
+//       } else {
+//         console.log(5);
+//         // blText.style.display = "block";
+//         blText[0].style.display = "block";
+//         // displayBlText.style.display = "block";
+//         console.log(5.1);
+//         // textDet.style.display = "block";
+//         // textDet[i].style.display = "block";
+//         textDet[0].style.display = "block";
+//         // displayTextDet[0].style.display = "block";
+//         console.log(5.2);
+//       }
+//     });
+//     // });
+//   }
+//   // });
 // }
-function clickText() {
-  console.log(1);
-  const contBl = document.querySelectorAll(".cont-block-");
-  // const subDet = document.querySelectorAll("#sub-detail-");
-  // const blText = document.querySelectorAll(".block-text-");
-  // const textDet = document.querySelectorAll(".text-detail-");
-  // contBl.forEach(function (cont) {
-  // cont.subDet.forEach(function (idI) {
-  for (var i = 0; i < contBl.length; i++) {
-    // for (var i = 0; i < contBl.length; i+=1) {
-    console.log(2);
-    // subDet.forEach(function (idI) {
-    // const subDet = cont.querySelectorAll("#sub-detail-");
-    // const contBlN = contBl[i].querySelector("#sub-detail-");
-    // contBlN[i].style.color == "blue";
-    // contBlN[i].style.display == "block"
-    console.log(2.1);
-    // const subDet = contBl[i].querySelector("#sub-detail-");
-    // const subDet = contBl[i].querySelector("#sub-detail-");
-    // const subDet = contBl[i].querySelectorAll(".block-img- .sub-");
-    // const subDet = contBl[i].querySelectorAll(".sub-");
-    // const subDet = contBl[i].querySelector(".sub-");
-    const subDet = contBl[i].querySelector(".sub-");
-    // const subDetTh = this.attr('id');
-    console.log(2.2);
-    // var ellements = document.getElementsByClassName("tohide");
-    // for(var i=0;i<ellements.length;i++) {
-    //    ellements[i].style.display="none";
-    // }
-    // var lyricsBox = document.getElementsByClassName("lyricsBox");
-    // var displaySetting = lyricsBox[0].style.display;
-    // if (displaySetting == "block") {
-    //   lyricsBox[0].style.display = "none";
-    // }
-    // idI.addEventListener("click", function () {
-    // for (var i=0;i<elems.length;i+=1){
-    //   elems[i].style.display = 'block';
-    // }
-    // subDet.addEventListener("click", function () {
-    subDet.addEventListener("click", () => {
-      // subDetTh.addEventListener("click", function () {
-      console.log(3);
-      const blText = document.querySelectorAll(".block-text-");
-      // const blText = document.getElementsByClassName("block-text-");
-      // const blText = document.querySelector(".block-text-");
-      const displayBlText = blText[0].style.display;
-      console.log(3.1);
-      const textDet = document.querySelectorAll(".text-detail-");
-      // const textDet = document.querySelector(".text-detail-");
-      const displayTextDet = textDet[0].style.display;
-      // const textDet = Array.from(document.querySelectorAll('.text-detail-'));
-      // const textDet = Array.from(document.querySelector('.text-detail-'));
-      console.log(3.2);
-      // if (blText.style.display == "block") {
-      // if (displayBlText.style.display == "block") {
-      // if (displayBlText == "block") {
-      if (displayBlText == "block" && displayTextDet == "block") {
-        console.log(4);
-        // blText.style.display = "flex";
-        blText[0].style.display = "flex";
-        // displayBlText.style.display = "flex";
-        console.log(4.1);
-        // textDet.style.display = "none";
-        // textDet[i].style.display = "none";
-        textDet[0].style.display = "none";
-        // displayTextDet[0].style.display = "none";
-        // displayTextDet.style.display = "none";
-        console.log(4.2);
-        // } else if ((blText.style.display = "flex")) {
-        // } else if ((displayBlText.style.display = "flex")) {
-        // } else if ((displayBlText = "flex")) {
-      } else {
-        console.log(5);
-        // blText.style.display = "block";
-        blText[0].style.display = "block";
-        // displayBlText.style.display = "block";
-        console.log(5.1);
-        // textDet.style.display = "block";
-        // textDet[i].style.display = "block";
-        textDet[0].style.display = "block";
-        // displayTextDet[0].style.display = "block";
-        console.log(5.2);
-      }
-    });
-    // });
-  }
-  // });
-}
-// clickText();
+// // clickText();
 
 function clickText2() {
   const contBl = Array.from(document.querySelectorAll(".cont-block-"));
-  // Тоже самое, что
   const subDet = contBl.map((item) => item.querySelector(".sub-"));
+  // Тоже самое, что
   // const subDet = Array.from(document.querySelectorAll(".sub-"));
   // const subDet = Array.from(document.querySelectorAll('#sub-detail-'))
   // const subDet = contBl.map((item) => item.querySelector("#sub-detail-"));
@@ -433,118 +451,119 @@ function clickText2() {
   });
 }
 clickText2();
+// // !
+
+// //! блоки на/для jQ
+// function clickText3() {
+//   console.log(1);
+//   const btn = document.querySelectorAll(".btn");
+//   // document.querySelectorAll(".btn").addEventListener("click", function () {
+//   // document.querySelector(".btn").addEventListener("click", function () {
+//   // querySelectorAll
+//   // querySelectorBy
+//   // const btn = document.querySelector(".btn");
+//   console.log(1.1);
+//   // btn.addEventListener("click", function () {
+//   this.addEventListener("click", function () {
+//     console.log(2);
+//     const block = document.querySelector(".block");
+//     // block.classList.remove("active");
+//     block.classList.toggle("active");
+//     console.log(3);
+//     // var num = this.attr("data-num");
+//     // var num = this.querySelector(".btn").getAttribute('data-num')
+//     var num = this.getAttribute("data-num");
+//     console.log(4);
+//     const IdBlock = document.querySelector("#block" + num);
+//     console.log(5);
+//     IdBlock.classList.add("active");
+//     // IdBlock.classList.toggle("active");
+//     console.log(6);
+//   });
+// }
+// // clickText3();
+
+// function clickText4() {
+//   $(".btn").click(function () {
+//     $(".block").removeClass("active");
+//     var num = $(this).attr("data-num");
+//     $("#block" + num).toggle("active");
+//   });
+// }
+// clickText4();
+// //! блоки на/для jQ
+// //! блоки проб 1
+// // !!!https://ru.stackoverflow.com/questions/1200678/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5-%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2-%D0%BF%D0%BE-%D0%BA%D0%BB%D0%B8%D0%BA%D1%83-js
+// function clickText5() {
+//   const users = Array.from(document.querySelectorAll(".user"));
+//   const triggers = users.map((item) => item.querySelector(".trigger")); // Тоже самое, что Array.from(document.querySelectorAll('.trigger'))
+
+//   triggers.forEach((item, i) => {
+//     let settings = document.querySelector(".settings");
+//     // проходимся по каждому тригеру
+//     // item.addEventListener("click", (e) => {
+//     item.addEventListener("click", () => {
+//       // settings.style.display = "block";
+//       // ставим на него слушатель события клика
+//       users[i].classList.toggle("active");
+//       // if (users[i].classList.toggle("active")) {
+//       //   // settings.
+//       // } // что-то делаем
+//     });
+//   });
+// }
+// clickText5();
+// //! блоки проб 1
+// //! блоки проб 2
+// // ??? не раб
+// function switchVisible2(element) {
+//   console.log(2.1);
+//   if (element.className && element.className.length > 0) {
+//     console.log(2.2);
+//     // находим элемент на который указывает класс нажатой кнопки
+//     var targetEl = document.getElementById(element.className);
+//     var displayMode = targetEl.style.display === "block" ? "none" : "block";
+//     // иной способ без тернарного оператора
+//     // var visility = "";
+//     //if (targetEl.style.display === "block"){
+//     //    displayMode = "none";
+//     //}
+//     //else{
+//     //    displayMode = "block";
+//     //}
+//     targetEl.style.display = displayMode;
+//   }
+// }
+// switchVisible2(".Div3");
+// //! блоки проб 2
+// //! блоки проб 3
+// function clickText6() {
+//   document.querySelector(".box-menu").addEventListener("click", (e) => {
+//     if (e.target.classList.contains("menu")) {
+//       let num = [...document.querySelectorAll(".box-menu .menu")].indexOf(
+//           e.target
+//         ),
+//         content = document.querySelectorAll(".content");
+//       for (let i = 0; i < content.length; i++)
+//         i == num
+//           ? (content[i].style.display = "block")
+//           : (content[i].style.display = "none");
+//     }
+//   });
+//   // <ul class="box-menu">
+//   // <li class="menu">Text 4</li>
+//   // </ul>
+//   // <div class="content" style="display: none">Содержимое 1</div>
+// }
+// clickText6();
+// //! блоки проб 3
+// //! блоки проб 4
+// function HideAll() {
+//   var ellements = document.getElementsByClassName("tohide");
+//   for (var i = 0; i < ellements.length; i++) {
+//     ellements[i].style.display = "none";
+//   }
+// }
+// HideAll();
+// //! блоки проб 4
 // !
-
-//! блоки на/для jQ
-function clickText3() {
-  console.log(1);
-  const btn = document.querySelectorAll(".btn");
-  // document.querySelectorAll(".btn").addEventListener("click", function () {
-  // document.querySelector(".btn").addEventListener("click", function () {
-  // querySelectorAll
-  // querySelectorBy
-  // const btn = document.querySelector(".btn");
-  console.log(1.1);
-  // btn.addEventListener("click", function () {
-  this.addEventListener("click", function () {
-    console.log(2);
-    const block = document.querySelector(".block");
-    // block.classList.remove("active");
-    block.classList.toggle("active");
-    console.log(3);
-    // var num = this.attr("data-num");
-    // var num = this.querySelector(".btn").getAttribute('data-num')
-    var num = this.getAttribute("data-num");
-    console.log(4);
-    const IdBlock = document.querySelector("#block" + num);
-    console.log(5);
-    IdBlock.classList.add("active");
-    // IdBlock.classList.toggle("active");
-    console.log(6);
-  });
-}
-// clickText3();
-
-function clickText4() {
-  $(".btn").click(function () {
-    $(".block").removeClass("active");
-    var num = $(this).attr("data-num");
-    $("#block" + num).toggle("active");
-  });
-}
-clickText4();
-//! блоки на/для jQ
-//! блоки проб 1
-// !!!https://ru.stackoverflow.com/questions/1200678/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5-%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2-%D0%BF%D0%BE-%D0%BA%D0%BB%D0%B8%D0%BA%D1%83-js
-function clickText5() {
-  const users = Array.from(document.querySelectorAll(".user"));
-  const triggers = users.map((item) => item.querySelector(".trigger")); // Тоже самое, что Array.from(document.querySelectorAll('.trigger'))
-
-  triggers.forEach((item, i) => {
-    let settings = document.querySelector(".settings");
-    // проходимся по каждому тригеру
-    // item.addEventListener("click", (e) => {
-    item.addEventListener("click", () => {
-      // settings.style.display = "block";
-      // ставим на него слушатель события клика
-      users[i].classList.toggle("active");
-      // if (users[i].classList.toggle("active")) {
-      //   // settings.
-      // } // что-то делаем
-    });
-  });
-}
-clickText5();
-//! блоки проб 1
-//! блоки проб 2
-// ??? не раб
-function switchVisible2(element) {
-  console.log(2.1);
-  if (element.className && element.className.length > 0) {
-    console.log(2.2);
-    // находим элемент на который указывает класс нажатой кнопки
-    var targetEl = document.getElementById(element.className);
-    var displayMode = targetEl.style.display === "block" ? "none" : "block";
-    // иной способ без тернарного оператора
-    // var visility = "";
-    //if (targetEl.style.display === "block"){
-    //    displayMode = "none";
-    //}
-    //else{
-    //    displayMode = "block";
-    //}
-    targetEl.style.display = displayMode;
-  }
-}
-switchVisible2(".Div3");
-//! блоки проб 2
-//! блоки проб 3
-function clickText6() {
-  document.querySelector(".box-menu").addEventListener("click", (e) => {
-    if (e.target.classList.contains("menu")) {
-      let num = [...document.querySelectorAll(".box-menu .menu")].indexOf(
-          e.target
-        ),
-        content = document.querySelectorAll(".content");
-      for (let i = 0; i < content.length; i++)
-        i == num
-          ? (content[i].style.display = "block")
-          : (content[i].style.display = "none");
-    }
-  });
-  // <ul class="box-menu">
-  // <li class="menu">Text 4</li>
-  // </ul>
-  // <div class="content" style="display: none">Содержимое 1</div>
-}
-clickText6();
-//! блоки проб 3
-//! блоки проб 4
-function HideAll() {
-  var ellements = document.getElementsByClassName("tohide");
-  for (var i = 0; i < ellements.length; i++) {
-    ellements[i].style.display = "none";
-  }
-}
-HideAll();
-//! блоки проб 4

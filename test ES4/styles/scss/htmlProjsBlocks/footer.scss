@@ -1,7 +1,11 @@
 // <FOOTER>============================================
 footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   height: 120px;
-  background: #ccc;
+  color: #707070;
   background: #000;
   // height: 30px;
   // text-align: center;

@@ -22,8 +22,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "watch": "cross-env NODE_ENV=development webpack --mode development -watch",
-    "start": "webpack serve --mode development --open",
-    "st": "webpack serve NODE_ENV=development webpack --mode development --open",
+    "start": "cross-env NODE_ENV=development webpack serve --mode development --open",
+    "st": "webpack serve --mode development --open",
     "build": "cross-env NODE_ENV=production webpack --mode production"
   },
   "dependencies": {
