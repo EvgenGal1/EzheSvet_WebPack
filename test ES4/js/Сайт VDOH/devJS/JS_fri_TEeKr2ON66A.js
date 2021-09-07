@@ -1,4 +1,5 @@
-// РАЗМЕРЫ
+// !! JS Размеры, Прокрутка, Координаты. ФриПоЖиз - TEeKr2ON66A
+// ! РАЗМЕРЫ
 // доступные размеры окна браузера, только для чтения (с лево до скрола - тег html). clientWidth и clientHeight
 const mainEl = document.documentElement;
 const mainElWidth = mainEl.clientWidth;
@@ -35,7 +36,7 @@ const scrollLeft = window.pageXOffset;
 console.log("scrollTop:" + scrollTop);
 console.log("scrollLeft:" + scrollLeft);
 
-// УПРАВ ПРОКРУТКОЙ СТРАНИЦЫ
+// ! УПРАВ ПРОКРУТКОЙ СТРАНИЦЫ
 // добавл к текущему
 function setScrollBy() {
   window.scrollBy(0, 50);
@@ -53,7 +54,7 @@ function setScrollTo() {
 // scrollTo с опциями. не раб в safary. позиции и прокрутка - плавно, авто
 function setScrollToOpt() {
   window.scrollTo({
-    top: 500,
+    top: 1870,
     left: 0,
     behavior: "smooth",
   });
@@ -61,15 +62,23 @@ function setScrollToOpt() {
 // scrollIntoView прокруч в опред место. атр top=true(по умолч), прокуч чтоб el был вверху. top=false - внизу
 function setScrollIntoViewHead() {
   const headerScroll = document.querySelector("header");
-  headerScroll.scrollIntoView();
+  headerScroll.scrollIntoView({
+    behavior: "smooth",
+  });
 }
 function setScrollIntoViewFoot() {
-  const footerScroll = document.querySelector("footer");
-  footerScroll.scrollIntoView(false);
+  const footerScroll = document.querySelector(".centr-cont-");
+  footerScroll.scrollIntoView(
+    // ???не раб - false с опц не выводит вниз, раб как при top=true
+    {
+      top: false,
+      behavior: "smooth",
+    }
+  );
 }
 // scrollIntoView с опциями. не раб в safary
 function setScrollIntoViewOpt() {
-  const centrText = document.querySelector(".centr-text");
+  const centrText = document.querySelector("footer");
   centrText.scrollIntoView({
     // block - вертикаль позиция. center(умолч), start, end, nearest - до `ближайший` видимости
     block: "nearest",
@@ -87,17 +96,16 @@ function setEnableDesableScroll() {
   document.body.classList.toggle("scroll-lock");
 }
 
-// МЕТРИКА(РАЗМЕРЫ/ПОЛОЖЕНИЯ) ЕЛЕМ НА СТРАНИЦЕ
+// ! МЕТРИКА(РАЗМЕРЫ/ПОЛОЖЕНИЯ) ЕЛЕМ НА СТРАНИЦЕ
 
-
-// ! своё
-// ??? не раб - не знаю как поставить .miniAside вертикально по середине доступного окна браузера
+// !!! своё
+// ??? не раб - не знаю как поставить .mini-aside вертикально по середине доступного окна браузера
 function clickMinAside2() {
   const mainEl = document.documentElement;
   const mainElHeight = mainEl.clientHeight;
   console.log("доступ. Width:" + mainElWidth);
   console.log("доступ. Height:" + mainElHeight);
-  let miniAside = document.querySelectorAll(".miniAside");
+  let miniAside = document.querySelectorAll(".mini-aside");
   miniAside.document.body.style.left = function () {
     // calc(100% / clientHeight(););
     clientHeight() / 2;
@@ -106,9 +114,9 @@ function clickMinAside2() {
   };
 }
 // clickMinAside2();
-// нажатие на кнопки .miniAside
+// нажатие на кнопки .mini-aside
 function clickMinAside() {
-  let jsScroll = document.querySelectorAll(".js-scroll");
+  let jsScroll = document.querySelectorAll(".ma-bl__js-scroll");
   jsScroll.forEach(function (btn) {
     btn.addEventListener("click", function () {
       const jScr1 = document.querySelector("#jScr1");

@@ -1,5 +1,7 @@
 // подключение пакет пафз через константу. для корректного поиска точки входа
 const path = require("path");
+// Импорт станд модуль fs(File System) в проект, для раб с файловой системой
+const fs = require("fs");
 // `путь`=`требует`
 // html выгр, подкл css, js
 const HTMLWebpackPlugin = require("html-webpack-plugin");
@@ -136,25 +138,82 @@ const jsLoaders = () => {
   return user;
 };
 
+// !
+// !
+// !
+// !
+// !
+// !
+// !
+// !
+// !
+// !
+// !
+// !
+// !
+// !
+// !
 // принимает путь основ. папок с html в src, пересобирает всё dist
 function generateHtmlPlugins(templatesDir) {
-  const fs = require("fs");
-  const templateFolders = fs.readdirSync(path.resolve(__dirname, templatesDir));
+  // в перем `папки шаблонов` = обращ. к файл.сист. синхр.чтен.директории принимая путь дериктории (список файлов\подкаталогов в каталоге)
+  // const templateFolders = fs.readdirSync(path.resolve(__dirname, templatesDir));
+  // const templateFolders = fs.readdirSync(path.resolve(__dirname, templatesDir), { withFileTypes: true });
+  const templateFolders = fs.readdirSync(templatesDir);
+  console.log("templatesDir:" + templatesDir);
+  console.log("templateFolders:" + templateFolders);
+  // возвращ. отфильтр., получ. ?только файлы и исключ. из вывода директории?
   return templateFolders.map((folderName) => {
+    // !
+    // const foldersNames = fs.readdirSync(path.resolve(__dirname, folderName))[0];
+    // const foldersNames = fs.readdirSync(folderName)[0]; // нет такого файла или каталога, scandir 'Audio'
+    // const foldersNames = fs.readdirSync(folderName);
+    // folderName.forEach((foldersNames) => {
+    //   return console.log(foldersNames);
+    // });
+    // folderName[0].fs.readdirSync((foldersNames) => {
+    //     return console.log(foldersNames);
+    //   });
+    // console.log("foldersNames:" + foldersNames);
+    // !
+    console.log("folderName:" + folderName);
+    // в перем `путь к папкам шаблонов` = превращ последовательность путей или сегментов пути в абсолютный путь
     const templateFoldersPath = path.resolve(
+      // главн.папка, путьДоКат, имяПапк
       __dirname,
       templatesDir,
       folderName
     );
+    console.log("templateFoldersPath:" + templateFoldersPath);
+    // !
+    // templateFoldersPath.map((foldersNames) => {
+    // templateFoldersPath.fs.readdirSync((foldersNames) => {
+    // templateFoldersPath = fs.readdirSync((foldersNames) => {
+    //     return console.log(foldersNames);
+    //   });
+    // console.log("foldersNames:" + foldersNames);
+    // }
+    // !
+    // в перем `имя первого файла шаблона` = обращ. к файл.сист. синхр.чтен.директ. ?к первому эл?
     const firstTemplateFileName = fs.readdirSync(templateFoldersPath)[0];
+    // const firstTemplateFileName = fs.readdirSync(templateFoldersPath);
+    console.log("firstTemplateFileName:" + firstTemplateFileName);
+    // в перем `первый путь к файлу шаблона` = превращ последов. путей или сегментов пути в абсолют. путь
     const firstTemplateFilePath = path.resolve(
+      // главн.папка, путьДоКат, имяПапк, имяФайл
       __dirname,
       templatesDir,
       folderName,
       firstTemplateFileName
     );
+    console.log("firstTemplateFilePath:" + firstTemplateFilePath);
+    // возвращ. ?конст? html
+    // !1
     return new HTMLWebpackPlugin({
+      // new HTMLWebpackPlugin({
+      // !1
+      // имя: html/имяПапк/имяФайл
       filename: `html/${folderName}/${firstTemplateFileName}`,
+      // `шаблон` ?пути?
       template: firstTemplateFilePath,
       // minify: { collapseWhitespace: isProd },
       minify: false,
@@ -162,9 +221,143 @@ function generateHtmlPlugins(templatesDir) {
       // inject: false,
       chunks: ["app"],
     });
+    // !2
+    // return new HTMLWebpackPlugin({
+    //   // new HTMLWebpackPlugin({
+    //   // имя: html/имяПапк/имяФайл
+    //   // filename: `html/${folderName}/${folderName+"s"}/${firstTemplateFileName2}`,
+    //   filename: `html/${folderName}/${folderName}/${firstTemplateFileName}`,
+    //   // `шаблон` ?пути?
+    //   template: firstTemplateFilePath,
+    //   // minify: { collapseWhitespace: isProd },
+    // });
+    // !2
   });
 }
+// !!!
+// принимает путь основ. папок с html в src, пересобирает всё dist
+function generateHtmlPlugins20(templatesDir) {
+  // !!
+  fs.readdirSync(templatesDir).map((fileName) => {
+    console.log("templatesDir:" + templatesDir);
+    console.log("fileName:" + fileName);
+    // return path.join(templatesDir, fileName);
+    path.join(templatesDir, fileName);
+  });
+  return new HTMLWebpackPlugin({
+    // new HTMLWebpackPlugin({
+    // !1
+    // имя: html/имяПапк/имяФайл
 
+    filename: `html/${filename}/${filename}`,
+    // `шаблон` ?пути?
+    template: templatesDir,
+    // minify: { collapseWhitespace: isProd },
+    minify: false,
+    // inject: true,
+    // inject: false,
+    chunks: ["app"],
+  });
+  // const templateFolders = fs.readdirSync(templatesDir).map(fileName => {
+  //   const templateF = fs.readdirSync(path.resolve(__dirname,templatesDir));
+  //   return templateF.map((fileName) => {
+  //    path.join(templatesDir, fileName)
+  //   console.log("fileName:" + fileName);
+  // })
+  // !!
+  // в перем `папки шаблонов` = обращ. к файл.сист. синхр.чтен.директории принимая путь дериктории (список файлов\подкаталогов в каталоге)
+  // const templateFolders = fs.readdirSync(path.resolve(__dirname, templatesDir));
+  // const templateFolders = fs.readdirSync(templatesDir);
+  // console.log("templatesDir:" + templatesDir);
+  // console.log("templateFolders:" + templateFolders);
+  // // возвращ. отфильтр., получ. ?только файлы и исключ. из вывода директории?
+  // return templateFolders.map((folderName) => {
+  //   // // !
+  //   // // const foldersNames = fs.readdirSync(path.resolve(__dirname, folderName))[0];
+  //   // // const foldersNames = fs.readdirSync(folderName)[0]; // нет такого файла или каталога, scandir 'Audio'
+  //   // // const foldersNames = fs.readdirSync(folderName);
+  //   // // folderName.forEach((foldersNames) => {
+  //   // //   return console.log(foldersNames);
+  //   // // });
+  //   // // folderName[0].fs.readdirSync((foldersNames) => {
+  //   // //     return console.log(foldersNames);
+  //   // //   });
+  //   // // console.log("foldersNames:" + foldersNames);
+  //   // // !
+  //   console.log("folderName:" + folderName);
+  //   // // в перем `путь к папкам шаблонов` = превращ последовательность путей или сегментов пути в абсолютный путь
+  //   const templateFoldersPath = path.resolve(
+  //     // главн.папка, путьДоКат, имяПапк
+  //     __dirname,
+  //     templatesDir,
+  //     folderName
+  //   );
+  //   console.log("templateFoldersPath:" + templateFoldersPath);
+  // // !
+  // // templateFoldersPath.map((foldersNames) => {
+  // // templateFoldersPath.fs.readdirSync((foldersNames) => {
+  // // templateFoldersPath = fs.readdirSync((foldersNames) => {
+  // //     return console.log(foldersNames);
+  // //   });
+  // // console.log("foldersNames:" + foldersNames);
+  // // }
+  // // !
+  // // в перем `имя первого файла шаблона` = обращ. к файл.сист. синхр.чтен.директ. ?к первому эл?
+  // const firstTemplateFileName = fs.readdirSync(templateFoldersPath)[0];
+  // // const firstTemplateFileName = fs.readdirSync(templateFoldersPath);
+  // console.log("firstTemplateFileName:" + firstTemplateFileName);
+  // // в перем `первый путь к файлу шаблона` = превращ последов. путей или сегментов пути в абсолют. путь
+  // const firstTemplateFilePath = path.resolve(
+  //   // главн.папка, путьДоКат, имяПапк, имяФайл
+  //   __dirname,
+  //   templatesDir,
+  //   folderName,
+  //   firstTemplateFileName
+  // );
+  // console.log("firstTemplateFilePath:" + firstTemplateFilePath);
+  // // возвращ. ?конст? html
+  // // !1
+  // return new HTMLWebpackPlugin({
+  // // new HTMLWebpackPlugin({
+  //   // !1
+  //   // имя: html/имяПапк/имяФайл
+  //   filename: `html/${folderName}/${firstTemplateFileName}`,
+  //   // `шаблон` ?пути?
+  //   template: firstTemplateFilePath,
+  //   // minify: { collapseWhitespace: isProd },
+  //   minify: false,
+  //   // inject: true,
+  //   // inject: false,
+  //   chunks: ["app"],
+  // });
+  // });
+}
+// !!!
+// !!!!
+var generateHtmlPlugins30 = function (dir, done) {
+  // function generateHtmlPlugins30(dir, done) {
+  var results = [];
+  fs.readdir(dir, function (err, list) {
+    if (err) return done(err);
+    var pending = list.length;
+    if (!pending) return done(null, results);
+    list.forEach(function (file) {
+      file = path.resolve(dir, file);
+      fs.stat(file, function (err, stat) {
+        if (stat && stat.isDirectory()) {
+          walk(file, function (err, res) {
+            results = results.concat(res);
+            if (!--pending) done(null, results);
+          });
+        } else {
+          results.push(file);
+          if (!--pending) done(null, results);
+        }
+      });
+    });
+  });
+};
+// !!!!
 // передаем в fn() путь основных папок с html. вызов в plugins().base[].concat(htmlPlugins)
 const htmlPlugins = generateHtmlPlugins("./test ES4/html/views");
 
@@ -172,7 +365,7 @@ const htmlPlugins = generateHtmlPlugins("./test ES4/html/views");
 // описание plugin в plugins:стандарт + описание
 const plugins = () => {
   const base = [
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       minify: {
         collapseWhitespace: isProd,
@@ -217,6 +410,9 @@ const plugins = () => {
     }),
     // вызов .concat(htmlPlugins) для f() generateHtmlPlugins
   ].concat(htmlPlugins);
+  // !
+  // ]
+  // !
   // analyzer подк. е/и Prod
   // if (isProd) {
   //   base.push(new BundleAnalyzerPlugin());
@@ -321,7 +517,7 @@ module.exports = {
   // server
   devServer: {
     // порт для запуска. рекоменд 8081, реже 8080
-    port: 8081, // 8080 // 4200 // 8081
+    port: 8080, // 8081, // 8080 // 4200 // 8081
     // только в разраб
     hot: isDev,
     // показ ошб. на экране а не в консоле

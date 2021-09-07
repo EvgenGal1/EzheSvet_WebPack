@@ -583,7 +583,7 @@
   }
 
   //
-  .switcher-radio-on:checked ~ .switcher-slider {
+  .switcher-radio-light:checked ~ .switcher-slider {
     background-color: #81ea89;
   }
 
@@ -591,11 +591,11 @@
     background: #ddd;
   }
 
-  .switcher-radio-off:checked ~ .switcher-slider {
+  .switcher-radio-dark:checked ~ .switcher-slider {
     background-color: #ed8282;
   }
 
-  .switcher-radio-on:checked ~ .switcher-slider:after {
+  .switcher-radio-light:checked ~ .switcher-slider:after {
     left: calc(2 * ((100% - 6px) / 3));
   }
 
@@ -603,8 +603,8 @@
     left: calc(1px + 100% / 3);
   }
 
-  .switcher-radio-off:checked ~ .switcher-slider:after {
-  // .switcher-radio-off:checked + .switcher-slider:after {
+  .switcher-radio-dark:checked ~ .switcher-slider:after {
+  // .switcher-radio-dark:checked + .switcher-slider:after {
     left: 3px;
   }
 }
@@ -718,7 +718,7 @@
       }
       // изменение цвета центр. и мини кнопок при нажатии
       // ??? не раб - разобратся как работает такая вложенность
-      // начальная позиция на .item3-state-off attr checked в -90'град
+      // начальная позиция на .--style-state-off attr checked в -90'град
       &:checked {
         & + input[type="radio"] {
           z-index: 10;
@@ -774,7 +774,7 @@
       // изменение стрелки(:after) при нажатии
       // изменения в label при нажатии
       // ??? не раб - разобратся как работает такая вложенность
-      // начальная позиция на .item3-state-off attr checked в -90'град
+      // начальная позиция на .--style-state-off attr checked в -90'град
       &:checked {
         // третье положение?
         & + i {

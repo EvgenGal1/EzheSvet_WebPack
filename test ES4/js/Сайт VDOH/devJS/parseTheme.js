@@ -14,8 +14,8 @@
 //   var theme = document.body.classList.contains("light-theme")
 //   return "light";
 // } else if (prefNo) {
-//   var theme = document.body.classList.contains("grayn-theme")
-//   return "grayn";
+//   var theme = document.body.classList.contains("neutral-theme")
+//   return "neutral";
 // }
 // localStorage.setItem("theme", theme);
 // !!
@@ -25,10 +25,10 @@
 // 1.
 // Получаем предпочтение темы пользователя из локального хранилища, если оно доступно
 const currentTheme = localStorage.getItem("theme");
-// Если текущая тема в localStorage равна "grayn"
-if (currentTheme == "grayn") {
-  // вкл класс .grayn-theme для <body>
-  document.body.classList.add("grayn-theme");
+// Если текущая тема в localStorage равна "neutral"
+if (currentTheme == "neutral") {
+  // вкл класс .neutral-theme для <body>
+  document.body.classList.add("neutral-theme");
 } else if (currentTheme == "dark") {
   document.body.classList.add("dark-theme");
 } else if (currentTheme == "light") {
@@ -49,8 +49,8 @@ swLabelAll.forEach(function (btn) {
       console.log("~");
       document.body.classList.remove("light-theme");
       document.body.classList.remove("dark-theme");
-      document.body.classList.add("grayn-theme");
-      var theme = "grayn";
+      document.body.classList.add("neutral-theme");
+      var theme = "neutral";
       // !
       // document.swNeut.checked=true;
       // localStorage.setItem("document.swNeut.checked", true);
@@ -61,36 +61,76 @@ swLabelAll.forEach(function (btn) {
 
       // el.onchange = () => localStorage.setItem(el.id, el.checked);
       // el.checked = localStorage.getItem(el.id) === "true";
-      btn.onchange = () => localStorage.setItem(btn.id, btn.checked);
-      btn.checked = localStorage.getItem(btn.id) === "true";
+      // btn.onchange = () => localStorage.setItem(btn.id, btn.checked);
+      // btn.checked = localStorage.getItem(btn.id) === "true";
       // !
     }
     if (btn == swOn) {
       console.log("+");
       document.body.classList.remove("dark-theme");
-      document.body.classList.remove("grayn-theme");
+      document.body.classList.remove("neutral-theme");
       document.body.classList.add("light-theme");
       var theme = "light";
       // !
       // document.swOn.checked=true;
-      localStorage.setItem("document.swOn.checked", true);
+      // localStorage.setItem("document.swOn.checked", true);
       // !
     }
     if (btn == swOff) {
       console.log("o");
       document.body.classList.remove("light-theme");
-      document.body.classList.remove("grayn-theme");
+      document.body.classList.remove("neutral-theme");
       document.body.classList.add("dark-theme");
       var theme = "dark";
       // !
       // document.swOff.checked=true;
-      localStorage.setItem("document.swOff.checked", true);
+      // localStorage.setItem("document.swOff.checked", true);
       // !
     }
     localStorage.setItem("theme", theme);
     // localStorage.clear();
   });
 });
+// !12
+function rtf(selector) {
+  // не дублируем код
+  function save(data) {
+      localStorage.setItem(selector, JSON.stringify(data));
+  }
+  // и не создаем тысячи функций в цикле
+  // а используем одну общую
+  function onChange(event) {
+      var element = event.target,
+          name = element.name,
+          value = element.value;
+      data[name] = value;
+      save(data);
+  }
+  var elements = document.querySelectorAll(selector),
+      data = localStorage.getItem(selector);
+  if(data) { // если в сторадже что-то есть
+      // то можем и распарсить
+      data = JSON.parse(data);
+  } else {
+      // иначе парсить нельзя, будет ошибка
+      // присвоим дефолтное значение и сохраним
+      save(data = {});
+  }
+  // вместо ненужного создания массива
+  // обратимся напрямую к прототипу
+  Array.prototype.forEach.call(elements, function(element) {
+      var name = element.name,
+          value = element.value;
+      if(data[name] === value) { // если текущий элемент отмечен в сторадже
+          // то отметим и на странице
+          element.checked = true;
+      }
+      // навесим созданый вне цикла хандлер на событие
+      element.addEventListener("change", onChange);        
+  });
+}
+rtf("input[type=radio]")
+// !12
 // document.querySelector(".switcher-off").checkbox.checked
 // document.querySelector(".switcher-off").checked
 // !!!!! настройки стиля-цвета
@@ -113,9 +153,9 @@ swLabelAll.forEach(function (btn) {
   const sw7mid = document.querySelector(".sw7-mid");
   const sw7off = document.querySelector(".sw7-off");
   // ???не раб - по id не вызов. для смены стиля по нажатию на центр в 3х циферблатную кнопку
-  // const sw7Of = document.querySelectorById(".item3-state-off");
-  // const sw7On = document.querySelectorById(".item3-state-on");
-  // const sw7Nul = document.querySelectorById(".item3-state-null");
+  // const sw7Of = document.querySelectorById(".--style-state-off");
+  // const sw7On = document.querySelectorById(".--style-state-on");
+  // const sw7Nul = document.querySelectorById(".--style-state-null");
   btn.addEventListener("click", function () {
     if (btn == sw7big) {
       document.body.classList.remove("style-mid");

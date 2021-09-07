@@ -36,7 +36,7 @@
 
 // ? 4 Переопределение настроек ОС
 /* Цвета по умолчанию */
-// body.grayn-theme {
+// body.neutral-theme {
 //   // --text-color: #f00;
 //   // --bkg-color: #cccccc;
 //   --anchor-color: #0d0238;
@@ -53,7 +53,7 @@
 //   --anchor-color: #0033cc;
 // }
 // /* Стили для пользователей, предпочитающих тёмный режим на уровне ОС */
-// @media (prefers-color-scheme: grayn) {
+// @media (prefers-color-scheme: neutral) {
 //   /* Стили для темы по умолчанию */
 //   body {
 //     // --text-color: #f00;
@@ -97,8 +97,8 @@
 // Обратите внимание на пробелы, они не ломают синтаксис (что сбросило бы определение всей строки). Теперь осталось только вынести переключатель состояния в отдельные переменные:
 // :root {
 body {
-  // body.grayn-theme {
-  // :root.grayn-theme {
+  // body.neutral-theme {
+  // :root.neutral-theme {
   /* --ON и --OFF заменяют двоичную переменную */
   --ON: initial;
   // --ON: ;
@@ -109,60 +109,60 @@ body {
 // .theme-default,
 // .theme-light {
 // .default-theme,
-.grayn-theme {
-  --grayn: var(--ON);
+.neutral-theme {
+  --neutral: var(--ON);
   --light: var(--OFF);
   --dark: var(--OFF);
 }
 .light-theme {
   --light: var(--ON);
-  --grayn: var(--OFF);
+  --neutral: var(--OFF);
   --dark: var(--OFF);
 }
 .dark-theme {
   --dark: var(--ON);
   --light: var(--OFF);
-  --grayn: var(--OFF);
+  --neutral: var(--OFF);
 }
 /* медиа-запрос теперь нужен только для переключения */
 @media (prefers-color-scheme: dark) {
   .theme-default {
     --dark: var(--ON);
     --light: var(--OFF);
-    --grayn: var(--OFF);
+    --neutral: var(--OFF);
   }
 }
 // Теперь цветовые схемы можно определять в одном месте, выглядеть это будет так:
 // :root {
 body {
-  // --baz-bkg-color: var(--dark, #1d0a0a) var(--grayn, #500000)    var(--light, #858585);
-  --baz-bkg-color: var(--dark, #140f0b) var(--grayn, #333) var(--light, #858585);
-  // --hed-bkg-color: var(--dark, #500000) var(--grayn, #8b0000) var(--light, #4b4b4b);
-  --hed-bkg-color: var(--dark, #35170c) var(--grayn, #8b0000)
+  // --baz-bkg-color: var(--dark, #1d0a0a) var(--neutral, #500000)    var(--light, #858585);
+  --baz-bkg-color: var(--dark, #140f0b) var(--neutral, #333) var(--light, #858585);
+  // --hed-bkg-color: var(--dark, #500000) var(--neutral, #8b0000) var(--light, #4b4b4b);
+  --hed-bkg-color: var(--dark, #35170c) var(--neutral, #8b0000)
     var(--light, #4b4b4b);
-  --hed-bkg-color: var(--dark, #4b0000) var(--grayn, #8b0000)
+  --hed-bkg-color: var(--dark, #4b0000) var(--neutral, #8b0000)
     var(--light, #4b4b4b);
-  --bkd-col: var(--dark, #080707) var(--grayn, #500000) var(--light, #cccccc); //--grayn, #500000
-  // --text-color: var(--dark, #4b4b4b) var(--grayn, #cccccc) var(--light, #000000);
-  // --text-color: var(--dark, #555555) var(--grayn, #4b0000) var(--light, #000000);
-  --text-color: var(--dark, #555555) var(--grayn, #1b0000) var(--light, #000000);
-  // --h-color: var(--dark, #555555) var(--grayn, #8b0000) var(--light, #000000);
-  // --h-color: var(--dark, #4b0000) var(--grayn, #8b0000) var(--light, #000000);
-  // --h-bkg-color: var(--dark, #C34D0A) var(--grayn, #ff0) var(--light, #ccc);
-  --hel-p-bkg-color: var(--dark, #4d220e) var(--grayn, #555) var(--light, #ccc); //--dark, #58290e
-  --hel-p-color: var(--dark, #4b0000) var(--grayn, #8b0000)
+  --bkd-col: var(--dark, #080707) var(--neutral, #500000) var(--light, #cccccc); //--neutral, #500000
+  // --text-color: var(--dark, #4b4b4b) var(--neutral, #cccccc) var(--light, #000000);
+  // --text-color: var(--dark, #555555) var(--neutral, #4b0000) var(--light, #000000);
+  --text-color: var(--dark, #555555) var(--neutral, #1b0000) var(--light, #000000);
+  // --h-color: var(--dark, #555555) var(--neutral, #8b0000) var(--light, #000000);
+  // --h-color: var(--dark, #4b0000) var(--neutral, #8b0000) var(--light, #000000);
+  // --h-bkg-color: var(--dark, #C34D0A) var(--neutral, #ff0) var(--light, #ccc);
+  --hel-p-bkg-color: var(--dark, #4d220e) var(--neutral, #555) var(--light, #ccc); //--dark, #58290e
+  --hel-p-color: var(--dark, #4b0000) var(--neutral, #8b0000)
     var(--light, #000000);
-  --hel-p-color: var(--dark, #1b0000) var(--grayn, #8b0000)
+  --hel-p-color: var(--dark, #1b0000) var(--neutral, #8b0000)
     var(--light, #000000);
-  --hel-p-color: var(--dark, #555555) var(--grayn, #8b0000)
+  --hel-p-color: var(--dark, #555555) var(--neutral, #8b0000)
     var(--light, #000000);
-  // --h-bkg-color: var(--dark, #3f2512) var(--grayn, #555) var(--light, #ccc); //--dark, #58290e
-  --hel-h-color: var(--dark, #6b0000) var(--grayn, #8b0000)
+  // --h-bkg-color: var(--dark, #3f2512) var(--neutral, #555) var(--light, #ccc); //--dark, #58290e
+  --hel-h-color: var(--dark, #6b0000) var(--neutral, #8b0000)
     var(--light, #000000);
-  --hel-h-bkg-color: var(--dark, #35170c) var(--grayn, #fad201)
+  --hel-h-bkg-color: var(--dark, #35170c) var(--neutral, #fad201)
     var(--light, #ccc); //--dark, #58290e
-  --link-color: var(--dark, #b76c10) var(--grayn, #cde404) var(--light, #0089c7);
-  --primary-color: var(--dark, #8916b9) var(--grayn, #c07d00)
+  --link-color: var(--dark, #b76c10) var(--neutral, #cde404) var(--light, #0089c7);
+  --primary-color: var(--dark, #8916b9) var(--neutral, #c07d00)
     var(--light, #165fb9);
 }
 // #C3B6A2 #313B44 #232B32
@@ -373,14 +373,14 @@ header {
         width: var(--switcher-5-aft);
         height: var(--switcher-5-aft);
       }
-      .switcher-radio-on:checked ~ .switcher-slider:after {
+      .switcher-radio-light:checked ~ .switcher-slider:after {
         left: calc(100% - (var(--switcher-5-aft) + 3px));
       }
       .switcher-radio-neutral:checked ~ .switcher-slider:after {
         left: calc(((100% + var(--height) - (var(--switcher-5-aft) / 2))) / 3);
         left: calc(var(--switcher-5-neut) + 100% / 3);
       }
-      .switcher-radio-off:checked ~ .switcher-slider:after {
+      .switcher-radio-dark:checked ~ .switcher-slider:after {
         // left: var(--switcher-5-top);
       }
     }

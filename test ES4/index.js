@@ -146,8 +146,8 @@ ibgJS();
 // //   var theme = document.body.classList.contains("light-theme")
 // //   return "light";
 // // } else if (prefNo) {
-// //   var theme = document.body.classList.contains("grayn-theme")
-// //   return "grayn";
+// //   var theme = document.body.classList.contains("neutral-theme")
+// //   return "neutral";
 // // }
 // // localStorage.setItem("theme", theme);
 // // !!
@@ -157,10 +157,10 @@ ibgJS();
 // // 1.
 // // Получаем предпочтение темы пользователя из локального хранилища, если оно доступно
 // const currentTheme = localStorage.getItem("theme");
-// // Если текущая тема в localStorage равна "grayn"
-// if (currentTheme == "grayn") {
-//   // вкл класс .grayn-theme для <body>
-//   document.body.classList.add("grayn-theme");
+// // Если текущая тема в localStorage равна "neutral"
+// if (currentTheme == "neutral") {
+//   // вкл класс .neutral-theme для <body>
+//   document.body.classList.add("neutral-theme");
 // } else if (currentTheme == "dark") {
 //   document.body.classList.add("dark-theme");
 // } else if (currentTheme == "light") {
@@ -181,8 +181,8 @@ ibgJS();
 //       console.log("~");
 //       document.body.classList.remove("light-theme");
 //       document.body.classList.remove("dark-theme");
-//       document.body.classList.add("grayn-theme");
-//       var theme = "grayn";
+//       document.body.classList.add("neutral-theme");
+//       var theme = "neutral";
 //       // !
 //       // document.swNeut.checked=true;
 //       // localStorage.setItem("document.swNeut.checked", true);
@@ -200,7 +200,7 @@ ibgJS();
 //     if (btn == swOn) {
 //       console.log("+");
 //       document.body.classList.remove("dark-theme");
-//       document.body.classList.remove("grayn-theme");
+//       document.body.classList.remove("neutral-theme");
 //       document.body.classList.add("light-theme");
 //       var theme = "light";
 //       // !
@@ -211,7 +211,7 @@ ibgJS();
 //     if (btn == swOff) {
 //       console.log("o");
 //       document.body.classList.remove("light-theme");
-//       document.body.classList.remove("grayn-theme");
+//       document.body.classList.remove("neutral-theme");
 //       document.body.classList.add("dark-theme");
 //       var theme = "dark";
 //       // !
@@ -287,9 +287,9 @@ ibgJS();
 //   const sw7mid = document.querySelector(".sw7-mid");
 //   const sw7off = document.querySelector(".sw7-off");
 //   // ???не раб - по id не вызов. для смены стиля по нажатию на центр в 3х циферблатную кнопку
-//   // const sw7Of = document.querySelectorById(".item3-state-off");
-//   // const sw7On = document.querySelectorById(".item3-state-on");
-//   // const sw7Nul = document.querySelectorById(".item3-state-null");
+//   // const sw7Of = document.querySelectorById(".--style-state-off");
+//   // const sw7On = document.querySelectorById(".--style-state-on");
+//   // const sw7Nul = document.querySelectorById(".--style-state-null");
 //   btn.addEventListener("click", function () {
 //     if (btn == sw7big) {
 //       document.body.classList.remove("style-mid");
