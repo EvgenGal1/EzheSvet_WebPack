@@ -1,9 +1,10 @@
-// <HEADER>============================================
+// <HEADER>====================================================
 
 header {
   // display: flex;
   @include flexbox();
-  justify-content: space-between;
+  // position: fixed;
+    justify-content: space-between;
   height: 150px;
   padding: 25px 03%;
   background-color: #8b0000;
@@ -23,14 +24,8 @@ header {
       height: 80px !important;
     }
   }
-  // .header {
-  //   background-color: #8b0000;
-  //   height: 150px;
-  //   display: flex;
-  //   justify-content: space-between;
-  // }
 }
-// <LOGO>============================================
+// <LOGO>====================================================
 .header-logo {
   .header-logo-smail {
     position: relative;
@@ -72,32 +67,9 @@ header {
   }
 }
 //<MENU>====================================================
-.wrapper {
-  .header-menu {
-    position: relative;
-    // min-width: 1250px;
-    &__top {
-      position: absolute;
-      right: 0;
-      top: 0;
-      .header-menu-list {
-        flex-flow: initial;
-      }
-      .menu-list__items {
-        float: left;
-      }
-    }
-
-    &__bottom {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-    }
-  }
-}
-
 .header-menu {
   position: relative;
+  width: 100%;
   // text-shadow: 0.5px 0.3px 0.5px #000;
   &__top {
     position: absolute;
@@ -125,7 +97,7 @@ header {
   .header-menu-list {
     display: flex;
     // ??? убрать полсе решения последних li
-    flex-flow: row wrap;
+    // flex-flow: row wrap;
     justify-content: space-evenly;
     justify-content: flex-end;
   }
@@ -150,7 +122,7 @@ header {
     //   // width: 150px;
     //   // height: 50px;
     // }
-    a.menu-list-link{
+    a.menu-list-link {
       color: #35170c;
     }
     &:nth-child(1) .menu-list-link {
@@ -349,67 +321,19 @@ header {
     }
     @media (max-width: 1106px) {
       &:nth-child(5) {
-        // @include ulliul();
-        width: 50px;
-        a,
-        .ul {
-          width: 50px;
-        }
-        .link__last-bykv,
-        .ul-li__last-bykv {
-          display: none;
-        }
-        .ul-li-a:hover {
-          text-decoration: underline;
-          &::before,
-          &::after {
-            content: "" !important;
-          }
-        }
+        @include ulliul();
       }
     }
     @media (max-width: 1009px) {
       &:nth-child(4) {
         // ??? не раб - SassError: Undefined mixin - @include ulliul();
-        // @include ulliul();
-        width: 50px;
-        a,
-        .ul {
-          width: 50px;
-        }
-        .link__last-bykv,
-        .ul-li__last-bykv {
-          display: none;
-        }
-        .ul-li-a:hover {
-          text-decoration: underline;
-          &::before,
-          &::after {
-            content: "" !important;
-          }
-        }
+        @include ulliul();
       }
     }
     @media (max-width: 903px) {
       &:nth-child(3) {
         // ??? не раб - SassError: Undefined mixin - @include ulliul();
-        // @include ulliul();
-        width: 50px;
-        a,
-        .ul {
-          width: 50px;
-        }
-        .link__last-bykv,
-        .ul-li__last-bykv {
-          display: none;
-        }
-        .ul-li-a:hover {
-          text-decoration: underline;
-          &::before,
-          &::after {
-            content: "" !important;
-          }
-        }
+        @include ulliul();
       }
     }
     @media (max-width: 797px) {
@@ -561,8 +485,8 @@ header {
           content: "<<";
         }
       }
-      .ul-li__firct-bykv, 
-      .ul-li__last-bykv{
+      .ul-li__firct-bykv,
+      .ul-li__last-bykv {
         // font-size: 16px;
       }
     }

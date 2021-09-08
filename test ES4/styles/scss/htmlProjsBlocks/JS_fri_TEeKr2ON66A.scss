@@ -22,11 +22,17 @@
   // border-bottom-right-radius: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  transition-duration: 0.1s;
   &:hover {
     width: 40px;
     transition-duration: 0.1s;
     left: calc(100% - 40px);
     opacity: 1;
+  }
+  // попытка сделать пред наведение
+  .obol{
+    background: #8b0000;
+    padding: 5px 0 5px 5px;
   }
   div.m-a__bl {
     &:hover:first-child .ma-bl__js-scroll {
@@ -58,4 +64,14 @@
 }
 body.scroll-lock {
   overflow: hidden;
+}
+
+
+.fixed_menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
 }

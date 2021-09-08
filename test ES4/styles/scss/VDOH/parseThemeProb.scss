@@ -93,6 +93,8 @@
 // }
 
 // ? 5
+
+// ! <стили --theme(настройки стиля-цвета, кнп.m-s-switcher-5)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
 // !!! https://habr.com/ru/company/macloud/blog/550168/
 // Обратите внимание на пробелы, они не ломают синтаксис (что сбросило бы определение всей строки). Теперь осталось только вынести переключатель состояния в отдельные переменные:
 // :root {
@@ -136,7 +138,8 @@ body {
 // :root {
 body {
   // --baz-bkg-color: var(--dark, #1d0a0a) var(--neutral, #500000)    var(--light, #858585);
-  --baz-bkg-color: var(--dark, #140f0b) var(--neutral, #333) var(--light, #858585);
+  --baz-bkg-color: var(--dark, #140f0b) var(--neutral, #333)
+    var(--light, #858585);
   // --hed-bkg-color: var(--dark, #500000) var(--neutral, #8b0000) var(--light, #4b4b4b);
   --hed-bkg-color: var(--dark, #35170c) var(--neutral, #8b0000)
     var(--light, #4b4b4b);
@@ -145,11 +148,13 @@ body {
   --bkd-col: var(--dark, #080707) var(--neutral, #500000) var(--light, #cccccc); //--neutral, #500000
   // --text-color: var(--dark, #4b4b4b) var(--neutral, #cccccc) var(--light, #000000);
   // --text-color: var(--dark, #555555) var(--neutral, #4b0000) var(--light, #000000);
-  --text-color: var(--dark, #555555) var(--neutral, #1b0000) var(--light, #000000);
+  --text-color: var(--dark, #555555) var(--neutral, #1b0000)
+    var(--light, #000000);
   // --h-color: var(--dark, #555555) var(--neutral, #8b0000) var(--light, #000000);
   // --h-color: var(--dark, #4b0000) var(--neutral, #8b0000) var(--light, #000000);
   // --h-bkg-color: var(--dark, #C34D0A) var(--neutral, #ff0) var(--light, #ccc);
-  --hel-p-bkg-color: var(--dark, #4d220e) var(--neutral, #555) var(--light, #ccc); //--dark, #58290e
+  --hel-p-bkg-color: var(--dark, #4d220e) var(--neutral, #555)
+    var(--light, #ccc); //--dark, #58290e
   --hel-p-color: var(--dark, #4b0000) var(--neutral, #8b0000)
     var(--light, #000000);
   --hel-p-color: var(--dark, #1b0000) var(--neutral, #8b0000)
@@ -161,7 +166,8 @@ body {
     var(--light, #000000);
   --hel-h-bkg-color: var(--dark, #35170c) var(--neutral, #fad201)
     var(--light, #ccc); //--dark, #58290e
-  --link-color: var(--dark, #b76c10) var(--neutral, #cde404) var(--light, #0089c7);
+  --link-color: var(--dark, #b76c10) var(--neutral, #cde404)
+    var(--light, #0089c7);
   --primary-color: var(--dark, #8916b9) var(--neutral, #c07d00)
     var(--light, #165fb9);
 }
@@ -175,6 +181,8 @@ body {
 // color: #58290e
 // color: #35170c
 // color: #200c0c;
+
+// применённые переменные-------------------------------------------------------------
 body {
   background: var(--baz-bkg-color);
 }
@@ -216,7 +224,10 @@ hr {
   // }
 }
 
-// !!!!! настройки стиля-размера
+// ! </стили --theme(настройки стиля-цвета, кнп.m-s-switcher-5)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˄
+
+// ! <стили --style(настройки стиля-размера, кнп.m-s-switcher-7)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
+
 body {
   --ON: initial;
   --OFF: ;
@@ -256,6 +267,8 @@ body {
 body {
   --width: var(--big, 120px) var(--mid, 100px) var(--small, 80px)
     var(--off, 80px);
+  --width-swit: var(--big, 100px) var(--mid, 95px) var(--small, 90px)
+    var(--off, 90px);
   --height: var(--big, 35px) var(--mid, 30px) var(--small, 25px)
     var(--off, 25px);
   --font-size-big: var(--big, 22px) var(--mid, 18px) var(--small, 15px)
@@ -270,25 +283,43 @@ body {
     var(--small, 0.5px solid #000) var(--off, 0px solid #000);
   --border-radius: var(--big, 7px) var(--mid, 5px) var(--small, 2px)
     var(--off, 0px);
-  // --mar-bl: var(--big, 8px) var(--mid, 5px) var(--small, 2px) var(--off, 0px);
-  // --bor-wid: var(--big, 5px) var(--mid, 2px) var(--small, 1px) var(--off, 0px);
   --mar-bl: var(--big, 5px) var(--mid, 0px) var(--small, 0px) var(--off, 0px);
   --bor-wid: var(--big, 5px) var(--mid, 5px) var(--small, 3px) var(--off, 0px);
   --switcher-1-top: var(--big, 16%) var(--mid, 12%) var(--small, 5%)
     var(--off, 5%);
   --switcher-1-lab: var(--big, 32px) var(--mid, 27px) var(--small, 22px)
     var(--off, 22px);
+  --switcher-2-lef: var(--big, 10px) var(--mid, 9px) var(--small, 8px)
+    var(--off, 8px);
+  --switcher-2-rig: var(--big, 10px) var(--mid, 9px) var(--small, 8px)
+    var(--off, 8px);
+  --switcher-2-fo-si: var(--big, 17px) var(--mid, 15px) var(--small, 13px)
+    var(--off, 13px);
   --switcher-5-aft: var(--big, 29px) var(--mid, 24px) var(--small, 19px)
     var(--off, 19px);
   --switcher-5-top: var(--big, 3px) var(--mid, 2px) var(--small, 1px)
     var(--off, 1px);
   --switcher-5-neut: var(--big, 1px) var(--mid, 3px) var(--small, 6px)
     var(--off, 6px);
-
+  --switcher-7-box-sh: var(--big, -25px -11px 0 #707070)
+    var(--mid, -22px 9.5px 0 #707070) var(--small, 20px -8.5px 0 #707070)
+    var(--off, 19.5px 8px 0 #707070);
+  --switcher-7-top: var(--big, -1px) var(--mid, 4px) var(--small, -3px)
+    var(--off, 5px);
+  --switcher-2-left: var(--big, 0px) var(--mid, 0px) var(--small, -14px)
+    var(--off, -14px);
+  --bot-it-fir-mar: var(--big, 30px) var(--mid, 25px) var(--small, 20px)
+    var(--off, 20px);
+  --bot-it-las-mar-rig: var(--big, 14px) var(--mid, 12px) var(--small, 10px)
+    var(--off, 10px);
+  --bot-it-las-mar-lef: var(--big, 44px) var(--mid, 37px) var(--small, 30px)
+    var(--off, 30px);
+  // --bor-wid: var(--big, 5px) var(--mid, 2px) var(--small, 1px) var(--off, 0px);
   // --mar-blqw: var(--small, 2px) var(--big, 8px) var(--mid, 5px) var(--off, 0px);
   // --mar-bl-endqw: var(--small, 15px) var(--big, 25px) var(--mid, 17px);
   // --mar-bl-strqw: var(--small, 15px) var(--big, 25px) var(--mid, 17px);
 }
+// применённые переменные-------------------------------------------------------------
 hr {
   margin-block-start: var(--mar-bl);
   margin-block-end: var(--mar-bl);
@@ -322,10 +353,18 @@ header {
     }
   }
 
-  // m-s-switcher (кнопки)
+  // <m-s-switcher> (кнопки)-------------------------------------------------------------
   .header-menu__bottom {
     .menu-set__items {
       height: var(--height);
+      width: var(--width-swit);
+      &:not(:first-child) {
+        margin: 0px 0px 0px var(--bot-it-fir-mar);
+      }
+      &:last-child {
+        // width: 30px;
+        margin: 0px var(--bot-it-las-mar-rig) 0px var(--bot-it-las-mar-lef);
+      }
     }
   }
   .m-s-switcher {
@@ -345,6 +384,18 @@ header {
         height: var(--height);
         input {
           height: var(--height);
+          &:before {
+            left: var(--switcher-2-lef);
+            font-size: var(--switcher-2-fo-si);
+          }
+          &:after {
+            right: var(--switcher-2-rig);
+            font-size: var(--switcher-2-fo-si);
+          }
+        }
+      }
+      .m-s-switcher-2 {
+        input[type="switcher-2"] {
         }
       }
       .m-s-switcher-3 label {
@@ -362,7 +413,7 @@ header {
         width: var(--height);
       }
     }
-    // -5(3 позиции - горизонт)
+    // -5(3 позиции - горизонт --theme)
     &-5 {
       // switcher-5-TA
       .switcher {
@@ -384,9 +435,37 @@ header {
         // left: var(--switcher-5-top);
       }
     }
+    // -7(3 позиции - круг --style)
+    &-7 {
+      height: var(--height);
+      width: var(--height);
+      .tristate-rotate {
+        height: var(--height);
+        width: var(--height);
+      }
+      .tristate {
+        & > input[type="radio"],
+        & i {
+          height: var(--height);
+          width: var(--height);
+        }
+        & i {
+          &:before {
+            box-shadow: var(--switcher-7-box-sh);
+          }
+          &:after {
+            top: calc(50% - var(--switcher-7-top));
+            left: var(--switcher-7-left);
+          }
+        }
+      }
+    }
   }
 }
 // m-s-switcher (кнопки)
+
+// ! </стили --style(настройки стиля-размера, кнп.m-s-switcher-7)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˄
+
 // !
 // Советы по дизайну
 // Изображения в тёмном режиме

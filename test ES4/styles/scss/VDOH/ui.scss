@@ -52,8 +52,8 @@ body {
   box-shadow: 0px 0px 3px #000 inset;
 }
 // видимая часть трека
-::-webkit-scrollbar-track-piece{
-// background-color: blue;
+::-webkit-scrollbar-track-piece {
+  // background-color: blue;
 }
 // бегунок/ползунок
 ::-webkit-scrollbar-thumb {
@@ -75,7 +75,11 @@ body {
 }
 
 //<>====================================================
-
+.empty_block {
+  height: 150px;
+  width: 100%;
+  padding-top: 150px;
+}
 hr {
   display: block;
   // юникод биди. направления контента
