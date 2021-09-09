@@ -332,7 +332,8 @@ hr {
   }
 }
 header {
-  .menu-list__items .menu-list-link {
+  .header-menu__top .menu-list .menu-list__items .menu-list__link
+   {
     width: var(--width);
     height: var(--height);
     font-size: var(--font-size-big);
@@ -340,13 +341,13 @@ header {
     border: var(--border);
     border-radius: var(--border-radius);
   }
-  .ul {
+  .menu-list__sub {
     width: var(--width);
     // font-size: var(--font-size-smail);
-    .ul-li {
+    .sub-li {
       &-a {
-        .ul-li__firct-bykv,
-        .ul-li__last-bykv {
+        .sub-li__a-firct-bykv,
+        .sub-li__a-last-bykv {
           font-size: var(--font-size-mid);
         }
       }

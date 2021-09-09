@@ -59,7 +59,9 @@ function setScrollTo() {
 // scrollTo с опциями. не раб в safary. позиции и прокрутка - плавно, авто
 function setScrollToOpt() {
   window.scrollTo({
+    top: 50,
     top: 75,
+    top: 100,
     left: 0,
     behavior: "smooth",
   });
@@ -170,15 +172,15 @@ function scrolHead() {
     //   header.classList.remove("fixed_menu");
     // }
     var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrolled >= 75) {
+    if (scrolled >= 100) {
       console.log(0);
       header.style.height = "50px";
-      helloys.style.paddingTop = "150px";
+      helloys.style.paddingTop = "140px";
       header.classList.add("fixed_menu");
       // !2
       // headerMenuTop.classList.add("done").appendChild(headerBurger)
       let hedDon = headerMenuTop.classList.add("done");
-      hedDon.append(headerBurger);
+      // hedDon.append(headerBurger);
       // headerMenuTop.classList.add("done").insertAdjacentHTML(headerBurger)
       // !2
     } else {
@@ -313,7 +315,7 @@ function adaptive_header() {
   //   });
   // }
 }
-adaptive_header();
+// adaptive_header();
 
 function adaptive_function() {
   var w = $(window).outerWidth();

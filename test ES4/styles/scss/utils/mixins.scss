@@ -81,14 +81,14 @@
 @mixin ulliul {
   width: 50px;
   a,
-  .ul {
+  .menu-list__sub {
     width: 50px;
   }
   .link__last-bykv,
-  .ul-li__last-bykv {
+  .sub-li__a-last-bykv {
     display: none;
   }
-  .ul-li-a:hover {
+  .sub-li__a:hover {
     text-decoration: underline;
     &::before,
     &::after {

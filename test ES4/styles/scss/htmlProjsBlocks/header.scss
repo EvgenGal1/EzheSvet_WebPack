@@ -1,30 +1,30 @@
 // <HEADER>====================================================
 
-header {
-  // display: flex;
-  @include flexbox();
-  // position: fixed;
-    justify-content: space-between;
-  height: 150px;
-  padding: 25px 03%;
-  background-color: #8b0000;
-  box-shadow: #000000 3px 5px 20px 0.5px inset,
-    #000000 -3px -1px 10px 0.5px inset;
-  box-shadow: #000000 10px 10px 30px 7px inset,
-    #000000 -10px -10px 30px 7px inset;
+// header {
+//   // display: flex;
+//   @include flexbox();
+//   // position: fixed;
+//     justify-content: space-between;
+//   height: 150px;
+//   padding: 25px 03%;
+//   background-color: #8b0000;
+//   box-shadow: #000000 3px 5px 20px 0.5px inset,
+//     #000000 -3px -1px 10px 0.5px inset;
+//   box-shadow: #000000 10px 10px 30px 7px inset,
+//     #000000 -10px -10px 30px 7px inset;
 
-  @media (max-width: 553px) {
-    // @media (max-width: $md4+px) {
+//   @media (max-width: 553px) {
+//     // @media (max-width: $md4+px) {
 
-    height: 120px;
-    padding: 20px 02%;
+//     height: 120px;
+//     padding: 20px 02%;
 
-    .header-logo .header-logo-smail {
-      width: 80px !important;
-      height: 80px !important;
-    }
-  }
-}
+//     .header-logo .header-logo-smail {
+//       width: 80px !important;
+//       height: 80px !important;
+//     }
+//   }
+// }
 // <LOGO>====================================================
 .header-logo {
   .header-logo-smail {
@@ -66,387 +66,387 @@ header {
     }
   }
 }
-//<MENU>====================================================
-.header-menu {
-  position: relative;
-  width: 100%;
-  // text-shadow: 0.5px 0.3px 0.5px #000;
-  &__top {
-    position: absolute;
-    right: 0;
-    top: 0;
-    .header-menu-list {
-      flex-flow: initial;
-    }
-    .menu-list__items {
-      float: left;
-    }
-  }
+// //<MENU>====================================================
+// .header-menu {
+//   position: relative;
+//   width: 100%;
+//   // text-shadow: 0.5px 0.3px 0.5px #000;
+//   &__top {
+//     position: absolute;
+//     right: 0;
+//     top: 0;
+//     .menu-list {
+//       flex-flow: initial;
+//     }
+//     .menu-list__items {
+//       float: left;
+//     }
+//   }
 
-  &__bottom {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-  // затемняет не то что выделено
-  ul:hover li:not(:hover) {
-    // не видно
-    // opacity: 0;
-    opacity: 0.7;
-  }
-  .header-menu-list {
-    display: flex;
-    // ??? убрать полсе решения последних li
-    // flex-flow: row wrap;
-    justify-content: space-evenly;
-    justify-content: flex-end;
-  }
+//   &__bottom {
+//     position: absolute;
+//     right: 0;
+//     bottom: 0;
+//   }
+//   // затемняет не то что выделено
+//   ul:hover li:not(:hover) {
+//     // не видно
+//     // opacity: 0;
+//     opacity: 0.7;
+//   }
+//   .menu-list {
+//     display: flex;
+//     // ??? убрать полсе решения последних li
+//     // flex-flow: row wrap;
+//     justify-content: space-evenly;
+//     justify-content: flex-end;
+//   }
 
-  .menu-list__items {
-    // для li кроме первого отступ с лево
-    &:not(:first-child) {
-      margin: 0 0 0px 10px;
-      z-index: 3;
-    }
-    // затемняет не то что выделено
-    &:hover .ul li:not(:hover) {
-      // opacity: 0.5;
-      // opacity: 1;
-    }
-    &:hover .ul {
-      display: block;
-    }
-    // всем, кроме первого. перебивает медиа запрос
-    // &:nth-child(n):not(:first-child) {
-    //   content: "open-quote";
-    //   // width: 150px;
-    //   // height: 50px;
-    // }
-    a.menu-list-link {
-      color: #35170c;
-    }
-    &:nth-child(1) .menu-list-link {
-      background-color: #ffff00;
-      background-color: #ff0000;
-      background-color: #ffff00;
-      // width: 170px;
-    }
-    &:nth-child(2) .menu-list-link {
-      background-color: #fd2727;
-      background-color: #ffa500;
-      background-color: #ff0000;
-    }
-    &:nth-child(3) .menu-list-link {
-      background-color: #00ba00;
-      background-color: #ffff00;
-      background-color: #0000ff;
-    }
-    &:nth-child(4) .menu-list-link {
-      background-color: #008000;
-      background-color: #ffa500;
-    }
-    &:nth-child(5) .menu-list-link {
-      background-color: #1c89bb;
-      background-color: #42aaff;
-    }
-    &:nth-child(6) .menu-list-link {
-      // background-color: #ffffff;
-      // color: #000;
-      background-color: #0000ff;
-      background-color: #008000;
-      background-color: #00ba00;
-    }
-    &:nth-child(7) .menu-list-link {
-      // background-color: #000000;
-      // color: #fff;
-      background-color: #008000;
-      background-color: #8b00ff;
-    }
-    &:nth-child(8) a.menu-list-link {
-      background-color: #12621d;
-      background-color: #ffffff;
-      color: #000;
-    }
-    &:nth-child(9) a.menu-list-link {
-      background-color: #961cbb;
-      background-color: #000000;
-      color: #fff;
-    }
-    // ??? не раб - уменьшать соседний передний блок, при наведении на сокращенный
-    // ??? не раб - уменьш себя а не соседа
-    // &:nth-child(n):hover {
-    //   // .menu-list__items:nth-child(n + 1)
-    //   &:nth-child(n + 1) {
-    //     width: 50px;
-    //     a {
-    //       width: 50px;
-    //     }
-    //     .link__last-bykv {
-    //       display: none;
-    //     }
-    //     background-color: #ffa;
-    //   }
-    // }
-    @media (max-width: 553px) {
-      // @media (max-width: $md4+px) {
-      header {
-        height: 120px;
-        padding: 20px 02%;
-      }
-      .header-logo .header-logo-smail {
-        width: 80px !important;
-        height: 80px !important;
-      }
-      .menu-list-link,
-      .ul {
-        border-radius: 7px;
-        text-decoration: none;
-      }
-      // вибираем все li.menu-list__items кроме первого,
-      &:nth-child(n):not(:first-child) {
-        width: 20px !important;
-        // всем a.menu-list-link перед дочерним элементом ставим <
-        & .menu-list-link:nth-child(n)::before {
-          content: "<";
-        }
-        a.menu-list-link {
-          width: 20px !important;
-          .link__firct-bykv {
-            display: none;
-            // text-shadow: 1px 1px#000000;
-          }
-        }
-        .ul {
-          width: 20px !important;
-          .ul-li {
-            width: 0px !important;
-            border: 0;
-          }
-        }
-      }
-    }
-    // ??? не раб - SassError: Undefined variable. - @media (max-width: $md0+px) {
-    @media (max-width: 1320px) {
-      // @media (max-width: $md0+px) {
-      // &:last-child
-      &:nth-child(7) {
-        width: 50px;
-        a {
-          width: 50px;
-        }
-        .link__last-bykv {
-          display: none;
-        }
-      }
-    }
-    @media (max-width: 1212px) {
-      &:nth-child(6) {
-        width: 50px;
-        a {
-          width: 50px;
-        }
-        .link__last-bykv {
-          display: none;
-        }
-      }
-    }
-    @media (max-width: 1106px) {
-      &:nth-child(5) {
-        width: 50px;
-        a {
-          width: 50px;
-        }
-        .link__last-bykv {
-          display: none;
-        }
-      }
-    }
-    @media (max-width: 1009px) {
-      &:nth-child(4) {
-        // width: 50px;
-        // a,
-        // .ul {
-        //   width: 50px;
-        // }
-        // .link__last-bykv,
-        // .ul-li__last-bykv {
-        //   display: none;
-        // }
-        // .ul-li-a:hover {
-        //   &::before,
-        //   &::after {
-        //     content: "" !important;
-        //   }
-        // }
-        // ??? не раб - SassError: Undefined mixin - @include ulliul();
-        // @include ulliul();
-        width: 50px;
-        a,
-        .ul {
-          width: 50px;
-        }
-        .link__last-bykv,
-        .ul-li__last-bykv {
-          display: none;
-        }
-        .ul-li-a:hover {
-          text-decoration: underline;
-          &::before,
-          &::after {
-            content: "" !important;
-          }
-        }
-      }
-    }
-    @media (max-width: 1212px) {
-      &:nth-child(6) {
-        // @include ulliul();
-        width: 50px;
-        a,
-        .ul {
-          width: 50px;
-        }
-        .link__last-bykv,
-        .ul-li__last-bykv {
-          display: none;
-        }
-        .ul-li-a:hover {
-          text-decoration: underline;
-          &::before,
-          &::after {
-            content: "" !important;
-          }
-        }
-      }
-    }
-    @media (max-width: 1106px) {
-      &:nth-child(5) {
-        @include ulliul();
-      }
-    }
-    @media (max-width: 1009px) {
-      &:nth-child(4) {
-        // ??? не раб - SassError: Undefined mixin - @include ulliul();
-        @include ulliul();
-      }
-    }
-    @media (max-width: 903px) {
-      &:nth-child(3) {
-        // ??? не раб - SassError: Undefined mixin - @include ulliul();
-        @include ulliul();
-      }
-    }
-    @media (max-width: 797px) {
-      &:nth-child(2) {
-        // ??? не раб - SassError: Undefined mixin - @include ulliul();
-        // @include ulliul();
-        width: 50px;
-        a,
-        .ul {
-          width: 50px;
-        }
-        .link__last-bykv,
-        .ul-li__last-bykv {
-          display: none;
-        }
-        .ul-li-a:hover {
-          text-decoration: underline;
-          &::before,
-          &::after {
-            content: "" !important;
-          }
-        }
-      }
-    }
-    @media (max-width: 680px) {
-      &:nth-child(1) {
-        width: 50px;
-        a.menu-list-link {
-          width: 50px;
-        }
-        .link__last-bykv {
-          display: none;
-        }
-      }
-    }
-  }
+//   .menu-list__items {
+//     // для li кроме первого отступ с лево
+//     &:not(:first-child) {
+//       margin: 0 0 0px 10px;
+//       z-index: 3;
+//     }
+//     // затемняет не то что выделено
+//     &:hover .menu-list__sub li:not(:hover) {
+//       // opacity: 0.5;
+//       // opacity: 1;
+//     }
+//     &:hover .menu-list__sub {
+//       display: block;
+//     }
+//     // всем, кроме первого. перебивает медиа запрос
+//     // &:nth-child(n):not(:first-child) {
+//     //   content: "open-quote";
+//     //   // width: 150px;
+//     //   // height: 50px;
+//     // }
+//     a.menu-list__link {
+//       color: #35170c;
+//     }
+//     &:nth-child(1) .menu-list__link {
+//       background-color: #ffff00;
+//       background-color: #ff0000;
+//       background-color: #ffff00;
+//       // width: 170px;
+//     }
+//     &:nth-child(2) .menu-list__link {
+//       background-color: #fd2727;
+//       background-color: #ffa500;
+//       background-color: #ff0000;
+//     }
+//     &:nth-child(3) .menu-list__link {
+//       background-color: #00ba00;
+//       background-color: #ffff00;
+//       background-color: #0000ff;
+//     }
+//     &:nth-child(4) .menu-list__link {
+//       background-color: #008000;
+//       background-color: #ffa500;
+//     }
+//     &:nth-child(5) .menu-list__link {
+//       background-color: #1c89bb;
+//       background-color: #42aaff;
+//     }
+//     &:nth-child(6) .menu-list__link {
+//       // background-color: #ffffff;
+//       // color: #000;
+//       background-color: #0000ff;
+//       background-color: #008000;
+//       background-color: #00ba00;
+//     }
+//     &:nth-child(7) .menu-list__link {
+//       // background-color: #000000;
+//       // color: #fff;
+//       background-color: #008000;
+//       background-color: #8b00ff;
+//     }
+//     &:nth-child(8) a.menu-list__link {
+//       background-color: #12621d;
+//       background-color: #ffffff;
+//       color: #000;
+//     }
+//     &:nth-child(9) a.menu-list__link {
+//       background-color: #961cbb;
+//       background-color: #000000;
+//       color: #fff;
+//     }
+//     // ??? не раб - уменьшать соседний передний блок, при наведении на сокращенный
+//     // ??? не раб - уменьш себя а не соседа
+//     // &:nth-child(n):hover {
+//     //   // .menu-list__items:nth-child(n + 1)
+//     //   &:nth-child(n + 1) {
+//     //     width: 50px;
+//     //     a {
+//     //       width: 50px;
+//     //     }
+//     //     .link__last-bykv {
+//     //       display: none;
+//     //     }
+//     //     background-color: #ffa;
+//     //   }
+//     // }
+//     @media (max-width: 553px) {
+//       // @media (max-width: $md4+px) {
+//       header {
+//         height: 120px;
+//         padding: 20px 02%;
+//       }
+//       .header-logo .header-logo-smail {
+//         width: 80px !important;
+//         height: 80px !important;
+//       }
+//       .menu-list__link,
+//       .menu-list__sub {
+//         border-radius: 7px;
+//         text-decoration: none;
+//       }
+//       // вибираем все li.menu-list__items кроме первого,
+//       &:nth-child(n):not(:first-child) {
+//         width: 20px !important;
+//         // всем a.menu-list__link перед дочерним элементом ставим <
+//         & .menu-list__link:nth-child(n)::before {
+//           content: "<";
+//         }
+//         a.menu-list__link {
+//           width: 20px !important;
+//           .link__firct-bykv {
+//             display: none;
+//             // text-shadow: 1px 1px#000000;
+//           }
+//         }
+//         .menu-list__sub {
+//           width: 20px !important;
+//           .sub-li {
+//             width: 0px !important;
+//             border: 0;
+//           }
+//         }
+//       }
+//     }
+//     // ??? не раб - SassError: Undefined variable. - @media (max-width: $md0+px) {
+//     @media (max-width: 1320px) {
+//       // @media (max-width: $md0+px) {
+//       // &:last-child
+//       &:nth-child(7) {
+//         width: 50px;
+//         a {
+//           width: 50px;
+//         }
+//         .link__last-bykv {
+//           display: none;
+//         }
+//       }
+//     }
+//     @media (max-width: 1212px) {
+//       &:nth-child(6) {
+//         width: 50px;
+//         a {
+//           width: 50px;
+//         }
+//         .link__last-bykv {
+//           display: none;
+//         }
+//       }
+//     }
+//     @media (max-width: 1106px) {
+//       &:nth-child(5) {
+//         width: 50px;
+//         a {
+//           width: 50px;
+//         }
+//         .link__last-bykv {
+//           display: none;
+//         }
+//       }
+//     }
+//     @media (max-width: 1009px) {
+//       &:nth-child(4) {
+//         // width: 50px;
+//         // a,
+//         // .menu-list__sub {
+//         //   width: 50px;
+//         // }
+//         // .link__last-bykv,
+//         // .sub-li__a-last-bykv {
+//         //   display: none;
+//         // }
+//         // .sub-li__a:hover {
+//         //   &::before,
+//         //   &::after {
+//         //     content: "" !important;
+//         //   }
+//         // }
+//         // ??? не раб - SassError: Undefined mixin - @include ulliul();
+//         // @include ulliul();
+//         width: 50px;
+//         a,
+//         .menu-list__sub {
+//           width: 50px;
+//         }
+//         .link__last-bykv,
+//         .sub-li__a-last-bykv {
+//           display: none;
+//         }
+//         .sub-li__a:hover {
+//           text-decoration: underline;
+//           &::before,
+//           &::after {
+//             content: "" !important;
+//           }
+//         }
+//       }
+//     }
+//     @media (max-width: 1212px) {
+//       &:nth-child(6) {
+//         // @include ulliul();
+//         width: 50px;
+//         a,
+//         .menu-list__sub {
+//           width: 50px;
+//         }
+//         .link__last-bykv,
+//         .sub-li__a-last-bykv {
+//           display: none;
+//         }
+//         .sub-li__a:hover {
+//           text-decoration: underline;
+//           &::before,
+//           &::after {
+//             content: "" !important;
+//           }
+//         }
+//       }
+//     }
+//     @media (max-width: 1106px) {
+//       &:nth-child(5) {
+//         @include ulliul();
+//       }
+//     }
+//     @media (max-width: 1009px) {
+//       &:nth-child(4) {
+//         // ??? не раб - SassError: Undefined mixin - @include ulliul();
+//         @include ulliul();
+//       }
+//     }
+//     @media (max-width: 903px) {
+//       &:nth-child(3) {
+//         // ??? не раб - SassError: Undefined mixin - @include ulliul();
+//         @include ulliul();
+//       }
+//     }
+//     @media (max-width: 797px) {
+//       &:nth-child(2) {
+//         // ??? не раб - SassError: Undefined mixin - @include ulliul();
+//         // @include ulliul();
+//         width: 50px;
+//         a,
+//         .menu-list__sub {
+//           width: 50px;
+//         }
+//         .link__last-bykv,
+//         .sub-li__a-last-bykv {
+//           display: none;
+//         }
+//         .sub-li__a:hover {
+//           text-decoration: underline;
+//           &::before,
+//           &::after {
+//             content: "" !important;
+//           }
+//         }
+//       }
+//     }
+//     @media (max-width: 680px) {
+//       &:nth-child(1) {
+//         width: 50px;
+//         a.menu-list__link {
+//           width: 50px;
+//         }
+//         .link__last-bykv {
+//           display: none;
+//         }
+//       }
+//     }
+//   }
 
-  .menu-list-link {
-    // margin-top: 21px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    width: 150px;
-    height: 30px;
-    height: 40px;
-    // ??? не раб - задать всем кроме последнего
-    // not:last-child.menu-list-link:
-    // margin: 0 10px 20px 0;
-    // убираем пробел м/у span
-    font-size: 17px;
-    font-size: 25px;
-    // font-size: 0px;
-    font-weight: 400;
-    font-weight: 700;
-    font-style: italic;
-    list-style-type: none;
-    border: 1px solid #000;
-    border: 2px solid #000;
-    border-radius: 5px;
-    border-radius: 10px;
-    // border-top-left-radius: 10px;
-    // border-top-right-radius: 10px;
-    // border-bottom-left-radius: 10px;
-    // border-bottom-right-radius: 10px;
-    // тень li
-    box-shadow: -1px -1px 3px #000 inset, 2px 2px 10px black;
-    box-shadow: -1px -1px 3px #000 inset, 1px 1px 3px black;
-    &:hover {
-      // повесить на hover
-      box-shadow: 0 0 3px #555555 inset, 0px 0px 10px black;
-      // color: #000000;
-      &:before,
-      &:after {
-        // content: "!";
-      }
-    }
-    &:link {
-      color: #8b0000;
-    }
-    // убираем пробел м/у span
-    .link__last-bykv,
-    .link__firct-bykv {
-      // font-size: 18px;
-    }
-  }
+//   .menu-list__link {
+//     // margin-top: 21px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 100px;
+//     width: 150px;
+//     height: 30px;
+//     height: 40px;
+//     // ??? не раб - задать всем кроме последнего
+//     // not:last-child.menu-list__link:
+//     // margin: 0 10px 20px 0;
+//     // убираем пробел м/у span
+//     font-size: 17px;
+//     font-size: 25px;
+//     // font-size: 0px;
+//     font-weight: 400;
+//     font-weight: 700;
+//     font-style: italic;
+//     list-style-type: none;
+//     border: 1px solid #000;
+//     border: 2px solid #000;
+//     border-radius: 5px;
+//     border-radius: 10px;
+//     // border-top-left-radius: 10px;
+//     // border-top-right-radius: 10px;
+//     // border-bottom-left-radius: 10px;
+//     // border-bottom-right-radius: 10px;
+//     // тень li
+//     box-shadow: -1px -1px 3px #000 inset, 2px 2px 10px black;
+//     box-shadow: -1px -1px 3px #000 inset, 1px 1px 3px black;
+//     &:hover {
+//       // повесить на hover
+//       box-shadow: 0 0 3px #555555 inset, 0px 0px 10px black;
+//       // color: #000000;
+//       &:before,
+//       &:after {
+//         // content: "!";
+//       }
+//     }
+//     &:link {
+//       color: #8b0000;
+//     }
+//     // убираем пробел м/у span
+//     .link__last-bykv,
+//     .link__firct-bykv {
+//       // font-size: 18px;
+//     }
+//   }
 
-  .header-menu__top a:link {
-    // color: #8b0000;
-  }
+//   .header-menu__top a:link {
+//     // color: #8b0000;
+//   }
 
-  .header-menu__top a:visited {
-    // color: #800080;
-  }
+//   .header-menu__top a:visited {
+//     // color: #800080;
+//   }
 
-  .header-menu__top a:hover {
-    color: #000000;
-  }
+//   .header-menu__top a:hover {
+//     color: #000000;
+//   }
 
-  .header-menu__top a:active {
-    // color: #1400d4;
-  }
+//   .header-menu__top a:active {
+//     // color: #1400d4;
+//   }
 
-  // .header-menu__top a {
-  //   display: inline-block;
-  //   width: 100%;
-  //   height: 100%;
-  // }
-}
+//   // .header-menu__top a {
+//   //   display: inline-block;
+//   //   width: 100%;
+//   //   height: 100%;
+//   // }
+// }
 
-//<>====================================================
+// //<>====================================================
 
-.ul {
+.menu-list__sub {
   display: none;
   // display: block;
   // top: 20px;
@@ -466,16 +466,16 @@ header {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 
-  .ul-li {
+  .sub-li {
     // opacity: 0.5;
     display: block;
     top: 25px;
     margin-top: 3px;
     background: #a3a3a3;
     border: 1px solid #f00;
-    .ul-li-a {
+    .sub-li__a {
       text-decoration: none;
-      font-size: 0;
+      // font-size: 0;
       &:hover {
         // color: #000000;
         &::before {
@@ -485,8 +485,8 @@ header {
           content: "<<";
         }
       }
-      .ul-li__firct-bykv,
-      .ul-li__last-bykv {
+      .sub-li__a-firct-bykv,
+      .sub-li__a-last-bykv {
         // font-size: 16px;
       }
     }
@@ -531,3 +531,226 @@ header {
   color: #000000;
 }
 */
+
+// !!!!!!
+header {
+  // position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #8b0000;
+  box-shadow: #000000 3px 5px 20px 0.5px inset,
+    #000000 -3px -1px 10px 0.5px inset;
+  box-shadow: #000000 10px 10px 30px 7px inset,
+    #000000 -10px -10px 30px 7px inset;
+
+  .header__container {
+    max-width: 1200px;
+    height: 150px;
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 25px 03%;
+  }
+}
+// =================================================================
+// Mobile First - сво-ва для экранов больше мобилок (меньше писать для мобилок)
+@media (min-width: $md3+px) {
+  // $md3: 767.98;
+  .header-menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .menu-list {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .header-menu-set {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .menu-list__items
+  // , .menu-set__items
+  {
+    padding: 10px 0;
+    padding: 0 0 10px 0;
+  }
+}
+// =================================================================
+.header-menu {
+  // display: flex;
+  // flex-direction: column;
+}
+// =================================================================
+.header-menu__top {
+  .menu-list {
+    // затемняет не то что выделено
+    &:hover li:not(:hover) {
+      opacity: 0.7;
+    }
+    // меню 1го ур.
+    .menu-list__items {
+      &:hover .menu-list__sub {
+              display: block;
+            }
+      // для li кроме первого отступ с лево
+      &:not(:first-child) {
+        position: relative;
+        margin: 0 0 0px 10px;
+        z-index: 3;
+      }
+      // ссылки 1го ур.
+      // меню 1го ур.
+      .menu-list__link {
+        color: #8b0000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 40px;
+        font-size: 25px;
+        font-weight: 700;
+        font-style: italic;
+        list-style-type: none;
+        border-radius: 10px;
+        border: 2px solid #000;
+        box-shadow: -1px -1px 3px #000 inset, 1px 1px 3px black;
+        &:hover {
+          box-shadow: 0 0 3px #555555 inset, 0px 0px 10px black;
+        }
+        .link__firct-bykv {
+        }
+        .link__last-bykv {
+        }
+      }
+      // расцветка 1го ур.
+      & {
+        &:nth-child(1) .menu-list__link {
+          background-color: #ffff00;
+        }
+        &:nth-child(2) .menu-list__link {
+          background-color: #ff0000;
+        }
+        &:nth-child(3) .menu-list__link {
+          background-color: #0000ff;
+        }
+        &:nth-child(4) .menu-list__link {
+          background-color: #ffa500;
+        }
+        &:nth-child(5) .menu-list__link {
+          background-color: #42aaff;
+        }
+        &:nth-child(6) .menu-list__link {
+          background-color: #00ba00;
+        }
+        &:nth-child(7) .menu-list__link {
+          background-color: #8b00ff;
+        }
+        &:nth-child(8) a.menu-list__link {
+          background-color: #ffffff;
+          color: #000;
+        }
+        &:nth-child(9) a.menu-list__link {
+          background-color: #000000;
+          color: #fff;
+        }
+      }
+    }
+    // меню 2го ур.
+    .menu-list__sub {
+      // ссылки 2го ур.
+      .sub-li {
+        .sub-li__a {
+        }
+        .sub-li__a-firct-bykv {
+        }
+        .sub-li__a-last-bykv {
+        }
+      }
+    }
+  }
+}
+// =================================================================
+.header-menu__bottom {
+  .header-menu-set {
+    // display: flex;
+    // justify-content: flex-end;
+  }
+  .menu-set__items {
+  }
+}
+.m-s-switcher-0 {
+}
+.checkbox {
+}
+.checkbox-label {
+}
+.on {
+}
+.off {
+}
+.m-s-switcher-1 {
+}
+.m-s-switcher-2-3 {
+}
+.m-s-switchers {
+}
+.m-s-switcher-2 {
+}
+.m-s-switcher-3 {
+}
+.m-s-switcher-4 {
+}
+.toggle-button {
+}
+.toggle-button--aava {
+}
+.toggle-button__icon {
+}
+.m-s-switcher-5 {
+}
+.switcher {
+}
+.switcher-label {
+}
+.switcher-off {
+}
+.switcher-radio-dark {
+}
+.switcher-neutral {
+}
+.switcher-radio-neutral {
+}
+.switcher-on {
+}
+.switcher-radio-light {
+}
+.switcher-slider {
+}
+.m-s-switcher-7 {
+}
+.tristate {
+}
+.tristate-rotate {
+}
+.sw7-label {
+}
+.sw7-big {
+}
+.sw7-mid {
+}
+.sw7-small {
+}
+.sw7-off {
+}
+.header-menu__icon {
+}
+.header-burger {
+}
