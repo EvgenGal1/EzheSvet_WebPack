@@ -158,8 +158,8 @@ function scrolHead() {
   // !1
   var headerLogo = document.querySelector(".header-logo");
   var headerMenu = document.querySelector(".header-menu");
-  var headerMenuTop = document.querySelector(".header-menu__top");
-  var headerMenuBottom = document.querySelector(".header-menu__bottom");
+  var headerMenuTop = document.querySelector(".menu__top");
+  var headerMenuBottom = document.querySelector(".menu__bottom");
   var headerLang = document.querySelector(".header-menu__icon");
   var headerBurger = document.querySelector(".header-burger");
   // !1
@@ -198,8 +198,8 @@ function adaptive_header() {
   console.log("adaptheader");
   var headerLogo = document.querySelector(".header-logo");
   var headerMenu = document.querySelector(".header-menu");
-  var headerMenuTop = document.querySelector(".header-menu__top");
-  var headerMenuBottom = document.querySelector(".header-menu__bottom");
+  var headerMenuTop = document.querySelector(".menu__top");
+  var headerMenuBottom = document.querySelector(".menu__bottom");
   var headerLang = document.querySelector(".header-menu__icon");
   var headerBurger = document.querySelector(".header-burger");
 
@@ -323,3 +323,65 @@ function adaptive_function() {
   adaptive_header(w, h);
 }
 // adaptive_function();
+
+// =================================================================
+// ! touch -
+// определяет на каком устройстве открыта страница
+var ua = navigator.userAgent;
+var isMobile = {
+  // ! touch 0.1
+  TouchPC: function (){
+    // метод match() производит поиск по заданной строке с использованием регулярного выражения (глобальный объект RegExp) и возвращает массив, содержащий результаты этого поиска.
+    // метод search() выполняет поиск первого соответствия (сопоставления) регулярному выражению (объект RegExp) внутри строки.
+      return ua.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini)/i)
+      // возможно не  нужно 0.1
+       || ua.search(/mobile/i) > 0
+  },
+  // ! touch 0.1
+  // ! touch 0
+  // Android: function () {
+    //   return ua.match(/Android/i);
+    // },
+    // BlackBerry: function () {
+      //   return ua.match(/BlackBerry/i);
+      // },
+      // iOS: function () {
+        //   return ua.match(/iPhone|iPad|iPod/i);
+        // },
+        // Opera: function () {
+          //   return ua.match(/Opera Mini/i);
+          // },
+          // Windows: function () {
+            //   return ua.match(/IEMobile/i);
+  // },
+  // // возможно не  нужно 1
+  // Mobile: function () {
+    //   return ua.search(/mobile/i);
+    // },
+    // возможно не  нужно 1
+    // ! touch 0
+    any: function () {
+      return (
+        // ! touch 0.2
+        isMobile.TouchPC()
+        // ! touch 0.2
+        // ! touch 0
+        // isMobile.Android() ||
+        // isMobile.BlackBerry() ||
+        // isMobile.iOS() ||
+        // isMobile.Opera() ||
+        // isMobile.Windows() 
+        // // возможно не  нужно 0.2
+        // || isMobile.Mobile() > 0
+        // // возможно не  нужно 0.2
+        // ! touch 0
+    );
+  },
+};
+
+// ! дабав класс опред body е/и touchscreen(Сенсорный экран) или PC
+if (isMobile.any()) {
+  document.body.classList.add("_touch");
+} else {
+  document.body.classList.add("_pc");
+}

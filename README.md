@@ -147,7 +147,7 @@ src(test ES4)/
   <nav class="header-menu__top">
     <ul class="header-menu-list">
       <li class="menu-list__items">
-        <a class="menu-list-link" href="index.html">
+        <a class="items-link" href="index.html">
           <span class="link__firct-bykv">Г</span>
           <span class="link__last-bykv">лавная</span>
         </a>

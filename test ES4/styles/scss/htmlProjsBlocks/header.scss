@@ -109,11 +109,11 @@
 //       z-index: 3;
 //     }
 //     // затемняет не то что выделено
-//     &:hover .menu-list__sub li:not(:hover) {
+//     &:hover .items__sub li:not(:hover) {
 //       // opacity: 0.5;
 //       // opacity: 1;
 //     }
-//     &:hover .menu-list__sub {
+//     &:hover .items__sub {
 //       display: block;
 //     }
 //     // всем, кроме первого. перебивает медиа запрос
@@ -122,52 +122,52 @@
 //     //   // width: 150px;
 //     //   // height: 50px;
 //     // }
-//     a.menu-list__link {
+//     a.items__link {
 //       color: #35170c;
 //     }
-//     &:nth-child(1) .menu-list__link {
+//     &:nth-child(1) .items__link {
 //       background-color: #ffff00;
 //       background-color: #ff0000;
 //       background-color: #ffff00;
 //       // width: 170px;
 //     }
-//     &:nth-child(2) .menu-list__link {
+//     &:nth-child(2) .items__link {
 //       background-color: #fd2727;
 //       background-color: #ffa500;
 //       background-color: #ff0000;
 //     }
-//     &:nth-child(3) .menu-list__link {
+//     &:nth-child(3) .items__link {
 //       background-color: #00ba00;
 //       background-color: #ffff00;
 //       background-color: #0000ff;
 //     }
-//     &:nth-child(4) .menu-list__link {
+//     &:nth-child(4) .items__link {
 //       background-color: #008000;
 //       background-color: #ffa500;
 //     }
-//     &:nth-child(5) .menu-list__link {
+//     &:nth-child(5) .items__link {
 //       background-color: #1c89bb;
 //       background-color: #42aaff;
 //     }
-//     &:nth-child(6) .menu-list__link {
+//     &:nth-child(6) .items__link {
 //       // background-color: #ffffff;
 //       // color: #000;
 //       background-color: #0000ff;
 //       background-color: #008000;
 //       background-color: #00ba00;
 //     }
-//     &:nth-child(7) .menu-list__link {
+//     &:nth-child(7) .items__link {
 //       // background-color: #000000;
 //       // color: #fff;
 //       background-color: #008000;
 //       background-color: #8b00ff;
 //     }
-//     &:nth-child(8) a.menu-list__link {
+//     &:nth-child(8) a.items__link {
 //       background-color: #12621d;
 //       background-color: #ffffff;
 //       color: #000;
 //     }
-//     &:nth-child(9) a.menu-list__link {
+//     &:nth-child(9) a.items__link {
 //       background-color: #961cbb;
 //       background-color: #000000;
 //       color: #fff;
@@ -197,28 +197,28 @@
 //         width: 80px !important;
 //         height: 80px !important;
 //       }
-//       .menu-list__link,
-//       .menu-list__sub {
+//       .items__link,
+//       .items__sub {
 //         border-radius: 7px;
 //         text-decoration: none;
 //       }
 //       // вибираем все li.menu-list__items кроме первого,
 //       &:nth-child(n):not(:first-child) {
 //         width: 20px !important;
-//         // всем a.menu-list__link перед дочерним элементом ставим <
-//         & .menu-list__link:nth-child(n)::before {
+//         // всем a.items__link перед дочерним элементом ставим <
+//         & .items__link:nth-child(n)::before {
 //           content: "<";
 //         }
-//         a.menu-list__link {
+//         a.items__link {
 //           width: 20px !important;
 //           .link__firct-bykv {
 //             display: none;
 //             // text-shadow: 1px 1px#000000;
 //           }
 //         }
-//         .menu-list__sub {
+//         .items__sub {
 //           width: 20px !important;
-//           .sub-li {
+//           .sub__li {
 //             width: 0px !important;
 //             border: 0;
 //           }
@@ -265,14 +265,14 @@
 //       &:nth-child(4) {
 //         // width: 50px;
 //         // a,
-//         // .menu-list__sub {
+//         // .items__sub {
 //         //   width: 50px;
 //         // }
 //         // .link__last-bykv,
-//         // .sub-li__a-last-bykv {
+//         // .li-a__last-bykv {
 //         //   display: none;
 //         // }
-//         // .sub-li__a:hover {
+//         // .sub__li-a:hover {
 //         //   &::before,
 //         //   &::after {
 //         //     content: "" !important;
@@ -282,14 +282,14 @@
 //         // @include ulliul();
 //         width: 50px;
 //         a,
-//         .menu-list__sub {
+//         .items__sub {
 //           width: 50px;
 //         }
 //         .link__last-bykv,
-//         .sub-li__a-last-bykv {
+//         .li-a__last-bykv {
 //           display: none;
 //         }
-//         .sub-li__a:hover {
+//         .sub__li-a:hover {
 //           text-decoration: underline;
 //           &::before,
 //           &::after {
@@ -303,14 +303,14 @@
 //         // @include ulliul();
 //         width: 50px;
 //         a,
-//         .menu-list__sub {
+//         .items__sub {
 //           width: 50px;
 //         }
 //         .link__last-bykv,
-//         .sub-li__a-last-bykv {
+//         .li-a__last-bykv {
 //           display: none;
 //         }
-//         .sub-li__a:hover {
+//         .sub__li-a:hover {
 //           text-decoration: underline;
 //           &::before,
 //           &::after {
@@ -342,14 +342,14 @@
 //         // @include ulliul();
 //         width: 50px;
 //         a,
-//         .menu-list__sub {
+//         .items__sub {
 //           width: 50px;
 //         }
 //         .link__last-bykv,
-//         .sub-li__a-last-bykv {
+//         .li-a__last-bykv {
 //           display: none;
 //         }
-//         .sub-li__a:hover {
+//         .sub__li-a:hover {
 //           text-decoration: underline;
 //           &::before,
 //           &::after {
@@ -361,7 +361,7 @@
 //     @media (max-width: 680px) {
 //       &:nth-child(1) {
 //         width: 50px;
-//         a.menu-list__link {
+//         a.items__link {
 //           width: 50px;
 //         }
 //         .link__last-bykv {
@@ -371,7 +371,7 @@
 //     }
 //   }
 
-//   .menu-list__link {
+//   .items__link {
 //     // margin-top: 21px;
 //     display: flex;
 //     align-items: center;
@@ -381,7 +381,7 @@
 //     height: 30px;
 //     height: 40px;
 //     // ??? не раб - задать всем кроме последнего
-//     // not:last-child.menu-list__link:
+//     // not:last-child.items__link:
 //     // margin: 0 10px 20px 0;
 //     // убираем пробел м/у span
 //     font-size: 17px;
@@ -421,23 +421,23 @@
 //     }
 //   }
 
-//   .header-menu__top a:link {
+//   .menu__top a:link {
 //     // color: #8b0000;
 //   }
 
-//   .header-menu__top a:visited {
+//   .menu__top a:visited {
 //     // color: #800080;
 //   }
 
-//   .header-menu__top a:hover {
+//   .menu__top a:hover {
 //     color: #000000;
 //   }
 
-//   .header-menu__top a:active {
+//   .menu__top a:active {
 //     // color: #1400d4;
 //   }
 
-//   // .header-menu__top a {
+//   // .menu__top a {
 //   //   display: inline-block;
 //   //   width: 100%;
 //   //   height: 100%;
@@ -446,88 +446,84 @@
 
 // //<>====================================================
 
-.menu-list__sub {
-  display: none;
-  // display: block;
-  // top: 20px;
-  font-style: italic;
-  font-size: 16px;
-  font-weight: 900;
-  text-align: center;
-  width: 120px;
-  // margin: 15px 2px 1px;
-  padding: 1px 3px 3px;
-  // float: right;
-  list-style-type: none;
-  border: 2px solid #000;
-  background: #ccc;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-
-  .sub-li {
-    // opacity: 0.5;
-    display: block;
-    top: 25px;
-    margin-top: 3px;
-    background: #a3a3a3;
-    border: 1px solid #f00;
-    .sub-li__a {
-      text-decoration: none;
-      // font-size: 0;
-      &:hover {
-        // color: #000000;
-        &::before {
-          content: ">>";
-        }
-        &:hover::after {
-          content: "<<";
-        }
-      }
-      .sub-li__a-firct-bykv,
-      .sub-li__a-last-bykv {
-        // font-size: 16px;
-      }
-    }
-    // ??? не раб - SassError: Undefined variable. - @media (max-width: $md3+px) {
-    @media (max-width: 768px) {
-      // @media (max-width: $md3+px) {
-    }
-  }
-}
+// .items__sub {
+//   display: none;
+//   // display: block;
+//   // top: 20px;
+//   font-style: italic;
+//   font-size: 16px;
+//   font-weight: 900;
+//   text-align: center;
+//   width: 120px;
+//   // margin: 15px 2px 1px;
+//   padding: 1px 3px 3px;
+//   // float: right;
+//   list-style-type: none;
+//   border: 2px solid #000;
+//   background: #ccc;
+//   border-right: 10px;
+//   .sub__li {
+//     // opacity: 0.5;
+//     display: block;
+//     top: 25px;
+//     margin-top: 3px;
+//     background: #a3a3a3;
+//     border: 1px solid #f00;
+//     .sub__li-a {
+//       text-decoration: none;
+// font-size: 0;
+// &:hover {
+//   // color: #000000;
+//   &::before {
+//     content: ">>";
+//   }
+//   &:hover::after {
+//     content: "<<";
+//   }
+// }
+//       .li-a__firct-bykv,
+//       .li-a__last-bykv {
+//         // font-size: 16px;
+//       }
+//     }
+//     // ??? не раб - SassError: Undefined variable. - @media (max-width: $md3+px) {
+//     @media (max-width: 768px) {
+//       // @media (max-width: $md3+px) {
+//     }
+//   }
+// }
 
 /*
 
-.header-menu__top a:hover::before {
+.menu__top a:hover::before {
   content: "!!!";
   color: #000;
 }
 
-.header-menu__top a:hover::after {
+.menu__top a:hover::after {
   content: "!!!";
   color: #000000;
 }
 
-.header-menu__top a {
+.menu__top a {
   display: inline-block;
   width: 100%;
   height: 100%;
 }
 
-.header-menu__top a:link {
+.menu__top a:link {
   color: #8b0000;
 }
 
-.header-menu__top a:visited {
+.menu__top a:visited {
   color: #800080;
 }
 
-.header-menu__top a:hover {
+.menu__top a:hover {
   color: #1400d4;
 }
 
-.header-menu__top a:active {
+.menu__top a:active {
   color: #000000;
 }
 */
@@ -545,9 +541,9 @@ header {
     #000000 -3px -1px 10px 0.5px inset;
   box-shadow: #000000 10px 10px 30px 7px inset,
     #000000 -10px -10px 30px 7px inset;
-
   .header__container {
     max-width: 1200px;
+    max-width: $mw + px;
     height: 150px;
     @include flexbox();
     align-items: center;
@@ -567,21 +563,69 @@ header {
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
+    // для того чтоб TOP не наезжал на BOTTOM
+    position: relative;
   }
-  .menu-list {
-    display: flex;
-    justify-content: flex-end;
+  .menu__top {
+    // для того чтоб TOP не наезжал на BOTTOM
+    position: absolute;
+    top: 0;
+    .menu-list {
+      display: flex;
+      justify-content: flex-end;
+      // ??? не раб - временное переход items вниз. придумать как сокращать item при переполнение блока
+      flex-wrap: wrap;
+      // меню 1го ур.
+      &__items {
+        // вроде не нужно
+        // padding: 0 0 10px 0;
+      }
+      // меню 2го ур.
+      .items__sub {
+        transform: translate(0px, 10%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease 0s;
+        // запрет взаимодействия с мышью. не ловит уходящее подменю
+        pointer-events: none;
+      }
+    }
   }
-  .header-menu-set {
-    display: flex;
-    justify-content: flex-end;
+  .menu__bottom {
+    // для того чтоб TOP не наезжал на BOTTOM
+    position: absolute;
+    bottom: 0;
+    .menu-set {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
-  .menu-list__items
-  // , .menu-set__items
-  {
-    padding: 10px 0;
-    padding: 0 0 10px 0;
-  }
+}
+// =================================================================
+body._pc  .menu-list__items:hover .items__sub {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px, 0px);
+  pointer-events: all;
+}
+body._touch .menu-list__items{
+  display: flex;
+  align-items: center;
+}
+body._touch .items__link{
+  // для надежной верстки сделать на всю ширину
+  flex: 1 1 auto;
+}
+body._touch .items__arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0 0 0 5px;
+  // стрелка из border
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #fff;
+  transition: transform 0.3s ease 0s;
 }
 // =================================================================
 .header-menu {
@@ -589,26 +633,27 @@ header {
   // flex-direction: column;
 }
 // =================================================================
-.header-menu__top {
+.menu__top {
   .menu-list {
     // затемняет не то что выделено
     &:hover li:not(:hover) {
       opacity: 0.7;
     }
     // меню 1го ур.
-    .menu-list__items {
-      &:hover .menu-list__sub {
-              display: block;
-            }
+    &__items {
+      // для позиц. подменю
+      position: relative;
+      &:hover {
+        // подпункт TOP старше BOTTOM
+        z-index: 6;
+      }
       // для li кроме первого отступ с лево
       &:not(:first-child) {
         position: relative;
         margin: 0 0 0px 10px;
-        z-index: 3;
       }
       // ссылки 1го ур.
-      // меню 1го ур.
-      .menu-list__link {
+      .items__link {
         color: #8b0000;
         display: flex;
         align-items: center;
@@ -623,7 +668,14 @@ header {
         border: 2px solid #000;
         box-shadow: -1px -1px 3px #000 inset, 1px 1px 3px black;
         &:hover {
+          color: #000;
           box-shadow: 0 0 3px #555555 inset, 0px 0px 10px black;
+          &::before {
+            content: "!";
+          }
+          &:after {
+            content: "!";
+          }
         }
         .link__firct-bykv {
         }
@@ -632,60 +684,98 @@ header {
       }
       // расцветка 1го ур.
       & {
-        &:nth-child(1) .menu-list__link {
+        &:nth-child(1) .items__link {
           background-color: #ffff00;
         }
-        &:nth-child(2) .menu-list__link {
+        &:nth-child(2) .items__link {
           background-color: #ff0000;
         }
-        &:nth-child(3) .menu-list__link {
+        &:nth-child(3) .items__link {
           background-color: #0000ff;
         }
-        &:nth-child(4) .menu-list__link {
+        &:nth-child(4) .items__link {
           background-color: #ffa500;
         }
-        &:nth-child(5) .menu-list__link {
+        &:nth-child(5) .items__link {
           background-color: #42aaff;
         }
-        &:nth-child(6) .menu-list__link {
+        &:nth-child(6) .items__link {
           background-color: #00ba00;
         }
-        &:nth-child(7) .menu-list__link {
+        &:nth-child(7) .items__link {
           background-color: #8b00ff;
         }
-        &:nth-child(8) a.menu-list__link {
+        &:nth-child(8) a.items__link {
           background-color: #ffffff;
           color: #000;
         }
-        &:nth-child(9) a.menu-list__link {
+        &:nth-child(9) a.items__link {
           background-color: #000000;
           color: #fff;
         }
       }
     }
     // меню 2го ур.
-    .menu-list__sub {
+    .items__sub {
+      // для позиц. подменю
+      position: absolute;
+      font-style: italic;
+      font-size: 16px;
+      font-weight: 900;
+      text-align: center;
+      width: 120px;
+      padding: 1px 3px 3px;
+      list-style-type: none;
+      border: 2px solid #000;
+      background: #ccc;
+      border-radius: 10px;
       // ссылки 2го ур.
-      .sub-li {
-        .sub-li__a {
+      .sub__li {
+        // display: block;
+        top: 25px;
+        margin-top: 3px;
+        background: #a3a3a3;
+        border: 1px solid #f00;
+        .sub__li-a {
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &:hover {
+            text-decoration: underline;
+            color: #000000;
+            &::before {
+              content: ">";
+            }
+            &:hover::after {
+              content: "<";
+            }
+          }
         }
-        .sub-li__a-firct-bykv {
+        .li-a__firct-bykv {
         }
-        .sub-li__a-last-bykv {
+        .li-a__last-bykv {
         }
       }
     }
   }
 }
 // =================================================================
-.header-menu__bottom {
-  .header-menu-set {
+.items__arrow {
+  display: none;
+}
+// =================================================================
+.menu__bottom {
+  z-index: 5;
+  .menu-set {
     // display: flex;
     // justify-content: flex-end;
   }
   .menu-set__items {
   }
 }
+// =================================================================
+
 .m-s-switcher-0 {
 }
 .checkbox {

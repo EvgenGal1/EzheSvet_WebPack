@@ -1,11 +1,11 @@
 // <parseTheme.scss()>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
 
-// header-menu__bottom ()>˅=======================================================================================˅
+// menu__bottom ()>˅=======================================================================================˅
 
-.header-menu__bottom {
+.menu__bottom {
   // display: flex;
   // justify-content: flex-end;
-  .header-menu-set {
+  .menu-set {
     // display: flex;
     // justify-content: flex-end;
   }
@@ -87,18 +87,11 @@
       position: absolute;
       z-index: 0;
       left: 0;
-      opacity: 1;
       min-width: 300px;
       line-height: 50px;
-      opacity: 0;
       display: block;
       position: absolute;
       top: -25px;
-      /* z-index: 0; */
-      /* left: 0; */
-      /* opacity: 1; */
-      /* min-width: 300px; */
-      /* line-height: 50px; */
       opacity: 0;
       color: #13bf11;
       color: $green;

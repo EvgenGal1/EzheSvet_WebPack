@@ -332,30 +332,26 @@ hr {
   }
 }
 header {
-  .header-menu__top .menu-list .menu-list__items .menu-list__link
-   {
-    width: var(--width);
-    height: var(--height);
-    font-size: var(--font-size-big);
-    // font-weight: var(--font-weight);
-    border: var(--border);
-    border-radius: var(--border-radius);
-  }
-  .menu-list__sub {
-    width: var(--width);
-    // font-size: var(--font-size-smail);
-    .sub-li {
-      &-a {
-        .sub-li__a-firct-bykv,
-        .sub-li__a-last-bykv {
+  .menu__top .menu-list {
+    .menu-list__items .items__link {
+      width: var(--width);
+      height: var(--height);
+      font-size: var(--font-size-big);
+      // font-weight: var(--font-weight);
+      border: var(--border);
+      border-radius: var(--border-radius);
+    }
+    .items__sub {
+      width: var(--width);
+      .sub__li {
+        &-a {
           font-size: var(--font-size-mid);
         }
       }
     }
   }
-
   // <m-s-switcher> (кнопки)-------------------------------------------------------------
-  .header-menu__bottom {
+  .menu__bottom {
     .menu-set__items {
       height: var(--height);
       width: var(--width-swit);
