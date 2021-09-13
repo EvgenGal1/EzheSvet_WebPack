@@ -1,100 +1,4 @@
-// 1 Использование класса для <body>
-// !!! https://webref.ru/dev/dark-mode/toggling-themes
-// body {
-//   color: #222;
-//   background: #fff;
-// }
-// a {
-//   color: #0033cc;
-// }
-// /* Стили Тёмной темы */
-// body.--theme-dark {
-//   color: #eee;
-//   background: #121212;
-// }
-// body.--theme-dark a {
-//   color: #809fff;
-// }
-// 2 Использование пользовательских свойств
-// body {
-//   --text-color: #222;
-//   --bkg-color: #fff;
-//   --anchor-color: #0033cc;
-// }
-// body.--theme-dark {
-//   --text-color: #eee;
-//   --bkg-color: #121212;
-//   --anchor-color: #809fff;
-// }
-// body {
-//   color: var(--text-color);
-//   background: var(--bkg-color);
-// }
-// a {
-//   color: var(--anchor-color);
-// }
-
-// ? 4 Переопределение настроек ОС
-/* Цвета по умолчанию */
-// body.--theme_neutral {
-//   // --text-color: #f00;
-//   // --bkg-color: #cccccc;
-//   --anchor-color: #0d0238;
-// }
-// /* Цвета тёмной темы */
-// body.--theme-dark {
-//   --text-color: #c0c0c0;
-//   --bkg-color: #121212;
-//   --anchor-color: #809fff;
-// }
-// body.--theme_light {
-//   --text-color: #222;
-//   --bkg-color: #fff;
-//   --anchor-color: #0033cc;
-// }
-// /* Стили для пользователей, предпочитающих тёмный режим на уровне ОС */
-// @media (prefers-color-scheme: neutral) {
-//   /* Стили для темы по умолчанию */
-//   body {
-//     // --text-color: #f00;
-//     // --bkg-color: #cccccc;
-//     // --anchor-color: #01299e;
-//   }
-// }
-// @media (prefers-color-scheme: dark) {
-//   /* Стили для тёмной темы */
-//   body {
-//     --text-color: #c0c0c0;
-//     --bkg-color: #121212;
-//     --anchor-color: #809fff;
-//   }
-// }
-// @media (prefers-color-scheme: light) {
-//   /* Стили для светлой темы */
-//   body {
-//     --text-color: #222;
-//     --bkg-color: #fff;
-//     --anchor-color: #0033cc;
-//   }
-// }
-// * {
-//   // font-family: Arial, Helvetica, sans-serif;
-// }
-// body {
-//   color: var(--text-color);
-//   background: var(--bkg-color);
-// }
-// h1,
-// p {
-//   color: var(--text-color);
-// }
-// a {
-//   color: var(--anchor-color);
-// }
-
-// ? 5
-
-// ! <стили --theme(настройки стиля-цвета, кнп.m-s-switcher-5)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
+// ! </настройки стиля-цвета(--theme:переменные,)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
 // !!! https://habr.com/ru/company/macloud/blog/550168/
 // Обратите внимание на пробелы, они не ломают синтаксис (что сбросило бы определение всей строки). Теперь осталось только вынести переключатель состояния в отдельные переменные:
 // :root {
@@ -134,7 +38,8 @@ body {
   //   --light: var(--OFF);
   //   --neutral: var(--OFF);
   // }
-  .--theme_neutral {
+  .--theme_dark {
+  // .--theme_neutral {
     --dark: var(--OFF);
     --neutral: var(--ON);
     --light: var(--OFF);
@@ -218,41 +123,47 @@ hr {
   }
   color: var(--text-color);
 }
+// ! </настройки стиля-цвета(--theme:переменные,)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˄
 
-// ! </стили --theme(настройки стиля-цвета)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˄
-
-// ! <стили --style(настройки стиля-размера)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
-
+// ! <настройки стиля-размера(--size:переменные,)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
 body {
   --ON: initial;
   --OFF: ;
 }
-._size-mid {
+.--size_mid {
   --mid: var(--ON);
   --small: var(--OFF);
   --big: var(--OFF);
   --off: var(--OFF);
 }
-._size-small {
+.--size_small {
   --small: var(--ON);
   --mid: var(--OFF);
   --big: var(--OFF);
   --off: var(--OFF);
 }
-._size-big {
+.--size_big {
   --big: var(--ON);
   --small: var(--OFF);
   --mid: var(--OFF);
   --off: var(--OFF);
 }
-._size-off {
+.--size_off {
   --off: var(--ON);
   --small: var(--OFF);
   --mid: var(--OFF);
   --big: var(--OFF);
 }
-@media (prefers-color-scheme: big) {
-  .style-default {
+@media (prefers-reduced-motion: reduce) {
+// @media (prefers-reduced-motion: big) {
+// @media (prefers-color-scheme: big) {
+  // .style-default {
+  //   --big: var(--ON);
+  //   --small: var(--OFF);
+  //   --mid: var(--OFF);
+  //   --off: var(--OFF);
+  // }
+  .--size_off {
     --big: var(--ON);
     --small: var(--OFF);
     --mid: var(--OFF);
@@ -416,18 +327,18 @@ header {
         width: var(--switcher-5-aft);
         height: var(--switcher-5-aft);
       }
-      .switcher-radio-light:checked ~ .switcher-slider:after {
+      .switcher-radio__light:checked ~ .switcher-slider:after {
         left: calc(100% - (var(--switcher-5-aft) + 3px));
       }
-      .switcher-radio-neutral:checked ~ .switcher-slider:after {
+      .switcher-radio__neutral:checked ~ .switcher-slider:after {
         left: calc(((100% + var(--height) - (var(--switcher-5-aft) / 2))) / 3);
         left: calc(var(--switcher-5-neut) + 100% / 3);
       }
-      .switcher-radio-dark:checked ~ .switcher-slider:after {
+      .switcher-radio__dark:checked ~ .switcher-slider:after {
         // left: var(--switcher-5-top);
       }
     }
-    // -7(3 позиции - круг --style)
+    // -7(3 позиции - круг --size)
     &-7 {
       height: var(--height);
       width: var(--height);
@@ -454,7 +365,7 @@ header {
     }
   }
 }
-// ! </стили --style(настройки стиля-размера)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˄
+// ! </настройки стиля-размера(--size:переменные,)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˄
 
 // !
 // Советы по дизайну

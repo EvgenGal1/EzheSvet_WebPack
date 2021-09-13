@@ -730,7 +730,7 @@
       }
       // изменение цвета центр. и мини кнопок при нажатии
       // ??? не раб - разобратся как работает такая вложенность
-      // начальная позиция на .--style-state-off attr checked в -90'град
+      // начальная позиция на ._big attr checked в -90'град
       &:checked {
         & + input[type="radio"] {
           z-index: 10;
@@ -790,7 +790,7 @@
       // изменение стрелки(:after) при нажатии
       // изменения в label при нажатии
       // ??? не раб - разобратся как работает такая вложенность
-      // начальная позиция на .--style-state-off attr checked в -90'град
+      // начальная позиция на .--size-state-off attr checked в -90'град
       &:checked {
         // третье положение?
         & + i {
@@ -852,9 +852,9 @@
     //     // третье положение
     //     & + i {
     //       background-color: #0f0;
-    //       & + .sw7-big,
-    //       & + .sw7-mid,
-    //       & + .sw7-small {
+    //       & + .sw7__big,
+    //       & + .sw7__mid,
+    //       & + .sw7__small {
     //         background: none;
     //         font-family: 1px;
     //       }
@@ -863,9 +863,9 @@
     //     & + input[type="radio"] {
     //       & + i {
     //         background-color: #00f;
-    //         & + .sw7-big,
-    //         & + .sw7-mid,
-    //         & + .sw7-off {
+    //         & + .sw7__big,
+    //         & + .sw7__mid,
+    //         & + .sw7__off {
     //           background: none;
     //           font-family: 2px;
     //         }
@@ -874,9 +874,9 @@
     //       & + input[type="radio"] {
     //         & + i {
     //           background-color: #ff0;
-    //           & + .sw7-big,
-    //           & + .sw7-small,
-    //           & + .sw7-off {
+    //           & + .sw7__big,
+    //           & + .sw7__small,
+    //           & + .sw7__off {
     //             background: none;
     //             font-family: 3px;
     //           }
@@ -885,9 +885,9 @@
     //         & + input[type="radio"] {
     //           & + i {
     //             background-color: #f00;
-    //             & + .sw7-mid,
-    //             & + .sw7-small,
-    //             & + .sw7-off {
+    //             & + .sw7__mid,
+    //             & + .sw7__small,
+    //             & + .sw7__off {
     //               background: none;
     //               font-family: 4px;
     //             }
