@@ -64,7 +64,7 @@ $(".DoC1-ul li:nth-child(1) a").hide().show();
 $(".DoC1-ul li:nth-child(1) p").hide(1000).text("Нов. текст 1").show(3000);
 
 // взять высоту/ширину -> .height()/.width(); изменить  высоту/ширину -> .height(300)/.width(150);
-//  ???не раб - не могу между вставляемого текста добавть еще элемент
+//  ??? не раб - не могу между вставляемого текста добавть еще элемент
 function hW1() {
   var hMax = $(".DoC1-ul li img").height(50);
   var h = $(".DoC1-ul li img").height();

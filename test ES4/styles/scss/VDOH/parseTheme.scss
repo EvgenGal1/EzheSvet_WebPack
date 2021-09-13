@@ -210,9 +210,6 @@
     z-index: 0;
     font: 17px/26px Arial, sans-serif;
     font-weight: bold;
-    // ??? не раб - SassError: Undefined operation "#000 / 0.15" - text-shadow: 2px 2px 0px (rgb(0, 0, 0) / 15%);
-    // text-shadow: 2px 2px 0px (#000 / 0.15);
-    // text-shadow: 2px 2px 0px (rgb(0, 0, 0) / 15%);
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.75);
   }
 
@@ -537,19 +534,19 @@
     z-index: 1;
   }
 
-  .switcher-off {
+  .switcher__dark {
     left: 3px;
     width: 33%;
     height: 100%;
   }
 
-  .switcher-neutral {
+  .switcher__neutral {
     left: 31%;
     width: 33%;
     height: 100%;
   }
 
-  .switcher-on {
+  .switcher__light {
     right: 3px;
     width: 33%;
     height: 100%;
@@ -599,33 +596,34 @@
   }
 
   //
-  .switcher-radio-light:checked ~ .switcher-slider {
+  .switcher-radio__light:checked ~ .switcher-slider {
     background-color: #81ea89;
   }
 
-  .switcher-radio-neutral:checked ~ .switcher-slider {
+  .switcher-radio__neutral:checked ~ .switcher-slider {
     background: #ddd;
   }
 
-  .switcher-radio-dark:checked ~ .switcher-slider {
+  .switcher-radio__dark:checked ~ .switcher-slider {
     background-color: #ed8282;
   }
 
-  .switcher-radio-light:checked ~ .switcher-slider:after {
+  .switcher-radio__light:checked ~ .switcher-slider:after {
     left: calc(2 * ((100% - 6px) / 3));
   }
 
-  .switcher-radio-neutral:checked ~ .switcher-slider:after {
+  .switcher-radio__neutral:checked ~ .switcher-slider:after {
     left: calc(1px + 100% / 3);
   }
 
-  .switcher-radio-dark:checked ~ .switcher-slider:after {
-    // .switcher-radio-dark:checked + .switcher-slider:after {
+  .switcher-radio__dark:checked ~ .switcher-slider:after {
+    // .switcher-radio__dark:checked + .switcher-slider:after {
     left: 3px;
   }
 }
 //</.m-s-switcher-5(3 позиции - горизонт)>˄=======================================================================================˄
 
+// ??? не раб - Травник - понять почему не взаимосвязаны label и input. связать в общее переключение
 // <.m-s-switcher-7(3 позиции - круг)>˅=======================================================================================˅
 //! https://codepen.io/PaulZi/pen/zBbVvV?editors=1100
 .m-s-switcher-7 {

@@ -41,8 +41,6 @@
     float: left;
     // outline-style: ridge;
     border-style: ridge;
-    // ??? не раб - SassError: Undefined mixin - @include flexbox();
-    // @include flexbox();
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -810,17 +808,17 @@ body._touch .items__arrow {
 }
 .switcher-label {
 }
-.switcher-off {
+.switcher__dark {
 }
-.switcher-radio-dark {
+.switcher-radio__dark {
 }
-.switcher-neutral {
+.switcher__neutral {
 }
-.switcher-radio-neutral {
+.switcher-radio__neutral {
 }
-.switcher-on {
+.switcher__light {
 }
-.switcher-radio-light {
+.switcher-radio__light {
 }
 .switcher-slider {
 }

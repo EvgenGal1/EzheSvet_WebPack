@@ -333,7 +333,7 @@ h6 {
 .catalog-block,
 .game-block,
 .manual-block {
-  // ??? не раб - SassError: Undefined mixin - @include flexbox();
+  // ??? не раб -  
   // @include flexbox();
   display: flex;
   max-width: 1308px;
@@ -646,7 +646,7 @@ ol.counter {
 }
 //=============================================================================================
 .graystyle {
-  // ??? не раб - SassError: Undefined mixin - @include flexbox();
+  // ??? не раб -  
   // @include anim(0.8s, 0s);
   transition: all 0.8s ease 0s;
   filter: grayscale(1);

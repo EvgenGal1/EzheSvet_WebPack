@@ -286,7 +286,7 @@ ibgJS();
 //   const sw7small = document.querySelector(".sw7-small");
 //   const sw7mid = document.querySelector(".sw7-mid");
 //   const sw7off = document.querySelector(".sw7-off");
-//   // ???не раб - по id не вызов. для смены стиля по нажатию на центр в 3х циферблатную кнопку
+//   // ??? не раб - по id не вызов. для смены стиля по нажатию на центр в 3х циферблатную кнопку
 //   // const sw7Of = document.querySelectorById(".--style-state-off");
 //   // const sw7On = document.querySelectorById(".--style-state-on");
 //   // const sw7Nul = document.querySelectorById(".--style-state-null");

@@ -76,7 +76,7 @@ function setScrollIntoViewHead() {
 function setScrollIntoViewOpt() {
   const footerScroll = document.querySelector(".centr-cont-");
   footerScroll.scrollIntoView(
-    // ???не раб - false с опц не выводит вниз, раб как при top=true
+    // ??? не раб - false с опц не выводит вниз, раб как при top=true
     {
       // top: false,
       // top: true,

@@ -8,11 +8,11 @@
 //   color: #0033cc;
 // }
 // /* Стили Тёмной темы */
-// body.dark-theme {
+// body.--theme-dark {
 //   color: #eee;
 //   background: #121212;
 // }
-// body.dark-theme a {
+// body.--theme-dark a {
 //   color: #809fff;
 // }
 // 2 Использование пользовательских свойств
@@ -21,7 +21,7 @@
 //   --bkg-color: #fff;
 //   --anchor-color: #0033cc;
 // }
-// body.dark-theme {
+// body.--theme-dark {
 //   --text-color: #eee;
 //   --bkg-color: #121212;
 //   --anchor-color: #809fff;
@@ -36,18 +36,18 @@
 
 // ? 4 Переопределение настроек ОС
 /* Цвета по умолчанию */
-// body.neutral-theme {
+// body.--theme_neutral {
 //   // --text-color: #f00;
 //   // --bkg-color: #cccccc;
 //   --anchor-color: #0d0238;
 // }
 // /* Цвета тёмной темы */
-// body.dark-theme {
+// body.--theme-dark {
 //   --text-color: #c0c0c0;
 //   --bkg-color: #121212;
 //   --anchor-color: #809fff;
 // }
-// body.light-theme {
+// body.--theme_light {
 //   --text-color: #222;
 //   --bkg-color: #fff;
 //   --anchor-color: #0033cc;
@@ -99,8 +99,8 @@
 // Обратите внимание на пробелы, они не ломают синтаксис (что сбросило бы определение всей строки). Теперь осталось только вынести переключатель состояния в отдельные переменные:
 // :root {
 body {
-  // body.neutral-theme {
-  // :root.neutral-theme {
+  // body.--theme_neutral {
+  // :root.--theme_neutral {
   /* --ON и --OFF заменяют двоичную переменную */
   --ON: initial;
   // --ON: ;
@@ -108,30 +108,36 @@ body {
   // --NORM: initial;
 }
 /* выбираем светлую тему по умолчанию */
-// .theme-default,
+// .--theme-default,
 // .theme-light {
 // .default-theme,
-.neutral-theme {
+.--theme_neutral {
   --neutral: var(--ON);
   --light: var(--OFF);
   --dark: var(--OFF);
 }
-.light-theme {
+.--theme_light {
   --light: var(--ON);
   --neutral: var(--OFF);
   --dark: var(--OFF);
 }
-.dark-theme {
+.--theme_dark {
   --dark: var(--ON);
   --light: var(--OFF);
   --neutral: var(--OFF);
 }
 /* медиа-запрос теперь нужен только для переключения */
 @media (prefers-color-scheme: dark) {
-  .theme-default {
-    --dark: var(--ON);
+// @media (prefers-color-scheme: neutral) {
+  // .--theme-default {
+  //   --dark: var(--ON);
+  //   --light: var(--OFF);
+  //   --neutral: var(--OFF);
+  // }
+  .--theme_neutral {
+    --dark: var(--OFF);
+    --neutral: var(--ON);
     --light: var(--OFF);
-    --neutral: var(--OFF);
   }
 }
 // Теперь цветовые схемы можно определять в одном месте, выглядеть это будет так:
@@ -198,10 +204,8 @@ hr {
   h3 {
     text-align: center;
     background-color: var(--hel-h-bkg-color);
-    // color: var(--hel-h-color);
   }
   p {
-    // background: #58290e;
     background-color: var(--hel-p-bkg-color);
     color: var(--hel-p-color);
   }
@@ -209,48 +213,39 @@ hr {
 .block-body,
 .centr-text {
   h3 {
-    // text-align: center;
-    // background-color: var(--h-bkg-color);
-    // color: var(--h-bkg-color);
-    // color: var(--background);
     background-color: var(--h-bkg-color);
     color: var(--text-color);
   }
-  // p {
-  // background: var(--baz-bkg-color);
-  // background-color: var(--h-bkg-color);
   color: var(--text-color);
-  // color: #500000;
-  // }
 }
 
-// ! </стили --theme(настройки стиля-цвета, кнп.m-s-switcher-5)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˄
+// ! </стили --theme(настройки стиля-цвета)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˄
 
-// ! <стили --style(настройки стиля-размера, кнп.m-s-switcher-7)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
+// ! <стили --style(настройки стиля-размера)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
 
 body {
   --ON: initial;
   --OFF: ;
 }
-.style-mid {
+._size-mid {
   --mid: var(--ON);
   --small: var(--OFF);
   --big: var(--OFF);
   --off: var(--OFF);
 }
-.style-small {
+._size-small {
   --small: var(--ON);
   --mid: var(--OFF);
   --big: var(--OFF);
   --off: var(--OFF);
 }
-.style-big {
+._size-big {
   --big: var(--ON);
   --small: var(--OFF);
   --mid: var(--OFF);
   --off: var(--OFF);
 }
-.style-off {
+._size-off {
   --off: var(--ON);
   --small: var(--OFF);
   --mid: var(--OFF);
@@ -306,7 +301,7 @@ body {
     var(--off, 19.5px 8px 0 #707070);
   --switcher-7-top: var(--big, -1px) var(--mid, 4px) var(--small, -3px)
     var(--off, 5px);
-  --switcher-2-left: var(--big, 0px) var(--mid, 0px) var(--small, -14px)
+  --switcher-7-left: var(--big, 0px) var(--mid, 0px) var(--small, -14px)
     var(--off, -14px);
   --bot-it-fir-mar: var(--big, 30px) var(--mid, 25px) var(--small, 20px)
     var(--off, 20px);
@@ -459,9 +454,7 @@ header {
     }
   }
 }
-// m-s-switcher (кнопки)
-
-// ! </стили --style(настройки стиля-размера, кнп.m-s-switcher-7)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˄
+// ! </стили --style(настройки стиля-размера)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˄
 
 // !
 // Советы по дизайну
