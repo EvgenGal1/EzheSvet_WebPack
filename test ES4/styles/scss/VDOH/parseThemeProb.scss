@@ -195,8 +195,8 @@ body {
     var(--off, 5%);
   --switcher-1-lab: var(--big, 32px) var(--mid, 27px) var(--small, 22px)
     var(--off, 22px);
-  --switcher-2-lef: var(--big, 10px) var(--mid, 9px) var(--small, 8px)
-    var(--off, 8px);
+  --switcher-2-lef: var(--big, 10px) var(--mid, 9px) var(--small, 8px)    var(--off, 8px);
+  --switcher-2-lef: var(--big, 14px) var(--mid, 13px) var(--small, 12px)    var(--off, 12px);
   --switcher-2-rig: var(--big, 10px) var(--mid, 9px) var(--small, 8px)
     var(--off, 8px);
   --switcher-2-fo-si: var(--big, 17px) var(--mid, 15px) var(--small, 13px)
@@ -339,7 +339,7 @@ header {
       }
     }
     // -7(3 позиции - круг --size)
-    &-7 {
+    &-4btn {
       height: var(--height);
       width: var(--height);
       .tristate-rotate {
@@ -352,6 +352,7 @@ header {
           height: var(--height);
           width: var(--height);
         }
+        // !
         & i {
           &:before {
             box-shadow: var(--switcher-7-box-sh);

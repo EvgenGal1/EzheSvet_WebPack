@@ -15,14 +15,15 @@
     &:not(:first-child) {
       margin: 0 0 0px 30px;
     }
-    &:last-child{
+    &:last-child {
       width: 30px;
       margin: 0 12px 0px 42px;
     }
     &:first-child,
     &:nth-child(2),
     &:nth-child(4),
-    &:nth-child(5)
+    &:nth-child(6)
+    // &:nth-child(3) 
     {
       display: none;
     }
@@ -33,7 +34,10 @@
     &-3,
     &-4,
     &-5,
-    &-7 {
+    &-6,
+    &-7,
+    &-dark
+     {
       width: 100%;
       height: 100%;
     }
@@ -311,6 +315,7 @@
         & + label {
           left: 2px;
           right: 56px;
+          right: 46px;
           background: $black;
           transition: left 0.5s, right 0.4s 0.2s;
         }
@@ -595,17 +600,26 @@
     box-shadow: 0 0 1px 1px #f4f4f4 inset, 0 0 3px 1px rgba(0, 0, 0, 0.6);
   }
 
+  .switcher-slider::before {
+    content: "";// "&#127765"; - Полнолуние	&#127761; - Новолуние &#9728; - Жёлтое солнце
+    position: absolute;
+    content: "\002605";
+  }
+
   //
   .switcher-radio__light:checked ~ .switcher-slider {
     background-color: #81ea89;
+    background-color: #ddd;
   }
 
   .switcher-radio__neutral:checked ~ .switcher-slider {
     background: #ddd;
+    background: #fad201;
   }
 
   .switcher-radio__dark:checked ~ .switcher-slider {
     background-color: #ed8282;
+    background-color: #b40000;
   }
 
   .switcher-radio__light:checked ~ .switcher-slider:after {
@@ -624,9 +638,9 @@
 //</.m-s-switcher-5(3 позиции - горизонт)>˄=======================================================================================˄
 
 // ??? не раб - Травник - понять почему не взаимосвязаны label и input. связать в общее переключение
-// <.m-s-switcher-7(3 позиции - круг)>˅=======================================================================================˅
+// <.m-s-switcher-4btn(3 позиции - круг)>˅=======================================================================================˅
 //! https://codepen.io/PaulZi/pen/zBbVvV?editors=1100
-.m-s-switcher-7 {
+.m-s-switcher-4btn {
   .tristate {
     position: relative;
     display: inline-block;
@@ -686,7 +700,7 @@
       width: 40%;
       height: 40%;
       // display: inline-block;
-      // background-color: #ffa600;
+      // background-color: #fad201;
       text-align: center;
       border-radius: 50px;
       & + label {
@@ -738,12 +752,14 @@
         // третье положение
         & + i {
           background-color: #0f0;
+          background: #00ba00;
           & + label,
           & + label + label,
           & + label + label + label {
             background: none;
             background: red;
-            font-family: 1px;
+            background-color: #b40000;
+            // font-family: 1px;
           }
         }
         // второе положение
@@ -755,32 +771,37 @@
             & + label + label + label + label {
               background: none;
               background: red;
-              font-family: 2px;
+              background-color: #b40000;
+              // font-family: 2px;
             }
           }
           // первое положение
           & + input[type="radio"] {
             & + i {
               background-color: #ff0;
+              background-color: #fad201;
               & + label,
               & + label + label + label,
               & + label + label + label + label {
                 background: none;
                 background: red;
-                font-family: 3px;
+                background-color: #b40000;
+                // font-family: 3px;
               }
             }
             // ? 0 положение
             & + input[type="radio"] {
               & + i {
                 background-color: #f00;
+                background-color: #b40000;
                 // & + label,
                 & + label + label,
                 & + label + label + label,
                 & + label + label + label + label {
                   background: none;
                   background: red;
-                  font-family: 4px;
+                  background-color: #b40000;
+                  // font-family: 4px;
                 }
               }
             }
@@ -829,7 +850,7 @@
       }
     }
 
-    // & > .sw7-label {
+    // & > .sw4btn-label {
     //   position: absolute;
     //   left: 0;
     //   top: 0;
@@ -852,9 +873,9 @@
     //     // третье положение
     //     & + i {
     //       background-color: #0f0;
-    //       & + .sw7__big,
-    //       & + .sw7__mid,
-    //       & + .sw7__small {
+    //       & + .sw4-lab__big,
+    //       & + .sw4-lab__mid,
+    //       & + .sw4-lab__small {
     //         background: none;
     //         font-family: 1px;
     //       }
@@ -863,9 +884,9 @@
     //     & + input[type="radio"] {
     //       & + i {
     //         background-color: #00f;
-    //         & + .sw7__big,
-    //         & + .sw7__mid,
-    //         & + .sw7__off {
+    //         & + .sw4-lab__big,
+    //         & + .sw4-lab__mid,
+    //         & + .sw4-lab__off {
     //           background: none;
     //           font-family: 2px;
     //         }
@@ -874,9 +895,9 @@
     //       & + input[type="radio"] {
     //         & + i {
     //           background-color: #ff0;
-    //           & + .sw7__big,
-    //           & + .sw7__small,
-    //           & + .sw7__off {
+    //           & + .sw4-lab__big,
+    //           & + .sw4-lab__small,
+    //           & + .sw4-lab__off {
     //             background: none;
     //             font-family: 3px;
     //           }
@@ -885,9 +906,9 @@
     //         & + input[type="radio"] {
     //           & + i {
     //             background-color: #f00;
-    //             & + .sw7__mid,
-    //             & + .sw7__small,
-    //             & + .sw7__off {
+    //             & + .sw4-lab__mid,
+    //             & + .sw4-lab__small,
+    //             & + .sw4-lab__off {
     //               background: none;
     //               font-family: 4px;
     //             }
@@ -899,7 +920,132 @@
     // }
   }
 }
-//</.m-s-switcher-7(3 позиции - круг)>˄=======================================================================================˄
+//</.m-s-switcher-4btn(3 позиции - круг)>˄=======================================================================================˄
+
+// <.m-s-switcher-()>˅=======================================================================================˅
+// ! https://codepen.io/pieter-biesemans/pen/LYRdaKw
+.m-s-switcher-dark {
+  @mixin cc() {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  $white: #fff;
+  $black: #000;
+  $lightGrey: #666;
+  $mediumGrey: #444;
+  $darkGrey: #333;
+  $lightBlue: #5197c4;
+  $darkBlue: #2c4e63;
+  $purple: #27173a;
+  $yellow: #ffc207;
+  $font: "Open Sans", sans-serif;
+
+  div {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    font-size: 3vmin;
+  }
+
+  // body {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: $font;
+    font-size: 1rem;
+    color: $white;
+    background: $mediumGrey;
+
+    .message {
+      position: absolute;
+      right: 0.5vw;
+      top: 1vw;
+      max-width: 60vw;
+      font-size: 12px;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid darken($darkGrey, 10%);
+        &:hover {
+          border-width: 3px;
+        }
+      }
+    }
+
+    .toggle {
+      @include cc;
+      overflow: visible;
+
+      input {
+        display: none;
+      }
+
+      input:checked ~ span {
+        border-color: $darkGrey;
+        background: $darkBlue;
+        &:before {
+          left: 5.5rem;
+          box-shadow: inset -1rem 0rem 0 0.25rem $yellow;
+          background: transparent;
+        }
+        &:after {
+          content: "\002605";
+          top: 1rem;
+          left: 5rem;
+          width: 2rem;
+          height: 2rem;
+          font-size: 2rem;
+          color: $yellow;
+        }
+      }
+
+      span {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 10rem;
+        height: 5rem;
+        border-radius: 5rem;
+        border: 0.25rem solid $lightGrey;
+        background: $lightBlue;
+        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0.5rem;
+          left: 0.5rem;
+          width: 4rem;
+          height: 4rem;
+          border-radius: 50%;
+          box-shadow: inset -4rem -4rem 0 0 $yellow;
+          transition: all 0.5s cubic-bezier(0, 0.55, 0.45, 1);
+        }
+        &:after {
+          content: "\002601";
+          position: absolute;
+          top: 1rem;
+          left: 1.75rem;
+          width: 1rem;
+          height: 1rem;
+          color: $white;
+          font-size: 4rem;
+          transition: all 0.5s cubic-bezier(0, 0.55, 0.45, 1);
+        }
+      }
+    }
+  // }
+}
+//</.m-s-switcher-dark()>˄=======================================================================================˄
 
 // <.m-s-switcher-()>˅=======================================================================================˅
 // ! https://nisnom.com/veb-razrabotki/pure-css-toggle-buttons-on-off-switches/#more-3247

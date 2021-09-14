@@ -102,35 +102,43 @@ function generalFunctionOfReducedMotion() {
   } else if (currentStyle == "_off") {
     document.body.classList.add("--size_off");
   }
-  var sw7LabelAll = document.querySelectorAll(".sw7-label");
-  sw7LabelAll.forEach(function (btn) {
-    const sw7big = document.querySelector(".sw7__big");
-    const sw7mid = document.querySelector(".sw7__mid");
-    const sw7small = document.querySelector(".sw7__small");
-    const sw7off = document.querySelector(".sw7__off");
+  var sw4btnLabelAll = document.querySelectorAll(".sw4btn-input");
+  // var sw4btnLabelAll = document.querySelectorAll(".sw4btn-label");
+  sw4btnLabelAll.forEach(function (btn) {
+    // const sw4btnLabBig = document.querySelector(".sw4-lab__big");
+    // const sw4btnLabMid = document.querySelector(".sw4-lab__mid");
+    // const sw4btnLabSmall = document.querySelector(".sw4-lab__small");
+    // const sw4btnLabOff = document.querySelector(".sw4-lab__off");
+    const sw4btnInpBig = document.querySelector(".sw4-inp__big");
+    const sw4btnInpMid = document.querySelector(".sw4-inp__mid");
+    const sw4btnInpSmall = document.querySelector(".sw4-inp__small");
+    const sw4btnInpOff = document.querySelector(".sw4-inp__off");
     btn.addEventListener("click", function () {
-      if (btn == sw7big) {
-        document.body.classList.remove("--size_mid");
-        document.body.classList.remove("--size_small");
-        document.body.classList.remove("--size_off");
-        document.body.classList.add("--size_big");
-        var size = "_big";
-      }
-      if (btn == sw7mid) {
+      if (btn == sw4btnInpMid) {
         document.body.classList.remove("--size_big");
         document.body.classList.remove("--size_small");
         document.body.classList.remove("--size_off");
         document.body.classList.add("--size_mid");
         var size = "_mid";
       }
-      if (btn == sw7small) {
+      // if (btn == sw4btnLabBig ) {
+      if (btn == sw4btnInpBig) {
+        // if (btn == sw4btnLabBig || sw4btnInpBig.onclick) {
+        document.body.classList.remove("--size_mid");
+        document.body.classList.remove("--size_small");
+        document.body.classList.remove("--size_off");
+        document.body.classList.add("--size_big");
+        var size = "_big";
+      }
+      
+      if (btn == sw4btnInpSmall) {
         document.body.classList.remove("--size_big");
         document.body.classList.remove("--size_mid");
         document.body.classList.remove("--size_off");
         document.body.classList.add("--size_small");
         var size = "_small";
       }
-      if (btn == sw7off) {
+      if (btn == sw4btnInpOff) {
         document.body.classList.remove("--size_big");
         document.body.classList.remove("--size_mid");
         document.body.classList.remove("--size_small");

@@ -203,13 +203,23 @@
               <label for="switcher-1"></label>
             </div>
           </section>
-          <!-- switcher black -->
+          <!-- switcher-dark. черно зелёный -->
           <section class="menu-set__items">
-            <div class="m-s-switcher-2-3">
-              <span class="m-s-switchers m-s-switcher-2">
-                <input type="checkbox" id="switcher-2" />
-                <label for="switcher-2"></label>
-              </span>
+            <div class="m-s-switcher-dark">
+              <div class="toggle" title="toggle dark mode">
+                <label>
+                  <input type="checkbox" name="">
+                  <span></span>
+                </label>
+              </div><div class="message">
+                <!-- &check; Made by <a href="https://codepen.io/pieter-biesemans/" target="_blank" title="&check; check out my other work">Pieter Biesemans</a> with &#9749;, &#128420; &amp; &#8986;</i> -->
+              </div>
+              <!-- <div class="toggle" title="toggle dark mode">
+                <label>
+                  <input type="checkbox" name="">
+                  <span></span>
+                </label>
+              </div> -->
             </div>
           </section>
           <!-- switcher while -->
@@ -218,6 +228,15 @@
               <span class="m-s-switchers m-s-switcher-3">
                 <input type="checkbox" id="switcher-3" />
                 <label for="switcher-3"></label>
+              </span>
+            </div>
+          </section>
+          <!-- switcher black -->
+          <section class="menu-set__items">
+            <div class="m-s-switcher-2-3">
+              <span class="m-s-switchers m-s-switcher-2">
+                <input type="checkbox" id="switcher-2" />
+                <label for="switcher-2"></label>
               </span>
             </div>
           </section>
@@ -273,25 +292,26 @@
               </div>
             </div>
           </section>
-          <!-- switcher 7 (--size) -->
+          <!-- switcher 7 (--size:sw4btn) -->
+          <!-- sw4btnLabBig -->
           <section class="menu-set__items">
-            <div class="m-s-switcher-7">
+            <div class="m-s-switcher-4btn">
               <span class="tristate tristate-rotate">
-                <input
+                <input class="sw4btn-input sw4-inp__big" 
                   type="radio"
                   id="_big"
                   name="--size"
                   value="_big"
-                  checked
                 />
-                <input type="radio" id="_mid" name="--size" value="_mid" />
-                <input type="radio" id="_small" name="--size" value="_small" />
-                <input type="radio" id="_off" name="--size" value="_off" />
+                <input class="sw4btn-input sw4-inp__mid"  type="radio" id="_mid" name="--size" value="_mid" 
+                checked/>
+                <input class="sw4btn-input sw4-inp__small" type="radio" id="_small" name="--size" value="_small" />
+                <input class="sw4btn-input sw4-inp__off"  type="radio" id="_off" name="--size" value="_off" />
                 <i></i>
-                <label class="sw7-label sw7__big" for="_big">o</label>
-                <label class="sw7-label sw7__mid" for="_mid">~</label>
-                <label class="sw7-label sw7__small" for="_small">+</label>
-                <label class="sw7-label sw7__off" for="_off">#</label>
+                <label class="sw4btn-label sw4-lab__big" for="_big">o</label>
+                <label class="sw4btn-label sw4-lab__mid" for="_mid">~</label>
+                <label class="sw4btn-label sw4-lab__small" for="_small">+</label>
+                <label class="sw4btn-label sw4-lab__off" for="_off">#</label>
               </span>
             </div>
           </section>
