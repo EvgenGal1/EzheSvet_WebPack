@@ -23,7 +23,7 @@
     &:nth-child(2),
     &:nth-child(4),
     &:nth-child(6)
-    // &:nth-child(3) 
+    // &:nth-child(3)
     {
       display: none;
     }
@@ -36,8 +36,7 @@
     &-5,
     &-6,
     &-7,
-    &-dark
-     {
+    &-dark {
       width: 100%;
       height: 100%;
     }
@@ -527,10 +526,10 @@
 }
 //</.m-s-switcher-4(NISNOM 1))>˄=======================================================================================˄
 
-// <.m-s-switcher-5(3 позиции - горизонт)>˅=======================================================================================˅
+// <.m-s-switcher-3btn(3 позиции - горизонт)>˅=======================================================================================˅
 // ! https://habr.com/ru/sandbox/80843/
-.m-s-switcher-5 {
-  .switcher {
+.m-s-switcher-3btn {
+  .sw3btn {
     position: relative;
     display: inline-block;
     // margin: 1px 10px;
@@ -539,25 +538,25 @@
     z-index: 1;
   }
 
-  .switcher__dark {
+  .sw3btn__dark {
     left: 3px;
     width: 33%;
     height: 100%;
   }
 
-  .switcher__neutral {
+  .sw3btn__neutral {
     left: 31%;
     width: 33%;
     height: 100%;
   }
 
-  .switcher__light {
+  .sw3btn__light {
     right: 3px;
     width: 33%;
     height: 100%;
   }
 
-  .switcher-label {
+  .sw3btn-label {
     position: absolute;
     /* text-indent: -9999px; */
     /* z-index: 2; */
@@ -567,81 +566,81 @@
     justify-content: center;
   }
 
-  .switcher input {
+  .sw3btn input {
     visibility: hidden;
     position: absolute;
   }
 
-  .switcher-slider {
+  .sw3btn-slider {
     height: 100%;
     width: 100%;
-    padding: 3px;
+    // padding: 3px;
     border-radius: 25px;
-    background: #ddd;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1) inset,
-      0 0 4px rgba(0, 0, 0, 0.5) inset, 0 2px 2px 1px rgba(0, 0, 0, 0.3) inset;
+    // background: #ddd;
+    // box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1) inset, 0 0 4px rgba(0, 0, 0, 0.5) inset, 0 2px 2px 1px rgba(0, 0, 0, 0.3) inset;
     box-shadow: 0 0 3px #555555 inset, 0 0 10px black;
-    left: 33%;
+    // left: 33%;
     transition: background-color 0.2s linear 0s;
+    // background: linear-gradient(#d0d0d0, #fdfdfd) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    transition: all 0.3s ease 0s;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    &:before {
+      content: "🌑";
+      position: absolute;
+      font-size: 25px;
+      transition: left 0.2s linear 0s, right 0.2s linear 0s;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: all 0.5s cubic-bezier(0, 0.55, 0.45, 1);
+      transition: all 0.3s ease 0s;
+    }
+    &:after {
+      // content: "☁";
+      // position: absolute;
+      // font-size: 17px;
+      // z-index: 2;
+    }
   }
-
-  .switcher-slider:after {
-    transition: left 0.2s linear 0s, right 0.2s linear 0s;
-    background: linear-gradient(#d0d0d0, #fdfdfd) repeat scroll 0 0
-      rgba(0, 0, 0, 0);
-    content: "";
-    position: absolute;
-    top: 3px;
-    border-radius: 50%;
-    width: calc(100% / 3 - 1px);
-    width: 34px;
-    height: calc(100% - 2px);
-    height: 34px;
-    box-shadow: 0 0 1px 1px #f4f4f4 inset, 0 0 3px 1px rgba(0, 0, 0, 0.6);
-  }
-
-  .switcher-slider::before {
-    content: "";// "&#127765"; - Полнолуние	&#127761; - Новолуние &#9728; - Жёлтое солнце
-    position: absolute;
-    content: "\002605";
-  }
-
-  //
-  .switcher-radio__light:checked ~ .switcher-slider {
-    background-color: #81ea89;
+  .sw3btn-radio__light:checked ~ .sw3btn-slider {
+    // .sw3btn-radio__light ~ .sw3btn-slider {
     background-color: #ddd;
   }
-
-  .switcher-radio__neutral:checked ~ .switcher-slider {
-    background: #ddd;
+  .sw3btn-radio__neutral:checked ~ .sw3btn-slider {
     background: #fad201;
   }
-
-  .switcher-radio__dark:checked ~ .switcher-slider {
-    background-color: #ed8282;
+  .sw3btn-radio__dark:checked ~ .sw3btn-slider {
     background-color: #b40000;
   }
-
-  .switcher-radio__light:checked ~ .switcher-slider:after {
-    left: calc(2 * ((100% - 6px) / 3));
+  .sw3btn-radio__dark ~ .sw3btn-slider {
+    background-color: #b40000;
   }
-
-  .switcher-radio__neutral:checked ~ .switcher-slider:after {
-    left: calc(1px + 100% / 3);
-  }
-
-  .switcher-radio__dark:checked ~ .switcher-slider:after {
-    // .switcher-radio__dark:checked + .switcher-slider:after {
+  .sw3btn-radio__dark:checked ~ .sw3btn-slider:before {
+    content: "🌑";
     left: 3px;
+    left: 0;
+  }
+  .sw3btn-radio__neutral:checked ~ .sw3btn-slider:before {
+    content: "🌗";
+    // left: calc(1px + 100% / 3);
+    left: calc(100% / 3 - 3.5px);
+    left: calc(100% / 3 - 3px);
+  }
+  .sw3btn-radio__light:checked ~ .sw3btn-slider:before {
+    content: "🌕";
+    left: calc(2 * ((100% - 6px) / 3));
+    right: 0;
+    left: calc(100% - 34px);
+    left: calc(100% - 33.5px);
   }
 }
-//</.m-s-switcher-5(3 позиции - горизонт)>˄=======================================================================================˄
+//</.m-s-switcher-3btn(3 позиции - горизонт)>˄=======================================================================================˄
 
 // ??? не раб - Травник - понять почему не взаимосвязаны label и input. связать в общее переключение
 // <.m-s-switcher-4btn(3 позиции - круг)>˅=======================================================================================˅
 //! https://codepen.io/PaulZi/pen/zBbVvV?editors=1100
 .m-s-switcher-4btn {
-  .tristate {
+  .sw4btn {
     position: relative;
     display: inline-block;
 
@@ -954,95 +953,95 @@
   }
 
   // body {
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    font-family: $font;
-    font-size: 1rem;
-    color: $white;
-    background: $mediumGrey;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+  font-size: 1rem;
+  color: $white;
+  background: $mediumGrey;
 
-    .message {
-      position: absolute;
-      right: 0.5vw;
-      top: 1vw;
-      max-width: 60vw;
-      font-size: 12px;
+  .message {
+    position: absolute;
+    right: 0.5vw;
+    top: 1vw;
+    max-width: 60vw;
+    font-size: 12px;
 
-      a {
-        color: inherit;
-        text-decoration: none;
-        border-bottom: 1px solid darken($darkGrey, 10%);
-        &:hover {
-          border-width: 3px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid darken($darkGrey, 10%);
+      &:hover {
+        border-width: 3px;
+      }
+    }
+  }
+
+  .toggle {
+    @include cc;
+    overflow: visible;
+
+    input {
+      display: none;
+    }
+
+    input:checked ~ span {
+      border-color: $darkGrey;
+      background: $darkBlue;
+      &:before {
+        left: 5.5rem;
+        box-shadow: inset -1rem 0rem 0 0.25rem $yellow;
+        background: transparent;
+      }
+      &:after {
+        content: "\002605";
+        top: 1rem;
+        left: 5rem;
+        width: 2rem;
+        height: 2rem;
+        font-size: 2rem;
+        color: $yellow;
       }
     }
 
-    .toggle {
-      @include cc;
-      overflow: visible;
-
-      input {
-        display: none;
+    span {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: 10rem;
+      height: 5rem;
+      border-radius: 5rem;
+      border: 0.25rem solid $lightGrey;
+      background: $lightBlue;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        box-shadow: inset -4rem -4rem 0 0 $yellow;
+        transition: all 0.5s cubic-bezier(0, 0.55, 0.45, 1);
       }
-
-      input:checked ~ span {
-        border-color: $darkGrey;
-        background: $darkBlue;
-        &:before {
-          left: 5.5rem;
-          box-shadow: inset -1rem 0rem 0 0.25rem $yellow;
-          background: transparent;
-        }
-        &:after {
-          content: "\002605";
-          top: 1rem;
-          left: 5rem;
-          width: 2rem;
-          height: 2rem;
-          font-size: 2rem;
-          color: $yellow;
-        }
-      }
-
-      span {
-        position: relative;
-        display: inline-block;
-        vertical-align: middle;
-        width: 10rem;
-        height: 5rem;
-        border-radius: 5rem;
-        border: 0.25rem solid $lightGrey;
-        background: $lightBlue;
-        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        &:before {
-          content: "";
-          position: absolute;
-          top: 0.5rem;
-          left: 0.5rem;
-          width: 4rem;
-          height: 4rem;
-          border-radius: 50%;
-          box-shadow: inset -4rem -4rem 0 0 $yellow;
-          transition: all 0.5s cubic-bezier(0, 0.55, 0.45, 1);
-        }
-        &:after {
-          content: "\002601";
-          position: absolute;
-          top: 1rem;
-          left: 1.75rem;
-          width: 1rem;
-          height: 1rem;
-          color: $white;
-          font-size: 4rem;
-          transition: all 0.5s cubic-bezier(0, 0.55, 0.45, 1);
-        }
+      &:after {
+        content: "\002601";
+        position: absolute;
+        top: 1rem;
+        left: 1.75rem;
+        width: 1rem;
+        height: 1rem;
+        color: $white;
+        font-size: 4rem;
+        transition: all 0.5s cubic-bezier(0, 0.55, 0.45, 1);
       }
     }
+  }
   // }
 }
 //</.m-s-switcher-dark()>˄=======================================================================================˄

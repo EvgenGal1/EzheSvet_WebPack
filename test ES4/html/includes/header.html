@@ -208,10 +208,11 @@
             <div class="m-s-switcher-dark">
               <div class="toggle" title="toggle dark mode">
                 <label>
-                  <input type="checkbox" name="">
+                  <input type="checkbox" name="" />
                   <span></span>
                 </label>
-              </div><div class="message">
+              </div>
+              <div class="message">
                 <!-- &check; Made by <a href="https://codepen.io/pieter-biesemans/" target="_blank" title="&check; check out my other work">Pieter Biesemans</a> with &#9749;, &#128420; &amp; &#8986;</i> -->
               </div>
               <!-- <div class="toggle" title="toggle dark mode">
@@ -254,41 +255,39 @@
               </span>
             </div>
           </section>
-          <!-- switcher 5 (--theme) -->
+          <!-- switcher 5 (--theme:sw3btn) -->
           <section class="menu-set__items">
-            <div class="m-s-switcher-5">
-              <div class="switcher">
-                <label class="switcher-label switcher__dark" for="_dark"
-                  >o</label
-                >
+            <div class="m-s-switcher-3btn">
+              <div class="sw3btn">
+                <label class="sw3btn-label sw3btn__dark" for="_dark">o</label>
                 <input
                   id="_dark"
-                  class="switcher-radio__dark"
+                  class="sw3btn-radio__dark"
                   type="radio"
                   name="--theme"
                   value="_dark"
                 />
-                <label class="switcher-label switcher__neutral" for="_neutral"
+                <label class="sw3btn-label sw3btn__neutral" for="_neutral"
                   >~</label
                 >
                 <input
                   id="_neutral"
-                  class="switcher-radio__neutral"
+                  class="sw3btn-radio__neutral"
                   type="radio"
                   name="--theme"
                   value="_neutral"
                 />
-                <label class="switcher-label switcher__light" for="_light"
-                  >+</label
-                >
+                <label class="sw3btn-label sw3btn__light" for="_light">+</label>
                 <input
                   id="_light"
-                  class="switcher-radio__light"
+                  class="sw3btn-radio__light"
                   type="radio"
                   name="--theme"
                   value="_light"
                 />
-                <div class="switcher-slider"></div>
+                <div class="sw3btn-slider">
+                  <!-- <div class="sw3btn-slider12"></div> -->
+                </div>
               </div>
             </div>
           </section>
@@ -296,21 +295,42 @@
           <!-- sw4btnLabBig -->
           <section class="menu-set__items">
             <div class="m-s-switcher-4btn">
-              <span class="tristate tristate-rotate">
-                <input class="sw4btn-input sw4-inp__big" 
+              <span class="sw4btn sw4btn-rotate">
+                <input
+                  class="sw4btn-input sw4-inp__big"
                   type="radio"
                   id="_big"
                   name="--size"
                   value="_big"
                 />
-                <input class="sw4btn-input sw4-inp__mid"  type="radio" id="_mid" name="--size" value="_mid" 
-                checked/>
-                <input class="sw4btn-input sw4-inp__small" type="radio" id="_small" name="--size" value="_small" />
-                <input class="sw4btn-input sw4-inp__off"  type="radio" id="_off" name="--size" value="_off" />
+                <input
+                  class="sw4btn-input sw4-inp__mid"
+                  type="radio"
+                  id="_mid"
+                  name="--size"
+                  value="_mid"
+                  checked
+                />
+                <input
+                  class="sw4btn-input sw4-inp__small"
+                  type="radio"
+                  id="_small"
+                  name="--size"
+                  value="_small"
+                />
+                <input
+                  class="sw4btn-input sw4-inp__off"
+                  type="radio"
+                  id="_off"
+                  name="--size"
+                  value="_off"
+                />
                 <i></i>
                 <label class="sw4btn-label sw4-lab__big" for="_big">o</label>
                 <label class="sw4btn-label sw4-lab__mid" for="_mid">~</label>
-                <label class="sw4btn-label sw4-lab__small" for="_small">+</label>
+                <label class="sw4btn-label sw4-lab__small" for="_small"
+                  >+</label
+                >
                 <label class="sw4btn-label sw4-lab__off" for="_off">#</label>
               </span>
             </div>

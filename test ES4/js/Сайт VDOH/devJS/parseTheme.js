@@ -35,13 +35,13 @@ function generalFunctionOfColorSchemes() {
     document.body.classList.add("--theme_light");
   }
   // Выбираем все кнопки на странице и получаем массив
-  var swLabelAll = document.querySelectorAll(".switcher-label");
+  var swLabelAll = document.querySelectorAll(".sw3btn-label");
   // Проходим по массиву
   swLabelAll.forEach(function (btn) {
     // заводим перем для позиций кнопок
-    const swDark = document.querySelector(".switcher__dark");
-    const swNeut = document.querySelector(".switcher__neutral");
-    const swLight = document.querySelector(".switcher__light");
+    const swDark = document.querySelector(".sw3btn__dark");
+    const swNeut = document.querySelector(".sw3btn__neutral");
+    const swLight = document.querySelector(".sw3btn__light");
     // Вешаем событие клик
     btn.addEventListener("click", function () {
       // if (btn == swDark || currentTheme == "dark" || currentTheme == "null") {
@@ -130,7 +130,7 @@ function generalFunctionOfReducedMotion() {
         document.body.classList.add("--size_big");
         var size = "_big";
       }
-      
+
       if (btn == sw4btnInpSmall) {
         document.body.classList.remove("--size_big");
         document.body.classList.remove("--size_mid");

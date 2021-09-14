@@ -32,14 +32,14 @@ body {
 }
 /* медиа-запрос теперь нужен только для переключения */
 @media (prefers-color-scheme: dark) {
-// @media (prefers-color-scheme: neutral) {
+  // @media (prefers-color-scheme: neutral) {
   // .--theme-default {
   //   --dark: var(--ON);
   //   --light: var(--OFF);
   //   --neutral: var(--OFF);
   // }
   .--theme_dark {
-  // .--theme_neutral {
+    // .--theme_neutral {
     --dark: var(--OFF);
     --neutral: var(--ON);
     --light: var(--OFF);
@@ -155,8 +155,8 @@ body {
   --big: var(--OFF);
 }
 @media (prefers-reduced-motion: reduce) {
-// @media (prefers-reduced-motion: big) {
-// @media (prefers-color-scheme: big) {
+  // @media (prefers-reduced-motion: big) {
+  // @media (prefers-color-scheme: big) {
   // .style-default {
   //   --big: var(--ON);
   //   --small: var(--OFF);
@@ -195,24 +195,28 @@ body {
     var(--off, 5%);
   --switcher-1-lab: var(--big, 32px) var(--mid, 27px) var(--small, 22px)
     var(--off, 22px);
-  --switcher-2-lef: var(--big, 10px) var(--mid, 9px) var(--small, 8px)    var(--off, 8px);
-  --switcher-2-lef: var(--big, 14px) var(--mid, 13px) var(--small, 12px)    var(--off, 12px);
+  --switcher-2-lef: var(--big, 10px) var(--mid, 9px) var(--small, 8px)
+    var(--off, 8px);
+  --switcher-2-lef: var(--big, 14px) var(--mid, 13px) var(--small, 12px)
+    var(--off, 12px);
   --switcher-2-rig: var(--big, 10px) var(--mid, 9px) var(--small, 8px)
     var(--off, 8px);
   --switcher-2-fo-si: var(--big, 17px) var(--mid, 15px) var(--small, 13px)
     var(--off, 13px);
-  --switcher-5-aft: var(--big, 29px) var(--mid, 24px) var(--small, 19px)
-    var(--off, 19px);
-  --switcher-5-top: var(--big, 3px) var(--mid, 2px) var(--small, 1px)
+  --sw3btn-aft: var(--big, 33.5px) var(--mid, 30px) var(--small, 26px)
+    var(--off, 26px);
+  --sw3btn-top: var(--big, 3px) var(--mid, 2px) var(--small, 1px)
     var(--off, 1px);
-  --switcher-5-neut: var(--big, 1px) var(--mid, 3px) var(--small, 6px)
-    var(--off, 6px);
-  --switcher-7-box-sh: var(--big, -25px -11px 0 #707070)
+  --sw3btn-neut: var(--big, 1px) var(--mid, 0px) var(--small, -1px)
+    var(--off, -1px);
+  --sw3btn-befo: var(--big, 25px) var(--mid, 22px) var(--small, 19px)
+    var(--off, 19px);
+  --sw3btn-box-sh: var(--big, -25px -11px 0 #707070)
     var(--mid, -22px 9.5px 0 #707070) var(--small, 20px -8.5px 0 #707070)
     var(--off, 19.5px 8px 0 #707070);
-  --switcher-7-top: var(--big, -1px) var(--mid, 4px) var(--small, -3px)
+  --sw3btn-top: var(--big, -1px) var(--mid, 4px) var(--small, -3px)
     var(--off, 5px);
-  --switcher-7-left: var(--big, 0px) var(--mid, 0px) var(--small, -14px)
+  --sw3btn-left: var(--big, 0px) var(--mid, 0px) var(--small, -14px)
     var(--off, -14px);
   --bot-it-fir-mar: var(--big, 30px) var(--mid, 25px) var(--small, 20px)
     var(--off, 20px);
@@ -317,36 +321,40 @@ header {
       }
     }
     // -5(3 позиции - горизонт --theme)
-    &-5 {
-      // switcher-5-TA
-      .switcher {
+    &-3btn {
+      .sw3btn {
         height: var(--height);
       }
-      .switcher-slider:after {
-        // top: var(--switcher-5-top);
-        width: var(--switcher-5-aft);
-        height: var(--switcher-5-aft);
+      .sw3btn-slider:before {
+        font-size: var(--sw3btn-befo);
       }
-      .switcher-radio__light:checked ~ .switcher-slider:after {
-        left: calc(100% - (var(--switcher-5-aft) + 3px));
+      .sw3btn-radio__light:checked ~ .sw3btn-slider:before {
+        left: calc(100% - var(--sw3btn-aft));
       }
-      .switcher-radio__neutral:checked ~ .switcher-slider:after {
-        left: calc(((100% + var(--height) - (var(--switcher-5-aft) / 2))) / 3);
-        left: calc(var(--switcher-5-neut) + 100% / 3);
+      .sw3btn-radio__neutral:checked ~ .sw3btn-slider:before {
+        left: calc(100% / 3 - var(--sw3btn-neut));
       }
-      .switcher-radio__dark:checked ~ .switcher-slider:after {
-        // left: var(--switcher-5-top);
+      .sw3btn-radio__dark:checked ~ .sw3btn-slider:before {
+        // background-color: #b40000;
+      }
+
+      // прописал цвет напрямую чтоб вкл после перезагр пр пустом LocalStorage
+      .sw3btn-radio__dark ~ .sw3btn-slider:before {
+        font-size: var(--sw3btn-befo);
+      }
+      .sw3btn-slider:before {
+        // left: var(--sw3btn-top);
       }
     }
     // -7(3 позиции - круг --size)
     &-4btn {
       height: var(--height);
       width: var(--height);
-      .tristate-rotate {
+      .sw4btn-rotate {
         height: var(--height);
         width: var(--height);
       }
-      .tristate {
+      .sw4btn {
         & > input[type="radio"],
         & i {
           height: var(--height);
@@ -355,11 +363,11 @@ header {
         // !
         & i {
           &:before {
-            box-shadow: var(--switcher-7-box-sh);
+            box-shadow: var(--sw3btn-box-sh);
           }
           &:after {
-            top: calc(50% - var(--switcher-7-top));
-            left: var(--switcher-7-left);
+            top: calc(50% - var(--sw3btn-top));
+            left: var(--sw3btn-left);
           }
         }
       }
