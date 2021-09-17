@@ -6,8 +6,11 @@ import "./styles/scss/styles.scss";
 
 // врем. подкл JS/CSS/SCSS
 import "./js/Сайт VDOH/devJS/JS_fri_TEeKr2ON66A.js";
-import "./styles/scss/htmlProjsBlocks/JS_fri_TEeKr2ON66A.scss"
-
+// ??? не раб - не принимает перемен е/и подкл файл сюда
+// Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):
+// ModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+// SassError: Undefined variable. background: $DarkRed;
+// import "./styles/scss/htmlProjsBlocks/JS_fri_TEeKr2ON66A.scss"
 
 // !
 // ! разобрать и удалить

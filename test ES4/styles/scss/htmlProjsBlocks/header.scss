@@ -7,7 +7,7 @@
 //     justify-content: space-between;
 //   height: 150px;
 //   padding: 25px 03%;
-//   background-color: #8b0000;
+//   background-color: $DarkRed;
 //   box-shadow: #000000 3px 5px 20px 0.5px inset,
 //     #000000 -3px -1px 10px 0.5px inset;
 //   box-shadow: #000000 10px 10px 30px 7px inset,
@@ -36,8 +36,8 @@
     background-color: #ccc;
     // margin-top: 25px;
     // margin-left: 25px;
-    // outline: 4px solid yellow;
     border: 4px solid yellow;
+    border: 4px solid #fad201;
     float: left;
     // outline-style: ridge;
     border-style: ridge;
@@ -60,7 +60,7 @@
       text-align: left;
     }
     p {
-      color: #8b0000;
+      color: $DarkRed;
     }
   }
 }
@@ -410,7 +410,7 @@
 //       }
 //     }
 //     &:link {
-//       color: #8b0000;
+//       color: $DarkRed;
 //     }
 //     // убираем пробел м/у span
 //     .link__last-bykv,
@@ -420,7 +420,7 @@
 //   }
 
 //   .menu__top a:link {
-//     // color: #8b0000;
+//     // color: $DarkRed;
 //   }
 
 //   .menu__top a:visited {
@@ -510,7 +510,7 @@
 }
 
 .menu__top a:link {
-  color: #8b0000;
+  color: $DarkRed;
 }
 
 .menu__top a:visited {
@@ -534,7 +534,7 @@ header {
   right: 0;
   width: 100%;
   z-index: 10;
-  background-color: #8b0000;
+  background-color: $DarkRed;
   box-shadow: #000000 3px 5px 20px 0.5px inset,
     #000000 -3px -1px 10px 0.5px inset;
   box-shadow: #000000 10px 10px 30px 7px inset,
@@ -600,17 +600,17 @@ header {
   }
 }
 // =================================================================
-body._pc  .menu-list__items:hover .items__sub {
+body._pc .menu-list__items:hover .items__sub {
   opacity: 1;
   visibility: visible;
   transform: translate(0px, 0px);
   pointer-events: all;
 }
-body._touch .menu-list__items{
+body._touch .menu-list__items {
   display: flex;
   align-items: center;
 }
-body._touch .items__link{
+body._touch .items__link {
   // для надежной верстки сделать на всю ширину
   flex: 1 1 auto;
 }
@@ -652,7 +652,7 @@ body._touch .items__arrow {
       }
       // ссылки 1го ур.
       .items__link {
-        color: #8b0000;
+        color: $DarkRed;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -684,6 +684,7 @@ body._touch .items__arrow {
       & {
         &:nth-child(1) .items__link {
           background-color: #ffff00;
+          background-color: #fad201;
         }
         &:nth-child(2) .items__link {
           background-color: #ff0000;
@@ -786,13 +787,13 @@ body._touch .items__arrow {
 }
 .m-s-switcher-1 {
 }
-.m-s-switcher-2-3 {
+.sw-blwh {
 }
-.m-s-switchers {
+.swblwh {
 }
-.m-s-switcher-2 {
+.swblwh-2 {
 }
-.m-s-switcher-3 {
+.swblwh-3 {
 }
 .m-s-switcher-4 {
 }
@@ -802,7 +803,7 @@ body._touch .items__arrow {
 }
 .toggle-button__icon {
 }
-.m-s-switcher-3btn {
+.sw-3btn {
 }
 .sw3btn {
 }
@@ -822,9 +823,9 @@ body._touch .items__arrow {
 }
 .sw3btn-slider {
 }
-.m-s-switcher-4btn {
+.sw-4btn {
 }
-.sw4btn{
+.sw4btn {
 }
 .sw4btn-rotate {
 }
@@ -841,4 +842,58 @@ body._touch .items__arrow {
 .header-menu__icon {
 }
 .header-burger {
+}
+
+.prob-shape-outside {
+  width: 100px;
+  height: 100px;
+  // img.shape-img-1 {
+  //   width: 100%;
+  //   height: 100%;
+  //   width: auto;
+  //   // shape-outside: url("img/1.png);
+  //   // shape-outside: url(./img/1.png);
+  //   // shape-outside: url(./img/01.jpg);
+  //   shape-outside: url(img/01.jpg);
+  //   float: left;
+  //   transform: translateX(-20px);
+  // }
+
+  .shape-outside {
+    margin: 20px 0;
+  }
+  .shape-outside p {
+    text-align: justify;
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.38;
+  }
+  .shape-outside:after {
+    clear: both;
+    display: table;
+    content: " ";
+  }
+  .shape-outside .shape-img-1 {
+    height: 100%;
+    width: auto;
+    width: 100px;
+    height: 100px;
+    float: left;
+    // shape-outside: url(img01.jpg);
+    width: 252px;
+    transform: translateX(-20px);
+  }
+  .shape-outside .shape-img-2 {
+    height: 100%;
+    width: auto;
+    width: 100px;
+    height: 100px;
+    float: right;
+    // shape-outside: url(img02.jpg);
+    // shape-inside:    rectangle(x, y, width, height, [rx, ry])
+    // shape-inside: rectangle(10, 15, width, height, [15px, 25]);
+    width: 252px;
+    transform: translateX(20px);
+  }
+  .shape-outside .shape-img-2 {}
 }

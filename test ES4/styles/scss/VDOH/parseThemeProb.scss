@@ -51,29 +51,29 @@ body {
   // --baz-bkg-color: var(--dark, #1d0a0a) var(--neutral, #500000)    var(--light, #858585);
   --baz-bkg-color: var(--dark, #140f0b) var(--neutral, #333)
     var(--light, #858585);
-  // --hed-bkg-color: var(--dark, #500000) var(--neutral, #8b0000) var(--light, #4b4b4b);
-  --hed-bkg-color: var(--dark, #35170c) var(--neutral, #8b0000)
+  // --hed-bkg-color: var(--dark, #500000) var(--neutral, $DarkRed) var(--light, #4b4b4b);
+  --hed-bkg-color: var(--dark, #35170c) var(--neutral, $DarkRed)
     var(--light, #4b4b4b);
-  --hed-bkg-color: var(--dark, #4b0000) var(--neutral, #8b0000)
+  --hed-bkg-color: var(--dark, #4b0000) var(--neutral, $DarkRed)
     var(--light, #4b4b4b);
   --bkd-col: var(--dark, #080707) var(--neutral, #500000) var(--light, #cccccc); //--neutral, #500000
   // --text-color: var(--dark, #4b4b4b) var(--neutral, #cccccc) var(--light, #000000);
   // --text-color: var(--dark, #555555) var(--neutral, #4b0000) var(--light, #000000);
   --text-color: var(--dark, #555555) var(--neutral, #1b0000)
     var(--light, #000000);
-  // --h-color: var(--dark, #555555) var(--neutral, #8b0000) var(--light, #000000);
-  // --h-color: var(--dark, #4b0000) var(--neutral, #8b0000) var(--light, #000000);
+  // --h-color: var(--dark, #555555) var(--neutral, $DarkRed) var(--light, #000000);
+  // --h-color: var(--dark, #4b0000) var(--neutral, $DarkRed) var(--light, #000000);
   // --h-bkg-color: var(--dark, #C34D0A) var(--neutral, #ff0) var(--light, #ccc);
   --hel-p-bkg-color: var(--dark, #4d220e) var(--neutral, #555)
     var(--light, #ccc); //--dark, #58290e
-  --hel-p-color: var(--dark, #4b0000) var(--neutral, #8b0000)
+  --hel-p-color: var(--dark, #4b0000) var(--neutral, $DarkRed)
     var(--light, #000000);
-  --hel-p-color: var(--dark, #1b0000) var(--neutral, #8b0000)
+  --hel-p-color: var(--dark, #1b0000) var(--neutral, $DarkRed)
     var(--light, #000000);
-  --hel-p-color: var(--dark, #555555) var(--neutral, #8b0000)
+  --hel-p-color: var(--dark, #555555) var(--neutral, $DarkRed)
     var(--light, #000000);
   // --h-bkg-color: var(--dark, #3f2512) var(--neutral, #555) var(--light, #ccc); //--dark, #58290e
-  --hel-h-color: var(--dark, #6b0000) var(--neutral, #8b0000)
+  --hel-h-color: var(--dark, #6b0000) var(--neutral, $DarkRed)
     var(--light, #000000);
   --hel-h-bkg-color: var(--dark, #35170c) var(--neutral, #fad201)
     var(--light, #ccc); //--dark, #58290e
@@ -85,9 +85,9 @@ body {
 // #C3B6A2 #313B44 #232B32
 // background: #C34D0A;
 // background: #FF4F00;
-// background: #8b0000;
+// background: $DarkRed;
 // background: #232B32;
-// color: #8b0000;
+// color: $DarkRed;
 // color: #500000;
 // color: #58290e
 // color: #35170c
@@ -195,28 +195,28 @@ body {
     var(--off, 5%);
   --switcher-1-lab: var(--big, 32px) var(--mid, 27px) var(--small, 22px)
     var(--off, 22px);
-  --switcher-2-lef: var(--big, 10px) var(--mid, 9px) var(--small, 8px)
+  --swblwh-2-lef: var(--big, 10px) var(--mid, 9px) var(--small, 8px)
     var(--off, 8px);
-  --switcher-2-lef: var(--big, 14px) var(--mid, 13px) var(--small, 12px)
+  --swblwh-2-lef: var(--big, 14px) var(--mid, 13px) var(--small, 12px)
     var(--off, 12px);
-  --switcher-2-rig: var(--big, 10px) var(--mid, 9px) var(--small, 8px)
+  --swblwh-2-rig: var(--big, 10px) var(--mid, 9px) var(--small, 8px)
     var(--off, 8px);
-  --switcher-2-fo-si: var(--big, 17px) var(--mid, 15px) var(--small, 13px)
+  --swblwh-2-fo-si: var(--big, 17px) var(--mid, 15px) var(--small, 13px)
     var(--off, 13px);
   --sw3btn-aft: var(--big, 33.5px) var(--mid, 30px) var(--small, 26px)
     var(--off, 26px);
-  --sw3btn-top: var(--big, 3px) var(--mid, 2px) var(--small, 1px)
-    var(--off, 1px);
+  --sw3btn-top: var(--big, -1px) var(--mid, 4px) var(--small, -3px)
+    var(--off, -3px);
   --sw3btn-neut: var(--big, 1px) var(--mid, 0px) var(--small, -1px)
     var(--off, -1px);
   --sw3btn-befo: var(--big, 25px) var(--mid, 22px) var(--small, 19px)
     var(--off, 19px);
-  --sw3btn-box-sh: var(--big, -25px -11px 0 #707070)
-    var(--mid, -22px 9.5px 0 #707070) var(--small, 20px -8.5px 0 #707070)
+  --sw4btn-box-sh: var(--big, -24px 11px 0 #707070)
+    var(--mid, -22px -9px 0 #707070) var(--small, 20px -8.5px 0 #707070)
     var(--off, 19.5px 8px 0 #707070);
-  --sw3btn-top: var(--big, -1px) var(--mid, 4px) var(--small, -3px)
+  --sw4btn-top: var(--big, 4px) var(--mid, -2px) var(--small, -3px)
     var(--off, 5px);
-  --sw3btn-left: var(--big, 0px) var(--mid, 0px) var(--small, -14px)
+  --sw4btn-left: var(--big, 0px) var(--mid, 0px) var(--small, -14px)
     var(--off, -14px);
   --bot-it-fir-mar: var(--big, 30px) var(--mid, 25px) var(--small, 20px)
     var(--off, 20px);
@@ -286,26 +286,26 @@ header {
       }
     }
     // -2,3(черно белые)
-    &-2-3 {
-      .m-s-switchers {
+    &.sw-blwh {
+      .swblwh {
         height: var(--height);
         input {
           height: var(--height);
           &:before {
-            left: var(--switcher-2-lef);
-            font-size: var(--switcher-2-fo-si);
+            left: var(--swblwh-2-lef);
+            font-size: var(--swblwh-2-fo-si);
           }
           &:after {
-            right: var(--switcher-2-rig);
-            font-size: var(--switcher-2-fo-si);
+            right: var(--swblwh-2-rig);
+            font-size: var(--swblwh-2-fo-si);
           }
         }
       }
-      .m-s-switcher-2 {
-        input[type="switcher-2"] {
+      .swblwh-2 {
+        input[type="swblwh-2"] {
         }
       }
-      .m-s-switcher-3 label {
+      .swblwh-3 label {
         height: var(--height);
       }
     }
@@ -321,7 +321,7 @@ header {
       }
     }
     // -5(3 позиции - горизонт --theme)
-    &-3btn {
+    &.sw-3btn {
       .sw3btn {
         height: var(--height);
       }
@@ -347,7 +347,7 @@ header {
       }
     }
     // -7(3 позиции - круг --size)
-    &-4btn {
+    &.sw-4btn {
       height: var(--height);
       width: var(--height);
       .sw4btn-rotate {
@@ -363,11 +363,11 @@ header {
         // !
         & i {
           &:before {
-            box-shadow: var(--sw3btn-box-sh);
+            box-shadow: var(--sw4btn-box-sh);
           }
           &:after {
-            top: calc(50% - var(--sw3btn-top));
-            left: var(--sw3btn-left);
+            top: calc(50% - var(--sw4btn-top));
+            left: var(--sw4btn-left);
           }
         }
       }
