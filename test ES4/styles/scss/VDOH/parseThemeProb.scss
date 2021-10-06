@@ -243,13 +243,17 @@ hr {
 }
 header {
   .menu__top .menu-list {
-    .menu-list__items .items__link {
-      width: var(--width);
-      height: var(--height);
-      font-size: var(--font-size-big);
-      // font-weight: var(--font-weight);
-      border: var(--border);
-      border-radius: var(--border-radius);
+    .menu-list__items {
+      // height: var(--height);
+      // font-size: var(--font-size-big);
+      .items__link {
+        width: var(--width);
+        height: var(--height);
+        font-size: var(--font-size-big);
+        // font-weight: var(--font-weight);
+        border: var(--border);
+        border-radius: var(--border-radius);
+      }
     }
     .items__sub {
       width: var(--width);
@@ -301,10 +305,10 @@ header {
           }
         }
       }
-      .swblwh-2 {
-        input[type="swblwh-2"] {
-        }
-      }
+      // .swblwh-2 {
+      // input[type="swblwh-2"] {
+      // }
+      // }
       .swblwh-3 label {
         height: var(--height);
       }
@@ -334,17 +338,17 @@ header {
       .sw3btn-radio__neutral:checked ~ .sw3btn-slider:before {
         left: calc(100% / 3 - var(--sw3btn-neut));
       }
-      .sw3btn-radio__dark:checked ~ .sw3btn-slider:before {
-        // background-color: #b40000;
-      }
+      // .sw3btn-radio__dark:checked ~ .sw3btn-slider:before {
+      // background-color: #b40000;
+      // }
 
       // прописал цвет напрямую чтоб вкл после перезагр пр пустом LocalStorage
       .sw3btn-radio__dark ~ .sw3btn-slider:before {
         font-size: var(--sw3btn-befo);
       }
-      .sw3btn-slider:before {
-        // left: var(--sw3btn-top);
-      }
+      // .sw3btn-slider:before {
+      // left: var(--sw3btn-top);
+      // }
     }
     // -7(3 позиции - круг --size)
     &.sw-4btn {

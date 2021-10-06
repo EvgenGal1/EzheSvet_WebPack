@@ -328,7 +328,6 @@ ibgJS();
 // });
 // // !!!!! настройки стиля-размера
 
-
 // !
 // // !
 // // !
@@ -431,6 +430,9 @@ ibgJS();
 // }
 // // clickText();
 
+// ! клик по кнопке в новом тектово-картиночном блоке(+текст,прыг кнп)
+// переписать боле кратко
+// переделать поб структуру (карт+текст+кнп)
 function clickText2() {
   const contBl = Array.from(document.querySelectorAll(".cont-block-"));
   const subDet = contBl.map((item) => item.querySelector(".sub-"));
@@ -441,14 +443,26 @@ function clickText2() {
   subDet.forEach((item, i) => {
     const blText = contBl[i].querySelector(".block-text-");
     const textDet = contBl[i].querySelector(".text-detail-");
+    const blSub = contBl[i].querySelector(".bl-sub-");
     item.addEventListener("click", () => {
       contBl[i].classList.toggle("active");
       if (contBl[i].classList.contains("active")) {
-        blText.style.display = "block";
+        // blText.style.display = "block";
+        // blText.style.marginBottom = "10px";
+        blText.style.padding = "0px";
         textDet.style.display = "block";
+        blSub.style.top = "0px";
+        // blSub.style.left = "0px";
+        blSub.style.transform = "scale(1, -1)";
+        // blSub.style = { top: "0%", left: "0%", transform: "scale(1, -1)" };
       } else {
-        blText.style.display = "flex";
-        textDet.style.display = "none";
+        blText.style = {
+          paddingTop: "10px",
+          // display: "block",
+          // marginBottom: "0px",
+        };
+        textDet.style = { display: "none" };
+        blSub.style = { top: "100%", left: "100%",transform : "scale(1, 1)"};
       }
     });
   });

@@ -25,45 +25,7 @@
 //     }
 //   }
 // }
-// <LOGO>====================================================
-.header-logo {
-  .header-logo-smail {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    // height: 100%;
-    // min-width: 100%;
-    background-color: #ccc;
-    // margin-top: 25px;
-    // margin-left: 25px;
-    border: 4px solid yellow;
-    border: 4px solid #fad201;
-    float: left;
-    // outline-style: ridge;
-    border-style: ridge;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    .logo-img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: auto;
-      left: 22%;
-      top: 22%;
-      width: 48px;
-    }
-    .logo-down {
-      text-align: right;
-    }
-    .logo-up {
-      text-align: left;
-    }
-    p {
-      color: $DarkRed;
-    }
-  }
-}
+
 // //<MENU>====================================================
 // .header-menu {
 //   position: relative;
@@ -527,30 +489,80 @@
 */
 
 // !!!!!!
+// <header(шапка)>===========================================================================================
 header {
   // position: fixed;
+  height: 150px;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   z-index: 10;
+  padding: 25px 03%;
   background-color: $DarkRed;
-  box-shadow: #000000 3px 5px 20px 0.5px inset,
-    #000000 -3px -1px 10px 0.5px inset;
-  box-shadow: #000000 10px 10px 30px 7px inset,
-    #000000 -10px -10px 30px 7px inset;
+  box-shadow: #000000 5px 5px 30px 1.5px inset,
+    #000000 -5px -5px 30px 1.5px inset;
+  // box-shadow: #000000 10px 10px 30px 7px inset, #000000 -10px -10px 30px 7px inset;
+  // transition: all 0.3s ease 0s;
   .header__container {
     max-width: 1200px;
     max-width: $mw + px;
-    height: 150px;
+    // height: 150px;
+    height: 100%;
     @include flexbox();
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 25px 03%;
+    // padding: 25px 03%;
   }
 }
-// =================================================================
+// фиксация меню при скроле
+.fixed_menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+// <tipLOGOtip>===========================================================================================
+.header-logo {
+  .header-logo-smail {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    // min-width: 100%;
+    background-color: #ccc;
+    border: 4px solid #fad201;
+    float: left;
+    border-style: ridge;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // transition: all 0.1s ease 0s;
+    .logo-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: auto;
+      left: 22%;
+      top: 22%;
+      width: 50px;
+    }
+    .logo-down {
+      text-align: right;
+    }
+    .logo-up {
+      text-align: left;
+    }
+    p {
+      color: $DarkRed;
+    }
+  }
+}
+
+// <MobileFirst>===========================================================================================
 // Mobile First - сво-ва для экранов больше мобилок (меньше писать для мобилок)
 @media (min-width: $md3+px) {
   // $md3: 767.98;
@@ -566,18 +578,19 @@ header {
   }
   .menu__top {
     // для того чтоб TOP не наезжал на BOTTOM
-    position: absolute;
-    top: 0;
+    // после смены расмеров высоты и padding, с header__container на header, вроде как не нужно
+    // position: absolute;
+    // top: 0;
     .menu-list {
       display: flex;
       justify-content: flex-end;
       // ??? не раб - временное переход items вниз. придумать как сокращать item при переполнение блока
       flex-wrap: wrap;
       // меню 1го ур.
-      &__items {
-        // вроде не нужно
-        // padding: 0 0 10px 0;
-      }
+      // &__items {
+      // вроде не нужно
+      // padding: 0 0 10px 0;
+      // }
       // меню 2го ур.
       .items__sub {
         transform: translate(0px, 10%);
@@ -591,15 +604,17 @@ header {
   }
   .menu__bottom {
     // для того чтоб TOP не наезжал на BOTTOM
-    position: absolute;
-    bottom: 0;
+    // после смены расмеров высоты и padding, с header__container на header, вроде как не нужно
+    // position: absolute;
+    // bottom: 0;
     .menu-set {
       display: flex;
       justify-content: flex-end;
     }
   }
 }
-// =================================================================
+
+// <PC и TOUCH сост.>===========================================================================================
 body._pc .menu-list__items:hover .items__sub {
   opacity: 1;
   visibility: visible;
@@ -615,6 +630,8 @@ body._touch .items__link {
   flex: 1 1 auto;
 }
 body._touch .items__arrow {
+  position: absolute;
+  right: 4px;
   display: block;
   width: 0;
   height: 0;
@@ -622,14 +639,15 @@ body._touch .items__arrow {
   // стрелка из border
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 10px solid #fff;
+  border-top: 10px solid #000;
   transition: transform 0.3s ease 0s;
 }
+
 // =================================================================
-.header-menu {
-  // display: flex;
-  // flex-direction: column;
-}
+// .header-menu {
+// display: flex;
+// flex-direction: column;
+// }
 // =================================================================
 .menu__top {
   .menu-list {
@@ -647,11 +665,11 @@ body._touch .items__arrow {
       }
       // для li кроме первого отступ с лево
       &:not(:first-child) {
-        position: relative;
         margin: 0 0 0px 10px;
       }
       // ссылки 1го ур.
       .items__link {
+        position: relative;
         color: $DarkRed;
         display: flex;
         align-items: center;
@@ -675,10 +693,10 @@ body._touch .items__arrow {
             content: "!";
           }
         }
-        .link__firct-bykv {
-        }
-        .link__last-bykv {
-        }
+        // .link__firct-bykv {
+        // }
+        // .link__last-bykv {
+        // }
       }
       // расцветка 1го ур.
       & {
@@ -751,10 +769,10 @@ body._touch .items__arrow {
             }
           }
         }
-        .li-a__firct-bykv {
-        }
-        .li-a__last-bykv {
-        }
+        // .li-a__firct-bykv {
+        // }
+        // .li-a__last-bykv {
+        // }
       }
     }
   }
@@ -766,134 +784,80 @@ body._touch .items__arrow {
 // =================================================================
 .menu__bottom {
   z-index: 5;
-  .menu-set {
-    // display: flex;
-    // justify-content: flex-end;
-  }
-  .menu-set__items {
-  }
+  // .menu-set {
+  // display: flex;
+  // justify-content: flex-end;
+  // }
+  // .menu-set__items {
+  // }
 }
 // =================================================================
 
-.m-s-switcher-0 {
-}
-.checkbox {
-}
-.checkbox-label {
-}
-.on {
-}
-.off {
-}
-.m-s-switcher-1 {
-}
-.sw-blwh {
-}
-.swblwh {
-}
-.swblwh-2 {
-}
-.swblwh-3 {
-}
-.m-s-switcher-4 {
-}
-.toggle-button {
-}
-.toggle-button--aava {
-}
-.toggle-button__icon {
-}
-.sw-3btn {
-}
-.sw3btn {
-}
-.sw3btn-label {
-}
-.sw3btn__dark {
-}
-.sw3btn-radio__dark {
-}
-.sw3btn__neutral {
-}
-.sw3btn-radio__neutral {
-}
-.sw3btn__light {
-}
-.sw3btn-radio__light {
-}
-.sw3btn-slider {
-}
-.sw-4btn {
-}
-.sw4btn {
-}
-.sw4btn-rotate {
-}
-.sw4btn-label {
-}
-.sw4-lab__big {
-}
-.sw4-lab__mid {
-}
-.sw4-lab__small {
-}
-.sw4-lab__off {
-}
-.header-menu__icon {
-}
-.header-burger {
-}
-
-.prob-shape-outside {
-  width: 100px;
-  height: 100px;
-  // img.shape-img-1 {
-  //   width: 100%;
-  //   height: 100%;
-  //   width: auto;
-  //   // shape-outside: url("img/1.png);
-  //   // shape-outside: url(./img/1.png);
-  //   // shape-outside: url(./img/01.jpg);
-  //   shape-outside: url(img/01.jpg);
-  //   float: left;
-  //   transform: translateX(-20px);
-  // }
-
-  .shape-outside {
-    margin: 20px 0;
-  }
-  .shape-outside p {
-    text-align: justify;
-    font-family: Verdana, sans-serif;
-    font-size: 16px;
-    line-height: 1.38;
-  }
-  .shape-outside:after {
-    clear: both;
-    display: table;
-    content: " ";
-  }
-  .shape-outside .shape-img-1 {
-    height: 100%;
-    width: auto;
-    width: 100px;
-    height: 100px;
-    float: left;
-    // shape-outside: url(img01.jpg);
-    width: 252px;
-    transform: translateX(-20px);
-  }
-  .shape-outside .shape-img-2 {
-    height: 100%;
-    width: auto;
-    width: 100px;
-    height: 100px;
-    float: right;
-    // shape-outside: url(img02.jpg);
-    // shape-inside:    rectangle(x, y, width, height, [rx, ry])
-    // shape-inside: rectangle(10, 15, width, height, [15px, 25]);
-    width: 252px;
-    transform: translateX(20px);
-  }
-  .shape-outside .shape-img-2 {}
-}
+// .m-s-switcher-0 {
+// }
+// .checkbox {
+// }
+// .checkbox-label {
+// }
+// .on {
+// }
+// .off {
+// }
+// .m-s-switcher-1 {
+// }
+// .sw-blwh {
+// }
+// .swblwh {
+// }
+// .swblwh-2 {
+// }
+// .swblwh-3 {
+// }
+// .m-s-switcher-4 {
+// }
+// .toggle-button {
+// }
+// .toggle-button--aava {
+// }
+// .toggle-button__icon {
+// }
+// .sw-3btn {
+// }
+// .sw3btn {
+// }
+// .sw3btn-label {
+// }
+// .sw3btn__dark {
+// }
+// .sw3btn-radio__dark {
+// }
+// .sw3btn__neutral {
+// }
+// .sw3btn-radio__neutral {
+// }
+// .sw3btn__light {
+// }
+// .sw3btn-radio__light {
+// }
+// .sw3btn-slider {
+// }
+// .sw-4btn {
+// }
+// .sw4btn {
+// }
+// .sw4btn-rotate {
+// }
+// .sw4btn-label {
+// }
+// .sw4-lab__big {
+// }
+// .sw4-lab__mid {
+// }
+// .sw4-lab__small {
+// }
+// .sw4-lab__off {
+// }
+// .header-menu__icon {
+// }
+// .header-burger {
+// }

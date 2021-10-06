@@ -1,14 +1,13 @@
 // <parseTheme.scss()>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
 
 // menu__bottom ()>˅=======================================================================================˅
-
 .menu__bottom {
   // display: flex;
   // justify-content: flex-end;
-  .menu-set {
+  // .menu-set {
     // display: flex;
     // justify-content: flex-end;
-  }
+  // }
   .menu-set__items {
     width: 100px;
     height: 30px;
@@ -32,7 +31,6 @@
     }
   }
 }
-
 // <m-s-switcher-0(бело серый)>˅=======================================================================================˅
 // ! https://nisnom.com/veb-razrabotki/stilizovannye-pereklyuchateli-so-smenyayushhimisya-podpisyami/#more-1205
 .m-s-switcher-0 {
@@ -576,12 +574,12 @@
       transition: all 0.5s cubic-bezier(0, 0.55, 0.45, 1);
       transition: all 0.3s ease 0s;
     }
-    &:after {
+    // &:after {
       // content: "☁";
       // position: absolute;
       // font-size: 17px;
       // z-index: 2;
-    }
+    // }
   }
   .sw3btn-radio__light:checked ~ .sw3btn-slider {
     // .sw3btn-radio__light ~ .sw3btn-slider {

@@ -52,9 +52,9 @@ body {
   box-shadow: 0px 0px 3px #000 inset;
 }
 // видимая часть трека
-::-webkit-scrollbar-track-piece {
-  // background-color: blue;
-}
+// ::-webkit-scrollbar-track-piece {
+// background-color: blue;
+// }
 // бегунок/ползунок
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 5px;
@@ -75,11 +75,6 @@ body {
 }
 
 //<>====================================================
-.empty_block {
-  height: 150px;
-  width: 100%;
-  padding-top: 150px;
-}
 hr {
   display: block;
   // юникод биди. направления контента
@@ -156,68 +151,15 @@ h6 {
   padding: 10px 0%;
 }
 
-//<блок кнопки "Покупки">====================================================
-// .kup {
-//   // grid-area: kup;
-//   // justify-self: center;
-// }
-.kup #kup,
-.kup,
-#kup,
-#sub-detail-,
-#sub-detail-1,
-#sub-detail-2,
-#sub-detail-3,
-#sub-detail-4 {
-  grid-area: kup;
-  // float: right;
-  border-radius: 1px;
-  width: 250px;
-  height: 57px;
-  background-color: #fc0101;
-  font-family: fantasy;
-  font-size: 30px;
-  border: 10px double yellow;
-  text-transform: capitalize;
-  // margin: -3px 25px;
-  h1 {
-    font-size: 30px;
-    margin: 0 0 10px;
-    min-height: 50px;
-    padding: 10px 0px;
-    vertical-align: bottom;
-    text-align: left;
-    background: yellow;
-    color: $DarkRed;
-    font-family: cursive;
-    margin: 0px 0px;
-    overflow: hidden;
-    background: yellow;
-  }
-}
-
-#kup:hover {
-  color: yellow;
-  border-style: ridge;
-  border-color: red;
-  background: black;
-}
-
-#kup:active {
-  color: red;
-}
-.kup {
-  background: yellow;
-  // margin-bottom: 10px;
-  h1 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: $DarkRed;
-    font-family: cursive;
-    font-size: 30px;
-    padding: 0px 03%;
-  }
+// общте стили больших текст. блоков ============================================================
+.catalog-block,
+.game-block,
+.manual-block {
+  @include flexbox();
+  max-width: 1308px;
+  font-size: 0;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
 // блок приветствия ============================================================
@@ -294,6 +236,71 @@ h6 {
   // }
 }
 
+//<блок кнопки "Покупки">====================================================
+// .kup {
+//   // grid-area: kup;
+//   // justify-self: center;
+// }
+.kup #kup,
+.kup,
+#kup
+// #sub-detail-,
+// #sub-detail-1,
+// #sub-detail-2,
+// #sub-detail-3,
+// #sub-detail-4
+{
+  grid-area: kup;
+  // float: right;
+  border-radius: 1px;
+  width: 250px;
+  height: 57px;
+  background-color: #fc0101;
+  font-family: fantasy;
+  font-size: 30px;
+  border: 10px double yellow;
+  text-transform: capitalize;
+  // margin: -3px 25px;
+  h1 {
+    font-size: 30px;
+    margin: 0 0 10px;
+    min-height: 50px;
+    padding: 10px 0px;
+    vertical-align: bottom;
+    text-align: left;
+    background: yellow;
+    color: $DarkRed;
+    font-family: cursive;
+    margin: 0px 0px;
+    overflow: hidden;
+    background: yellow;
+  }
+}
+
+#kup:hover {
+  color: yellow;
+  border-style: ridge;
+  border-color: red;
+  background: black;
+}
+
+#kup:active {
+  color: red;
+}
+.kup {
+  background: yellow;
+  // margin-bottom: 10px;
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $DarkRed;
+    font-family: cursive;
+    font-size: 30px;
+    padding: 0px 03%;
+  }
+}
+
 // большой текст. блок ============================================================
 .block-body,
 .centr-text {
@@ -326,20 +333,6 @@ h6 {
     font-family: monospace;
     font-family: cursive;
   }
-}
-
-// большой текст. блок ============================================================
-
-.catalog-block,
-.game-block,
-.manual-block {
-  // ??? не раб -  
-  // @include flexbox();
-  display: flex;
-  max-width: 1308px;
-  font-size: 0;
-  flex-flow: row wrap;
-  justify-content: space-between;
 }
 
 // обход картинки. 1 вар. float + доделка ibg ===========================================
@@ -397,31 +390,55 @@ h6 {
     }
   }
 }
-// !
+
+// ! новый тектово-картиночный блок ===========================================================
 .centr-cont- {
   .cont-block- {
     clear: both;
-    // межбуквенное расстояние
-    letter-spacing: 1px;
-    // пробел между словами
-    word-spacing: 1px;
-    // перенос строк внутри слов
-    word-break: break-all;
-    // перенос длянных слов
-    word-wrap: break-word;
-    // высота строки
-    line-height: 1.2;
-
-    // если текста мало
+    margin: 10px 0;
+    &:nth-child(n) .block-img- {
+      shape-margin: 10px;
+      shape-image-threshold: 0.5;
+      background-repeat: no-repeat;
+      width: 250px;
+      height: 250px;
+    }
     &:nth-child(even) .block-img- {
-      margin: 15px 17px 15px 0;
       float: left;
+      shape-outside: url(../../img/Rick.png);
+      background-image: url(../../img/Rick.png);
+      // ~
+      // shape-outside: circle();
+      // shape-margin: 10px;
+      // clip-path: circle(50%);
+      // shape-outside: circle();
+      // shape-outside: circle(50% at 0 50%);
+      // shape-outside: ellipse();
+      // shape-outside: ellipse(75px 120px);
+      // shape-outside: ellipse(farthest-side closest-side at 25% 57%);
+      // shape-outside: ellipse(closest-side farthest-side at 25% 25%);
+      // shape-outside: inset(75px);
+      // shape-outside: inset(50px round 75px);
+      // clip-path: inset(75px);
+      // shape-outside: polygon(0 0px,0px 300px,230px 300px,150px 150px,230px 0px);
+      // clip-path: polygon(0 0, 0 300px, 200px 300px);
+      // clip-path: polygon(0 0px, 0px 300px, 230px 300px, 150px 150px, 230px 0px);
+      // shape-outside: url(../../img/sheet.png);
+      // shape-margin: 7px;
+      // shape-image-threshold: 0.5;
+      // background: #009966 url(../../img/01.jpg);
+      // mask-image: url(../../img/sheet.png);
+      // mask-image: url(../../img/Rick.png);
+      // shape-rendering: geometricprecision;
+      // background-repeat: no-repeat;
+      // width: 250px;
+      // height: 250px;
     }
     &:nth-child(odd) .block-img- {
       float: right;
-      margin: 15px 0 15px 17px;
+      shape-outside: url(../../img/Morty.png);
+      background-image: url(../../img/Morty.png);
     }
-    // если текста мало
 
     // отличие текста
     &:nth-child(even) .block-text- {
@@ -431,46 +448,99 @@ h6 {
       color: red;
     }
 
+    // картиночный блок и кнп
     .block-img- {
+      position: relative;
       display: flex;
       flex-direction: column;
-      // margin: 0 0 17px 17px;
+      // margin-bottom: 10px;
       .block-img__link- {
+        background-image: url(../../img/Rick.png);
+        background-repeat: no-repeat;
+        width: 250px;
+        height: 250px;
+        display: none;
         .img-bl- {
           font-family: inherit;
+          display: none;
         }
       }
       .ibg- {
         font-family: inherit;
       }
+      .bl-sub- {
+        position: absolute;
+        content: "";
+        // top: 0;
+        // left: 0;
+        right: 35px;
+        bottom: 0;
+        width: 15px;
+        height: 15px;
+        background: yellow;
+        border-radius: 10px;
+        &::after {
+          content: url(../../img/elem/Arrow2Mini4.png);
+          position: absolute;
+          bottom: 0;
+        }
+        .sub- {
+          width: inherit;
+          height: inherit;
+          background: none;
+          font-size: 0;
+        }
+      }
     }
-
+    // текстовый блок
     .block-text- {
       // если текста мало
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: 15px;
-      min-height: 307px;
-      // если текста мало
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      // align-items: center;
+      // padding-top: 15px;
+      // min-height: 307px;
+      // ~
+      display: block;
+      padding-top: 10%;
+      // высота строки
+      line-height: 1.2;
+      // межбуквенное расстояние
+      letter-spacing: 2px;
+      // пробел между словами
+      word-spacing: 2px;
+      // перенос слов внутри строк
+      word-break: break-word;
+      // перенос длынных слов
+      word-wrap: break-word;
+      font-weight: bold;
+      font-family: Georgia, "Times New Roman", Times, serif;
       &:first-child {
-        // если текста много, для обтекания откл flex
-        // display: block;
         color: blue;
-        // если текста много, для обтекания откл flex
       }
-      .text-short {
-        font-family: inherit;
+      h3 {
+        // display: block;
+        font-size: 20px;
+        padding-bottom: 15px;
+      }
+      p {
+        font-size: 17px;
+        padding-bottom: 10px;
+      }
+      .text-short- {
+        text-align: center;
       }
       .text-detail- {
         display: none;
-        // display: block;
       }
     }
   }
 }
 // !
+//</ОСНОВНОЙ БЛОК>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄
+
+//<ГОТОВЫЕ КЛАССЫ>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
 .button {
   display: inline-block;
   border-radius: 0;
@@ -492,10 +562,7 @@ h6 {
   background-color: #302683;
   border: 3px solid #302683;
 }
-
-//</ОСНОВНОЙ БЛОК>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄
-
-//<ГОТОВЫЕ КЛАССЫ>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
+//============================================================================================
 .row:after {
   display: block;
   content: "";
@@ -646,7 +713,7 @@ ol.counter {
 }
 //=============================================================================================
 .graystyle {
-  // ??? не раб -  
+  // ??? не раб -
   // @include anim(0.8s, 0s);
   transition: all 0.8s ease 0s;
   filter: grayscale(1);

@@ -1,4 +1,5 @@
 // !! JS Размеры, Прокрутка, Координаты. ФриПоЖиз - TEeKr2ON66A
+
 // ! РАЗМЕРЫ
 function sizeFri() {
   // доступные размеры окна браузера, только для чтения (с лево до скрола - тег html). clientWidth и clientHeight
@@ -53,8 +54,6 @@ function setScrollBy() {
 // прокруч на абсолют коорд (pageX, pageY). тоже самое что scroll()
 function setScrollTo() {
   window.scrollTo(0, 1870);
-  // чтоб прижать .header(position:fixed) добавил .empty_block. теперь x0 смещён на 150px
-  // window.scrollTo(0, 0);
 }
 // scrollTo с опциями. не раб в safary. позиции и прокрутка - плавно, авто
 function setScrollToOpt() {
@@ -85,8 +84,6 @@ function setScrollIntoViewOpt() {
       behavior: "smooth",
     }
   );
-  // попыька .empty_block.
-  // )- 150 компенс  + 'px';
 }
 // scrollIntoView с опциями. не раб в safary
 function setScrollIntoViewFoot() {
@@ -110,7 +107,7 @@ function setEnableDesableScroll() {
 
 // ! МЕТРИКА(РАЗМЕРЫ/ПОЛОЖЕНИЯ) ЕЛЕМ НА СТРАНИЦЕ
 
-// !!! своё
+// !!! СВОЁ
 // ??? не раб - не знаю как поставить .mini-aside вертикально по середине доступного окна браузера
 function clickMinAside2() {
   const mainEl = document.documentElement;
@@ -126,6 +123,7 @@ function clickMinAside2() {
   };
 }
 // clickMinAside2();
+
 // ! нажатие на кнопки .mini-aside(мини меню с боку на скролах)
 function clickMinAside() {
   let jsScroll = document.querySelectorAll(".ma-bl__js-scroll");
@@ -153,44 +151,211 @@ function clickMinAside() {
 }
 clickMinAside();
 
-// !
+// ! <scrolHead(сокращ меню при скроле вниз)>===========================================================================
 function scrolHead() {
   // !1
-  var headerLogo = document.querySelector(".header-logo");
   var headerMenu = document.querySelector(".header-menu");
-  var headerMenuTop = document.querySelector(".menu__top");
-  var headerMenuBottom = document.querySelector(".menu__bottom");
+  var headerLogo = document.querySelector(".header-logo");
+  var headerLogoSmail = document.querySelector(".header-logo-smail");
+  var logoImg = document.querySelector(".logo-img");
+  var logoUp = document.querySelector(".logo-up");
+  var logoDown = document.querySelector(".logo-down");
   var headerLang = document.querySelector(".header-menu__icon");
   var headerBurger = document.querySelector(".header-burger");
+  var headerMenuTop = document.querySelector(".menu__top");
+  var headerMenuBottom = document.querySelector(".menu__bottom");
+  // !0
+  // let itemsLinks = document.querySelectorAll(".items__link");
+  // let itemsLinks = document.querySelector(".items__link");
+  // const menulistitems = Array.from(document.querySelectorAll(".menu-list__items"));
+  // const itemsLinks = Array.from(document.querySelectorAll(".items__link"));
+  // const itemsLinks = document.querySelectorAll(".items__link");
+  // const itemsLink = itemsLinks.map((i) => i.querySelector(".items__link"));
+  // const itemsLink = itemsLinks.map((it)=> it.querySelector(".items__link"));
+
+  // const itemsLinks = document.querySelectorAll('.items__link');
+  // itemsLinks.forEach((itemsLink) => itemsLinks.addEventListener('click', (e) => e.preventDefault()));
+  // for (let itemsLink of itemsLinks) {
+  // itemsLink.addEventListener('click', (e) => e.preventDefault());
+  // }
+
+  var itemsLinks = document.querySelectorAll(".items__link");
+  // ,
+  //   index
+  // ,
+  // itemsLink;
+  // for (index = 0; index < itemsLinks.length; index++) {
+  //   // itemsLink = itemsLinks[index];
+  //   itemsLink = itemsLinks[index];
+  //   // itemsLink.addEventListener('click', clickHandler);
+  //   // itemsLink.addEventListener('dblclick', doubleClickHandler);
+  // }
+
+  for (let itemsLink of itemsLinks) {
+    // alert(elem.innerHTML); // "тест", "пройден"
+  }
+  // !0
   // !1
   var header = document.querySelector("header");
   var helloys = document.querySelector(".helloys");
   document.addEventListener("scroll", () => {
-    // if (window.pageYOffset >= 150) {
-    //   header.classList.add("fixed_menu");
-    // } else {
-    //   header.classList.remove("fixed_menu");
-    // }
     var scrolled = window.pageYOffset || document.documentElement.scrollTop;
     if (scrolled >= 100) {
       console.log(0);
-      header.style.height = "50px";
-      helloys.style.paddingTop = "140px";
       header.classList.add("fixed_menu");
+      header.style.cssText = "height : 50px; padding : 0px 3%;";
+      header.style.boxShadow =
+        "#000000 3px 3px 15px 0.5px inset, #000000 -3px -3px 15px 0.5px inset";
+      headerLogoSmail.style.cssText = "width : 50px; height : 50px";
+      logoUp.style.display = "none";
+      logoDown.style.display = "none";
+      // logoImg.style.top = "0%";
+      // logoImg.style.width = "42px";
+      // logoImg.style.left = "0%";
+      logoImg.style.cssText = "left: 0%; top: 0%; width: 42px";
+      helloys.style.paddingTop = "140px";
+      // !0
+      for (let itemsLink of itemsLinks) {
+        // itemsLink[index].style.fontSize = "0px";
+        itemsLink.style.cssText = "font-size : 0px; height : 10px;";
+      }
+      // itemsLinks.style.height = "0px";
+      // itemsLinks[1].style.fontSize = "0px";
+      // itemsLink[index].style.fontSize = "0px";
+      // itemsLink[e].style.fontSize = "0px";
+      // itemsLink.style.fontSize = "0px";
+      // itemsLink[it].style.fontSize = "0px";
+      // itemsLinks.style.fontSize = "0px";
+      // itemsLinks.style.fontSize = "0px";
+      // !3
+      // ??? не раб - передача объектом не действует
+      // header.style = { height: "50px" };
+      // headerLogoSmail.style = { width: "50px", height: "50px" };
+      // logoUp.style = { display: "none" };
+      // logoDown.style = { display: "none" };
+      // logoImg.style.cssText = { left: "0%", top: "0%", width: "42px" };
+      // helloys.style = { paddingTop: "140px" };
       // !2
       // headerMenuTop.classList.add("done").appendChild(headerBurger)
-      let hedDon = headerMenuTop.classList.add("done");
+      // let hedDon = headerMenuTop.classList.add("done");
       // hedDon.append(headerBurger);
       // headerMenuTop.classList.add("done").insertAdjacentHTML(headerBurger)
       // !2
     } else {
-      header.style.height = "150px";
-      helloys.style.paddingTop = "0px";
       header.classList.remove("fixed_menu");
+      header.style.cssText = ""
+      // header.style.height = "150px";
+      // header.style.height = "";
+      // header.style.padding = "25px 3%";
+      // header.style.padding = "";
+      // header.style.boxShadow = "#000000 5px 5px 30px 1.5px inset, #000000 -5px -5px 30px 1.5px inset";
+      // header.style.boxShadow = "";
+      // headerLogoSmail.style.width = "100px";
+      headerLogoSmail.style.cssText = ""
+      // width = "";
+      // headerLogoSmail.style.height = "100px";
+      // headerLogoSmail.style.height = "";
+      logoUp.style.display = "";
+      logoDown.style.display = "";
+      // logoImg.style.left = "";
+      // logoImg.style.top = "";
+      // logoImg.style.width = "";
+      // logoImg.style.cssText = "left: ; top: ; width: ";
+      logoImg.style.cssText = "";
+      helloys.style.paddingTop = "";
+      // !0
+      for (let itemsLink of itemsLinks) {
+        // itemsLink[index].style.fontSize = "0px";
+        // itemsLink.style.fontSize = "";
+        itemsLink.style.cssText = "";
+      }
+      // itemsLink[index].style.fontSize = "";
+      // itemsLinks[1].style.fontSize = "";
+      // itemsLinks[it].style.fontSize = "";
+      // itemsLinks.style.fontSize = "inherit";
+      // itemsLinks.style.fontSize = "";
+      // ??? не раб - передача объектом не действует
+      // logoImg.style = { left: "22%", top: "22%", width: "48px" };
+      // helloys.style = { paddingTop: "0px" };
     }
   });
 }
 scrolHead();
+
+// ! <touch>========================================================================================
+// touch - определяет на каком устройстве открыта страница
+var ua = navigator.userAgent;
+var isMobile = {
+  // ! touch 0.1
+  TouchPC: function () {
+    // метод match() производит поиск по заданной строке с использованием регулярного выражения (глобальный объект RegExp) и возвращает массив, содержащий результаты этого поиска.
+    // метод search() выполняет поиск первого соответствия (сопоставления) регулярному выражению (объект RegExp) внутри строки.
+    return (
+      ua.match(
+        /(Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini)/i
+      ) ||
+      // возможно не нужно 0.1
+      ua.search(/mobile/i) > 0
+    );
+  },
+  // ! touch 0.1
+  // ! touch 0
+  // Android: function () {
+  //   return ua.match(/Android/i);
+  // },
+  // BlackBerry: function () {
+  //   return ua.match(/BlackBerry/i);
+  // },
+  // iOS: function () {
+  //   return ua.match(/iPhone|iPad|iPod/i);
+  // },
+  // Opera: function () {
+  //   return ua.match(/Opera Mini/i);
+  // },
+  // Windows: function () {
+  //   return ua.match(/IEMobile/i);
+  // },
+  // // возможно не  нужно 1
+  // Mobile: function () {
+  //   return ua.search(/mobile/i);
+  // },
+  // возможно не  нужно 1
+  // ! touch 0
+  any: function () {
+    return (
+      // ! touch 0.2
+      isMobile.TouchPC()
+      // ! touch 0.2
+      // ! touch 0
+      // isMobile.Android() ||
+      // isMobile.BlackBerry() ||
+      // isMobile.iOS() ||
+      // isMobile.Opera() ||
+      // isMobile.Windows()
+      // // возможно не  нужно 0.2
+      // || isMobile.Mobile() > 0
+      // // возможно не  нужно 0.2
+      // ! touch 0
+    );
+  },
+};
+
+// ! <PC и TOUCH сост>========================================================================================
+// добав класс опред body е/и touchscreen(Сенсорный экран) или PC
+if (isMobile.any()) {
+  document.body.classList.add("_touch");
+  let itemsArrows = document.querySelectorAll(".items__arrow");
+  if (itemsArrows.length > 0) {
+    for (let index = 0; index < itemsArrows.length; index++) {
+      const itemsArrow = itemsArrows[index];
+      itemsArrow = addEventListener("click", function () {
+        itemsArrow.parentElement.classList.toggle("_active");
+      });
+    }
+  }
+} else {
+  document.body.classList.add("_pc");
+}
 
 // !!
 // function adaptive_header(w, h) {
@@ -202,7 +367,6 @@ function adaptive_header() {
   var headerMenuBottom = document.querySelector(".menu__bottom");
   var headerLang = document.querySelector(".header-menu__icon");
   var headerBurger = document.querySelector(".header-burger");
-
   var scrolled = window.pageYOffset || document.documentElement.scrollTop;
   console.log(1);
   if (scrolled >= 75) {
@@ -260,60 +424,6 @@ function adaptive_header() {
   //   });
   // }
   // !!!
-
-  // // блок скрытого бургера
-  // var headerBurger = $(".header-burger");
-  // // класс языков
-  // var headerLang = $(".header-top-lang");
-  // // класс меню
-  // var headerMenu = $(".header-bottom-menu");
-  // // е\и ширина меньше 767
-  // if (w < 767) {
-  //   // е\и в языках нет класса done
-  //   if (!headerLang.hasClass("done")) {
-  //     // то блоку header-top-lang добавит класс "done" и добавить его в блок header-burger
-  //     headerLang.addClass("done").appendTo(headerBurger);
-  //   }
-  // } else {
-  //   // е\и в языках есть класса done
-  //   if (headerLang.hasClass("done")) {
-  //     // то у блока headerLang добавит класс "done" и добавить его в начало блока (prepend - `перед именем`) header-top
-  //     headerLang.removeClass("done").prependTo($(".header-top"));
-  //   }
-  // }
-  // // е\и ширина меньше 767
-  // if (w < 767) {
-  //   // е\и у меню нет класса done
-  //   if (!headerMenu.hasClass("done")) {
-  //     // то блоку header-bottom-menu добавит класс "done" и добавить его в блок header-burger
-  //     headerMenu.addClass("done").appendTo(headerBurger);
-  //   }
-  // } else {
-  //   // перебираем все элементы each (перебор `каждого` элем. коллекции jQuery, выполняя при этом функцию для каждого из них)
-  //   $.each(headerMenu, function (index, val) {
-  //     // е/и у эл. класс --right
-  //     if ($(this).hasClass("header-bottom-menu--right")) {
-  //       // е/и есть класс done
-  //       if ($(this).hasClass("done")) {
-  //         // у этих эл.
-  //         $(this)
-  //           //удалить done
-  //           .removeClass("done")
-  //           // и переместить в header-bottom__column в позицию 3 (так как индекс 2, счёт 3)
-  //           .prependTo($(".header-bottom__column").eq(2));
-  //       }
-  //     } else {
-  //       // е/и
-  //       if ($(this).hasClass("done")) {
-  //         $(this)
-  //           //удалить done
-  //           .removeClass("done")
-  //           // и переместить в header-bottom__column в позицию 1 (так как индекс 0, счёт 1)
-  //           .prependTo($(".header-bottom__column").eq(0));
-  //       }
-  //     }
-  //   });
-  // }
 }
 // adaptive_header();
 
@@ -323,65 +433,3 @@ function adaptive_function() {
   adaptive_header(w, h);
 }
 // adaptive_function();
-
-// =================================================================
-// ! touch -
-// определяет на каком устройстве открыта страница
-var ua = navigator.userAgent;
-var isMobile = {
-  // ! touch 0.1
-  TouchPC: function (){
-    // метод match() производит поиск по заданной строке с использованием регулярного выражения (глобальный объект RegExp) и возвращает массив, содержащий результаты этого поиска.
-    // метод search() выполняет поиск первого соответствия (сопоставления) регулярному выражению (объект RegExp) внутри строки.
-      return ua.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini)/i)
-      // возможно не  нужно 0.1
-       || ua.search(/mobile/i) > 0
-  },
-  // ! touch 0.1
-  // ! touch 0
-  // Android: function () {
-    //   return ua.match(/Android/i);
-    // },
-    // BlackBerry: function () {
-      //   return ua.match(/BlackBerry/i);
-      // },
-      // iOS: function () {
-        //   return ua.match(/iPhone|iPad|iPod/i);
-        // },
-        // Opera: function () {
-          //   return ua.match(/Opera Mini/i);
-          // },
-          // Windows: function () {
-            //   return ua.match(/IEMobile/i);
-  // },
-  // // возможно не  нужно 1
-  // Mobile: function () {
-    //   return ua.search(/mobile/i);
-    // },
-    // возможно не  нужно 1
-    // ! touch 0
-    any: function () {
-      return (
-        // ! touch 0.2
-        isMobile.TouchPC()
-        // ! touch 0.2
-        // ! touch 0
-        // isMobile.Android() ||
-        // isMobile.BlackBerry() ||
-        // isMobile.iOS() ||
-        // isMobile.Opera() ||
-        // isMobile.Windows() 
-        // // возможно не  нужно 0.2
-        // || isMobile.Mobile() > 0
-        // // возможно не  нужно 0.2
-        // ! touch 0
-    );
-  },
-};
-
-// ! дабав класс опред body е/и touchscreen(Сенсорный экран) или PC
-if (isMobile.any()) {
-  document.body.classList.add("_touch");
-} else {
-  document.body.classList.add("_pc");
-}
