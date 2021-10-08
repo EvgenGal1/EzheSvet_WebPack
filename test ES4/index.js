@@ -444,6 +444,7 @@ function clickText2() {
     const blText = contBl[i].querySelector(".block-text-");
     const textDet = contBl[i].querySelector(".text-detail-");
     const blSub = contBl[i].querySelector(".bl-sub-");
+    const blSubright = contBl[i].querySelector(".bl-sub-.right");
     item.addEventListener("click", () => {
       contBl[i].classList.toggle("active");
       if (contBl[i].classList.contains("active")) {
@@ -454,15 +455,16 @@ function clickText2() {
         blSub.style.top = "0px";
         // blSub.style.left = "0px";
         blSub.style.transform = "scale(1, -1)";
+        blSubright.style.transform = "scale(-1, -1)";
+        // ??? не раб - не прописывается много свойств вместе
+        // blSub.style.cssText = "top: 0%; left: 0%";
         // blSub.style = { top: "0%", left: "0%", transform: "scale(1, -1)" };
       } else {
-        blText.style = {
-          paddingTop: "10px",
-          // display: "block",
-          // marginBottom: "0px",
-        };
-        textDet.style = { display: "none" };
-        blSub.style = { top: "100%", left: "100%",transform : "scale(1, 1)"};
+        blText.style.cssText = "";
+        textDet.style.cssText = "";
+        blSub.style = {};
+        blSubright.style = "";
+        // blSub.style = { top: "100%", left: "100%", transform: "scale(1, 1)" };
       }
     });
   });

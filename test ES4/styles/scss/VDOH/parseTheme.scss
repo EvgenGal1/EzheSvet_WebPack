@@ -227,16 +227,19 @@
   $grey: #cccccc;
   $white: #ffffff;
   display: flex;
+  height: inherit;
   .swblwh {
     position: relative;
     width: 100%;
     height: 30px;
+    height: inherit;
     border-radius: 25px;
     input {
       appearance: none;
       position: relative;
       width: 100%;
       height: 30px;
+      height: inherit;
       border-radius: 25px;
       background-color: $black;
       outline: none;

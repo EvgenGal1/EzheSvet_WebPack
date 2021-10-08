@@ -140,9 +140,22 @@ function clickMinAside() {
       //   setScrollBy();
       // }
       if (btn == jScr1) setScrollBy();
-      if (btn == jScr2) setScrollIntoViewHead();
+      // if (btn == jScr2) setScrollIntoViewHead();
+      if (btn == jScr2)
+        scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
       if (btn == jScr3) setScrollToOpt();
       if (btn == jScr4) setScrollIntoViewOpt();
+      // if (btn == jScr4) {
+      //   console.log(31);
+      //   jScr4.scrollIntoView({
+      //     // top: true,
+      //     behavior: "smooth",
+      //   });
+      //   console.log(32)
+      // }
       if (btn == jScr5) setScrollTo();
       if (btn == jScr6) setScrollIntoViewFoot();
       if (btn == jScr7) setEnableDesableScroll();
@@ -219,22 +232,6 @@ function scrolHead() {
         // itemsLink[index].style.fontSize = "0px";
         itemsLink.style.cssText = "font-size : 0px; height : 10px;";
       }
-      // itemsLinks.style.height = "0px";
-      // itemsLinks[1].style.fontSize = "0px";
-      // itemsLink[index].style.fontSize = "0px";
-      // itemsLink[e].style.fontSize = "0px";
-      // itemsLink.style.fontSize = "0px";
-      // itemsLink[it].style.fontSize = "0px";
-      // itemsLinks.style.fontSize = "0px";
-      // itemsLinks.style.fontSize = "0px";
-      // !3
-      // ??? не раб - передача объектом не действует
-      // header.style = { height: "50px" };
-      // headerLogoSmail.style = { width: "50px", height: "50px" };
-      // logoUp.style = { display: "none" };
-      // logoDown.style = { display: "none" };
-      // logoImg.style.cssText = { left: "0%", top: "0%", width: "42px" };
-      // helloys.style = { paddingTop: "140px" };
       // !2
       // headerMenuTop.classList.add("done").appendChild(headerBurger)
       // let hedDon = headerMenuTop.classList.add("done");
@@ -243,7 +240,7 @@ function scrolHead() {
       // !2
     } else {
       header.classList.remove("fixed_menu");
-      header.style.cssText = ""
+      header.style.cssText = "";
       // header.style.height = "150px";
       // header.style.height = "";
       // header.style.padding = "25px 3%";
@@ -251,7 +248,7 @@ function scrolHead() {
       // header.style.boxShadow = "#000000 5px 5px 30px 1.5px inset, #000000 -5px -5px 30px 1.5px inset";
       // header.style.boxShadow = "";
       // headerLogoSmail.style.width = "100px";
-      headerLogoSmail.style.cssText = ""
+      headerLogoSmail.style.cssText = "";
       // width = "";
       // headerLogoSmail.style.height = "100px";
       // headerLogoSmail.style.height = "";
@@ -346,13 +343,20 @@ if (isMobile.any()) {
   document.body.classList.add("_touch");
   let itemsArrows = document.querySelectorAll(".items__arrow");
   if (itemsArrows.length > 0) {
-    for (let index = 0; index < itemsArrows.length; index++) {
-      const itemsArrow = itemsArrows[index];
-      itemsArrow = addEventListener("click", function () {
-        itemsArrow.parentElement.classList.toggle("_active");
+    itemsArrows.forEach((e) => {
+      e.addEventListener("click", function () {
+        e.parentElement.classList.toggle("_active");
       });
-    }
+    });
   }
+  // ??? не раб - Cannot read properties of undefined (reading 'parentElement')
+  // for (let index = 0; index < itemsArrows.length; index++) {
+  //   const itemsArrow = itemsArrows[index];
+  //   itemsArrow = addEventListener("click", function () {
+  //     itemsArrow.parentElement.classList.toggle("_active");
+  //     // this.parentElement.classList.add("_active");
+  //   });
+  // }
 } else {
   document.body.classList.add("_pc");
 }

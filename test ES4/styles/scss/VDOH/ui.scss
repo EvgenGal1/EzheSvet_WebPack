@@ -403,49 +403,55 @@ h6 {
       width: 250px;
       height: 250px;
     }
-    &:nth-child(even) .block-img- {
-      float: left;
-      shape-outside: url(../../img/Rick.png);
-      background-image: url(../../img/Rick.png);
-      // ~
-      // shape-outside: circle();
-      // shape-margin: 10px;
-      // clip-path: circle(50%);
-      // shape-outside: circle();
-      // shape-outside: circle(50% at 0 50%);
-      // shape-outside: ellipse();
-      // shape-outside: ellipse(75px 120px);
-      // shape-outside: ellipse(farthest-side closest-side at 25% 57%);
-      // shape-outside: ellipse(closest-side farthest-side at 25% 25%);
-      // shape-outside: inset(75px);
-      // shape-outside: inset(50px round 75px);
-      // clip-path: inset(75px);
-      // shape-outside: polygon(0 0px,0px 300px,230px 300px,150px 150px,230px 0px);
-      // clip-path: polygon(0 0, 0 300px, 200px 300px);
-      // clip-path: polygon(0 0px, 0px 300px, 230px 300px, 150px 150px, 230px 0px);
-      // shape-outside: url(../../img/sheet.png);
-      // shape-margin: 7px;
-      // shape-image-threshold: 0.5;
-      // background: #009966 url(../../img/01.jpg);
-      // mask-image: url(../../img/sheet.png);
-      // mask-image: url(../../img/Rick.png);
-      // shape-rendering: geometricprecision;
-      // background-repeat: no-repeat;
-      // width: 250px;
-      // height: 250px;
+    &:nth-child(even) {
+      .block-img- {
+        float: left;
+        // shape-outside: url(../../img/Rick.png);
+        // background-image: url(../../img/Rick.png);
+      }
+      // отличие текста
+      .block-text- {
+        color: green;
+      }
     }
-    &:nth-child(odd) .block-img- {
-      float: right;
-      shape-outside: url(../../img/Morty.png);
-      background-image: url(../../img/Morty.png);
+    &:nth-child(odd) {
+      .block-img- {
+        float: right;
+        // shape-outside: url(../../img/Morty.png);
+        // background-image: url(../../img/Morty.png);
+      }
+      // отличие текста
+      .block-text- {
+        color: red;
+      }
+      .bl-sub- {
+        left: 0;
+        transform: scale(-1, 1);
+      }
     }
-
-    // отличие текста
-    &:nth-child(even) .block-text- {
-      color: green;
+    &:nth-child(1) {
+      .block-img- {
+        shape-outside: url(../../img/RickAndMorty.png);
+        background-image: url(../../img/RickAndMorty.png);
+      }
     }
-    &:nth-child(odd) .block-text- {
-      color: red;
+    &:nth-child(2) {
+      .block-img- {
+        shape-outside: url(../../img/Rick.png);
+        background-image: url(../../img/Rick.png);
+      }
+    }
+    &:nth-child(3) {
+      .block-img- {
+        shape-outside: url(../../img/MortyEvil.png);
+        background-image: url(../../img/MortyEvil.png);
+      }
+    }
+    &:nth-child(4) {
+      .block-img- {
+        shape-outside: url(../../img/RickAndMortyBrut.png);
+        background-image: url(../../img/RickAndMortyBrut.png);
+      }
     }
 
     // картиночный блок и кнп
@@ -453,7 +459,7 @@ h6 {
       position: relative;
       display: flex;
       flex-direction: column;
-      // margin-bottom: 10px;
+      margin-bottom: 10px;
       .block-img__link- {
         background-image: url(../../img/Rick.png);
         background-repeat: no-repeat;
@@ -484,6 +490,20 @@ h6 {
           position: absolute;
           bottom: 0;
         }
+        &:nth-child(odd)::after {
+          // content: url(../../img/elem/Arrow2Mini4.png);
+          // position: absolute;
+          // bottom: 0;
+        }
+        &:nth-child(even) {
+          // left: 0;
+        }
+        &:nth-child(even)::after {
+          // transform : scale(-1, -1);
+          // content: url(../../img/elem/Arrow2Mini4.png);
+          // position: absolute;
+          // bottom: 0;
+        }
         .sub- {
           width: inherit;
           height: inherit;
@@ -503,7 +523,7 @@ h6 {
       // min-height: 307px;
       // ~
       display: block;
-      padding-top: 10%;
+      padding-top: 7%;
       // высота строки
       line-height: 1.2;
       // межбуквенное расстояние

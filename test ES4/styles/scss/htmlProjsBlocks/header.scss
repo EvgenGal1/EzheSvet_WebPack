@@ -615,34 +615,46 @@ header {
 }
 
 // <PC и TOUCH сост.>===========================================================================================
-body._pc .menu-list__items:hover .items__sub {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(0px, 0px);
-  pointer-events: all;
+body._pc {
+  .menu-list__items:hover .items__sub {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px, 0px);
+    pointer-events: all;
+  }
 }
-body._touch .menu-list__items {
-  display: flex;
-  align-items: center;
+body._touch {
+  .menu-list__items {
+    display: flex;
+    align-items: center;
+  }
+  .items__link {
+    // для надежной верстки сделать на всю ширину
+    flex: 1 1 auto;
+  }
+  .items__arrow {
+    position: absolute;
+    right: 4px;
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0 0 0 5px;
+    // стрелка из border
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #000;
+    transition: transform 0.3s ease 0s;
+  }
+  .menu-list__items._active .items__sub {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px, 0px);
+    pointer-events: all;
+  }
+  .menu-list__items._active .items__arrow {
+    transform: rotate(-180deg);
+  }
 }
-body._touch .items__link {
-  // для надежной верстки сделать на всю ширину
-  flex: 1 1 auto;
-}
-body._touch .items__arrow {
-  position: absolute;
-  right: 4px;
-  display: block;
-  width: 0;
-  height: 0;
-  margin: 0 0 0 5px;
-  // стрелка из border
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid #000;
-  transition: transform 0.3s ease 0s;
-}
-
 // =================================================================
 // .header-menu {
 // display: flex;
@@ -701,7 +713,6 @@ body._touch .items__arrow {
       // расцветка 1го ур.
       & {
         &:nth-child(1) .items__link {
-          background-color: #ffff00;
           background-color: #fad201;
         }
         &:nth-child(2) .items__link {
@@ -726,9 +737,14 @@ body._touch .items__arrow {
           background-color: #ffffff;
           color: #000;
         }
-        &:nth-child(9) a.items__link {
-          background-color: #000000;
-          color: #fff;
+        &:nth-child(9) {
+          a.items__link {
+            background-color: #000000;
+            color: #fff;
+          }
+          .items__arrow {
+            border-top: 10px solid #fff;
+          }
         }
       }
     }
@@ -736,6 +752,8 @@ body._touch .items__arrow {
     .items__sub {
       // для позиц. подменю
       position: absolute;
+      // при _touch чтоб было ниже li(menu-list__items) 1го ур.
+      top: 100%;
       font-style: italic;
       font-size: 16px;
       font-weight: 900;

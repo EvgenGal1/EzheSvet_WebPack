@@ -291,10 +291,12 @@ header {
     }
     // -2,3(черно белые)
     &.sw-blwh {
+      // ??? не раб - после прокрутки sw4btn не востанав размер, приходится и здесь прописывать перем heigth, почемуто в menu-set__items не хватает
+      height: var(--height);
       .swblwh {
-        height: var(--height);
+        // height: var(--height);
         input {
-          height: var(--height);
+          // height: var(--height);
           &:before {
             left: var(--swblwh-2-lef);
             font-size: var(--swblwh-2-fo-si);
@@ -380,10 +382,9 @@ header {
 }
 // ! </настройки стиля-размера(--size:переменные,)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˄
 
-// !
-// Советы по дизайну
+// ! Советы по дизайну
 // Изображения в тёмном режиме
-// ! Применяем фильтр напрямую к тегу <body>
+// Применяем фильтр напрямую к тегу <body>
 // body.dark-theme img {
 //   filter: brightness(0.8) contrast(1.2);
 // }
