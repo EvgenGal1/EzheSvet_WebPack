@@ -480,11 +480,15 @@ h6 {
         // top: 0;
         // left: 0;
         right: 35px;
-        bottom: 0;
+        // bottom: 0;
         width: 15px;
         height: 15px;
         background: yellow;
         border-radius: 10px;
+        transform :scale(1, -1);
+        &.right{
+          transform :scale(-1, -1);
+        }
         &::after {
           content: url(../../img/elem/Arrow2Mini4.png);
           position: absolute;
@@ -530,8 +534,8 @@ h6 {
       letter-spacing: 2px;
       // пробел между словами
       word-spacing: 2px;
-      // перенос слов внутри строк
-      word-break: break-word;
+      // перенос слов внутри строк (растягивание)
+      word-break:break-all;
       // перенос длынных слов
       word-wrap: break-word;
       font-weight: bold;

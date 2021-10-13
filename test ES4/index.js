@@ -450,15 +450,28 @@ function clickText2() {
       if (contBl[i].classList.contains("active")) {
         // blText.style.display = "block";
         // blText.style.marginBottom = "10px";
+        // blText.style.padding = "0px 0px 15px";
         blText.style.padding = "0px";
         textDet.style.display = "block";
-        blSub.style.top = "0px";
-        // blSub.style.left = "0px";
-        blSub.style.transform = "scale(1, -1)";
-        blSubright.style.transform = "scale(-1, -1)";
+        const blTextHeight = blText.offsetHeight;
+        // blSub.style.top = "50px";
+        // blSub.style.top = "0px" + "15px";
+        // blSub.style.top = "0px" + textDetHeight;
+        blSub.style.top = blTextHeight + "px";
+        blSub.style.left = "10%";
+        blSub.style.marginTop = "15px";
+        blSub.style.transform = "scale(1, 1)";
+        // blSubright.style.transform = "scale(-1, -1)";
+        // blSub.style.transform = "scale(1, 1)";
+        // !
+        // blSub.style.cssText = "left: 35px; transform: scale(1, 1);";
+        // !
+        blSubright.style.left = "80%";
+        blSubright.style.transform = "scale(-1, 1)";
         // ??? не раб - не прописывается много свойств вместе
         // blSub.style.cssText = "top: 0%; left: 0%";
         // blSub.style = { top: "0%", left: "0%", transform: "scale(1, -1)" };
+        console.log("teH :" + textDetHeight);
       } else {
         blText.style.cssText = "";
         textDet.style.cssText = "";
