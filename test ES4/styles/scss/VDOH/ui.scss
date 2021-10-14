@@ -396,6 +396,7 @@ h6 {
   .cont-block- {
     clear: both;
     margin: 10px 0;
+    // общ для всех img
     &:nth-child(n) .block-img- {
       shape-margin: 10px;
       shape-image-threshold: 0.5;
@@ -403,22 +404,21 @@ h6 {
       width: 250px;
       height: 250px;
     }
+    // для чётных
     &:nth-child(even) {
+      // прижатие img-
       .block-img- {
         float: left;
-        // shape-outside: url(../../img/Rick.png);
-        // background-image: url(../../img/Rick.png);
       }
       // отличие текста
       .block-text- {
         color: green;
       }
     }
+    // для не чётных
     &:nth-child(odd) {
       .block-img- {
         float: right;
-        // shape-outside: url(../../img/Morty.png);
-        // background-image: url(../../img/Morty.png);
       }
       // отличие текста
       .block-text- {
@@ -429,6 +429,7 @@ h6 {
         transform: scale(-1, 1);
       }
     }
+    // для 1го img-
     &:nth-child(1) {
       .block-img- {
         shape-outside: url(../../img/RickAndMorty.png);
@@ -453,24 +454,29 @@ h6 {
         background-image: url(../../img/RickAndMortyBrut.png);
       }
     }
-
+    // отступ снизу для последнего
+    &:last-child {
+      margin: 0 0 25px;
+    }
+    
     // картиночный блок и кнп
     .block-img- {
       position: relative;
       display: flex;
       flex-direction: column;
       margin-bottom: 10px;
-      .block-img__link- {
-        background-image: url(../../img/Rick.png);
-        background-repeat: no-repeat;
-        width: 250px;
-        height: 250px;
-        display: none;
-        .img-bl- {
-          font-family: inherit;
-          display: none;
-        }
-      }
+      // уже вроде не нужно
+      // .block-img__link- {
+      //   background-image: url(../../img/Rick.png);
+      //   background-repeat: no-repeat;
+      //   width: 250px;
+      //   height: 250px;
+      //   display: none;
+      //   .img-bl- {
+      //     font-family: inherit;
+      //     display: none;
+      //   }
+      // }
       .ibg- {
         font-family: inherit;
       }
@@ -485,9 +491,9 @@ h6 {
         height: 15px;
         background: yellow;
         border-radius: 10px;
-        transform :scale(1, -1);
-        &.right{
-          transform :scale(-1, -1);
+        transform: scale(1, -1);
+        &.right {
+          transform: scale(-1, -1);
         }
         &::after {
           content: url(../../img/elem/Arrow2Mini4.png);
@@ -516,6 +522,7 @@ h6 {
         }
       }
     }
+
     // текстовый блок
     .block-text- {
       // если текста мало
@@ -535,7 +542,7 @@ h6 {
       // пробел между словами
       word-spacing: 2px;
       // перенос слов внутри строк (растягивание)
-      word-break:break-all;
+      word-break: break-all;
       // перенос длынных слов
       word-wrap: break-word;
       font-weight: bold;
@@ -552,9 +559,11 @@ h6 {
         font-size: 17px;
         padding-bottom: 10px;
       }
+      // видимый текст
       .text-short- {
         text-align: center;
       }
+      // раскрыв. текст
       .text-detail- {
         display: none;
       }

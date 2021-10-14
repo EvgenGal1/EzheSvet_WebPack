@@ -471,7 +471,6 @@ function clickText2() {
         // ??? не раб - не прописывается много свойств вместе
         // blSub.style.cssText = "top: 0%; left: 0%";
         // blSub.style = { top: "0%", left: "0%", transform: "scale(1, -1)" };
-        console.log("teH :" + textDetHeight);
       } else {
         blText.style.cssText = "";
         textDet.style.cssText = "";
