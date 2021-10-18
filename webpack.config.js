@@ -139,6 +139,34 @@ const jsLoaders = () => {
   return user;
 };
 
+// ! рекурсивный поиск по каталогам
+// https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
+// https://ourcodeworld.com/articles/read/420/how-to-read-recursively-a-directory-in-node-js
+function filewalker(dir, done) {
+  let results = [];
+  fs.readdir(dir, function (err, list) {
+    if (err) return done(err);
+    var pending = list.length;
+    if (!pending) return done(null, results);
+    list.forEach(function (file) {
+      file = path.resolve(dir, file);
+      fs.stat(file, function (err, stat) {
+        // Если каталог, выполнить рекурсивный вызов
+        if (stat && stat.isDirectory()) {
+          // Добавить каталог в массив [прокомментируйте, если вам нужно удалить каталоги из массива]
+          results.push(file);
+          filewalker(file, function (err, res) {
+            results = results.concat(res);
+            if (!--pending) done(null, results);
+          });
+        } else {
+          results.push(file);
+          if (!--pending) done(null, results);
+        }
+      });
+    });
+  });
+}
 // !
 // !
 // !
@@ -415,63 +443,113 @@ function generateHtmlPlugins20(templatesDir) {
 // function generateHtmlPlugins(templatesDir) {
 //   const templateFolders = fs.readdirSync(templatesDir);
 //   return templateFolders.map((folderName) => {
-
 // function generateHtmlPlugins20(templatesDir) {
-//   // !!
 //   fs.readdirSync(templatesDir).map((fileName) => {
-
 // var generateHtmlPlugins30 = function (dir, done) {
 // function generateHtmlPlugins30(dir, done) {
 function generateHtmlPluginsNNNN(dir) {
-  console.log("dir " + dir);
+  console.log("dir " + dir); // ./test ES4/html/views
   const templateFolders = fs.readdirSync(dir);
-  console.log("templateFolders !!!: " + templateFolders);
+  console.log("templateFolders !!!: " + templateFolders); //~ Audio,Catalog,Contact, и пр.
   return templateFolders.map((folderName) => {
-    console.log("NNNN3 ");
+    console.log("folderName >!1<: " + folderName); //~ Audio  //~ Catalog //~ Contact и пр.
     const templateFoldersPath = path.resolve(
       // главн.папка, путьДоКат, имяПапк
       __dirname,
       dir,
       folderName
     );
-    console.log("templateFoldersPath >>: " + templateFoldersPath);
-    console.log("folderName >!1<: " + folderName);
+    console.log("templateFoldersPath >>: " + templateFoldersPath); //~ D:\Про\...\views\Audio
+
+    // &0
+    // const folderPath = './test ES4/html/views'
+    // const isDirectory0 = fileName => {
+    //   return fs.lstatSync(fileName).isDirectory()
+    // }
+    // const ert0 = fs.readdirSync(templateFoldersPath).map(fileName => {
+    //   return path.join(templateFoldersPath, fileName)
+    //    // .filter(isDirectory0)
+    // })
+    // const filert0 = ert0.filter(isDirectory0)
+    // console.log('filert0 : ' + filert0); //~ D:\Про\...\views\Audio\audios
+    // console.log('ert0 : ' + ert0); //~ D:\Про\...\views\Audio\Audio.html, D:\Про\...\views\Audio\audios
+    // &0
+
+    // &1
+    const isDirectory = (fileName) => {
+      return fs.lstatSync(fileName).isDirectory();
+    };
+    // const readTemplateFileName1 = fs.readdirSync(templateFoldersPath)[1]; //~ audios //! НАКРАЙНЯК
+    // console.log('readTemplateFileName 1 : ' + readTemplateFileName1); //~ audios
+    const containsFolder = (path) => {
+      return fs.readdirSync(path);
+    };
+    const contentsTempFoldPath = containsFolder(templateFoldersPath);
+    // const contentsTempFoldPath = fs.readdirSync(templateFoldersPath);
+    console.log("contentsTempFoldPath : " + contentsTempFoldPath); //~ Audio.html,audios
+    const contentsTempFoldPathJoinPath = fs
+      .readdirSync(templateFoldersPath)
+      .map((fileName) => {
+        return path.join(templateFoldersPath, fileName);
+      });
+    console.log(
+      "contentsTempFoldPathJoinPath : " + contentsTempFoldPathJoinPath
+    ); //~ D:\Про\...\views\Audio\Audio.html, D:\Про\...\views\Audio\audios
+    const filterDerectTempFoldPathJP =
+      contentsTempFoldPathJoinPath.filter(isDirectory);
+    console.log(
+      "filterDerectTempFoldPathJP : +++ " + filterDerectTempFoldPathJP
+    ); //~ D:\Про\...\views\Audio\audios
+
+    // &2
+    console.log("qwerty");
+    // const contentsTempFoldPath00 = fs.readdirSync(filterDerectTempFoldPathJP); //! Аргумент «путь» должен быть строкового типа, экземпляром буфера или URL. Получен экземпляр массива
+    // const contfiltDirectTempFoldPathJP = containsFolder(filterDerectTempFoldPathJP) //! Аргумент «путь» должен быть строкового типа, экземпляром буфера или URL. Получен экземпляр массива
+    // console.log('contfiltDirectTempFoldPathJP : ' + contfiltDirectTempFoldPathJP);
+    // &2
+
+    // const folderNameSecond = readTemplateFoldersPath.filter(isDirectory) //! нет ф. или кат. 'Audio.html'
+    // const folderNameSecond = path.resolve(readTemplateFileName, folderName) //! Арг Путь нежен строк типа.
+    // const folderNameSecond = path.join(readTemplateFileName, folderName) //! Аргумент «путь» должен быть строкового типа. Получен экземпляр массива
+    // const dirFolder = templateFoldersPath.filter(isDirectory) //! Свойство "filter" не существует в типе "string"
+    // const dirFolder = templateFolders.filter(isDirectory) //! нет такого файла или каталога, lstat 'Audio'
+    // const folderNameSecond = templateFoldersPath + `/`  + readTemplateFileName.filter(isDirectory) //! нет такого файла или каталога, lstat 'Audio'
+    // &1
+
+    const firstTemplateFileName = fs.readdirSync(templateFoldersPath)[0];
+    console.log("firstTemplateFileName 0!!: " + firstTemplateFileName); //~ Audio.html пр.
+    // console.log("isF : " + isF);
+    const firstTemplateFilePath = path.resolve(
+      // главн.папка, путьДоКат, имяПапк, имяФайл
+      __dirname,
+      dir,
+      folderName,
+      firstTemplateFileName
+    );
+    console.log("firstTemplateFilePath 1!>>: " + firstTemplateFilePath); //~ D:\Про\...\views\Audio.html пр.
 
     // &
-    fs.readdir(templateFoldersPath, (err, files) => {
-      if (err) throw err; // не прочитать содержимое папки
-      console.log("В папке находятся файлы:" + files);
-      // &&&~
-      // const pathsToCheck = [files];
-      // console.log('pathsToCheck : ' + pathsToCheck);
-      // console.log('files : ' + files);
-      // const pathsToCheck = ['./txtDir', './txtDir/file.txt'];
-      // for (let i = 0; i < pathsToCheck.length; i++) {
-      //   fs.stat(pathsToCheck, (err, stats) => {
-      //   // fs.stat(pathsToCheck[i], (err, stats) => {
-      //     console.log(stats.isDirectory());
-      //     console.log(stats);
-      //   });
-      // }
-      // &&&~
+    // ^ нужна ли эта проверка, может сразу for of ?
+    // fs.readdir(templateFoldersPath, (err, files) => {
+    fs.readdirSync(templateFoldersPath, (err, files) => {
+      //??? не раб Sync
+      // const arrTFP = fs.readdirSync(templateFoldersPath, (err, files) => {
+      if (err) throw err; // не прочиталось содержимое папки
+      console.log("В папке находятся файлы:" + files); //~ Audio.html,audios //~ и пр.
+      // ^ нужна ли эта проверка, может сразу for of ?
       // &&
       for (let file of files) {
-        console.log("files " + files);
-        console.log("file 1 " + file);
-        fs.stat(templateFoldersPath + `\/` + file, (errStat, stats) => {
+        console.log("files " + files); //~ Audio.html,audios //~ и пр.
+        console.log("file 1 " + file); //~ Audio.html //~ audios
+        fs.stat(templateFoldersPath + `/` + file, (errStat, stats) => {
           // fs.stat('file.txt', (errStat, status) => {
-          console.log("file 2 " + file);
-          console.log("stats : " + stats);
-          console.log("errStat : " + errStat);
+          console.log("file 2 " + file); //~ Audio.html //~ audios
+          console.log("stats : " + stats); //~ [object Object]
+          console.log("errStat : " + errStat); //~ null
           if (errStat) throw errStat;
-
           if (stats.isDirectory()) {
-            console.log("Папка file: >>!!!<< " + file);
-            // listObjects(path + '/' + file); // продолжаем рекурсию
+            console.log("Папка file: >>!!!<< " + file); //~ audios //~ и пр.
             // &&&
-            // const templSecondFolf = fs.readdirSync(file);
-            // console.log('templSecondFolf : ' + templSecondFolf);
-
             // &&&&
             const secTempFilPath = path.resolve(
               // главн.папка, путьДоКат, имяПапк, имяФайл
@@ -482,16 +560,24 @@ function generateHtmlPluginsNNNN(dir) {
               // firstTemplateFileName,
               file
             );
-            console.log("secTempFilPath : +++" + secTempFilPath);
+            console.log("secTempFilPath : +++ " + secTempFilPath); //~ D:\Про\...\views\Audio\audios
             // &&&&&
             const secondTFNSSS = fs.readdirSync(secTempFilPath);
             // const secondTFN = fs.readdirSync(secTempFilPath)[0];
-            console.log("secondTFNSSS : +++++ " + secondTFNSSS);
+            console.log("secondTFNSSS : +++++ " + secondTFNSSS); //~   //~ daydreamWealth.html,dreamSpace.html,
             // const secondTFN = fs.readdirSync(file)[0];
             for (let index = 0; index < secondTFNSSS.length; index++) {
               // return  secSSS = secondTFNSSS[index];
               let secSSS = secondTFNSSS[index];
-              console.log("secSSS : ++++++++++++++" + secSSS);
+              console.log("secSSS : ++++++++++++++ " + secSSS); //~ daydreamWealth.html //~ и пр.
+
+              filewalker(secTempFilPath, function (err, data) {
+                if (err) {
+                  throw err;
+                }
+                // ["c://some-existent-path/file.txt","c:/some-existent-path/subfolder"]
+                console.log(data);
+              });
 
               // !3
               return new HTMLWebpackPlugin({
@@ -513,8 +599,11 @@ function generateHtmlPluginsNNNN(dir) {
             // &&&&
             // &&&
           } else if (stats.isFile()) {
-            console.log("Файл: <!> " + file);
+            console.log("Файл: <!> " + file); //~
+            var isF = this;
           }
+
+          console.log("isF : " + isF);
         });
         // });
       }
@@ -522,38 +611,9 @@ function generateHtmlPluginsNNNN(dir) {
     });
     // &
 
-    const firstTemplateFileName = fs.readdirSync(templateFoldersPath)[0];
-    console.log("firstTemplateFileName 1!!: " + firstTemplateFileName);
-
-    const firstTemplateFilePath = path.resolve(
-      // главн.папка, путьДоКат, имяПапк, имяФайл
-      __dirname,
-      dir,
-      folderName,
-      firstTemplateFileName
-    );
-    console.log("firstTemplateFilePath 1!>>: " + firstTemplateFilePath);
-    // возвращ. ?конст? html
-    // !3
-    // return new HTMLWebpackPlugin({
-    //   // new HTMLWebpackPlugin({
-    //   // имя: html/имяПапк/имяФайл
-    //   filename: `html/${folderName}/${folderName + "s"}/${secSSS}`,
-    //   // filename: `html/${folderName}/${file}/${secSSS}`,
-    //   // `шаблон` ?пути?
-    //   template: secTempFilPath,
-    //   // minify: { collapseWhitespace: isProd },
-    //   minify: false,
-    //   // inject: true,
-    //   // inject: false,
-    //   chunks: ["app"],
-    // });
-    // !3
-    // !2
+    // !1
     return new HTMLWebpackPlugin({
-      // new HTMLWebpackPlugin({
       // имя: html/имяПапк/имяФайл
-      // filename: `html/${folderName}/${folderName+"s"}/${firstTemplateFileName2}`,
       filename: `html/${folderName}/${firstTemplateFileName}`,
       // `шаблон` ?пути?
       template: firstTemplateFilePath,
@@ -563,28 +623,23 @@ function generateHtmlPluginsNNNN(dir) {
       // inject: false,
       chunks: ["app"],
     });
+    // !1
+    // !2
+    new HTMLWebpackPlugin({
+      // имя: html/имяПапк/имяФайл
+      filename: `html/${folderName}/${
+        folderName + "s"
+      }/${firstTemplateFileName}`,
+      // `шаблон` ?пути?
+      template: secTempFilPath,
+      // minify: { collapseWhitespace: isProd },
+      minify: false,
+      // inject: true,
+      // inject: false,
+      chunks: ["app"],
+    });
     // !2
   });
-  // var results = [];
-  // fs.readdir(dir, function (err, list) {
-  // if (err) return done(err);
-  // var pending = list.length;
-  // if (!pending) return done(null, results);
-  // list.forEach(function (file) {
-  //   file = path.resolve(dir, file);
-  //   fs.stat(file, function (err, stat) {
-  //     if (stat && stat.isDirectory()) {
-  //       walk(file, function (err, res) {
-  //         results = results.concat(res);
-  //         if (!--pending) done(null, results);
-  //       });
-  //     } else {
-  //       results.push(file);
-  //       if (!--pending) done(null, results);
-  //     }
-  //   });
-  // });
-  // });
 }
 // !!!!
 // передаем в fn() путь основных папок с html. вызов в plugins().base[].concat(htmlPlugins)
