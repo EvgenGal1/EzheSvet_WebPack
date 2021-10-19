@@ -433,7 +433,7 @@ ibgJS();
 // ! клик по кнопке в новом тектово-картиночном блоке(+текст,прыг кнп)
 // переписать боле кратко
 // переделать поб структуру (карт+текст+кнп)
-function clickText2() {
+function clickToBlSub() {
   const contBl = Array.from(document.querySelectorAll(".cont-block-"));
   const subDet = contBl.map((item) => item.querySelector(".sub-"));
   // Тоже самое, что
@@ -481,7 +481,7 @@ function clickText2() {
     });
   });
 }
-clickText2();
+clickToBlSub();
 // // !
 
 // //! блоки на/для jQ

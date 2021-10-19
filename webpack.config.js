@@ -20,6 +20,7 @@ const OptimizeCssAssetWebpackPlugin = require("optimize-css-assets-webpack-plugi
 // минимизация JS
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const { log } = require("console");
+const { stringify } = require("querystring");
 // analyzer подк. визуал размер кода
 // const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
@@ -139,9 +140,10 @@ const jsLoaders = () => {
   return user;
 };
 
-// ! рекурсивный поиск по каталогам
+// ! рекурсивный поиск по каталогам (вывод путей, файлов и каталогов)
 // https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
 // https://ourcodeworld.com/articles/read/420/how-to-read-recursively-a-directory-in-node-js
+// https://habr.com/ru/company/ruvds/blog/424969/
 function filewalker(dir, done) {
   let results = [];
   fs.readdir(dir, function (err, list) {
@@ -149,18 +151,33 @@ function filewalker(dir, done) {
     var pending = list.length;
     if (!pending) return done(null, results);
     list.forEach(function (file) {
+      console.log("=FW= list 000000 " + list);
+      console.log("=FW= dir 000000 " + dir);
+      console.log("=FW= file 000000 " + file);
       file = path.resolve(dir, file);
+      console.log("=FW= dir 0000 " + dir);
+      console.log("=FW= file 0000 " + file);
       fs.stat(file, function (err, stat) {
         // Если каталог, выполнить рекурсивный вызов
+        console.log("=FW= file 0 " + file);
+        console.log("=FW= stat 0 " + stat);
         if (stat && stat.isDirectory()) {
+          console.log("=FW= stat 00 " + stat);
           // Добавить каталог в массив [прокомментируйте, если вам нужно удалить каталоги из массива]
           results.push(file);
+          console.log("=FW= file 000 " + file);
+          console.log("=FW= results 000 " + results);
           filewalker(file, function (err, res) {
             results = results.concat(res);
+            // console.log("=FW= results 1 " + results);
+            // console.log("=FW= res 1 " + res);
+            // console.log("=FW= file 1 " + file);
             if (!--pending) done(null, results);
           });
         } else {
           results.push(file);
+          // console.log("=FW= results 2 " + results);
+          // console.log("=FW= file 2 " + file);
           if (!--pending) done(null, results);
         }
       });
@@ -440,19 +457,14 @@ function generateHtmlPlugins20(templatesDir) {
 // !!!
 
 // !!!!
-// function generateHtmlPlugins(templatesDir) {
-//   const templateFolders = fs.readdirSync(templatesDir);
-//   return templateFolders.map((folderName) => {
-// function generateHtmlPlugins20(templatesDir) {
-//   fs.readdirSync(templatesDir).map((fileName) => {
-// var generateHtmlPlugins30 = function (dir, done) {
-// function generateHtmlPlugins30(dir, done) {
-function generateHtmlPluginsNNNN(dir) {
+function generateHtmlPluginsNNN(dir) {
   console.log("dir " + dir); // ./test ES4/html/views
   const templateFolders = fs.readdirSync(dir);
+  console.log(typeof dir); //~ string
   console.log("templateFolders !!!: " + templateFolders); //~ Audio,Catalog,Contact, и пр.
   return templateFolders.map((folderName) => {
     console.log("folderName >!1<: " + folderName); //~ Audio  //~ Catalog //~ Contact и пр.
+    console.log("folderName " + typeof folderName); //~ string
     const templateFoldersPath = path.resolve(
       // главн.папка, путьДоКат, имяПапк
       __dirname,
@@ -460,60 +472,70 @@ function generateHtmlPluginsNNNN(dir) {
       folderName
     );
     console.log("templateFoldersPath >>: " + templateFoldersPath); //~ D:\Про\...\views\Audio
-
-    // &0
-    // const folderPath = './test ES4/html/views'
-    // const isDirectory0 = fileName => {
-    //   return fs.lstatSync(fileName).isDirectory()
-    // }
-    // const ert0 = fs.readdirSync(templateFoldersPath).map(fileName => {
-    //   return path.join(templateFoldersPath, fileName)
-    //    // .filter(isDirectory0)
-    // })
-    // const filert0 = ert0.filter(isDirectory0)
-    // console.log('filert0 : ' + filert0); //~ D:\Про\...\views\Audio\audios
-    // console.log('ert0 : ' + ert0); //~ D:\Про\...\views\Audio\Audio.html, D:\Про\...\views\Audio\audios
-    // &0
-
+    console.log("tFP " + typeof templateFoldersPath); //~ string
     // &1
     const isDirectory = (fileName) => {
       return fs.lstatSync(fileName).isDirectory();
     };
-    // const readTemplateFileName1 = fs.readdirSync(templateFoldersPath)[1]; //~ audios //! НАКРАЙНЯК
-    // console.log('readTemplateFileName 1 : ' + readTemplateFileName1); //~ audios
-    const containsFolder = (path) => {
-      return fs.readdirSync(path);
-    };
-    const contentsTempFoldPath = containsFolder(templateFoldersPath);
-    // const contentsTempFoldPath = fs.readdirSync(templateFoldersPath);
+    console.log("isDir " + typeof isDirectory);
+    const readTemplateFileName1 = fs.readdirSync(templateFoldersPath)[1]; //~ audios //! НАКРАЙНЯК
+    console.log("readTemplateFileName 1 : " + readTemplateFileName1); //~ audios
+    // console.log(typeof readTemplateFileName1); //~ string
+    // const containsFolder = (path) => {
+    //   return fs.readdirSync(path);
+    // };
+    // const contentsTempFoldPath = containsFolder(templateFoldersPath);
+    const contentsTempFoldPath = fs.readdirSync(templateFoldersPath);
     console.log("contentsTempFoldPath : " + contentsTempFoldPath); //~ Audio.html,audios
     const contentsTempFoldPathJoinPath = fs
       .readdirSync(templateFoldersPath)
       .map((fileName) => {
         return path.join(templateFoldersPath, fileName);
+        // return path.join(templateFoldersPath, fileName).toString.filter(isDirectory);
       });
     console.log(
       "contentsTempFoldPathJoinPath : " + contentsTempFoldPathJoinPath
     ); //~ D:\Про\...\views\Audio\Audio.html, D:\Про\...\views\Audio\audios
-    const filterDerectTempFoldPathJP =
-      contentsTempFoldPathJoinPath.filter(isDirectory);
-    console.log(
-      "filterDerectTempFoldPathJP : +++ " + filterDerectTempFoldPathJP
-    ); //~ D:\Про\...\views\Audio\audios
-
+    console.log("contTFPJ " + typeof contentsTempFoldPathJoinPath); //~ object
+    const filterDirTFPJP = contentsTempFoldPathJoinPath.filter(isDirectory);
+    console.log("filterDirTFPJP : +++ " + filterDirTFPJP); //~ D:\Про\...\views\Audio\audios
+    console.log("filDirTFPJP " + typeof filterDirTFPJP); //~ object
+    // const strFilterDirTFPJP = stringify(filterDirTFPJP); //! нет ф. или кат, scandir 0=D%..%5Caudios
+    const strFilterDirTFPJP = String(filterDirTFPJP); //! нет ф. или кат, scandir (если нет подпапок)
+    console.log(String(filterDirTFPJP));
+    console.log("strFDTFPJP " + typeof strFilterDirTFPJP); //~ string
+    // typeof
     // &2
     console.log("qwerty");
-    // const contentsTempFoldPath00 = fs.readdirSync(filterDerectTempFoldPathJP); //! Аргумент «путь» должен быть строкового типа, экземпляром буфера или URL. Получен экземпляр массива
-    // const contfiltDirectTempFoldPathJP = containsFolder(filterDerectTempFoldPathJP) //! Аргумент «путь» должен быть строкового типа, экземпляром буфера или URL. Получен экземпляр массива
-    // console.log('contfiltDirectTempFoldPathJP : ' + contfiltDirectTempFoldPathJP);
-    // &2
+    const contentsTempFoldPathSecond = fs.readdirSync(strFilterDirTFPJP);
+    // const contentsTempFoldPath00 = fs.readdirSync(filterDirTFPJP); //! Арг Путь нежен строк типа. Это массив
+    console.log("contentsTempFoldPathSecond : " + contentsTempFoldPathSecond); //~ crossAndZero.html,sapper.html,snake.html
+    // &3
+    // for (const fileNamesSecondFolder of contentsTempFoldPathSecond) {
+    //   console.log("fileNamesSecondFolder : --- " + fileNamesSecondFolder);
+    //   console.log("fileNamesSecondFolder " + typeof fileNamesSecondFolder); //~ string
+    //   return;
+    // }
+    contentsTempFoldPathSecond.map(
+      // const fileNamesSecondFolder = contentsTempFoldPathSecond.map(
+      (fileNames) => {
+        console.log("fileNames : " + fileNames);
+        // &4
+        const pathSecondTemplates = path.resolve(
+          __dirname,
+          dir,
+          folderName,
+          readTemplateFileName1,
+          fileNames
+        );
+        console.log("pathSecondTemplates 2!>>: " + pathSecondTemplates); //~
+        // &4
+      }
+    );
+    // console.log("fileNamesSecondFolder : " + fileNamesSecondFolder);
 
-    // const folderNameSecond = readTemplateFoldersPath.filter(isDirectory) //! нет ф. или кат. 'Audio.html'
-    // const folderNameSecond = path.resolve(readTemplateFileName, folderName) //! Арг Путь нежен строк типа.
-    // const folderNameSecond = path.join(readTemplateFileName, folderName) //! Аргумент «путь» должен быть строкового типа. Получен экземпляр массива
-    // const dirFolder = templateFoldersPath.filter(isDirectory) //! Свойство "filter" не существует в типе "string"
-    // const dirFolder = templateFolders.filter(isDirectory) //! нет такого файла или каталога, lstat 'Audio'
-    // const folderNameSecond = templateFoldersPath + `/`  + readTemplateFileName.filter(isDirectory) //! нет такого файла или каталога, lstat 'Audio'
+    // &3
+    // &2
     // &1
 
     const firstTemplateFileName = fs.readdirSync(templateFoldersPath)[0];
@@ -627,11 +649,9 @@ function generateHtmlPluginsNNNN(dir) {
     // !2
     new HTMLWebpackPlugin({
       // имя: html/имяПапк/имяФайл
-      filename: `html/${folderName}/${
-        folderName + "s"
-      }/${firstTemplateFileName}`,
+      filename: `html/${folderName}/${readTemplateFileName}/${fileNames}`,
       // `шаблон` ?пути?
-      template: secTempFilPath,
+      template: pathSecondTemplates,
       // minify: { collapseWhitespace: isProd },
       minify: false,
       // inject: true,
@@ -642,6 +662,177 @@ function generateHtmlPluginsNNNN(dir) {
   });
 }
 // !!!!
+
+// !!!!!
+function generateHtmlPluginsNNNN(dir) {
+  console.log("dir " + dir); //~ ./test ES4/html/views //* string
+  const templateFolders = fs.readdirSync(dir);
+  console.log("tempeFolds + " + templateFolders); //~ Audio,Catalog,Contact, и пр. //* object
+  return templateFolders.map((firstFolderName) => {
+    console.log("firFoldNam 1 / " + firstFolderName); //~ Audio  //~ Catalog //~ Contact и пр. //* string
+    const firstTemplateFolderPath = path.resolve(
+      __dirname,
+      dir,
+      firstFolderName
+    );
+    console.log("firTemplFoldPaz 1 > " + firstTemplateFolderPath); //~ D:\Про\...\views\Audio //* string
+    const allTemplateFileName = fs.readdirSync(firstTemplateFolderPath); //~ Audio.html,audios //* object
+    console.log("allTemplateFileName : " + allTemplateFileName);
+    const firstTemplateFileName = fs.readdirSync(firstTemplateFolderPath)[0];
+    console.log("firTemplFilNam 1 ! " + firstTemplateFileName); //~ Audio.html пр. //* string
+    const firstTemplateFilePath = path.resolve(
+      __dirname,
+      dir,
+      firstFolderName,
+      firstTemplateFileName
+    );
+    console.log("firTemplFP 1 > ! " + firstTemplateFilePath); //~ D:\Про\...\views\Audio.html пр. //* string
+    //&1
+    const isFolder = (foldName) => {
+      console.log("foldName : " + foldName);
+      return fs.lstatSync(foldName).isDirectory();
+    };
+    const isFold = fs
+      .readdirSync(firstTemplateFolderPath)
+      .map((foldNames) => {
+        console.log("foldNames : " + foldNames);
+        return foldNames
+      //  return path.join(firstTemplateFolderPath, foldNames);
+      // ! СКОРЕЕ ВСЕГО НАДО РАЗБИТЬ ПО МЕТОДАМ(redS, map, filt) или ЗАЙТИ В FN()
+      })
+      // .filter(isFolder);
+    // if (isFolder == true) {
+    //   console.log(1);
+    // }
+    console.log("isFold : " + isFold); //~ D:\Про\...\Audio\audios //* object
+    const secondTemplateFolderPath = path.resolve(
+      __dirname,
+      dir,
+      firstFolderName//,
+      // foldNames
+    );
+    console.log("secTemplFoldPaz 1 > " + secondTemplateFolderPath); //~ D:\Про\...\views\Audio //* string
+    //&2
+    // ! вывод путей, файлов и каталогов ч/з fn() filewalker. СТОИТ РАСМОТРЕТЬ ПОБРОБНЕЕ!
+    // filewalker(firstTemplateFolderPath, function (err, data) {
+    //   if (err) {
+    //     throw err;
+    //   }
+    //   console.log(data);
+    // });
+    //&0
+    // const secondFolderName = fs.readdirSync(firstTemplateFolderPath)[1]; //~ audios //! НАКРАЙНЯК
+    // console.log("secFoldNam 2 / " + secondFolderName); //~ audios //* string
+    // // fs.readdirSync(firstTemplateFolderPath)
+    // allTemplateFileName.map((allFolderName) => {
+    //   console.log("allFolderName : " + allFolderName);
+    // });
+    //&0
+    console.log("q1");
+    return new HTMLWebpackPlugin(
+      {
+        // имя: html/имяПапк/имяФайл
+        filename: `html/${firstFolderName}/${firstTemplateFileName}`,
+        // `шаблон` ?пути?
+        template: firstTemplateFilePath,
+        // minify: { collapseWhitespace: isProd },
+        minify: false,
+        // inject: true,
+        // inject: false,
+        chunks: ["app"],
+      },
+      console.log("q2")
+    );
+    // console.log("isFold typ " + typeof isFold);
+    //   const secondTemplateFileName = fs.readdirSync(firstTemplateFolderPath)[1]; //~ audios //! НАКРАЙНЯК
+    // console.log("secTemplFilNam 2 / " + secondTemplateFileName); //~ audios //* string
+    // // &1
+    // const isDirectory = (fileName) => {
+    //   return fs.lstatSync(fileName).isDirectory();
+    // };
+    // console.log("isDir " + typeof isDirectory);
+    // const readTemplateFileName1 = fs.readdirSync(templateFoldersPath)[1]; //~ audios //! НАКРАЙНЯК
+    // console.log("readTemplateFileName 1 : " + readTemplateFileName1); //~ audios
+    // // console.log(typeof readTemplateFileName1); //~ string
+    // // const containsFolder = (path) => {
+    // //   return fs.readdirSync(path);
+    // // };
+    // // const contentsTempFoldPath = containsFolder(templateFoldersPath);
+    // const contentsTempFoldPath = fs.readdirSync(templateFoldersPath);
+    // console.log("contentsTempFoldPath : " + contentsTempFoldPath); //~ Audio.html,audios
+    // const contentsTempFoldPathJoinPath = fs
+    //   .readdirSync(templateFoldersPath)
+    //   .map((fileName) => {
+    //     return path.join(templateFoldersPath, fileName);
+    //     // return path.join(templateFoldersPath, fileName).toString.filter(isDirectory);
+    //   });
+    // console.log(
+    //   "contentsTempFoldPathJoinPath : " + contentsTempFoldPathJoinPath
+    // ); //~ D:\Про\...\views\Audio\Audio.html, D:\Про\...\views\Audio\audios
+    // console.log("contTFPJ " + typeof contentsTempFoldPathJoinPath); //~ object
+    // const filterDirTFPJP = contentsTempFoldPathJoinPath.filter(isDirectory);
+    // console.log("filterDirTFPJP : +++ " + filterDirTFPJP); //~ D:\Про\...\views\Audio\audios
+    // console.log("filDirTFPJP " + typeof filterDirTFPJP); //~ object
+    // // const strFilterDirTFPJP = stringify(filterDirTFPJP); //! нет ф. или кат, scandir 0=D%..%5Caudios
+    // const strFilterDirTFPJP = String(filterDirTFPJP); //! нет ф. или кат, scandir (если нет подпапок)
+    // console.log(String(filterDirTFPJP));
+    // console.log("strFDTFPJP " + typeof strFilterDirTFPJP); //~ string
+    // // typeof
+    // // &2
+    // console.log("qwerty");
+    // const contentsTempFoldPathSecond = fs.readdirSync(strFilterDirTFPJP);
+    // // const contentsTempFoldPath00 = fs.readdirSync(filterDirTFPJP); //! Арг Путь нежен строк типа. Это массив
+    // console.log("contentsTempFoldPathSecond : " + contentsTempFoldPathSecond); //~ crossAndZero.html,sapper.html,snake.html
+    // // &3
+    // contentsTempFoldPathSecond.map(
+    //   // const fileNamesSecondFolder = contentsTempFoldPathSecond.map(
+    //   (fileNames) => {
+    //     console.log("fileNames : " + fileNames);
+    //     // &4
+    //     const pathSecondTemplates = path.resolve(
+    //       __dirname,
+    //       dir,
+    //       folderName,
+    //       readTemplateFileName1,
+    //       fileNames
+    //     );
+    //     console.log("pathSecondTemplates 2!>>: " + pathSecondTemplates); //~
+    //     // &4
+    //   }
+    // );
+    // // &3
+    // // &2
+    // // &1
+
+    // !1
+    // return new HTMLWebpackPlugin({
+    //   // имя: html/имяПапк/имяФайл
+    //   filename: `html/${firstFolderName}/${firstTemplateFileName}`,
+    //   // `шаблон` ?пути?
+    //   template: firstTemplateFilePath,
+    //   // minify: { collapseWhitespace: isProd },
+    //   minify: false,
+    //   // inject: true,
+    //   // inject: false,
+    //   chunks: ["app"],
+    // });
+    // !1
+    // !2
+    // new HTMLWebpackPlugin({
+    //   // имя: html/имяПапк/имяФайл
+    //   filename: `html/${folderName}/${readTemplateFileName}/${fileNames}`,
+    //   // `шаблон` ?пути?
+    //   template: pathSecondTemplates,
+    //   // minify: { collapseWhitespace: isProd },
+    //   minify: false,
+    //   // inject: true,
+    //   // inject: false,
+    //   chunks: ["app"],
+    // });
+    // !2
+  });
+}
+// !!!!!
 // передаем в fn() путь основных папок с html. вызов в plugins().base[].concat(htmlPlugins)
 const htmlPlugins = generateHtmlPluginsNNNN("./test ES4/html/views");
 

@@ -1,4 +1,5 @@
 // !! JS Размеры, Прокрутка, Координаты. ФриПоЖиз - TEeKr2ON66A
+// ! https://html5.by/blog/scroll-effects/
 
 // ! РАЗМЕРЫ
 function sizeFri() {

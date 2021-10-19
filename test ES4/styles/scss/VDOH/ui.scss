@@ -429,7 +429,10 @@ h6 {
         transform: scale(-1, 1);
       }
     }
-    // для 1го img-
+    // для 1го img-. Обтекание картинки
+    // ! http://htmlbook.ru/blog/vvedenie-v-css-shapes
+    // ! https://www.internet-technologies.ru/articles/css-shapes.html
+    // ! https://habr.com/ru/post/190246/
     &:nth-child(1) {
       .block-img- {
         shape-outside: url(../../img/RickAndMorty.png);
