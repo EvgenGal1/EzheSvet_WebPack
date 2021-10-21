@@ -21,6 +21,7 @@ const OptimizeCssAssetWebpackPlugin = require("optimize-css-assets-webpack-plugi
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const { log } = require("console");
 const { stringify } = require("querystring");
+const { forEach } = require("lodash");
 // analyzer подк. визуал размер кода
 // const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
@@ -666,53 +667,203 @@ function generateHtmlPluginsNNN(dir) {
 // !!!!!
 function generateHtmlPluginsNNNN(dir) {
   console.log("dir " + dir); //~ ./test ES4/html/views //* string
-  const templateFolders = fs.readdirSync(dir);
-  console.log("tempeFolds + " + templateFolders); //~ Audio,Catalog,Contact, и пр. //* object
-  return templateFolders.map((firstFolderName) => {
+  const firstFolder = fs.readdirSync(dir);
+  console.log("tempeFolds + " + firstFolder); //~ Audio,Catalog,Contact, и пр. //* object
+  return firstFolder.map((firstFolderName) => {
     console.log("firFoldNam 1 / " + firstFolderName); //~ Audio  //~ Catalog //~ Contact и пр. //* string
-    const firstTemplateFolderPath = path.resolve(
-      __dirname,
-      dir,
-      firstFolderName
-    );
-    console.log("firTemplFoldPaz 1 > " + firstTemplateFolderPath); //~ D:\Про\...\views\Audio //* string
-    const allTemplateFileName = fs.readdirSync(firstTemplateFolderPath); //~ Audio.html,audios //* object
-    console.log("allTemplateFileName : " + allTemplateFileName);
-    const firstTemplateFileName = fs.readdirSync(firstTemplateFolderPath)[0];
-    console.log("firTemplFilNam 1 ! " + firstTemplateFileName); //~ Audio.html пр. //* string
-    const firstTemplateFilePath = path.resolve(
+    const firstFolderPath = path.resolve(__dirname, dir, firstFolderName);
+    console.log("firFoldPaz 1 > " + firstFolderPath); //~ D:\Про\...\views\Audio //* string
+    // const allFileName = fs.readdirSync(firstFolderPath); //~ Audio.html,audios //* object
+    // console.log("allFileName : " + allFileName);
+    const firstFileName = fs.readdirSync(firstFolderPath)[0];
+    console.log("firTemplFilNam 1 ! " + firstFileName); //~ Audio.html пр. //* string
+    const firstFilePath = path.resolve(
       __dirname,
       dir,
       firstFolderName,
-      firstTemplateFileName
+      firstFileName
     );
-    console.log("firTemplFP 1 > ! " + firstTemplateFilePath); //~ D:\Про\...\views\Audio.html пр. //* string
-    //&1
-    const isFolder = (foldName) => {
-      console.log("foldName : " + foldName);
-      return fs.lstatSync(foldName).isDirectory();
+    console.log("firTemplFP 1 > ! " + firstFilePath); //~ D:\Про\...\views\Audio.html пр. //* string
+    //&3
+    const secondFolder = fs.readdirSync(firstFolderPath);
+    console.log("secondFolder + " + secondFolder); //~ Audio.html,audios //* object
+    const isFolder = (folderName) => {
+      return fs.lstatSync(folderName).isDirectory();
     };
-    const isFold = fs
-      .readdirSync(firstTemplateFolderPath)
-      .map((foldNames) => {
-        console.log("foldNames : " + foldNames);
-        return foldNames
-      //  return path.join(firstTemplateFolderPath, foldNames);
-      // ! СКОРЕЕ ВСЕГО НАДО РАЗБИТЬ ПО МЕТОДАМ(redS, map, filt) или ЗАЙТИ В FN()
+    const isFolderss = fs
+      .readdirSync(firstFolderPath)
+      .map((folderName) => {
+        return path.join(firstFolderPath, folderName);
       })
-      // .filter(isFolder);
-    // if (isFolder == true) {
-    //   console.log(1);
-    // }
-    console.log("isFold : " + isFold); //~ D:\Про\...\Audio\audios //* object
-    const secondTemplateFolderPath = path.resolve(
-      __dirname,
-      dir,
-      firstFolderName//,
-      // foldNames
+      .filter(isFolder);
+    console.log("isFolderss : " + isFolderss); //~ D:\Про\...\Audio\audios //* object
+
+    const isFun = () => {
+      for (let isFo1 = 0; isFo1 < isFolderss.length; isFo1++) {
+        // const isFor =   for (let isFo1 = 0; isFo1 < isFolderss.length; isFo1++) {
+        // const isFo111 = isFolderss[isFo1];
+        return isFolderss[isFo1];
+        // console.log("isFo111 v: " + isFo111);
+        // console.log("isFo111 v: " + typeof isFo111);
+      }
+    };
+    console.log("isFun +: " + isFun()); //~ D:\Про\...\Video\videos //* string - isFun()
+
+    const funSecFoldPath = isFun();
+    console.log("funSecFoldPath +++: " + funSecFoldPath); //~ D:\Про\...\Video\videos //* string
+
+    //&3.3
+    const isFiless = fs.readdirSync(funSecFoldPath)
+    .map((fileName) => {
+      console.log('fileName 1: ' + fileName); //~ audios.html //~ plugins.html //* string
+      return fileName;
+      return path.join(funSecFoldPath, fileName);
+    })    
+    console.log("isFiless !: " + isFiless); //~ D:\Про\...\audios.html,D:\Про\...\plugins.html //* object
+    //&3.3
+    //&3.4
+    const isFun2 = () => { //??? не раб - ТРАВНИК - выводит только один последний эл.
+      for (let isFil1 of isFiless) {
+        console.log("FOR isFil1" + isFil1);
+        // const isFil111 = isFiless[isFil1];
+        // // return isFiless[isFil1];
+        // //  isFiless[isFil1];
+        // console.log("isFil111 v: " + isFil111);
+        // console.log("isFil111 v: " + typeof isFil111);
+        // return isFil111;
+        return isFil1;
+     }
+      // for (let isFil1 = 0; isFil1 < isFiless.length; isFil1++) {
+      //   // const isFor =   for (let isFo1 = 0; isFo1 < isFolderss.length; isFo1++) {
+      //   const isFil111 = isFiless[isFil1];
+      //   // return isFiless[isFil1];
+      //   //  isFiless[isFil1];
+      //   console.log("isFil111 v: " + isFil111);
+      //   console.log("isFil111 v: " + typeof isFil111);
+      //   return isFil111;
+      // }
+    };
+    console.log("isFun2 +: " + isFun2()); //~ audios.html //* string - isFun2()
+
+    const funSec2FilePath = isFun2();
+    console.log("funSec2FilePath ---: " + funSec2FilePath); //~ audios.html //* string
+    //&3.4
+    //&3.2
+    // const isFile = (fileName) => {
+    //   console.log('fileName 2: ' + fileName); //~ D:\Про\Audio\audios.html //* string
+    //   return fs.lstatSync(fileName).isFile();
+    // };
+    // const isFiless = fs.readdirSync(funSecFoldPath)
+    // .map((fileName) => {
+    //   console.log('fileName 1: ' + fileName); //~ audios.html //~ plugins.html //* string
+    //   return path.join(funSecFoldPath, fileName);
+    // })
+    // .filter(isFile);
+    // console.log("isFiless !: " + isFiless); //~ D:\Про\...\audios.html,D:\Про\...\plugins.html //* object
+    //&3.2
+    //&3.1
+    // // return secondFolder.map((secondFolderName) => { //! Invalid configuration object. Webpack has been initialized using a configuration object that does not match the API schema.
+    // const isFold = secondFolder.map((secondFolderName) => {
+    //   //   console.log("secondFoldNam 2 / " + secondFolderName); //~ Audio.html //~ audios //* string
+    //   const secondFolderPath = path.resolve(__dirname, dir, secondFolderName);
+    //   //   console.log("secFoldPaz 2 > " + secondFolderPath); //~  //* string
+    //   //   console.log("q1");
+    //   // return new HTMLWebpackPlugin(
+    //   //   {
+    //   //     // имя: html/имяПапк/имяФайл
+    //   //     filename: `html/${firstFolderName}/${secondFolderName}/${firstFileName}`,
+    //   //     // `шаблон` ?пути?
+    //   //     template: firstFilePath,
+    //   //     // minify: { collapseWhitespace: isProd },
+    //   //     minify: false,
+    //   //     // inject: true,
+    //   //     // inject: false,
+    //   //     chunks: ["app"],
+    //   //   },
+    //   //   console.log("q2")
+    //   // );
+    // });
+    // const isFoldVnetr = isFold
+    // console.log('isFoldVnetr : ' + isFoldVnetr);
+    //&3.1
+    console.log("q1");
+    return new HTMLWebpackPlugin(
+      {
+        // имя: html/имяПапк/имяФайл
+        filename: `html/${firstFolderName}/${firstFileName}`,
+        // filename: `html/${firstFolderName}/${secondFolderName}/${firstFileName}`,
+        // `шаблон` ?пути?
+        template: firstFilePath,
+        // minify: { collapseWhitespace: isProd },
+        minify: false,
+        // inject: true,
+        // inject: false,
+        chunks: ["app"],
+      },
+      console.log("q2")
     );
-    console.log("secTemplFoldPaz 1 > " + secondTemplateFolderPath); //~ D:\Про\...\views\Audio //* string
     //&2
+    // const isFolder = (foldName) => {
+    //   console.log("foldName 1: " + foldName);
+    // //  const foldNamePath = foldName
+    //   //  foldNamePath = path.join(firstFolderPath, foldName);
+    //   // console.log("foldName 2: " + foldNamePath);
+    //    return  fs.lstatSync(foldName).isDirectory();
+    // };
+    // // console.log('file v foldName : ' + foldName); // foldName is not defined
+    // // console.log("isFolder : " + isFolder(result));
+    // // console.info("isFolder : " +  isFolder);
+    // const isFold = fs.readdirSync(firstFolderPath).map((foldNames) => {
+    //   console.log("foldNames : " + foldNames);
+    //   //  isFolder(foldNames);
+    //    return path.join(firstFolderPath, foldNames);
+    //   // ! СКОРЕЕ ВСЕГО НАДО РАЗБИТЬ ПО МЕТОДАМ(redS, map, filt) или ЗАЙТИ В FN()
+    // }).filter(isFolder);
+    // // if (isFolder == true) {
+    // //   console.log(1);
+    // // }
+    // console.log("isFold : " + isFold); //~ D:\Про\...\Audio\audios //* object
+    // // const isFolder = (foldName) => {
+    // //   console.log("foldName 1: " + foldName);
+    // // //  const foldNamePath = foldName
+    // //    foldNamePath = path.join(firstTemplateFolderPath, foldName);
+    // //   console.log("foldName 2: " + foldNamePath);
+    // //   //  return  fs.lstatSync(foldName).isDirectory();
+    // //   const isF = fs.lstatSync(foldNamePath).isDirectory();
+    // //   console.log("isF : " + isF);
+    // //   if (isF == true) {
+    // //      console.log("dir " + isF);
+    // //      console.log('dir v foldName : ' + foldName);
+    // //      console.log('dir v foldNamePath : ' + foldNamePath);
+    // //      return foldName
+    // //   } else {
+    // //     console.log("file " + isF);
+    // //     console.log('file v foldName : ' + foldName);
+    // //     console.log('file v foldNamePath : ' + foldNamePath);
+    // //   }
+    // // };
+    // // // console.log('file v foldName : ' + foldName); // foldName is not defined
+    // // // console.log("isFolder : " + isFolder(result));
+    // // // console.info("isFolder : " +  isFolder);
+    // // const isFold = fs.readdirSync(firstTemplateFolderPath).map((foldNames) => {
+    // //   console.log("foldNames : " + foldNames);
+    // //    isFolder(foldNames);
+    // //   //  return path.join(firstTemplateFolderPath, foldNames);
+    // //   // ! СКОРЕЕ ВСЕГО НАДО РАЗБИТЬ ПО МЕТОДАМ(redS, map, filt) или ЗАЙТИ В FN()
+    // // });
+    // // // .filter(isFolder);
+    // // // if (isFolder == true) {
+    // // //   console.log(1);
+    // // // }
+    // // console.log("isFold : " + isFold); //~ D:\Про\...\Audio\audios //* object
+    // const secondFolderPath = path.resolve(
+    //   __dirname,
+    //   dir,
+    //   firstFolderName //,
+    //   // foldNames
+    // );
+    // console.log("secTemplFoldPaz 1 > " + secondFolderPath); //~ D:\Про\...\views\Audio //* string
+    //&1
     // ! вывод путей, файлов и каталогов ч/з fn() filewalker. СТОИТ РАСМОТРЕТЬ ПОБРОБНЕЕ!
     // filewalker(firstTemplateFolderPath, function (err, data) {
     //   if (err) {
@@ -728,21 +879,21 @@ function generateHtmlPluginsNNNN(dir) {
     //   console.log("allFolderName : " + allFolderName);
     // });
     //&0
-    console.log("q1");
-    return new HTMLWebpackPlugin(
-      {
-        // имя: html/имяПапк/имяФайл
-        filename: `html/${firstFolderName}/${firstTemplateFileName}`,
-        // `шаблон` ?пути?
-        template: firstTemplateFilePath,
-        // minify: { collapseWhitespace: isProd },
-        minify: false,
-        // inject: true,
-        // inject: false,
-        chunks: ["app"],
-      },
-      console.log("q2")
-    );
+    // console.log("q1");
+    // return new HTMLWebpackPlugin(
+    //   {
+    //     // имя: html/имяПапк/имяФайл
+    //     filename: `html/${firstFolderName}/${firstFileName}`,
+    //     // `шаблон` ?пути?
+    //     template: firstFilePath,
+    //     // minify: { collapseWhitespace: isProd },
+    //     minify: false,
+    //     // inject: true,
+    //     // inject: false,
+    //     chunks: ["app"],
+    //   },
+    //   console.log("q2")
+    // );
     // console.log("isFold typ " + typeof isFold);
     //   const secondTemplateFileName = fs.readdirSync(firstTemplateFolderPath)[1]; //~ audios //! НАКРАЙНЯК
     // console.log("secTemplFilNam 2 / " + secondTemplateFileName); //~ audios //* string
