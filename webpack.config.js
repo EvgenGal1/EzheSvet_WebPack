@@ -204,25 +204,11 @@ function filewalker(dir, done) {
 // принимает путь основ. папок с html в src, пересобирает всё dist
 function generateHtmlPlugins(templatesDir) {
   // в перем `папки шаблонов` = обращ. к файл.сист. синхр.чтен.директории принимая путь дериктории (список файлов\подкаталогов в каталоге)
-  // const templateFolders = fs.readdirSync(path.resolve(__dirname, templatesDir));
-  // const templateFolders = fs.readdirSync(path.resolve(__dirname, templatesDir), { withFileTypes: true });
   const templateFolders = fs.readdirSync(templatesDir);
   console.log("templatesDir:" + templatesDir);
   console.log("templateFolders:" + templateFolders);
   // возвращ. отфильтр., получ. ?только файлы и исключ. из вывода директории?
   return templateFolders.map((folderName) => {
-    // !
-    // const foldersNames = fs.readdirSync(path.resolve(__dirname, folderName))[0];
-    // const foldersNames = fs.readdirSync(folderName)[0]; // нет такого файла или каталога, scandir 'Audio'
-    // const foldersNames = fs.readdirSync(folderName);
-    // folderName.forEach((foldersNames) => {
-    //   return console.log(foldersNames);
-    // });
-    // folderName[0].fs.readdirSync((foldersNames) => {
-    //     return console.log(foldersNames);
-    //   }); // Невозможно прочитать свойство readdirSync из undefined
-    // console.log("foldersNames:" + foldersNames);
-    // !
     console.log("folderName:" + folderName);
     // в перем `путь к папкам шаблонов` = превращ последовательность путей или сегментов пути в абсолютный путь
     const templateFoldersPath = path.resolve(
@@ -232,89 +218,6 @@ function generateHtmlPlugins(templatesDir) {
       folderName
     );
     console.log("templateFoldersPath:" + templateFoldersPath);
-    // &
-    // const templateFolderFolders = fs.readdirSync(templateFoldersPath);
-    // console.log("templateFolderFolders:" + templateFolderFolders);
-
-    // // var tFF = path.dirname(templateFolderFolders);
-    // // console.log("dirname tFF " + tFF);
-
-    // // require('path').dirname('/test/something/file.txt') // /test/something
-    // templateFolderFolders.map((folderFoldersName) => {
-    //   // var tFF = path.dirname(templateFolderFolders);
-    //   // console.log("dirname tFF " + tFF);
-    //   console.log("folderFoldersName:" + folderFoldersName);
-    //   // console.log("folderFoldersName:" + folderFoldersName)[1];
-
-    //   var fFN = path.dirname(folderFoldersName);
-    //   console.log("dirname fFN " + fFN);
-
-    //   const templateFolderFoldersPath = path.resolve(
-    //     // const templateFolderFoldersPath = path.dirname(
-    //     // const templateFolderFoldersPath = path.resolve(
-    //     // const templateFolderFoldersPath = require('path').dirname(
-    //     __dirname,
-    //     templatesDir,
-    //     folderName,
-    //     folderFoldersName
-    //   );
-    //   console.log("templateFolderFoldersPath:" + templateFolderFoldersPath);
-
-    //  &&&
-    // let pathw = templatesDir
-    // fs.readdir(pathw, function (err, items) {
-    //   for (var i = 0; i < items.length; i++) {
-    //     var file = pathw + "/" + items[i];
-    //     console.log("Start: " + file);
-
-    //     fs.stat(file, function (err, stats) {
-    //       console.log("file "+file);
-    //       console.log(stats["size"]);
-    //     });
-    //   }
-    // });
-    //  &&&
-    //  &&
-    // if(templateFolderFolders.isDerictory()){
-    // // if(templateFolderFoldersPath.isDerictory()){
-    // // if(templateFolderFoldersPath.isFile()){
-    //   console.log('Это папка');
-    //  }
-    // let readFrom = templateFoldersPath; // из какой папки нужно всё прочитать
-    // let readFrom = templateFolderFoldersPath; // из какой папки нужно всё прочитать
-    // function listObjects(path) {
-    //   console.log("path :::::: " + path);
-    //   fs.readdir(path, (err, files) => {
-    //     // if (err) throw err;
-    //     console.log("files : " + files);
-    //     console.log("path2 : " + path);
-    //     for (let file of files) {
-    //       console.log("file :>>>>>> " + file);
-    //       fs.stat(file, (errStat, status) => { // - files is not iterable
-    // if (errStat) throw errStat;
-
-    //     if (status.isDerictory()) {
-    //       console.log("Папка: " + file);
-    //       listObjects(path + "/" + file); // продолжаем рекурсию
-    //     } else {
-    //       console.log("Файл: " + file);
-    //     }
-    //       });
-    //     }
-    //   });
-    // }
-    // listObjects(readFrom);
-    // console.log(listObjects);
-    //  &&
-
-    // var tFFP = path.dirname(templateFolderFoldersPath);
-    // // require('path').dirname('/test/something/file.txt')
-    // console.log("dirname tFFP " + tFFP);
-    // const secTemplateFileName = fs.readdirSync(templateFolderFoldersPath)[1];
-    // // const firstTemplateFileName = fs.readdirSync(templateFoldersPath);
-    // console.log("secTemplateFileName:" + secTemplateFileName);
-    // });
-    // &
     // в перем `имя первого файла шаблона` = обращ. к файл.сист. синхр.чтен.директ. ?к первому эл?
     const firstTemplateFileName = fs.readdirSync(templateFoldersPath)[0];
     // const firstTemplateFileName = fs.readdirSync(templateFoldersPath);
@@ -343,17 +246,6 @@ function generateHtmlPlugins(templatesDir) {
       // inject: false,
       chunks: ["app"],
     });
-    // !2
-    // return new HTMLWebpackPlugin({
-    //   // new HTMLWebpackPlugin({
-    //   // имя: html/имяПапк/имяФайл
-    //   // filename: `html/${folderName}/${folderName+"s"}/${firstTemplateFileName2}`,
-    //   filename: `html/${folderName}/${folderName}/${firstTemplateFileName}`,
-    //   // `шаблон` ?пути?
-    //   template: firstTemplateFilePath,
-    //   // minify: { collapseWhitespace: isProd },
-    // });
-    // !2
   });
 }
 
@@ -675,6 +567,8 @@ function generateHtmlPluginsNNNN(dir) {
     console.log("firFoldPaz 1 > " + firstFolderPath); //~ D:\Про\...\views\Audio //* string
     // const allFileName = fs.readdirSync(firstFolderPath); //~ Audio.html,audios //* object
     // console.log("allFileName : " + allFileName);
+     const secondFolderName = fs.readdirSync(firstFolderPath)[1]; //~ audios //! НАКРАЙНЯК
+    console.log("secFoldNam 2 / " + secondFolderName); //~ audios //* string
     const firstFileName = fs.readdirSync(firstFolderPath)[0];
     console.log("firTemplFilNam 1 ! " + firstFileName); //~ Audio.html пр. //* string
     const firstFilePath = path.resolve(
@@ -743,11 +637,20 @@ function generateHtmlPluginsNNNN(dir) {
       //   return isFil111;
       // }
     };
-    console.log("isFun2 +: " + isFun2()); //~ audios.html //* string - isFun2()
+    console.log("isFun2 +: " + isFun2()); //~ audios.html //* string - isFun2() 
 
     const funSec2FilePath = isFun2();
     console.log("funSec2FilePath ---: " + funSec2FilePath); //~ audios.html //* string
     //&3.4
+    //&3.5
+    const secondFilePath = path.resolve(
+      __dirname,
+      dir,
+      firstFolderName,
+      secondFolderName,
+      funSec2FilePath
+    );
+    //&3.5
     //&3.2
     // const isFile = (fileName) => {
     //   console.log('fileName 2: ' + fileName); //~ D:\Про\Audio\audios.html //* string
@@ -790,10 +693,11 @@ function generateHtmlPluginsNNNN(dir) {
     return new HTMLWebpackPlugin(
       {
         // имя: html/имяПапк/имяФайл
-        filename: `html/${firstFolderName}/${firstFileName}`,
-        // filename: `html/${firstFolderName}/${secondFolderName}/${firstFileName}`,
+        // filename: `html/${firstFolderName}/${firstFileName}`,
+        filename: `html/${firstFolderName}/${secondFolderName}/${funSec2FilePath}`,
         // `шаблон` ?пути?
-        template: firstFilePath,
+        // template: firstFilePath,
+        template: secondFilePath,
         // minify: { collapseWhitespace: isProd },
         minify: false,
         // inject: true,
@@ -985,7 +889,7 @@ function generateHtmlPluginsNNNN(dir) {
 }
 // !!!!!
 // передаем в fn() путь основных папок с html. вызов в plugins().base[].concat(htmlPlugins)
-const htmlPlugins = generateHtmlPluginsNNNN("./test ES4/html/views");
+const htmlPlugins = generateHtmlPlugins("./test ES4/html/views");
 
 // analyzer(визуал размер кода) и plugin ч/з fn()
 // описание plugin в plugins:стандарт + описание

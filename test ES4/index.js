@@ -454,10 +454,12 @@ function clickToBlSub() {
         blText.style.padding = "0px";
         textDet.style.display = "block";
         const blTextHeight = blText.offsetHeight;
+        console.log('blTextHeight : ' + blTextHeight);
         // blSub.style.top = "50px";
         // blSub.style.top = "0px" + "15px";
         // blSub.style.top = "0px" + textDetHeight;
         blSub.style.top = blTextHeight + "px";
+        console.log('blSub.style.top : ' + blSub.style.top);
         blSub.style.left = "10%";
         blSub.style.marginTop = "15px";
         blSub.style.transform = "scale(1, 1)";
