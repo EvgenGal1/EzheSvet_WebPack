@@ -22,58 +22,58 @@ body {
   background-color: #cccccc;
 }
 
-//<скролл>====================================================
+//<скроллбар(полоса прокрутки)>====================================================
 // !!! http://htmlbook.ru/blog/polzovatelskie-skrollbary-v-webkit
 // будущие стили
 * {
   // "auto" или "thin"
   scrollbar-width: thin;
   scrollbar-color: $DarkRed #333333;
-}
-// весь scrollbar
-::-webkit-scrollbar {
-  height: 12px;
-  width: 12px;
-}
-// кнопка верх/вниз
-::-webkit-scrollbar-button {
-  background-image: url("https://yraaa.ru/_pu/24/59610063.png");
-  background-color: #ffcb17;
-  background-color: #555555;
-  background-position: center;
-  background-repeat: no-repeat;
-  content: "";
-  // width: 6px;
-  // height: 0px;
-}
-// дорожка/трек
-::-webkit-scrollbar-track {
-  background-color: #333333;
-  box-shadow: 0px 0px 3px #000 inset;
-}
-// видимая часть трека
-// ::-webkit-scrollbar-track-piece {
-// background-color: blue;
-// }
-// бегунок/ползунок
-::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  background-color: #ffcb17;
-  background-color: $DarkRed;
-  box-shadow: 0px 1px 1px #fff inset;
-  background-image: url("https://yraaa.ru/_pu/24/59610063.png");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-// изменение размеров в углу
-::-webkit-resizer {
-  background-image: url("");
-  background-repeat: no-repeat;
-  width: 7px;
-  height: 7px;
-}
 
+  // весь scrollbar
+  ::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+  }
+  // кнопка верх/вниз
+  ::-webkit-scrollbar-button {
+    background-image: url("https://yraaa.ru/_pu/24/59610063.png");
+    background-color: #ffcb17;
+    background-color: #555555;
+    background-position: center;
+    background-repeat: no-repeat;
+    content: "";
+    // width: 6px;
+    // height: 0px;
+  }
+  // дорожка/трек
+  ::-webkit-scrollbar-track {
+    background-color: #333333;
+    box-shadow: 0px 0px 3px #000 inset;
+  }
+  // видимая часть трека
+  // ::-webkit-scrollbar-track-piece {
+  // background-color: blue;
+  // }
+  // бегунок/ползунок
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #ffcb17;
+    background-color: $DarkRed;
+    box-shadow: 0px 1px 1px #fff inset;
+    background-image: url("https://yraaa.ru/_pu/24/59610063.png");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  // изменение размеров в углу
+  ::-webkit-resizer {
+    background-image: url("");
+    background-repeat: no-repeat;
+    width: 7px;
+    height: 7px;
+  }
+}
 //<>====================================================
 hr {
   display: block;
@@ -461,7 +461,7 @@ h6 {
     &:last-child {
       margin: 0 0 25px;
     }
-    
+
     // картиночный блок и кнп
     .block-img- {
       position: relative;
@@ -550,7 +550,8 @@ h6 {
       word-wrap: break-word;
       font-weight: bold;
       font-family: Georgia, "Times New Roman", Times, serif;
-      transition: all 0.3s ease 0s;
+      //??? не раб - ТРАВНИК - c transition стал выводить большую высоту(~ 40px). было норм
+      // transition: all 0.3s ease 0s;
       &:first-child {
         color: blue;
       }

@@ -5,12 +5,12 @@ import "./js/Сайт VDOH/devJS/parseTheme.js";
 import "./styles/scss/styles.scss";
 
 // врем. подкл JS/CSS/SCSS
-import "./js/Сайт VDOH/devJS/JS_fri_TEeKr2ON66A.js";
+import "./js/Сайт VDOH/devJS/effect.js";
 // ??? не раб - не принимает перемен е/и подкл файл сюда
 // Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):
 // ModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
 // SassError: Undefined variable. background: $DarkRed;
-// import "./styles/scss/htmlProjsBlocks/JS_fri_TEeKr2ON66A.scss"
+// import "./styles/scss/htmlProjsBlocks/mini-aside.scss"
 
 // !
 // ! разобрать и удалить
@@ -459,6 +459,7 @@ function clickToBlSub() {
         // blSub.style.top = "0px" + "15px";
         // blSub.style.top = "0px" + textDetHeight;
         blSub.style.top = blTextHeight + "px";
+        //??? не раб - ТРАВНИК - с transition стал выводить большую высоту(~ 40px). было норм
         console.log('blSub.style.top : ' + blSub.style.top);
         blSub.style.left = "10%";
         blSub.style.marginTop = "15px";

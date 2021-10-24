@@ -567,7 +567,7 @@ function generateHtmlPluginsNNNN(dir) {
     console.log("firFoldPaz 1 > " + firstFolderPath); //~ D:\Про\...\views\Audio //* string
     // const allFileName = fs.readdirSync(firstFolderPath); //~ Audio.html,audios //* object
     // console.log("allFileName : " + allFileName);
-     const secondFolderName = fs.readdirSync(firstFolderPath)[1]; //~ audios //! НАКРАЙНЯК
+    const secondFolderName = fs.readdirSync(firstFolderPath)[1]; //~ audios //! НАКРАЙНЯК
     console.log("secFoldNam 2 / " + secondFolderName); //~ audios //* string
     const firstFileName = fs.readdirSync(firstFolderPath)[0];
     console.log("firTemplFilNam 1 ! " + firstFileName); //~ Audio.html пр. //* string
@@ -607,41 +607,46 @@ function generateHtmlPluginsNNNN(dir) {
     console.log("funSecFoldPath +++: " + funSecFoldPath); //~ D:\Про\...\Video\videos //* string
 
     //&3.3
-    const isFiless = fs.readdirSync(funSecFoldPath)
-    .map((fileName) => {
-      console.log('fileName 1: ' + fileName); //~ audios.html //~ plugins.html //* string
+    const isFiless = fs.readdirSync(funSecFoldPath).map((fileName) => {
+      console.log("fileName 1: " + fileName); //~ audios.html //~ plugins.html //* string
       return fileName;
       return path.join(funSecFoldPath, fileName);
-    })    
+    });
     console.log("isFiless !: " + isFiless); //~ D:\Про\...\audios.html,D:\Про\...\plugins.html //* object
     //&3.3
     //&3.4
-    const isFun2 = () => { //??? не раб - ТРАВНИК - выводит только один последний эл.
-      for (let isFil1 of isFiless) {
-        console.log("FOR isFil1" + isFil1);
+    const isFun2 = () => {
+      //??? не раб - ТРАВНИК - выводит только один эл.
+      //   for (let isFil1 of isFiless) {
+      //     console.log("FOR isFil1 " + isFil1);
+      //     // const isFil111 = isFiless[isFil1];
+      //     // return isFil111; //~ undefined
+      //     return isFil1; //~ audios.html //* string - вывод одного файла
+      //  }
+      var isFil3 = "";
+      console.log("isFil3 : " + isFil3);
+      // for (let isFil1 = 0; isFil1 < isFiless.length; isFil1++) {
+      for (var isFil1 in isFiless) {
+        // const isFor =   for (let isFo1 = 0; isFo1 < isFolderss.length; isFo1++) {
+        console.log("FOR isFiless.length : " + isFiless.length);
+        console.log("FOR isFiless : " + isFiless);
+        console.log("FOR isFil1 : " + isFil1);
         // const isFil111 = isFiless[isFil1];
-        // // return isFiless[isFil1];
-        // //  isFiless[isFil1];
+        isFil3 = isFiless[isFil1]; //~ audios.html //* string - вывод одного файла
+        // return isFiless[isFil1];
+        //  isFiless[isFil1];
         // console.log("isFil111 v: " + isFil111);
         // console.log("isFil111 v: " + typeof isFil111);
-        // return isFil111;
-        return isFil1;
-     }
-      // for (let isFil1 = 0; isFil1 < isFiless.length; isFil1++) {
-      //   // const isFor =   for (let isFo1 = 0; isFo1 < isFolderss.length; isFo1++) {
-      //   const isFil111 = isFiless[isFil1];
-      //   // return isFiless[isFil1];
-      //   //  isFiless[isFil1];
-      //   console.log("isFil111 v: " + isFil111);
-      //   console.log("isFil111 v: " + typeof isFil111);
-      //   return isFil111;
-      // }
+        // return isFil111; //~ audios.html //* string - вывод одного файла
+      }
+      console.log("isFil3 : " + isFil3);
+      return isFil3;
     };
-    console.log("isFun2 +: " + isFun2()); //~ audios.html //* string - isFun2() 
+    // console.log("isFun2 +: " + isFun2()); //~ audios.html //* string - isFun2()
 
+    //&3.4
     const funSec2FilePath = isFun2();
     console.log("funSec2FilePath ---: " + funSec2FilePath); //~ audios.html //* string
-    //&3.4
     //&3.5
     const secondFilePath = path.resolve(
       __dirname,
@@ -650,6 +655,7 @@ function generateHtmlPluginsNNNN(dir) {
       secondFolderName,
       funSec2FilePath
     );
+    console.log("secondFilePath : " + secondFilePath); //~ D:\Про\...\audios\plugins.html //* string
     //&3.5
     //&3.2
     // const isFile = (fileName) => {
@@ -689,24 +695,47 @@ function generateHtmlPluginsNNNN(dir) {
     // const isFoldVnetr = isFold
     // console.log('isFoldVnetr : ' + isFoldVnetr);
     //&3.1
+    //??? не раб - ТРАВНИК - выводит только один new HTML - последний
     console.log("q1");
-    return new HTMLWebpackPlugin(
-      {
-        // имя: html/имяПапк/имяФайл
-        // filename: `html/${firstFolderName}/${firstFileName}`,
-        filename: `html/${firstFolderName}/${secondFolderName}/${funSec2FilePath}`,
-        // `шаблон` ?пути?
-        // template: firstFilePath,
-        template: secondFilePath,
-        // minify: { collapseWhitespace: isProd },
-        minify: false,
-        // inject: true,
-        // inject: false,
-        chunks: ["app"],
-      },
-      console.log("q2")
+    return (
+      new HTMLWebpackPlugin(
+        //  new HTMLWebpackPlugin(
+        {
+          // имя: html/имяПапк/имяФайл
+          // filename: `html/${firstFolderName}/${firstFileName}`,
+          filename: `html/${firstFolderName}/${secondFolderName}/${funSec2FilePath}`,
+          // `шаблон` ?пути?
+          // template: firstFilePath,
+          template: secondFilePath,
+          // minify: { collapseWhitespace: isProd },
+          minify: false,
+          // inject: true,
+          // inject: false,
+          chunks: ["app"],
+        },
+        console.log("q2")
+      ),
+      console.log("q3"),
+      new HTMLWebpackPlugin(
+        {
+          // имя: html/имяПапк/имяФайл
+          filename: `html/${firstFolderName}/${firstFileName}`,
+          // filename: `html/${firstFolderName}/${secondFolderName}/${funSec2FilePath}`,
+          // `шаблон` ?пути?
+          // template: firstFilePath,
+          // template: secondFilePath,
+          minify: { collapseWhitespace: isProd },
+          minify: false,
+          // inject: true,
+          // inject: false,
+          chunks: ["app"],
+        },
+        console.log("q4")
+      )
     );
     //&2
+    //&3
+    //&4
     // const isFolder = (foldName) => {
     //   console.log("foldName 1: " + foldName);
     // //  const foldNamePath = foldName
