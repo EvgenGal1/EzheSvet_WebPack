@@ -1,5 +1,5 @@
 // подкл JS
-import "./js/Сайт VDOH/devJS/parseTheme.js";
+import "./js/Сайт VDOH/devJS/themeModesSettings.js";
 
 // подкл CSS/SCSS
 import "./styles/scss/styles.scss";

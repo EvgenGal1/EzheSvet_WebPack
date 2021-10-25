@@ -1,12 +1,12 @@
-// <parseTheme.scss()>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
+// ! <themeModesSettingsBtns.scss()>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
 
 // menu__bottom ()>˅=======================================================================================˅
 .menu__bottom {
   // display: flex;
   // justify-content: flex-end;
   // .menu-set {
-    // display: flex;
-    // justify-content: flex-end;
+  // display: flex;
+  // justify-content: flex-end;
   // }
   .menu-set__items {
     width: 100px;
@@ -578,10 +578,10 @@
       transition: all 0.3s ease 0s;
     }
     // &:after {
-      // content: "☁";
-      // position: absolute;
-      // font-size: 17px;
-      // z-index: 2;
+    // content: "☁";
+    // position: absolute;
+    // font-size: 17px;
+    // z-index: 2;
     // }
   }
   .sw3btn-radio__light:checked ~ .sw3btn-slider {
@@ -1062,7 +1062,7 @@
 
 // В заключении скажу, что стандартный подход изменения css заключается в использовании метода jQuery.css(). В нем тоже есть свои особенности и знать его нужно всегда.
 
-//</parseTheme.scss()>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄
+// ! </themeModesSettingsBtns.scss()>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄
 
 //! блоки на/для jQ
 .block {
@@ -1076,10 +1076,13 @@
 #block2 {
   background-color: blue;
 }
-.btn {
-  width: 100px;
-  height: 50px;
-  margin: 20px;
+.dlJQ {
+  display: flex;
+  .btn {
+    width: 100px;
+    height: 50px;
+    margin: 0px 10px;
+  }
   background-color: #000;
 }
 .block.active {

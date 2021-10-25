@@ -1,7 +1,8 @@
 // !!! СВОЁ и не только
 
+// общий переменные
 const header = document.querySelector("header");
-const helloys = document.querySelector(".helloys")//.offsetHeight + 150;
+const helloys = document.querySelector(".helloys");
 const centrCont = document.querySelector(".centr-cont-");
 const probB = document.querySelector(".probB");
 const footer = document.querySelector("footer");
@@ -11,25 +12,45 @@ function setScrollBy() {
   window.scrollBy(0, 50);
 }
 
-// scrollTo без передачи blocka
-function setScroll() {
-  window.scrollTo({
-    top: 0,
-    // block: "start",
-    behavior: "smooth",
-  });
+// scrollTo для header и holloys(у них изменяемые размеры в звисимости от скрола)
+function setScroll(block) {
+  if (block == header) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+  if (block == helloys) {
+    window.scrollTo({
+      top: 100,
+      behavior: "smooth",
+    });
+  }
 }
 
-// переход к переданому block
+// переход к переданому block с вычеслением header
 function setScrollTo(block) {
-  const heightHeader = document.querySelector("header").offsetHeight + 10;
-  
-// const helloys = document.querySelector("helloys").offsetHeight + 150;
-  // ??? не раб - при скроле с самого верха(когда header полный) доходит не до конца изза не учитываемого сложившегося headera 
-  const goToBlockValue =
-    block.getBoundingClientRect().top + window.pageYOffset - heightHeader;
-  window.scrollTo({ top: goToBlockValue, behavior: "smooth" });
-  console.log('goToBlockValue : ' + goToBlockValue);
+  // ??? не раб - всё раб. надо разобратся в логике
+  // когда header сохращённый
+  const heightHeader = document.querySelector("header").offsetHeight + 10; //~ 60
+  // когда header полный
+  const heightHeader2 = document.querySelector("header").offsetHeight - 80;  //~ 70
+  if (heightHeader < 100) {
+    goToBlockValue(block, heightHeader);
+    console.log('heightHeader : ' + heightHeader); //~ 60
+    console.log('heightHeader2- : ' + heightHeader2); //~ -30
+  } else {
+    goToBlockValue(block, heightHeader2);
+    console.log('heightHeader2 : ' + heightHeader2); //~ 70
+    console.log('heightHeader- : ' + heightHeader); //~ 160
+  }
+  function goToBlockValue(block, heightHeader) {
+    const goToBlockValuePar =
+    // getBoundingClientRect() - `получить огранич. прямоуг. кл.` - получ. коорд относит окна просмотра и размеры
+    // pageYOffset(scrollY) - кол-во прокруч пикселей
+      block.getBoundingClientRect().top + window.pageYOffset - heightHeader;
+    window.scrollTo({ top: goToBlockValuePar, behavior: "smooth" });
+  }
 }
 
 // переключает выкл scrollbar(полоса прокрутки)
@@ -37,23 +58,7 @@ function setEnableDesableScroll() {
   document.body.classList.toggle("scroll-lock");
 }
 
-// ??? не раб - не знаю как поставить .mini-aside вертикально по середине доступного окна браузера
-function clickMinAside2() {
-  const mainEl = document.documentElement;
-  const mainElHeight = mainEl.clientHeight;
-  // console.log("доступ. Width:" + mainElWidth);
-  console.log("доступ. Height:" + mainElHeight);
-  let miniAside = document.querySelector(".mini-aside");
-  // miniAside.document.body.style.left = function () {
-  //   // calc(100% / clientHeight(););
-  //   clientHeight() / 2;
-  //   clientHeight();
-  //   miniAside.clientHeight();
-  // };
-}
-// clickMinAside2();
-
-// ! нажатие на кнопки .mini-aside(мини меню с боку на скролах)
+// ! нажатие на кнопки .mini-aside(мини меню с боку на скролах) - переход к разделу
 function clickMinAside() {
   let jsScroll = document.querySelectorAll(".ma-bl__js-scroll");
   jsScroll.forEach(function (btn) {
@@ -67,8 +72,8 @@ function clickMinAside() {
       const jScr7 = document.querySelector("#jScr7"); // откл
 
       if (btn == jScr1) setScrollBy();
-      if (btn == jScr2) setScroll();
-      if (btn == jScr3) setScrollTo(helloys);
+      if (btn == jScr2) setScroll(header);
+      if (btn == jScr3) setScroll(helloys);
       if (btn == jScr4) setScrollTo(centrCont);
       if (btn == jScr5) setScrollTo(probB);
       if (btn == jScr6) setScrollTo(footer);
@@ -78,7 +83,7 @@ function clickMinAside() {
 }
 clickMinAside();
 
-// ! <scrolHeader(сокращ МЕНЮ при скроле вниз)>===========================================================================
+// ! <scrolHeader(сокращ МЕНЮ при скроле вниз)>======================================================================
 function scrolHeader() {
   // !1
   var headerMenu = document.querySelector(".header-menu");
