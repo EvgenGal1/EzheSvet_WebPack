@@ -34,20 +34,20 @@ function setScrollTo(block) {
   // когда header сохращённый
   const heightHeader = document.querySelector("header").offsetHeight + 10; //~ 60
   // когда header полный
-  const heightHeader2 = document.querySelector("header").offsetHeight - 80;  //~ 70
+  const heightHeader2 = document.querySelector("header").offsetHeight - 80; //~ 70
   if (heightHeader < 100) {
     goToBlockValue(block, heightHeader);
-    console.log('heightHeader : ' + heightHeader); //~ 60
-    console.log('heightHeader2- : ' + heightHeader2); //~ -30
+    console.log("heightHeader : " + heightHeader); //~ 60
+    console.log("heightHeader2- : " + heightHeader2); //~ -30
   } else {
     goToBlockValue(block, heightHeader2);
-    console.log('heightHeader2 : ' + heightHeader2); //~ 70
-    console.log('heightHeader- : ' + heightHeader); //~ 160
+    console.log("heightHeader2 : " + heightHeader2); //~ 70
+    console.log("heightHeader- : " + heightHeader); //~ 160
   }
   function goToBlockValue(block, heightHeader) {
     const goToBlockValuePar =
-    // getBoundingClientRect() - `получить огранич. прямоуг. кл.` - получ. коорд относит окна просмотра и размеры
-    // pageYOffset(scrollY) - кол-во прокруч пикселей
+      // getBoundingClientRect() - `получить огранич. прямоуг. кл.` - получ. коорд относит окна просмотра и размеры
+      // pageYOffset(scrollY) - кол-во прокруч пикселей
       block.getBoundingClientRect().top + window.pageYOffset - heightHeader;
     window.scrollTo({ top: goToBlockValuePar, behavior: "smooth" });
   }
@@ -219,17 +219,117 @@ function replaceLinks() {
   // let hedA = dQS(".header-logo > a").href; //??? не раб - не восприн сокращ doc.quSel
   let thisTitl = document.title; //~ Главная - если на главной (Каталог)
   console.log("thisTitl : " + thisTitl);
-  let hedImg = document.querySelector(".header-logo img").src; //~ http://localhost:8080/img/logo/%D0...Red.png
+  let hedImg = document.querySelector(".header-logo img").src; //~ http://localhost:8080/img/logo/%D0...Red.png //* string
   let hedA = document.querySelector(".header-logo a").href; //~ http://localhost:8080/index.html
   let aLinkMain = document.querySelector("a.items__link[href*='index']").href; //~ http://loc.../index.html
   let aLinkCat = document.querySelector("a.items__link[href*='Catalog']").href; //~ http://l../html/Catalog/Catalog.html
-  let aLinkCatSpace = document.querySelector("a[href*='Space']"); //~ http://l../html/Catalog/catalogs/dreamSpace.html
+  let aLinkCatSpace = document.querySelector("a[href*='Space']").href; //~ http://l../html/Catalog/catalogs/dreamSpace.html
+  // let hierarA = document.querySelectorAll("a[class^='hierar']").href; //~ undefined //* undefined
+  let hierarA = document.querySelectorAll("a[class*='hierar']"); //~ [object NodeList] //* object
+  console.log("hierarA : " + hierarA);
+  console.log("hierarA : " + typeof hierarA);
 
-  if (thisTitl == "Каталог") {
-    addEventListener;
+  // ??? не раб - на 2 еирарх ошб - Cannot read properties of null (reading 'href')
+  // let hierar = document.querySelector("a[class^='hierar']").href; //~ http://l.../index.html //* object
+  // console.log("hierar : " + hierar);
+  // console.log("hierar : " + typeof hierar);
+
+  //^ ч/з for
+  // let elementToStr = ""; //~ -
+  // console.log("elementToStr1 : " + elementToStr);
+  // for (let index = 0; index < hierarA.length; index++) {
+  //   let elementH = hierarA; //~ [object NodeList] //* object
+  //   let elementI = index; //~ 1, //~ 2 //* number
+  //   let elementA = hierarA[index]; //~ h.../index.html, //~ h.../Catalog.html //* object
+  //   let elementToStr = elementA.toString(); //~ h.../index.html, //~ h.../Catalog.html //* string
+  //   console.log("elementToStr2 : " + elementToStr);
+  //   // return elementToStr;
+  // }
+  // console.log("elementToStr3 : " + elementToStr); //~ -
+
+  //^ ч/з for2
+  // ! НЕ ПРОБОВАЛ !!!
+  // !!! https://question-it.com/questions/1048867/vernut-vse-znachenija-iz-tsikla-for-v-javascript
+  // var collections = [];
+  // for (var i = 0; i < dataSets.length; i++) {
+  //     var result = _.filter(data, function(item){
+  //       return _.contains(item, dataSets[i]);
+  //     });
+  //     collections[i] = [];
+  //     for(x in result) collections[i].push(result[x].value);
+  // }
+
+  //^ ч/з forEach
+  // !!! https://www.techiediaries.com/javascript-queryselectorall-nodelist-foreach/
+  // [].forEach.call(hierarA, (e) => { //~ h.../index.html, //~ h.../Catalog.html //* object
+  //   console.log("e : " + e);
+  //   console.log("e : " + typeof e);
+  // });
+
+  //^ ч/з Array.from()
+  // !!! javascript-queryselectorall-nodelist-foreach
+  let hierarAArr = Array.from(hierarA); //~ h.../index.html,h.../Catalog.html,h.../Game.html //* object
+  console.log("hierarAArr : " + hierarAArr);
+  console.log("hierarAArr : " + typeof hierarAArr);
+
+  //^ ч/з fn()
+  // !!! https://askdev.ru/q/vozvrat-znacheniy-iz-cikla-for-v-javascript-341945/
+  let a = hierarAArr;
+  console.log("a 1: " + a);
+  // getId(hierarAArr);
+  var result = ""; //~ -
+  console.log("result -: " + result);
+  function getId(a) {
+    console.log("a 2: " + a);
+    var result = "";
+    // var aL = a.length;
+    // for(i = 0; i < aL; i++ ){
+    for (i = 0; i < a.length; i++) {
+      let aI = a[i];
+      console.log("aI : " + aI);
+      console.log("aI : " + typeof aI);
+      console.log("i : " + i); //~ 0, ... //~ 3 //* number
+      console.log("a.length : " + a.length); //~ 4
+      console.log("result 1: " + result); //~ -, ... //~ 3
+      result += a[i];
+      // result ++ //~ 4
+      console.log("result 2: " + result); //~ 1, ... //~ 4
+    }
+    console.log("result 3: " + result); //~ 4 //* string
+    return result;
   }
+  // console.log("getId 1 : " + getId);
+  // console.log("getId 1 : " + typeof getId);
+  console.log("getId 2--------------: " + getId(a)[2][2]); //~ undefined
+  console.log("getId 2---------------: " + getId(a)[2]); //~ t
+  console.log("getId 2----------------: " + getId(a)); //~ http://localhost:8080/index.htmlhttp://localhost:8080/index.htmlhttp://localhost:8080/html/Catalog/Catalog.htmlhttp://localhost:8080/html/Game/Game.html
+  console.log("getId 2+++++++++++: " + typeof getId(a)); //* string
+  console.log("result --: " + result); //~ -
+
+  // const hierarAA = Array.from(document.querySelectorAll("a[class^='hierar']")); //~ http://l.../index.html //* object
+  // console.log('hierarAA : ' + hierarAA.length);
+  // const hierarAAA = hierarAA.map((item) => {
+  //  let item1 = item.toString();
+  //   console.log("item : " + item);
+  //   console.log("item : " + typeof item);
+  //   console.log("item1 : " + item1);
+  //   console.log("item1 : " + typeof item1);
+  // }); //~ h.../index.html //* object
+  // console.log("hierarAAA2 : " + hierarAAA);
+  // console.log("hierarAAA2 : " + typeof hierarAAA);
+  //   // ! hierarA.map is not a function
+  //   let hierarAF = hierarA.map((item) => {
+  // //  return  hierarAА = hierarA.map((item) => {
+  //     // item;
+  //     console.log("item : " + item);
+  //     console.log("item : " + typeof item);
+  //   });
+
+  // if (thisTitl == "Каталог") {
+  //   addEventListener;
+  // }
 }
-// replaceLinks();
+replaceLinks();
 
 // ! <touch>========================================================================================
 // touch - определяет на каком устройстве открыта страница
