@@ -146,45 +146,56 @@ const jsLoaders = () => {
 // https://ourcodeworld.com/articles/read/420/how-to-read-recursively-a-directory-in-node-js
 // https://habr.com/ru/company/ruvds/blog/424969/
 function filewalker(dir, done) {
-  let results = [];
+  //- dir 0 //~ ./test ES4/html/views, || //~ D:\...\Audio || D:\...\Audio\audios //* string
+  //- done 0 //~ function(err,data)..if(err) || //~ function(err,data)..results =...(5.1) //* function
+  let results = []; //~ пуст, //* object
   fs.readdir(dir, function (err, list) {
+    //- list 1 //~ Audio,Catalog,... || //~ Audio.html,audios || //~ audios.html,plugins.html //* object
+    //- dir 1 //~ ./test ES4/html/views || //~ D:\...\Audio, || //~ D:\...\Audio\audios //* string
     if (err) return done(err);
-    var pending = list.length;
+    var pending = list.length; //~ 8 //~ 2
     if (!pending) return done(null, results);
     list.forEach(function (file) {
-      console.log("=FW= list 000000 " + list);
-      console.log("=FW= dir 000000 " + dir);
-      console.log("=FW= file 000000 " + file);
+      //- list 2 //~ Audio,Catalog,... || //~ Audio.html,audios || //~ audios.html,plugins.html 
+      //- dir 2 //~ ./test ES4/html/views || //~ D:\...\Audio, || //~ D:\...\Audio\audios 
+      //- file 2 //~ Audio, //~ Catalog || //~ Audio.html //~ audios || //~ audios.html
       file = path.resolve(dir, file);
-      console.log("=FW= dir 0000 " + dir);
-      console.log("=FW= file 0000 " + file);
+      //- dir 3 //~ ./test ES4/html/views || //~ D:\...\Audio, || //~ D:\...\Audio\audios
+      //- file 3 //~ D:\...\Audio, //~ D:\...\Catalog, || //~ Audio.html //~ D:\...\Audio\audios || //~ D:\...\Audio\audios\audios.html
       fs.stat(file, function (err, stat) {
         // Если каталог, выполнить рекурсивный вызов
-        console.log("=FW= file 0 " + file);
-        console.log("=FW= stat 0 " + stat);
+        //- file 4 //~ D:\...\Audio, //~ D:\...\Catalog, ||  D:\...\Audio\Audio.html || //~ 
+        //- stat 4 //~ [object Object]
         if (stat && stat.isDirectory()) {
-          console.log("=FW= stat 00 " + stat);
+          //- stat 5 //~ [object Object]
           // Добавить каталог в массив [прокомментируйте, если вам нужно удалить каталоги из массива]
           results.push(file);
-          console.log("=FW= file 000 " + file);
-          console.log("=FW= results 000 " + results);
+          //- file 5 //~ D:\...\Audio, //~ D:\...\Catalog || //~ D:\...\Audio\audios
+          //- results 5 //~ D:\...\Audio, || //~ D:\...\Audio, D:\...\Catalog, || //~ D:\...\Audio\Audio.html, D:\...\Audio\audios
           filewalker(file, function (err, res) {
             results = results.concat(res);
-            // console.log("=FW= results 1 " + results);
-            // console.log("=FW= res 1 " + res);
-            // console.log("=FW= file 1 " + file);
+            console.log("=FW= results 5.1 " + results);//~ D:\...\Audio.html, D:\...\audios, D:\...\audios.html, D:\...\plugins.html      
+            console.log("=FW= res 5.1 " + res);//~ D:\...\audios.html, D:\...\plugins.html
+            console.log("=FW= file 5.1 " + file); //~ D:\...\audios
             if (!--pending) done(null, results);
           });
         } else {
           results.push(file);
-          // console.log("=FW= results 2 " + results);
-          // console.log("=FW= file 2 " + file);
+          //- results 6 //~ D:\...\Audio\Audio.html, //~ D:\...\Audio\Catalog.html || //~ D:\...\Audio\audios\audios.html
+          //- file 6 //~ D:\...\Audio\Audio.html, //~ D:\...\Audio\Catalog.html || //~ D:\...\Audio\audios\audios.html
           if (!--pending) done(null, results);
         }
       });
     });
   });
 }
+filewalker("./test ES4/html/views", function (err, data) {
+  if (err) {
+    throw err;
+  }
+  // ["c://some-existent-path/file.txt","c:/some-existent-path/subfolder"]
+  console.log(data);
+});
 // !
 // !
 // !
@@ -231,11 +242,9 @@ function generateHtmlPlugins(templatesDir) {
       firstTemplateFileName
     );
     console.log("firstTemplateFilePath:" + firstTemplateFilePath);
-    // возвращ. ?конст? html
-    // !1
+    // возвращ. ?конструктор? html
     return new HTMLWebpackPlugin({
       // new HTMLWebpackPlugin({
-      // !1
       // имя: html/имяПапк/имяФайл
       filename: `html/${folderName}/${firstTemplateFileName}`,
       // `шаблон` ?пути?
