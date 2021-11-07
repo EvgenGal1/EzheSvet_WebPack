@@ -300,7 +300,7 @@ function replaceLinks() {
   }
   // console.log("getId 1 : " + getId);
   // console.log("getId 1 : " + typeof getId);
-  console.log("getId 2--------------: " + getId(a)[2][2]); //~ undefined
+  // console.log("getId 2--------------: " + getId(a)[2][2]); //~ undefined
   console.log("getId 2---------------: " + getId(a)[2]); //~ t
   console.log("getId 2----------------: " + getId(a)); //~ http://localhost:8080/index.htmlhttp://localhost:8080/index.htmlhttp://localhost:8080/html/Catalog/Catalog.htmlhttp://localhost:8080/html/Game/Game.html
   console.log("getId 2+++++++++++: " + typeof getId(a)); //* string
@@ -329,7 +329,7 @@ function replaceLinks() {
   //   addEventListener;
   // }
 }
-replaceLinks();
+// replaceLinks();
 
 // ! <touch>========================================================================================
 // touch - определяет на каком устройстве открыта страница

@@ -1,3 +1,4 @@
+console.log('index.js');
 // подкл JS
 import "./js/Сайт VDOH/devJS/themeModesSettings.js";
 

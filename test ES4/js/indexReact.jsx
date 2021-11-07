@@ -1,3 +1,4 @@
+console.log('indexReact.jsx');
 import "../index.js";
 import '../styles/scss/styles.scss';
 

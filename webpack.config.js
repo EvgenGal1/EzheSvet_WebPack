@@ -156,15 +156,15 @@ function filewalker(dir, done) {
     var pending = list.length; //~ 8 //~ 2
     if (!pending) return done(null, results);
     list.forEach(function (file) {
-      //- list 2 //~ Audio,Catalog,... || //~ Audio.html,audios || //~ audios.html,plugins.html 
-      //- dir 2 //~ ./test ES4/html/views || //~ D:\...\Audio, || //~ D:\...\Audio\audios 
+      //- list 2 //~ Audio,Catalog,... || //~ Audio.html,audios || //~ audios.html,plugins.html
+      //- dir 2 //~ ./test ES4/html/views || //~ D:\...\Audio, || //~ D:\...\Audio\audios
       //- file 2 //~ Audio, //~ Catalog || //~ Audio.html //~ audios || //~ audios.html
       file = path.resolve(dir, file);
       //- dir 3 //~ ./test ES4/html/views || //~ D:\...\Audio, || //~ D:\...\Audio\audios
       //- file 3 //~ D:\...\Audio, //~ D:\...\Catalog, || //~ Audio.html //~ D:\...\Audio\audios || //~ D:\...\Audio\audios\audios.html
       fs.stat(file, function (err, stat) {
         // Если каталог, выполнить рекурсивный вызов
-        //- file 4 //~ D:\...\Audio, //~ D:\...\Catalog, ||  D:\...\Audio\Audio.html || //~ 
+        //- file 4 //~ D:\...\Audio, //~ D:\...\Catalog, ||  D:\...\Audio\Audio.html || //~
         //- stat 4 //~ [object Object]
         if (stat && stat.isDirectory()) {
           //- stat 5 //~ [object Object]
@@ -174,8 +174,8 @@ function filewalker(dir, done) {
           //- results 5 //~ D:\...\Audio, || //~ D:\...\Audio, D:\...\Catalog, || //~ D:\...\Audio\Audio.html, D:\...\Audio\audios
           filewalker(file, function (err, res) {
             results = results.concat(res);
-            console.log("=FW= results 5.1 " + results);//~ D:\...\Audio.html, D:\...\audios, D:\...\audios.html, D:\...\plugins.html      
-            console.log("=FW= res 5.1 " + res);//~ D:\...\audios.html, D:\...\plugins.html
+            console.log("=FW= results 5.1 " + results); //~ D:\...\Audio.html, D:\...\audios, D:\...\audios.html, D:\...\plugins.html
+            console.log("=FW= res 5.1 " + res); //~ D:\...\audios.html, D:\...\plugins.html
             console.log("=FW= file 5.1 " + file); //~ D:\...\audios
             if (!--pending) done(null, results);
           });
@@ -189,13 +189,13 @@ function filewalker(dir, done) {
     });
   });
 }
-filewalker("./test ES4/html/views", function (err, data) {
-  if (err) {
-    throw err;
-  }
-  // ["c://some-existent-path/file.txt","c:/some-existent-path/subfolder"]
-  console.log(data);
-});
+// filewalker("./test ES4/html/views", function (err, data) {
+//   if (err) {
+//     throw err;
+//   }
+//   // ["c://some-existent-path/file.txt","c:/some-existent-path/subfolder"]
+//   console.log(data);
+// });
 // !
 // !
 // !
@@ -968,7 +968,7 @@ const plugins = () => {
         },
         {
           from: `${PATHS.src}img`,
-          to: `${PATHS.dist}img`,
+          to: `${PATHS.dist}img/`,
         },
         // {
         //   from: `${PATHS.src}styles/scss/catalog.scss`,
@@ -1039,21 +1039,26 @@ module.exports = {
       // ??? не раб - не создает, не переносит img. только ч/з copy
       // {
       //   test: /\.(ico|gif|png|jpe?g|svg)$/i,
-      //   loader: "file-loader",
-      //   options: {
-      //     name: "img/[name].[hash].[ext]",
-      //     publicPath: "../",
-      //   },
-      //   // type: "asset/resource",
-      //   // generator: {
-      //     // filename: "img/[name].[hash].[ext]",
-      //     // publicPath: "../",
-      //   // },
+      //   use: [
+      //     {
+      //       loader: "file-loader",
+      //       options: {
+      //         // name: "img/[name].[hash].[ext]",
+      //         name: "img/[name].[ext]",
+      //         // publicPath: "../",
+      //       },
+      //     },
+      //   ],
+        //   // type: "asset/resource",
+        //   // generator: {
+        //     // filename: "img/[name].[hash].[ext]",
+        //     // publicPath: "../",
+        //   // },
       // },
       // fonts
       {
         test: /\.(ttf|otf|svg|woff|woff2|eot)$/,
-        exclude: path.resolve(__dirname, "src/img"),
+        exclude: path.resolve(__dirname, "src/fonts"),
         use: [
           {
             loader: "file-loader",
