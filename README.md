@@ -26,16 +26,16 @@
 
 - [Цель проекта](#Цель-проекта)
 - [Структура и Иерархия Проекта](#Структура-и-Иерархия-Проекта)
-  * [Важные файлы](#Важные-файлы)
-  * [Важные моменты](#Важные-моменты)
-    + [Ещё пара важных моментов](#Ещё-пара-важных-моментов)
-    + [Не стоит забывать и про это](#Не-стоит-про-это-забывать)
+  - [Важные файлы](#Важные-файлы)
+  - [Важные моменты](#Важные-моменты)
+    - [Ещё пара важных моментов](#Ещё-пара-важных-моментов)
+    - [Не стоит забывать и про это](#Не-стоит-про-это-забывать)
 - [Код/Elements/Логика](#Код/Elements/Логика)
-  * [HTML](#HTML)
-  * [Webpack](#Webpack)
-  * [SCSS](#SCSS)
-  * [jQuery](#jQ)
-  * [JavaScript](#JS)
+  - [HTML](#HTML)
+  - [Webpack](#Webpack)
+  - [SCSS](#SCSS)
+  - [jQuery](#jQ)
+  - [JavaScript](#JS)
 - [Разбор](#Разбор-будет-обязательно)
 - [Признательность](#Признательность)
 - [Авторство](#Авторство)
@@ -46,6 +46,7 @@
 # 1 Обучение вёрстке:
 Html, CSS, SCSS,
 JS, jQ, React,
+WP and Gulp,
 .... .. ...
 
 # 2 Создание собственной базы хранения:
@@ -90,29 +91,33 @@ src(test ES4)/
 ### Важные моменты:
 
 - `1` - 191
+
 * `2` - 248
-+ `3` - 396
+
+- `3` - 396
+
 * `4` - 428
+
 - `5` - 575
 
 #### Ещё пара важных моментов:
 
-| Имя                                                                                                        | Тип                 | Свойства                   | Статус        | Описание                                                                         |
+|                                                    Имя                                                     |         Тип         |                   Свойства |    Статус     | Описание                                                                         |
 | :--------------------------------------------------------------------------------------------------------: | :-----------------: | -------------------------: | :-----------: | :------------------------------------------------------------------------------- |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/html5.svg"></a>     | `{Object}`          | **[`index.html`](#HTML)**  | in developing | HTML код в разработке заливки в<a href="https://github.com/EvgenGal1">Проект</a> |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/css-3.svg"></a>     | `{String/Function}` | **[`styles.css`](#SCSS)**  | projected     | CSS код в разработке заливки JavaScript                                          |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/sass-1.svg"></a>    | `{Array/Function}`  | **[`styles.scss`](#SCSS)** | going to      | SCSS код в разработке заливки                                                    |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/babel.svg"></a>     | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">Babel</a>                           |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/react.svg"></a>      | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">React</a>                           |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/javascript.svg"></a> | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">JavaScript</a>                      |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/jquery.svg"></a>     | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">jQuery</a>                          |
-| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/webpack.svg"></a>    | `[]`                | `false`                    | planned       | Код в разработке заливки <a href="https://#">WebPack</a>                         |
+|   <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/html5.svg"></a>   |     `{Object}`      |  **[`index.html`](#HTML)** | in developing | HTML код в разработке заливки в<a href="https://github.com/EvgenGal1">Проект</a> |
+|   <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/css-3.svg"></a>   | `{String/Function}` |  **[`styles.css`](#SCSS)** |   projected   | CSS код в разработке заливки JavaScript                                          |
+|  <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/sass-1.svg"></a>   | `{Array/Function}`  | **[`styles.scss`](#SCSS)** |   going to    | SCSS код в разработке заливки                                                    |
+|   <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logos/babel.svg"></a>   |        `[]`         |                    `false` |    planned    | Код в разработке заливки <a href="https://#">Babel</a>                           |
+|   <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/react.svg"></a>    |        `[]`         |                    `false` |    planned    | Код в разработке заливки <a href="https://#">React</a>                           |
+| <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/javascript.svg"></a> |        `[]`         |                    `false` |    planned    | Код в разработке заливки <a href="https://#">JavaScript</a>                      |
+|   <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/jquery.svg"></a>   |        `[]`         |                    `false` |    planned    | Код в разработке заливки <a href="https://#">jQuery</a>                          |
+|  <a href="https://#"><img width="48" height="48" src="https://worldvectorlogo.com/logo/webpack.svg"></a>   |        `[]`         |                    `false` |    planned    | Код в разработке заливки <a href="https://#">WebPack</a>                         |
 
 #### Не стоит про это забывать:
 
 ```bash
 
-.-. ..- ... 
+.-. ..- ...
 -.. ..- -- .- .-.. ..   ---. - ---   --.. -.. . ... -..-   ---. - --- - ---   .-- .- ...- -. --- . ..--..
 .-   -. . - --..--   .--. --- ... .--. .. - . --..--   ... -.- --- .-. ---   .--. --- .-.- .-- .. - ... .-.- .-.-.-
 
@@ -122,13 +127,13 @@ src(test ES4)/
 ... .. .. .... . .....
 .. .... ... .. . ...
 
-  Z     Z   z 
+  Z     Z   z
            _____________
-        _/__/  /  /  __ \__           
+        _/__/  /  /  __ \__
      _/ /  _\  \ / \/  ___/\__
     / _/____/____\  \ ___/\_ \
    | /  \____  \____/ \___  /
-   |_|_____  \_/  \_______/ 
+   |_|_____  \_/  \_______/
      \_______/ \ \/ ___/
                 \ \_/
                  \ \
@@ -140,7 +145,7 @@ src(test ES4)/
 Заполню по наличию времени...
 Пока кусочки экспериментов:
 
-####  HTML
+#### HTML
 
 ```html
 <div class="header-menu">
@@ -169,7 +174,7 @@ const PATHS = {
   views: path.join(__dirname, "./test ES4/html/views/"),
   // Путь к блокам HTML
   includes: path.resolve(__dirname, "./test ES4/html/includes/"),
-}
+};
 ```
 
 #### SCSS
