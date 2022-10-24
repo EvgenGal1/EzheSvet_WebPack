@@ -17,6 +17,11 @@ body {
 // .--theme-default,
 // .theme-light {
 // .default-theme,
+.--theme_dark {
+  --dark: var(--ON);
+  --light: var(--OFF);
+  --neutral: var(--OFF);
+}
 .--theme_neutral {
   --neutral: var(--ON);
   --light: var(--OFF);
@@ -26,11 +31,6 @@ body {
   --light: var(--ON);
   --neutral: var(--OFF);
   --dark: var(--OFF);
-}
-.--theme_dark {
-  --dark: var(--ON);
-  --light: var(--OFF);
-  --neutral: var(--OFF);
 }
 /* медиа-запрос теперь нужен только для переключения */
 @media (prefers-color-scheme: dark) {
@@ -42,8 +42,8 @@ body {
   // }
   .--theme_dark {
     // .--theme_neutral {
-    --dark: var(--OFF);
-    --neutral: var(--ON);
+    --dark: var(--ON);
+    --neutral: var(--OFF);
     --light: var(--OFF);
   }
 }

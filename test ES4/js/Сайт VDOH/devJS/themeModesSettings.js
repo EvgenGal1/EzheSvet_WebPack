@@ -7,28 +7,31 @@ function generalFunctionOfColorSchemes() {
   const preflight = window.matchMedia("(prefers-color-scheme: light)");
   const prefNo = window.matchMedia("(prefers-color-scheme: no-preference)");
   const NoCurrentTheme = localStorage.getItem("--theme") == null;
+  var theme;
   if (NoCurrentTheme) {
     if (prefDark) {
       // var theme = document.body.classList.contains("--theme-dark");
       // document.body.classList.contains("_-theme-dark");
-      var theme = "_dark";
+      theme = "_dark";
       // return "dark";
-    } else if (preflight) {
-      var theme = "_light";
-    } else if (prefNo) {
-      var theme = "_neutral";
+    }
+    if (preflight) {
+      theme = "_light";
+    }
+    if (prefNo) {
+      theme = "_neutral";
     }
     localStorage.setItem("--theme", theme);
   }
   // Получаем предпочтение темы пользователя из локального хранилища, если оно доступно
   const currentTheme = localStorage.getItem("--theme");
   // Если текущая тема в localStorage равна "neutral"
-  if (currentTheme == "_neutral") {
+  if (currentTheme == "_dark") {
+    document.body.classList.add("--theme_dark");
     //  if (currentTheme == "neutral" || NoCurrentTheme) {
     // вкл класс .--theme_neutral для <body>
+  } else if (currentTheme == "_neutral") {
     document.body.classList.add("--theme_neutral");
-  } else if (currentTheme == "_dark") {
-    document.body.classList.add("--theme_dark");
   } else if (currentTheme == "_light") {
     document.body.classList.add("--theme_light");
   }
