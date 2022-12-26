@@ -4,9 +4,9 @@
   \*************************************************************************************************************************************************************************************************/
 // @charset "UTF-8";
 * {
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
+  padding: 0px !important;
+  margin: 0px !important;
+  border: 0px !important;
 }
 
 *,
@@ -220,6 +220,7 @@ header .header__container {
 }
 .header-logo .header-logo-smail p {
   color: #8b0000;
+  margin: 0;
 }
 
 @media (min-width: 767.98px) {
