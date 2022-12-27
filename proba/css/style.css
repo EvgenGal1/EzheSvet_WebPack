@@ -834,18 +834,26 @@ h6 {
 .centr-cont- .cont-block-:nth-child(1) .block-img- {
   shape-outside: url(../01b76173e4d717090471.png);
   background-image: url(../01b76173e4d717090471.png);
+  shape-outside: url(../../test ES4/img/RickAndMorty.png);
+  background-image: url(../../test ES4/img/RickAndMorty.png);
 }
 .centr-cont- .cont-block-:nth-child(2) .block-img- {
   shape-outside: url(../4c733c8ed0c53b97053c.png);
   background-image: url(../4c733c8ed0c53b97053c.png);
+  shape-outside: url(../../test ES4/img/Rick.png);
+  background-image: url(../../test ES4/img/Rick.png);
 }
 .centr-cont- .cont-block-:nth-child(3) .block-img- {
   shape-outside: url(../07197d3a9ac354daa2e0.png);
   background-image: url(../07197d3a9ac354daa2e0.png);
+  shape-outside: url(../../test ES4/img/MortyEvil.png);
+  background-image: url(../../test ES4/img/MortyEvil.png);
 }
 .centr-cont- .cont-block-:nth-child(4) .block-img- {
   shape-outside: url(../9a4bbccede2cabeea2c8.png);
   background-image: url(../9a4bbccede2cabeea2c8.png);
+  shape-outside: url(../../test ES4/img/RickAndMortyBrut.png);
+  background-image: url(../../test ES4/img/RickAndMortyBrut.png);
 }
 .centr-cont- .cont-block-:last-child {
   margin: 0 0 25px;
