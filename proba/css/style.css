@@ -169,8 +169,7 @@ header {
   z-index: 10;
   padding: 25px 3%;
   background-color: #8b0000;
-  box-shadow: #000000 5px 5px 30px 1.5px inset,
-    #000000 -5px -5px 30px 1.5px inset;
+  box-shadow: #000000 5px 5px 30px 1.5px inset, #000000 -5px -5px 30px 1.5px inset;
 }
 header .header__container {
   max-width: 1200px;
@@ -321,10 +320,10 @@ body._touch .menu-list__items._active .items__arrow {
   box-shadow: 0 0 3px #555555 inset, 0px 0px 10px black;
 }
 .menu__top .menu-list__items .items__link:hover::before {
-  content: "!";
+  content: '!';
 }
 .menu__top .menu-list__items .items__link:hover:after {
-  content: "!";
+  content: '!';
 }
 .menu__top .menu-list__items:nth-child(1) .items__link {
   background-color: #fad201;
@@ -389,10 +388,10 @@ body._touch .menu-list__items._active .items__arrow {
   color: #000000;
 }
 .menu__top .menu-list .items__sub .sub__li .sub__li-a:hover::before {
-  content: ">";
+  content: '>';
 }
 .menu__top .menu-list .items__sub .sub__li .sub__li-a:hover:hover::after {
-  content: "<";
+  content: '<';
 }
 
 .items__arrow {
@@ -490,12 +489,12 @@ body {
   width: 12px;
 }
 * ::-webkit-scrollbar-button {
-  background-image: url("https://yraaa.ru/_pu/24/59610063.png");
+  background-image: url('https://yraaa.ru/_pu/24/59610063.png');
   background-color: #ffcb17;
   background-color: #555555;
   background-position: center;
   background-repeat: no-repeat;
-  content: "";
+  content: '';
 }
 * ::-webkit-scrollbar-track {
   background-color: #333333;
@@ -506,12 +505,12 @@ body {
   background-color: #ffcb17;
   background-color: #8b0000;
   box-shadow: 0px 1px 1px #fff inset;
-  background-image: url("https://yraaa.ru/_pu/24/59610063.png");
+  background-image: url('https://yraaa.ru/_pu/24/59610063.png');
   background-position: center;
   background-repeat: no-repeat;
 }
 * ::-webkit-resizer {
-  background-image: url("");
+  background-image: url('');
   background-repeat: no-repeat;
   width: 7px;
   height: 7px;
@@ -832,26 +831,26 @@ h6 {
 .centr-cont- .cont-block-:nth-child(1) .block-img- {
   shape-outside: url(../01b76173e4d717090471.png);
   background-image: url(../01b76173e4d717090471.png);
-  shape-outside: url(../../test ES4/img/RickAndMorty.png);
-  background-image: url(../../test ES4/img/RickAndMorty.png);
+  shape-outside: url('./test ES4/img/RickAndMorty.png');
+  background-image: url('./test ES4/img/RickAndMorty.png');
 }
 .centr-cont- .cont-block-:nth-child(2) .block-img- {
   shape-outside: url(../4c733c8ed0c53b97053c.png);
   background-image: url(../4c733c8ed0c53b97053c.png);
-  shape-outside: url(../../test ES4/img/Rick.png);
-  background-image: url(../../test ES4/img/Rick.png);
+  shape-outside: url('test ES4/img/Rick.png');
+  background-image: url('test ES4/img/Rick.png');
 }
 .centr-cont- .cont-block-:nth-child(3) .block-img- {
   shape-outside: url(../07197d3a9ac354daa2e0.png);
   background-image: url(../07197d3a9ac354daa2e0.png);
-  shape-outside: url(../../test ES4/img/MortyEvil.png);
-  background-image: url(../../test ES4/img/MortyEvil.png);
+  shape-outside: url('test ES4/img/MortyEvil.png');
+  background-image: url('test ES4/img/MortyEvil.png');
 }
 .centr-cont- .cont-block-:nth-child(4) .block-img- {
   shape-outside: url(../9a4bbccede2cabeea2c8.png);
   background-image: url(../9a4bbccede2cabeea2c8.png);
-  shape-outside: url(../../test ES4/img/RickAndMortyBrut.png);
-  background-image: url(../../test ES4/img/RickAndMortyBrut.png);
+  shape-outside: url('test ES4/img/RickAndMortyBrut.png');
+  background-image: url('test ES4/img/RickAndMortyBrut.png');
 }
 .centr-cont- .cont-block-:last-child {
   margin: 0 0 25px;
@@ -867,7 +866,7 @@ h6 {
 }
 .centr-cont- .cont-block- .block-img- .bl-sub- {
   position: absolute;
-  content: "";
+  content: '';
   right: 35px;
   width: 15px;
   height: 15px;
@@ -898,7 +897,7 @@ h6 {
   word-break: break-all;
   word-wrap: break-word;
   font-weight: bold;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .centr-cont- .cont-block- .block-text-:first-child {
   color: blue;
@@ -942,12 +941,12 @@ h6 {
 
 .row:after {
   display: block;
-  content: "";
+  content: '';
   clear: both;
 }
 
 .rub:after {
-  content: "₽";
+  content: '₽';
 }
 
 .noselect {
@@ -1243,7 +1242,7 @@ ol.counter li:before {
   color: #bbbbbb;
 }
 .m-s-switcher-0 .checkbox-label:before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   z-index: 1;
@@ -1305,11 +1304,10 @@ ol.counter li:before {
   background: #333;
   position: relative;
   border-radius: 50px;
-  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5),
-    0px 1px 0px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
 }
 .m-s-switcher-1:after {
-  content: "OFF";
+  content: 'OFF';
   color: #000;
   position: absolute;
   right: 5px;
@@ -1320,7 +1318,7 @@ ol.counter li:before {
   text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.15);
 }
 .m-s-switcher-1:before {
-  content: "ON";
+  content: 'ON';
   color: #27ae60;
   position: absolute;
   left: 5px;
@@ -1345,10 +1343,10 @@ ol.counter li:before {
   transition: all 0.4s ease;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
 }
-.m-s-switcher-1 input[type="checkbox"] {
+.m-s-switcher-1 input[type='checkbox'] {
   visibility: hidden;
 }
-.m-s-switcher-1 input[type="checkbox"]:checked + label {
+.m-s-switcher-1 input[type='checkbox']:checked + label {
   left: 44px;
 }
 
@@ -1374,7 +1372,7 @@ ol.counter li:before {
   border-radius: 25px;
   background-color: #1e1e1e;
   outline: none;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
   font: 17px/26px Arial, sans-serif;
   line-height: 2;
   font-weight: bold;
@@ -1387,13 +1385,13 @@ ol.counter li:before {
   transform: translateY(-50%);
 }
 .sw-blwh .swblwh input:before {
-  content: "ON";
+  content: 'ON';
   left: 10px;
   text-shadow: 0px 0px 15px #cccccc;
   text-shadow: 0px 0px 7px #707070;
 }
 .sw-blwh .swblwh input:after {
-  content: "OFF";
+  content: 'OFF';
   right: 10px;
   color: #ffffff;
   transition: color 0.5s 0.2s;
@@ -1558,7 +1556,7 @@ ol.counter li:before {
 }
 .m-s-switcher-4 .toggle-button__icon:before,
 .m-s-switcher-4 .toggle-button__icon:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 45%;
   left: 35%;
@@ -1582,47 +1580,35 @@ ol.counter li:before {
 .m-s-switcher-4 .toggle-button--aava label:after {
   content: attr(data-off-text);
 }
-.m-s-switcher-4 .toggle-button--aava input[type="checkbox"] + label {
+.m-s-switcher-4 .toggle-button--aava input[type='checkbox'] + label {
   width: 100px;
   background: #ff5335;
 }
-.m-s-switcher-4 .toggle-button--aava input[type="checkbox"] + label:before {
+.m-s-switcher-4 .toggle-button--aava input[type='checkbox'] + label:before {
   opacity: 0;
   transform: translate(0, 20px);
 }
-.m-s-switcher-4 .toggle-button--aava input[type="checkbox"] + label:after {
+.m-s-switcher-4 .toggle-button--aava input[type='checkbox'] + label:after {
   opacity: 1;
   transform: translate(0, 0);
 }
-.m-s-switcher-4 .toggle-button--aava input[type="checkbox"]:checked ~ label {
+.m-s-switcher-4 .toggle-button--aava input[type='checkbox']:checked ~ label {
   width: 100px;
   background: #61b136;
 }
-.m-s-switcher-4
-  .toggle-button--aava
-  input[type="checkbox"]:checked
-  ~ label:before {
+.m-s-switcher-4 .toggle-button--aava input[type='checkbox']:checked ~ label:before {
   opacity: 1;
   transform: translate(0, 0);
 }
-.m-s-switcher-4
-  .toggle-button--aava
-  input[type="checkbox"]:checked
-  ~ label:after {
+.m-s-switcher-4 .toggle-button--aava input[type='checkbox']:checked ~ label:after {
   opacity: 0;
   transform: translate(0, -20px);
 }
-.m-s-switcher-4
-  .toggle-button--aava
-  input[type="checkbox"]:checked
-  ~ .toggle-button__icon:before {
+.m-s-switcher-4 .toggle-button--aava input[type='checkbox']:checked ~ .toggle-button__icon:before {
   transform: translate(-10%, 100%) rotate(45deg);
   width: 16.66667px;
 }
-.m-s-switcher-4
-  .toggle-button--aava
-  input[type="checkbox"]:checked
-  ~ .toggle-button__icon:after {
+.m-s-switcher-4 .toggle-button--aava input[type='checkbox']:checked ~ .toggle-button__icon:after {
   transform: translate(30%) rotate(-45deg);
 }
 .m-s-switcher-4 .toggle-button--aava .toggle-button__icon {
@@ -1694,7 +1680,7 @@ ol.counter li:before {
   align-items: center;
 }
 .sw-3btn .sw3btn-slider:before {
-  content: "🌑";
+  content: '🌑';
   position: absolute;
   font-size: 25px;
   transition: left 0.2s linear 0s, right 0.2s linear 0s;
@@ -1715,17 +1701,17 @@ ol.counter li:before {
   background-color: #b40000;
 }
 .sw-3btn .sw3btn-radio__dark:checked ~ .sw3btn-slider:before {
-  content: "🌑";
+  content: '🌑';
   left: 3px;
   left: 0;
 }
 .sw-3btn .sw3btn-radio__neutral:checked ~ .sw3btn-slider:before {
-  content: "🌗";
+  content: '🌗';
   left: calc(100% / 3 - 3.5px);
   left: calc(100% / 3 - 3px);
 }
 .sw-3btn .sw3btn-radio__light:checked ~ .sw3btn-slider:before {
-  content: "🌕";
+  content: '🌕';
   left: calc(2 * ((100% - 6px) / 3));
   right: 0;
   left: calc(100% - 34px);
@@ -1743,8 +1729,7 @@ ol.counter li:before {
   height: 40px;
   background-color: #ccc;
   border-radius: 50%;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3),
-    inset 1px 1px 2px rgba(255, 255, 255, 0.4),
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), inset 1px 1px 2px rgba(255, 255, 255, 0.4),
     inset -1px -1px 2px rgba(0, 0, 0, 0.4);
 }
 .sw-4btn .sw4btn i,
@@ -1753,7 +1738,7 @@ ol.counter li:before {
   transition: all 0.3s;
 }
 .sw-4btn .sw4btn i:before {
-  content: " ";
+  content: ' ';
   display: block;
   position: absolute;
   left: 30%;
@@ -1762,11 +1747,10 @@ ol.counter li:before {
   height: 40%;
   border-radius: 50%;
   box-shadow: -30px 0 0 #707070, 0 30px 0 #707070, 30px 0 0 #707070;
-  box-shadow: -30px -13px 0 #707070, -30px 13px 0 #707070, 30px -13px 0 #707070,
-    30px 13px 0 #707070;
+  box-shadow: -30px -13px 0 #707070, -30px 13px 0 #707070, 30px -13px 0 #707070, 30px 13px 0 #707070;
 }
 .sw-4btn .sw4btn i:after {
-  content: " ";
+  content: ' ';
   display: block;
   position: absolute;
   top: calc(50% - 1px);
@@ -1803,7 +1787,7 @@ ol.counter li:before {
   top: 97%;
   top: 63%;
 }
-.sw-4btn .sw4btn > input[type="radio"] {
+.sw-4btn .sw4btn > input[type='radio'] {
   position: absolute;
   left: 0;
   top: 0;
@@ -1813,85 +1797,47 @@ ol.counter li:before {
   padding: 0;
   opacity: 0;
 }
-.sw-4btn .sw4btn > input[type="radio"]:first-child {
+.sw-4btn .sw4btn > input[type='radio']:first-child {
   z-index: 10;
 }
-.sw-4btn .sw4btn > input[type="radio"]:first-child:checked {
+.sw-4btn .sw4btn > input[type='radio']:first-child:checked {
   z-index: 0;
 }
-.sw-4btn .sw4btn > input[type="radio"]:checked + input[type="radio"] {
+.sw-4btn .sw4btn > input[type='radio']:checked + input[type='radio'] {
   z-index: 10;
 }
-.sw-4btn .sw4btn > input[type="radio"]:checked + i {
+.sw-4btn .sw4btn > input[type='radio']:checked + i {
   background-color: #0f0;
   background: #00ba00;
 }
-.sw-4btn .sw4btn > input[type="radio"]:checked + i + label,
-.sw-4btn .sw4btn > input[type="radio"]:checked + i + label + label,
-.sw-4btn .sw4btn > input[type="radio"]:checked + i + label + label + label {
+.sw-4btn .sw4btn > input[type='radio']:checked + i + label,
+.sw-4btn .sw4btn > input[type='radio']:checked + i + label + label,
+.sw-4btn .sw4btn > input[type='radio']:checked + i + label + label + label {
   background: none;
   background: red;
   background-color: #b40000;
 }
-.sw-4btn .sw4btn > input[type="radio"]:checked + input[type="radio"] + i {
+.sw-4btn .sw4btn > input[type='radio']:checked + input[type='radio'] + i {
   background-color: #00f;
 }
-.sw-4btn
-  .sw4btn
-  > input[type="radio"]:checked
-  + input[type="radio"]
-  + i
-  + label,
-.sw-4btn
-  .sw4btn
-  > input[type="radio"]:checked
-  + input[type="radio"]
-  + i
-  + label
-  + label,
-.sw-4btn
-  .sw4btn
-  > input[type="radio"]:checked
-  + input[type="radio"]
-  + i
-  + label
-  + label
-  + label
-  + label {
+.sw-4btn .sw4btn > input[type='radio']:checked + input[type='radio'] + i + label,
+.sw-4btn .sw4btn > input[type='radio']:checked + input[type='radio'] + i + label + label,
+.sw-4btn .sw4btn > input[type='radio']:checked + input[type='radio'] + i + label + label + label + label {
   background: none;
   background: red;
   background-color: #b40000;
 }
-.sw-4btn
-  .sw4btn
-  > input[type="radio"]:checked
-  + input[type="radio"]
-  + input[type="radio"]
-  + i {
+.sw-4btn .sw4btn > input[type='radio']:checked + input[type='radio'] + input[type='radio'] + i {
   background-color: #ff0;
   background-color: #b40000;
 }
+.sw-4btn .sw4btn > input[type='radio']:checked + input[type='radio'] + input[type='radio'] + i + label,
+.sw-4btn .sw4btn > input[type='radio']:checked + input[type='radio'] + input[type='radio'] + i + label + label + label,
 .sw-4btn
   .sw4btn
-  > input[type="radio"]:checked
-  + input[type="radio"]
-  + input[type="radio"]
-  + i
-  + label,
-.sw-4btn
-  .sw4btn
-  > input[type="radio"]:checked
-  + input[type="radio"]
-  + input[type="radio"]
-  + i
-  + label
-  + label
-  + label,
-.sw-4btn
-  .sw4btn
-  > input[type="radio"]:checked
-  + input[type="radio"]
-  + input[type="radio"]
+  > input[type='radio']:checked
+  + input[type='radio']
+  + input[type='radio']
   + i
   + label
   + label
@@ -1900,40 +1846,34 @@ ol.counter li:before {
   background: none;
   background-color: #b40000;
 }
-.sw-4btn
-  .sw4btn
-  > input[type="radio"]:checked
-  + input[type="radio"]
-  + input[type="radio"]
-  + input[type="radio"]
-  + i {
+.sw-4btn .sw4btn > input[type='radio']:checked + input[type='radio'] + input[type='radio'] + input[type='radio'] + i {
   background-color: #fad201;
 }
 .sw-4btn
   .sw4btn
-  > input[type="radio"]:checked
-  + input[type="radio"]
-  + input[type="radio"]
-  + input[type="radio"]
+  > input[type='radio']:checked
+  + input[type='radio']
+  + input[type='radio']
+  + input[type='radio']
   + i
   + label
   + label,
 .sw-4btn
   .sw4btn
-  > input[type="radio"]:checked
-  + input[type="radio"]
-  + input[type="radio"]
-  + input[type="radio"]
+  > input[type='radio']:checked
+  + input[type='radio']
+  + input[type='radio']
+  + input[type='radio']
   + i
   + label
   + label
   + label,
 .sw-4btn
   .sw4btn
-  > input[type="radio"]:checked
-  + input[type="radio"]
-  + input[type="radio"]
-  + input[type="radio"]
+  > input[type='radio']:checked
+  + input[type='radio']
+  + input[type='radio']
+  + input[type='radio']
   + i
   + label
   + label
@@ -1942,28 +1882,23 @@ ol.counter li:before {
   background: none;
   background-color: #b40000;
 }
-.sw-4btn .sw4btn > input[type="radio"]:checked + i:after {
+.sw-4btn .sw4btn > input[type='radio']:checked + i:after {
   transform: rotate(150deg);
   transform: rotate(210deg);
 }
-.sw-4btn .sw4btn > input[type="radio"]:checked + input[type="radio"] + i:after {
+.sw-4btn .sw4btn > input[type='radio']:checked + input[type='radio'] + i:after {
   transform: rotate(-30deg);
   transform: rotate(150deg);
 }
-.sw-4btn
-  .sw4btn
-  > input[type="radio"]:checked
-  + input[type="radio"]
-  + input[type="radio"]
-  + i:after {
+.sw-4btn .sw4btn > input[type='radio']:checked + input[type='radio'] + input[type='radio'] + i:after {
   transform: rotate(30deg);
 }
 .sw-4btn
   .sw4btn
-  > input[type="radio"]:checked
-  + input[type="radio"]
-  + input[type="radio"]
-  + input[type="radio"]
+  > input[type='radio']:checked
+  + input[type='radio']
+  + input[type='radio']
+  + input[type='radio']
   + i:after {
   transform: rotate(-30deg);
 }
@@ -2074,31 +2009,19 @@ body {
   }
 }
 body {
-  --baz-bkg-color: var(--dark, #140f0b) var(--neutral, #333)
-    var(--light, #858585);
-  --hed-bkg-color: var(--dark, #35170c) var(--neutral, $DarkRed)
-    var(--light, #4b4b4b);
-  --hed-bkg-color: var(--dark, #4b0000) var(--neutral, $DarkRed)
-    var(--light, #4b4b4b);
+  --baz-bkg-color: var(--dark, #140f0b) var(--neutral, #333) var(--light, #858585);
+  --hed-bkg-color: var(--dark, #35170c) var(--neutral, $DarkRed) var(--light, #4b4b4b);
+  --hed-bkg-color: var(--dark, #4b0000) var(--neutral, $DarkRed) var(--light, #4b4b4b);
   --bkd-col: var(--dark, #080707) var(--neutral, #500000) var(--light, #cccccc);
-  --text-color: var(--dark, #555555) var(--neutral, #1b0000)
-    var(--light, #000000);
-  --hel-p-bkg-color: var(--dark, #4d220e) var(--neutral, #555)
-    var(--light, #ccc);
-  --hel-p-color: var(--dark, #4b0000) var(--neutral, $DarkRed)
-    var(--light, #000000);
-  --hel-p-color: var(--dark, #1b0000) var(--neutral, $DarkRed)
-    var(--light, #000000);
-  --hel-p-color: var(--dark, #555555) var(--neutral, $DarkRed)
-    var(--light, #000000);
-  --hel-h-color: var(--dark, #6b0000) var(--neutral, $DarkRed)
-    var(--light, #000000);
-  --hel-h-bkg-color: var(--dark, #35170c) var(--neutral, #fad201)
-    var(--light, #ccc);
-  --link-color: var(--dark, #b76c10) var(--neutral, #cde404)
-    var(--light, #0089c7);
-  --primary-color: var(--dark, #8916b9) var(--neutral, #c07d00)
-    var(--light, #165fb9);
+  --text-color: var(--dark, #555555) var(--neutral, #1b0000) var(--light, #000000);
+  --hel-p-bkg-color: var(--dark, #4d220e) var(--neutral, #555) var(--light, #ccc);
+  --hel-p-color: var(--dark, #4b0000) var(--neutral, $DarkRed) var(--light, #000000);
+  --hel-p-color: var(--dark, #1b0000) var(--neutral, $DarkRed) var(--light, #000000);
+  --hel-p-color: var(--dark, #555555) var(--neutral, $DarkRed) var(--light, #000000);
+  --hel-h-color: var(--dark, #6b0000) var(--neutral, $DarkRed) var(--light, #000000);
+  --hel-h-bkg-color: var(--dark, #35170c) var(--neutral, #fad201) var(--light, #ccc);
+  --link-color: var(--dark, #b76c10) var(--neutral, #cde404) var(--light, #0089c7);
+  --primary-color: var(--dark, #8916b9) var(--neutral, #c07d00) var(--light, #165fb9);
 }
 
 body {
@@ -2176,59 +2099,35 @@ body {
   }
 }
 body {
-  --width: var(--big, 120px) var(--mid, 100px) var(--small, 80px)
-    var(--off, 80px);
-  --width-swit: var(--big, 100px) var(--mid, 95px) var(--small, 90px)
-    var(--off, 90px);
-  --height: var(--big, 35px) var(--mid, 30px) var(--small, 25px)
-    var(--off, 25px);
-  --font-size-big: var(--big, 22px) var(--mid, 18px) var(--small, 15px)
-    var(--off, 15px);
-  --font-size-mid: var(--big, 16px) var(--mid, 14px) var(--small, 11px)
-    var(--off, 11px);
-  --font-size-small: var(--big, 22px) var(--mid, 17px) var(--small, 15px)
-    var(--off, 15px);
-  --font-weight: var(--big, 700) var(--mid, 400) var(--small, 200)
-    var(--off, 200);
-  --border: var(--big, 1px solid #000) var(--mid, 1px solid #000)
-    var(--small, 0.5px solid #000) var(--off, 0px solid #000);
-  --border-radius: var(--big, 7px) var(--mid, 5px) var(--small, 2px)
-    var(--off, 0px);
+  --width: var(--big, 120px) var(--mid, 100px) var(--small, 80px) var(--off, 80px);
+  --width-swit: var(--big, 100px) var(--mid, 95px) var(--small, 90px) var(--off, 90px);
+  --height: var(--big, 35px) var(--mid, 30px) var(--small, 25px) var(--off, 25px);
+  --font-size-big: var(--big, 22px) var(--mid, 18px) var(--small, 15px) var(--off, 15px);
+  --font-size-mid: var(--big, 16px) var(--mid, 14px) var(--small, 11px) var(--off, 11px);
+  --font-size-small: var(--big, 22px) var(--mid, 17px) var(--small, 15px) var(--off, 15px);
+  --font-weight: var(--big, 700) var(--mid, 400) var(--small, 200) var(--off, 200);
+  --border: var(--big, 1px solid #000) var(--mid, 1px solid #000) var(--small, 0.5px solid #000)
+    var(--off, 0px solid #000);
+  --border-radius: var(--big, 7px) var(--mid, 5px) var(--small, 2px) var(--off, 0px);
   --mar-bl: var(--big, 5px) var(--mid, 0px) var(--small, 0px) var(--off, 0px);
   --bor-wid: var(--big, 5px) var(--mid, 5px) var(--small, 3px) var(--off, 0px);
-  --switcher-1-top: var(--big, 16%) var(--mid, 12%) var(--small, 5%)
-    var(--off, 5%);
-  --switcher-1-lab: var(--big, 32px) var(--mid, 27px) var(--small, 22px)
-    var(--off, 22px);
-  --swblwh-2-lef: var(--big, 10px) var(--mid, 9px) var(--small, 8px)
-    var(--off, 8px);
-  --swblwh-2-lef: var(--big, 14px) var(--mid, 13px) var(--small, 12px)
-    var(--off, 12px);
-  --swblwh-2-rig: var(--big, 10px) var(--mid, 9px) var(--small, 8px)
-    var(--off, 8px);
-  --swblwh-2-fo-si: var(--big, 17px) var(--mid, 15px) var(--small, 13px)
-    var(--off, 13px);
-  --sw3btn-aft: var(--big, 33.5px) var(--mid, 30px) var(--small, 26px)
-    var(--off, 26px);
-  --sw3btn-top: var(--big, -1px) var(--mid, 4px) var(--small, -3px)
-    var(--off, -3px);
-  --sw3btn-neut: var(--big, 1px) var(--mid, 0px) var(--small, -1px)
-    var(--off, -1px);
-  --sw3btn-befo: var(--big, 25px) var(--mid, 22px) var(--small, 19px)
-    var(--off, 19px);
-  --sw4btn-box-sh: var(--big, -24px 11px 0 #707070)
-    var(--mid, -22px -9px 0 #707070) var(--small, 20px -8.5px 0 #707070)
+  --switcher-1-top: var(--big, 16%) var(--mid, 12%) var(--small, 5%) var(--off, 5%);
+  --switcher-1-lab: var(--big, 32px) var(--mid, 27px) var(--small, 22px) var(--off, 22px);
+  --swblwh-2-lef: var(--big, 10px) var(--mid, 9px) var(--small, 8px) var(--off, 8px);
+  --swblwh-2-lef: var(--big, 14px) var(--mid, 13px) var(--small, 12px) var(--off, 12px);
+  --swblwh-2-rig: var(--big, 10px) var(--mid, 9px) var(--small, 8px) var(--off, 8px);
+  --swblwh-2-fo-si: var(--big, 17px) var(--mid, 15px) var(--small, 13px) var(--off, 13px);
+  --sw3btn-aft: var(--big, 33.5px) var(--mid, 30px) var(--small, 26px) var(--off, 26px);
+  --sw3btn-top: var(--big, -1px) var(--mid, 4px) var(--small, -3px) var(--off, -3px);
+  --sw3btn-neut: var(--big, 1px) var(--mid, 0px) var(--small, -1px) var(--off, -1px);
+  --sw3btn-befo: var(--big, 25px) var(--mid, 22px) var(--small, 19px) var(--off, 19px);
+  --sw4btn-box-sh: var(--big, -24px 11px 0 #707070) var(--mid, -22px -9px 0 #707070) var(--small, 20px -8.5px 0 #707070)
     var(--off, 19.5px 8px 0 #707070);
-  --sw4btn-top: var(--big, 4px) var(--mid, -2px) var(--small, -3px)
-    var(--off, 5px);
-  --sw4btn-left: var(--big, 0px) var(--mid, 0px) var(--small, -14px)
-    var(--off, -14px);
-  --bot-it-fir-mar: var(--big, 30px) var(--mid, 25px) var(--small, 20px)
-    var(--off, 20px);
-  --bot-it-las-mar-rig: var(--big, 14px) var(--mid, 12px) var(--small, 10px)
-    var(--off, 10px);
-  --bot-it-las-mar-lef: var(--big, 44px) var(--mid, 37px) var(--small, 30px)
-    var(--off, 30px);
+  --sw4btn-top: var(--big, 4px) var(--mid, -2px) var(--small, -3px) var(--off, 5px);
+  --sw4btn-left: var(--big, 0px) var(--mid, 0px) var(--small, -14px) var(--off, -14px);
+  --bot-it-fir-mar: var(--big, 30px) var(--mid, 25px) var(--small, 20px) var(--off, 20px);
+  --bot-it-las-mar-rig: var(--big, 14px) var(--mid, 12px) var(--small, 10px) var(--off, 10px);
+  --bot-it-las-mar-lef: var(--big, 44px) var(--mid, 37px) var(--small, 30px) var(--off, 30px);
 }
 
 hr {
@@ -2302,16 +2201,10 @@ header .m-s-switcher.sw-3btn .sw3btn {
 header .m-s-switcher.sw-3btn .sw3btn-slider:before {
   font-size: var(--sw3btn-befo);
 }
-header
-  .m-s-switcher.sw-3btn
-  .sw3btn-radio__light:checked
-  ~ .sw3btn-slider:before {
+header .m-s-switcher.sw-3btn .sw3btn-radio__light:checked ~ .sw3btn-slider:before {
   left: calc(100% - var(--sw3btn-aft));
 }
-header
-  .m-s-switcher.sw-3btn
-  .sw3btn-radio__neutral:checked
-  ~ .sw3btn-slider:before {
+header .m-s-switcher.sw-3btn .sw3btn-radio__neutral:checked ~ .sw3btn-slider:before {
   left: calc(100% / 3 - var(--sw3btn-neut));
 }
 header .m-s-switcher.sw-3btn .sw3btn-radio__dark ~ .sw3btn-slider:before {
@@ -2325,7 +2218,7 @@ header .m-s-switcher.sw-4btn .sw4btn-rotate {
   height: var(--height);
   width: var(--height);
 }
-header .m-s-switcher.sw-4btn .sw4btn > input[type="radio"],
+header .m-s-switcher.sw-4btn .sw4btn > input[type='radio'],
 header .m-s-switcher.sw-4btn .sw4btn i {
   height: var(--height);
   width: var(--height);
@@ -2639,10 +2532,9 @@ header .m-s-switcher.sw-4btn .sw4btn i:after {
   color: #fff;
   padding: 10px;
   text-transform: uppercase;
-  font-family: "Montserrat Regular", sans-serif;
+  font-family: 'Montserrat Regular', sans-serif;
   font-size: 12px;
-  transition: 1s cubic-bezier(0.34, 1.56, 0.34, 1.56),
-    background-color 0.5s ease-in, color 1.5s ease-out;
+  transition: 1s cubic-bezier(0.34, 1.56, 0.34, 1.56), background-color 0.5s ease-in, color 1.5s ease-out;
 }
 
 .gallery .gallery-grid img {
@@ -2655,7 +2547,7 @@ header .m-s-switcher.sw-4btn .sw4btn i:after {
   grid-template-columns: repeat(5, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
   grid-template-rows: minmax(auto, auto);
-  grid-template-areas: "img-b b-s b-s b-s b-s" "b-b b-b b-b b-b b-b" "cha cha cha cha cha" "t-b t-b t-b t-b t-b";
+  grid-template-areas: 'img-b b-s b-s b-s b-s' 'b-b b-b b-b b-b b-b' 'cha cha cha cha cha' 't-b t-b t-b t-b t-b';
 }
 .cont-grid .block-img {
   grid-area: img-b;
@@ -2704,7 +2596,7 @@ header .m-s-switcher.sw-4btn .sw4btn i:after {
 }
 
 .cont-grid {
-  grid-template-areas: "img-b b-s b-s b-s b-s" "b-b b-b b-b b-b img-b2" "img-b3 b-ss b-ss b-ss b-ss" "b-bs b-bs b-bs b-bs img-b4";
+  grid-template-areas: 'img-b b-s b-s b-s b-s' 'b-b b-b b-b b-b img-b2' 'img-b3 b-ss b-ss b-ss b-ss' 'b-bs b-bs b-bs b-bs img-b4';
 }
 
 /*# sourceMappingURL=main.css.map*/
