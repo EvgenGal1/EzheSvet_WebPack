@@ -2,7 +2,7 @@
   "name": "ezhesvet4",
   "version": "1.0.0",
   "description": "Сайт ЕжеСвет",
-  "license": "",
+  "license": "ISC",
   "private": "true",
   "author": "EvgenGal1",
   "repository": {
@@ -64,5 +64,6 @@
     "webpack": "^5.46.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.3.1"
-  }
+  },
+  "main": "postcss.config.js"
 }

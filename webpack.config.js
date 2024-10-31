@@ -1012,13 +1012,13 @@ module.exports = {
       },
       // JS
       {
-        test: /\.js?$/,
+        test: /\.(js|ts)?$/,
         exclude: /(node_modules)/,
         use: jsLoaders(),
       },
       // JSX
       {
-        test: /\.(js|jsx)?$/i,
+        test: /\.(js|jsx|ts|tsx)?$/i,
         exclude: /(node_modules)/,
         use: {
           loader: "babel-loader",
@@ -1049,11 +1049,11 @@ module.exports = {
       //       },
       //     },
       //   ],
-        //   // type: "asset/resource",
-        //   // generator: {
-        //     // filename: "img/[name].[hash].[ext]",
-        //     // publicPath: "../",
-        //   // },
+      //   // type: "asset/resource",
+      //   // generator: {
+      //     // filename: "img/[name].[hash].[ext]",
+      //     // publicPath: "../",
+      //   // },
       // },
       // fonts
       {
@@ -1078,7 +1078,16 @@ module.exports = {
   // расшир/сокращ
   resolve: {
     // расшир. по умолч. чтоб не указыв. в import/export
-    extensions: [".js", ".jsx", ".json", ".css", ".scss", ".png"],
+    extensions: [
+      ".js",
+      ".jsx",
+      ".ts",
+      ".tsx",
+      ".json",
+      ".css",
+      ".scss",
+      ".png",
+    ],
     // сокращение/пседвоним указ. на путь
     alias: {
       "@models": path.resolve(__dirname, "src/models"),
